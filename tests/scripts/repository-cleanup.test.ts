@@ -1,7 +1,19 @@
-import {existsSync, readFileSync} from 'node:fs'
+import {existsSync, readdirSync, readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vite-plus/test'
 
 describe('Grabbit repository presentation', () => {
+	it('keeps one directly maintained root README without translation-generation tooling', () => {
+		expect(readdirSync('.').filter(file => /^README(?:\.[\w-]+)?\.md$/.test(file))).toEqual(['README.md'])
+		expect(existsSync('readme-src/build.mjs')).toBe(false)
+		expect(existsSync('scripts/check-locale-parity.ts')).toBe(false)
+		const scripts = readFileSync('package.json', 'utf8')
+		const hooks = readFileSync('vite.config.ts', 'utf8')
+		expect(scripts).not.toMatch(/build:readme|check:readme|check:locales/)
+		expect(hooks).not.toContain('readme-src')
+		expect(scripts).toContain('bun scripts/check-app-i18n.ts --strict && bun run i18n:check')
+		expect(readFileSync('README.md', 'utf8')).not.toMatch(/README\.[\w-]+\.md|Read in:|\{\{\w+\}\}/)
+	})
+
 	it('does not ship upstream donation or personal maintainer material', () => {
 		for (const file of [
 			'DONATE.md',

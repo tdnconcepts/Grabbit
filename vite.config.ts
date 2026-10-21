@@ -37,9 +37,8 @@ const QUALITY_GATES = ['check:static', 'check:shell', 'check:tooling-parity', 'c
 
 // Format, then lint with type checks (typeCheck is on). This is `vp check`
 // plus --deny-warnings, which `vp check` cannot take. Type-aware rules resolve
-// ytdlp-errors through its built types, so build it first. README sources are
-// skipped: readme-src is rebuilt by its own rule.
-const STAGED_CHECK = `bash -lc 'set -e; args=(); for f in "$@"; do case "$f" in */readme-src/*|readme-src/*) ;; *) args+=("$f");; esac; done; if [ \${#args[@]} -eq 0 ]; then exit 0; fi; bun run errors:build; vp fmt --no-error-on-unmatched-pattern "\${args[@]}"; vp lint --fix --deny-warnings "\${args[@]}"' --`
+// ytdlp-errors through its built types, so build it first.
+const STAGED_CHECK = `bash -lc 'set -e; bun run errors:build; vp fmt --no-error-on-unmatched-pattern "$@"; vp lint --fix --deny-warnings "$@"' --`
 
 export default defineConfig({
 	test: {
@@ -49,7 +48,7 @@ export default defineConfig({
 		]
 	},
 	run: {tasks: {'quality-gate': {command: 'bun run packages:check', dependsOn: QUALITY_GATES, cache: false}}},
-	staged: {'readme-src/**': "bash -lc 'bun run build:readme && git add README.md README.*.md' --", '*.{json,jsonc,css}': 'vp fmt --no-error-on-unmatched-pattern', '*.{ts,tsx,cts,mts,js,mjs,cjs}': STAGED_CHECK},
+	staged: {'*.{json,jsonc,css}': 'vp fmt --no-error-on-unmatched-pattern', '*.{ts,tsx,cts,mts,js,mjs,cjs}': STAGED_CHECK},
 	fmt: {
 		// Mirrors the former Biome formatter settings (tabs, 320 cols, no semis, collapsed objects).
 		useTabs: true,
@@ -67,7 +66,6 @@ export default defineConfig({
 			'**/*.md',
 			'**/*.yml',
 			'**/*.yaml',
-			'readme-src/**',
 			'docs/**',
 			'dev-docs/**',
 			'design/**',
@@ -103,7 +101,6 @@ export default defineConfig({
 			'test-results/**',
 			'refs/**',
 			'.ref/**',
-			'readme-src/**',
 			'.electron-user-data/**',
 			'.agents/**',
 			'.claude/**',

@@ -267,8 +267,8 @@ describe('release asset names', () => {
 		expect(release).toContain('${builder_api_url#https://api.github.com/}')
 	})
 
-	it('presents Grabbit without upstream release or marketing links in the README template', () => {
-		const template = read('readme-src/template.md')
+	it('presents Grabbit without upstream release or marketing links in the README', () => {
+		const template = read('README.md')
 
 		expect(template).toContain('# Grabbit')
 		expect(template).toContain('https://github.com/tdnconcepts/Grabbit.git')
@@ -283,7 +283,7 @@ describe('release asset names', () => {
 		}
 	})
 
-	it('does not document stale versioned Windows filename patterns in generated READMEs', () => {
+	it('does not document stale versioned Windows filename patterns in the README', () => {
 		const readmes = readdirSync(root).filter(file => /^README(?:\.[a-z]+)?\.md$/.test(file))
 
 		for (const file of readmes) {

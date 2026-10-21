@@ -2,7 +2,7 @@ import {defineConfig} from '@playwright/test'
 
 // README screenshots (`bun run screenshots:readme`). Renders the browser-mock
 // renderer with showcase content and writes each shot into build/, where the
-// README and readme-src/template.md reference them. Not part of `bun run check`.
+// README.md references them. Not part of `bun run check`.
 
 function readRendererPort(): number {
 	const raw = process.env.ARROXY_RENDERER_PORT

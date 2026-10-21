@@ -52,11 +52,6 @@ English changes are detected through gettext's `msgid` model. A stable i18next k
 
 If `bun run i18n:sync` fails because `msgmerge` is missing, install GNU gettext in the environment or report that the sync step is blocked. Do not bypass this by editing generated JSON manually.
 
-## README Translations
+## README scope
 
-README files are generated from `readme-src/` and are separate from app i18n. If a task touches README copy, update `readme-src/` and run:
-
-```bash
-bun run build:readme
-bun run check:readme
-```
+Grabbit has one directly maintained English `README.md` at the repository root. README edits do not require app locale changes. Do not recreate translated READMEs or a README generator; preserve the application's runtime locale JSON and PO/POT catalogs.

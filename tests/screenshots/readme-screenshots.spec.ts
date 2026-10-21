@@ -12,7 +12,7 @@ import type {Page} from '@playwright/test'
 // Chromium shows the GPU look), at the default window size and 2x pixel
 // density, in the dark theme. Each shot waits for its own `ready` element.
 // To add a shot for a new feature: add a scenario if none shows it, add an entry
-// below, run the command, and reference build/<file> from readme-src/template.md.
+// below, run the command, and reference build/<file> from README.md.
 
 interface Shot {
 	name: string

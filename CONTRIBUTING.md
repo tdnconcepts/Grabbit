@@ -21,7 +21,7 @@ bun run dev
 - Target `main` with focused pull requests.
 - Add regression tests at the layer that owns the behavior.
 - Run `bun run check` and report any existing failures separately.
-- Edit `readme-src/` and regenerate READMEs with `bun run build:readme`; do not edit generated READMEs directly.
+- Edit the English root `README.md` directly; app translations are maintained separately.
 - Keep app translations synchronized when changing visible text.
 - Keep credentials, app data, installers, caches, and local test artifacts out of Git.
 - Preserve `LICENSE` and `THIRD_PARTY_NOTICES.txt`.

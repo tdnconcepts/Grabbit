@@ -214,7 +214,7 @@ On a branch `subpath` in arroxy-web. `main` keeps deploying the old site to Page
 
 1. One shared site-URL constant used by `AboutDialog.tsx`, `ShareDialog.tsx` and `useUpdateChannel.ts`, with tests updated.
 2. Feedback default → `https://orionus.dev/arroxy/api/feedback-diagnostics`. Stage 1 must already be deployed.
-3. `readme-src/template.md` badge and CTA → regenerate READMEs; `scripts/flatpak/publish-repo.sh`; `AGENTS.md`;
+3. Update the root `README.md` directly; `scripts/flatpak/publish-repo.sh`; `AGENTS.md`;
    `dev-docs/`; `workers/feedback-upload/README.md`; CHANGELOG entry.
 4. `gh repo edit antonio-orionus/Arroxy --homepage https://orionus.dev/arroxy/`.
 - **verify:** `bun run check`; in the built app, About, Share and the update-banner link open the new URL; one feedback
