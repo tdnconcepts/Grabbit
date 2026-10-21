@@ -182,8 +182,6 @@ export const fr = {
     "Si un site change, yt-dlp publie des correctifs chaque semaine et Arroxy met à jour le binaire automatiquement au lancement",
   shot1_cap:
     "<b>Accueil Téléchargement rapide</b><br/>Collez une URL et lancez-la aussitôt avec votre profil actif",
-  shot2_cap:
-    "<b>Profils de téléchargement réutilisables</b><br/>Enregistrez format, qualité et sortie en préréglages — réutilisés à chaque téléchargement",
   shot3_cap:
     "<b>Pistes audio multilingues</b><br/>Choisissez la langue audio exacte fournie par la vidéo",
   shot4_cap:

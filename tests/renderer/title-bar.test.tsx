@@ -23,7 +23,7 @@ describe('TitleBar window controls', () => {
 	it('uses native macOS traffic lights instead of renderer window controls', async () => {
 		await renderTitleBar('darwin')
 
-		expect(screen.getByTestId('title-bar')).toHaveTextContent('Arroxy')
+		expect(screen.getByTestId('title-bar')).toHaveTextContent('Grabbit')
 		expect(screen.getByTestId('native-window-controls-spacer')).toBeInTheDocument()
 		expect(screen.queryByTestId('window-controls-mac')).not.toBeInTheDocument()
 		expect(screen.queryByTestId('wc-close')).not.toBeInTheDocument()
@@ -32,6 +32,7 @@ describe('TitleBar window controls', () => {
 	it('keeps renderer window controls on Windows and Linux', async () => {
 		await renderTitleBar('linux')
 
+		expect(screen.getByTestId('title-bar')).not.toHaveTextContent('Highest resolution + best audio')
 		expect(screen.getByTestId('window-controls-win')).toBeInTheDocument()
 		expect(screen.getByTestId('wc-close')).toBeInTheDocument()
 		expect(screen.queryByTestId('native-window-controls-spacer')).not.toBeInTheDocument()

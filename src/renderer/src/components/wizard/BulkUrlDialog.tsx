@@ -1,7 +1,7 @@
 import {useMemo, useRef, useState, type ReactNode} from 'react'
 import {useTranslation} from 'react-i18next'
-import {AlertTriangle, Link2, WandSparkles} from 'lucide-react'
-import type {BulkUrlRejectReason, DownloadProfileRef} from '@shared/types.js'
+import {AlertTriangle, Download, Link2, WandSparkles} from 'lucide-react'
+import type {BulkUrlRejectReason} from '@shared/types.js'
 import {bulkLogger} from '@renderer/lib/bulkLogger.js'
 import {cn} from '@renderer/lib/utils.js'
 import {Badge} from '../ui/badge.js'
@@ -13,7 +13,6 @@ import {Item, ItemActions, ItemContent, ItemGroup, ItemMedia, ItemTitle} from '.
 import {Textarea} from '../ui/textarea.js'
 import {useAppStore} from '../../store/useAppStore.js'
 import {buildBulkUrlPreview} from './bulkUrlPreview.js'
-import {QuickProfileControl} from './QuickProfileControl.js'
 import {SectionLabel} from '../shared/SectionLabel.js'
 
 export interface BulkUrlDialogActionState {
@@ -27,21 +26,16 @@ interface BulkUrlDialogProps {
 	open: boolean
 	onOpenChange: (open: boolean) => void
 	initialRaw?: string
-	onEditProfile?: () => void
-	onManageProfiles?: () => void
-	onNewProfile?: () => void
 	renderActions?: (state: BulkUrlDialogActionState) => ReactNode
 }
 
 const REJECT_I18N: Record<BulkUrlRejectReason, 'wizard.bulk.reject.duplicate'> = {duplicate: 'wizard.bulk.reject.duplicate'}
 
-export function BulkUrlDialog({open, onOpenChange, initialRaw = '', onEditProfile, onManageProfiles, onNewProfile, renderActions}: BulkUrlDialogProps): ReactNode {
+export function BulkUrlDialog({open, onOpenChange, initialRaw = '', renderActions}: BulkUrlDialogProps): ReactNode {
 	const {t} = useTranslation()
 	const startBulkUrls = useAppStore(state => state.startBulkUrls)
 	const quickDownloadUrls = useAppStore(state => state.quickDownloadUrls)
 	const quickDownloadStatus = useAppStore(state => state.quickDownloadStatus)
-	const setActiveDownloadProfile = useAppStore(state => state.setActiveDownloadProfile)
-	const profilesPrefs = useAppStore(state => state.settings?.profiles)
 	const [raw, setRaw] = useState(initialRaw)
 	const textareaRef = useRef<HTMLTextAreaElement>(null)
 	const preview = useMemo(() => buildBulkUrlPreview(raw), [raw])
@@ -75,15 +69,6 @@ export function BulkUrlDialog({open, onOpenChange, initialRaw = '', onEditProfil
 			setRaw('')
 			onOpenChange(false)
 		}
-	}
-
-	function activateProfile(ref: DownloadProfileRef): void {
-		void setActiveDownloadProfile(ref)
-	}
-
-	function closeAndRun(action: (() => void) | undefined): void {
-		close()
-		action?.()
 	}
 
 	return (
@@ -163,18 +148,12 @@ export function BulkUrlDialog({open, onOpenChange, initialRaw = '', onEditProfil
 					{!preview.canConfirm ? <p className="text-xs text-muted-foreground">{t('wizard.bulk.needsAtLeastOne')}</p> : null}
 
 					{renderActions ? null : (
-						<QuickProfileControl
-							disabled={!preview.canConfirm || quickPreparing}
-							onDownload={() => void confirmQuick()}
-							onEditProfile={() => closeAndRun(onEditProfile)}
-							onManageProfiles={() => closeAndRun(onManageProfiles)}
-							onNewProfile={() => closeAndRun(onNewProfile)}
-							onPickProfile={activateProfile}
-							preparing={quickPreparing}
-							profilesPrefs={profilesPrefs}
-							size="compact"
-							testIdPrefix="bulk"
-						/>
+						<div className="flex justify-end">
+							<Button type="button" variant="glow" disabled={!preview.canConfirm || quickPreparing} onClick={() => void confirmQuick()} data-testid="bulk-quick-download" title={t('wizard.url.quickDownloadTooltip', {profileName: t('presets.best-quality.label')})}>
+								<Download data-icon="inline-start" aria-hidden />
+								{quickPreparing ? t('wizard.url.quickPreparing') : t('wizard.url.quickDownload')}
+							</Button>
+						</div>
 					)}
 				</div>
 

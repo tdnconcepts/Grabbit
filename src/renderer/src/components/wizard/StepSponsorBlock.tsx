@@ -17,7 +17,7 @@ function isSponsorBlockMode(value: string | undefined): value is SponsorBlockMod
 	return value !== undefined && (SPONSORBLOCK_MODES as readonly string[]).includes(value)
 }
 
-export function StepSponsorBlock(): ReactNode {
+export function StepSponsorBlock({embedded = false}: {embedded?: boolean} = {}): ReactNode {
 	const {t} = useTranslation()
 	const {wizardSponsorBlockMode, wizardSponsorBlockCategories, setSponsorBlockMode, toggleSponsorBlockCategory, advance, back} = useAppStore()
 
@@ -69,7 +69,7 @@ export function StepSponsorBlock(): ReactNode {
 				</>
 			)}
 
-			<WizardStepFooterActions onBack={back} onContinue={advance} />
+			{!embedded ? <WizardStepFooterActions onBack={back} onContinue={advance} /> : null}
 		</div>
 	)
 }

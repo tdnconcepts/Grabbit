@@ -239,7 +239,7 @@ export function resolveDownloadProfileOutputDir(profile: DownloadProfile, contex
 
 /**
  * Profile override wins, else the global setting, else the built-in default.
- * The result is an Arroxy template (`{title} [{id}]`), not a yt-dlp one —
+ * The result is an Grabbit template (`{title} [{id}]`), not a yt-dlp one —
  * compilation happens at queue-submission time.
  */
 export function resolveFilenameTemplate(profile: DownloadProfile | undefined, globalTemplate: string | undefined): string {

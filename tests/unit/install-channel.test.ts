@@ -31,36 +31,36 @@ describe('detectInstallChannel', () => {
 
 	it('detects scoop from a user-scope execPath on win32', async () => {
 		setPlatform('win32')
-		setExecPath('C:\\Users\\tester\\scoop\\apps\\arroxy\\current\\Arroxy.exe')
+		setExecPath('C:\\Users\\tester\\scoop\\apps\\arroxy\\current\\Grabbit.exe')
 		const {detectInstallChannel} = await import('@main/installChannel.js')
 		expect(detectInstallChannel('arroxy')).toBe('scoop')
 	})
 
 	it('detects scoop from a global-scope execPath on win32', async () => {
 		setPlatform('win32')
-		setExecPath('C:\\ProgramData\\scoop\\apps\\arroxy\\current\\Arroxy.exe')
+		setExecPath('C:\\ProgramData\\scoop\\apps\\arroxy\\current\\Grabbit.exe')
 		const {detectInstallChannel} = await import('@main/installChannel.js')
 		expect(detectInstallChannel('arroxy')).toBe('scoop')
 	})
 
 	it('falls back to direct on win32 when execPath is a normal NSIS install', async () => {
 		setPlatform('win32')
-		setExecPath('C:\\Users\\tester\\AppData\\Local\\Programs\\Arroxy\\Arroxy.exe')
+		setExecPath('C:\\Users\\tester\\AppData\\Local\\Programs\\Grabbit\\Grabbit.exe')
 		const {detectInstallChannel} = await import('@main/installChannel.js')
 		expect(detectInstallChannel('arroxy')).toBe('direct')
 	})
 
 	it('detects portable on win32 when PORTABLE_EXECUTABLE_FILE is set', async () => {
 		setPlatform('win32')
-		setExecPath('C:\\Users\\tester\\Downloads\\Arroxy-portable.exe')
-		process.env.PORTABLE_EXECUTABLE_FILE = 'C:\\Users\\tester\\Downloads\\Arroxy-portable.exe'
+		setExecPath('C:\\Users\\tester\\Downloads\\Grabbit-portable.exe')
+		process.env.PORTABLE_EXECUTABLE_FILE = 'C:\\Users\\tester\\Downloads\\Grabbit-portable.exe'
 		const {detectInstallChannel} = await import('@main/installChannel.js')
 		expect(detectInstallChannel('arroxy')).toBe('portable')
 	})
 
 	it('scoop wins over portable detection (scoop installs do not set PORTABLE_EXECUTABLE_FILE in practice)', async () => {
 		setPlatform('win32')
-		setExecPath('C:\\Users\\tester\\scoop\\apps\\arroxy\\current\\Arroxy.exe')
+		setExecPath('C:\\Users\\tester\\scoop\\apps\\arroxy\\current\\Grabbit.exe')
 		process.env.PORTABLE_EXECUTABLE_FILE = 'whatever'
 		const {detectInstallChannel} = await import('@main/installChannel.js')
 		expect(detectInstallChannel('arroxy')).toBe('scoop')

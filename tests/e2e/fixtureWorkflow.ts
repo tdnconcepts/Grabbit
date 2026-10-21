@@ -44,7 +44,7 @@ export function recordArrayField(record: Record<string, unknown>, key: string): 
 }
 
 export function listFilesRecursive(dir: string): string[] {
-	// The output directory is live while this walks it: Arroxy creates and
+	// The output directory is live while this walks it: Grabbit creates and
 	// removes `.arroxy-temp/<id>` scratch directories during a download, so a
 	// directory listed one moment can be gone the next. Reading a snapshot and
 	// then descending into it is inherently racy, and the failure surfaces as

@@ -5,7 +5,7 @@ import {buildJourneyEnv} from '../../scripts/startup/runJourney.js'
 
 const BASE: StartupJourney = {id: 'test', description: 'test', profile: {kind: 'empty'}, env: {}, expect: 'main-screen', logPolicy: {allowedWarnings: [], allowedErrors: []}, tiers: ['nightly']}
 
-const CTX = {packagedExe: '/app/Arroxy', baseDir: '/tmp/base'}
+const CTX = {packagedExe: '/app/Grabbit', baseDir: '/tmp/base'}
 
 describe('buildJourneyEnv', () => {
 	it('points the app at the provisioned profile', () => {

@@ -21,10 +21,10 @@ export function resolveAction(channel: InstallChannel, platform: NodeJS.Platform
 			return {kind: 'download'}
 		case 'direct':
 			return platform === 'darwin' ? {kind: 'download'} : {kind: 'install'}
-		// Arroxy's Flatpak repo serves updates; the sandboxed app cannot replace
+		// Grabbit's Flatpak repo serves updates; the sandboxed app cannot replace
 		// its own files, so the user runs the update.
 		case 'flatpak':
-			return {kind: 'command', cmd: 'flatpak update io.github.antonio_orionus.Arroxy'}
+			return {kind: 'command', cmd: 'flatpak update io.github.antonio_orionus.Grabbit'}
 		default: {
 			// Exhaustiveness check — adding a channel without handling here is a type error.
 			const _exhaustive: never = channel

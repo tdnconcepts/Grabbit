@@ -44,7 +44,7 @@ function makeProbeService(mockMode = false, cache?: ProbeInfoJsonCache): ProbeSe
 
 beforeEach(() => {
 	vi.clearAllMocks()
-	vi.mocked(probeElectronNodeRuntime).mockResolvedValue({ok: true, runtime: {kind: 'electron-node', executablePath: '/mock/Arroxy', version: '24.16.0'}, output: 'v24.16.0'})
+	vi.mocked(probeElectronNodeRuntime).mockResolvedValue({ok: true, runtime: {kind: 'electron-node', executablePath: '/mock/Grabbit', version: '24.16.0'}, output: 'v24.16.0'})
 })
 
 describe('ProbeService — mockMode', () => {
@@ -64,6 +64,37 @@ describe('ProbeService — mockMode', () => {
 })
 
 describe('ProbeService — video probe', () => {
+	it('exposes one low-bandwidth HTTPS progressive stream for the clip preview', async () => {
+		const json = JSON.stringify({
+			_type: 'video',
+			id: 'preview',
+			title: 'Preview source',
+			extractor: 'generic',
+			formats: [
+				{format_id: 'dash', ext: 'mp4', url: 'https://cdn.example/video-only.mp4', protocol: 'https', vcodec: 'avc1', acodec: 'none', height: 480},
+				{format_id: 'large', ext: 'mp4', url: 'https://cdn.example/1080.mp4', protocol: 'https', vcodec: 'avc1', acodec: 'aac', height: 1080},
+				{format_id: 'preview', ext: 'mp4', url: 'https://cdn.example/480.mp4', protocol: 'https', vcodec: 'avc1', acodec: 'aac', height: 480},
+				{format_id: 'insecure', ext: 'mp4', url: 'http://cdn.example/360.mp4', protocol: 'http', vcodec: 'avc1', acodec: 'aac', height: 360}
+			]
+		})
+		vi.mocked(spawnYtDlp).mockReturnValue(makeFakeProcessEmitting(json) as never)
+
+		const result = await makeProbeService().probe('https://example.com/watch/preview')
+
+		expect(result.ok).toBe(true)
+		if (result.ok && result.data.kind === 'video') expect(result.data.previewUrl).toBe('https://cdn.example/480.mp4')
+	})
+
+	it('omits the preview stream when the probe has no safe browser-playable URL', async () => {
+		const json = JSON.stringify({_type: 'video', id: 'audio', title: 'Audio', extractor: 'generic', formats: [{format_id: 'audio', ext: 'm4a', url: 'https://cdn.example/audio.m4a', protocol: 'https', vcodec: 'none', acodec: 'aac'}]})
+		vi.mocked(spawnYtDlp).mockReturnValue(makeFakeProcessEmitting(json) as never)
+
+		const result = await makeProbeService().probe('https://example.com/audio')
+
+		expect(result.ok).toBe(true)
+		if (result.ok && result.data.kind === 'video') expect(result.data.previewUrl).toBeUndefined()
+	})
+
 	it('parses _type:video and derives isAudioOnlySource from extractor', async () => {
 		const json = JSON.stringify({_type: 'video', id: 'abc', title: 'Bandcamp Track', extractor: 'bandcamp', extractor_key: 'Bandcamp', webpage_url: 'https://artist.bandcamp.com/track/x', formats: [{format_id: 'mp3-128', ext: 'mp3', acodec: 'mp3', vcodec: 'none', abr: 128}]})
 		vi.mocked(spawnYtDlp).mockReturnValue(makeFakeProcessEmitting(json) as never)
@@ -464,7 +495,7 @@ describe('ProbeService — _type: url redirect', () => {
 
 describe('ProbeService — uploader and upload date for filename templates', () => {
 	// Filename templates can name directories after {uploader} and {date}, and
-	// Arroxy renders those itself (it needs the path before the download starts).
+	// Grabbit renders those itself (it needs the path before the download starts).
 	// That only works if the probe carries the fields through.
 	it('carries uploader and uploadDate on a video probe', async () => {
 		const json = JSON.stringify({_type: 'video', id: 'v1', title: 'Clip', uploader: 'Blender Foundation', upload_date: '20260803', extractor: 'youtube', extractor_key: 'Youtube', webpage_url: 'https://www.youtube.com/watch?v=v1', formats: [{format_id: '18', ext: 'mp4', vcodec: 'avc1', acodec: 'mp4a.40.2'}]})

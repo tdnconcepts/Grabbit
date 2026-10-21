@@ -102,9 +102,9 @@ jobs:
         shell: bash
         run: |
           if [ "$RUNNER_OS" = "macOS" ]; then
-            exe=$(find dist -name "Arroxy" -path "*/MacOS/Arroxy" | head -1)
+            exe=$(find dist -name "Grabbit" -path "*/MacOS/Grabbit" | head -1)
           elif [ "$RUNNER_OS" = "Windows" ]; then
-            exe="dist/win-unpacked/Arroxy.exe"
+            exe="dist/win-unpacked/Grabbit.exe"
           else
             exe="dist/linux-unpacked/arroxy"
           fi
@@ -198,15 +198,15 @@ jobs:
           if [ "$RUNNER_OS" = "macOS" ]; then
             arch="$(uname -m)"
             if [ "$arch" = "arm64" ]; then
-              exe=$(find dist -name "Arroxy" -path "*/mac-arm64/*.app/Contents/MacOS/Arroxy" 2>/dev/null | head -1)
+              exe=$(find dist -name "Grabbit" -path "*/mac-arm64/*.app/Contents/MacOS/Grabbit" 2>/dev/null | head -1)
             else
-              exe=$(find dist -name "Arroxy" -path "*/mac/*.app/Contents/MacOS/Arroxy" 2>/dev/null | head -1)
+              exe=$(find dist -name "Grabbit" -path "*/mac/*.app/Contents/MacOS/Grabbit" 2>/dev/null | head -1)
             fi
             if [ -z "${exe:-}" ]; then
-              exe=$(find dist -name "Arroxy" -path "*/Contents/MacOS/Arroxy" 2>/dev/null | head -1)
+              exe=$(find dist -name "Grabbit" -path "*/Contents/MacOS/Grabbit" 2>/dev/null | head -1)
             fi
           else
-            exe=$(find dist -maxdepth 1 \( -name "Arroxy-linux-x64.AppImage" -o -name "Arroxy-linux-x86_64.AppImage" \) -print | head -1)
+            exe=$(find dist -maxdepth 1 \( -name "Grabbit-linux-x64.AppImage" -o -name "Grabbit-linux-x86_64.AppImage" \) -print | head -1)
             if [ -n "${exe:-}" ]; then
               chmod +x "$exe"
             fi
@@ -306,9 +306,9 @@ jobs:
           DOWNLOAD_BADGES=$(cat <<EOF
           ## Install
 
-          [![Windows Setup](https://img.shields.io/badge/Windows-Setup-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-win-x64-Setup.exe) [![Windows Portable](https://img.shields.io/badge/Windows-Portable-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-win-x64-Portable.exe)<br>
-          [![macOS Apple Silicon](https://img.shields.io/badge/macOS-Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-mac-arm64.dmg) [![macOS Intel](https://img.shields.io/badge/macOS-Intel-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-mac-x64.dmg)<br>
-          [![Linux AppImage](https://img.shields.io/badge/Linux-AppImage-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-linux-x64.AppImage) [![Linux Flatpak](https://img.shields.io/badge/Linux-Flatpak-4A90D9?style=for-the-badge&logo=flathub&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-linux-x64.flatpak) [![Linux tar.gz](https://img.shields.io/badge/Linux-tar.gz-6B7280?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Arroxy-linux-x64.tar.gz)<br>
+          [![Windows Setup](https://img.shields.io/badge/Windows-Setup-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-win-x64-Setup.exe) [![Windows Portable](https://img.shields.io/badge/Windows-Portable-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-win-x64-Portable.exe)<br>
+          [![macOS Apple Silicon](https://img.shields.io/badge/macOS-Apple%20Silicon-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-mac-arm64.dmg) [![macOS Intel](https://img.shields.io/badge/macOS-Intel-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-mac-x64.dmg)<br>
+          [![Linux AppImage](https://img.shields.io/badge/Linux-AppImage-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-linux-x64.AppImage) [![Linux Flatpak](https://img.shields.io/badge/Linux-Flatpak-4A90D9?style=for-the-badge&logo=flathub&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-linux-x64.flatpak) [![Linux tar.gz](https://img.shields.io/badge/Linux-tar.gz-6B7280?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/Grabbit-linux-x64.tar.gz)<br>
           [![SHA256](https://img.shields.io/badge/SHA256-Checksums-4B5563?style=for-the-badge&logo=github&logoColor=white)](https://github.com/${REPO}/releases/download/${REF_NAME}/SHA256SUMS)
           EOF
           )
@@ -334,8 +334,8 @@ jobs:
             assets=$(gh release view "${{ github.ref_name }}" \
               --repo "${{ github.repository }}" \
               --json assets --jq '.assets[].name' 2>/dev/null || echo "")
-            if echo "$assets" | grep -Fxq "Arroxy-win-x64-Setup.exe" \
-              && echo "$assets" | grep -Fxq "Arroxy-win-x64-Portable.exe"; then
+            if echo "$assets" | grep -Fxq "Grabbit-win-x64-Setup.exe" \
+              && echo "$assets" | grep -Fxq "Grabbit-win-x64-Portable.exe"; then
               echo "Windows artifacts present after ${i}0s"
               exit 0
             fi
@@ -354,8 +354,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          public_name="Arroxy-linux-x64.AppImage"
-          builder_name="Arroxy-linux-x86_64.AppImage"
+          public_name="Grabbit-linux-x64.AppImage"
+          builder_name="Grabbit-linux-x86_64.AppImage"
           tmpdir=$(mktemp -d)
           trap 'rm -rf "$tmpdir"' EXIT
 
@@ -411,22 +411,22 @@ jobs:
           gh release download "${GITHUB_REF_NAME}" \
             --repo "${GITHUB_REPOSITORY}" \
             --dir artifacts \
-            --pattern "Arroxy-win-x64-Setup.exe" \
-            --pattern "Arroxy-win-x64-Portable.exe" \
-            --pattern "Arroxy-mac-arm64.dmg" \
-            --pattern "Arroxy-mac-x64.dmg" \
-            --pattern "Arroxy-linux-x64.AppImage" \
-            --pattern "Arroxy-linux-x64.tar.gz" \
-            --pattern "Arroxy-linux-x64.flatpak"
+            --pattern "Grabbit-win-x64-Setup.exe" \
+            --pattern "Grabbit-win-x64-Portable.exe" \
+            --pattern "Grabbit-mac-arm64.dmg" \
+            --pattern "Grabbit-mac-x64.dmg" \
+            --pattern "Grabbit-linux-x64.AppImage" \
+            --pattern "Grabbit-linux-x64.tar.gz" \
+            --pattern "Grabbit-linux-x64.flatpak"
 
           required=(
-            "Arroxy-win-x64-Setup.exe"
-            "Arroxy-win-x64-Portable.exe"
-            "Arroxy-mac-arm64.dmg"
-            "Arroxy-mac-x64.dmg"
-            "Arroxy-linux-x64.AppImage"
-            "Arroxy-linux-x64.tar.gz"
-            "Arroxy-linux-x64.flatpak"
+            "Grabbit-win-x64-Setup.exe"
+            "Grabbit-win-x64-Portable.exe"
+            "Grabbit-mac-arm64.dmg"
+            "Grabbit-mac-x64.dmg"
+            "Grabbit-linux-x64.AppImage"
+            "Grabbit-linux-x64.tar.gz"
+            "Grabbit-linux-x64.flatpak"
           )
           for file in "${required[@]}"; do
             if [ ! -f "artifacts/${file}" ]; then
@@ -476,12 +476,12 @@ jobs:
         run: |
           gh release download "${GITHUB_REF_NAME}" \
             --repo "${GITHUB_REPOSITORY}" \
-            --pattern Arroxy-linux-x64.tar.gz \
+            --pattern Grabbit-linux-x64.tar.gz \
             --dir flatpak-source
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: flatpak-source
-          path: flatpak-source/Arroxy-linux-x64.tar.gz
+          path: flatpak-source/Grabbit-linux-x64.tar.gz
           if-no-files-found: error
 
   build-flatpak:
@@ -523,7 +523,7 @@ jobs:
           # too, but only into a temporary config that doesn't always survive
           # across steps in this container image.
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          TARBALL="Arroxy-linux-x64.tar.gz"
+          TARBALL="Grabbit-linux-x64.tar.gz"
           HASH=$(sha256sum "flatpak/$TARBALL" | awk '{print $1}')
           python3 scripts/render-flatpak-manifest.py \
             --sha256 "$HASH" \
@@ -608,10 +608,10 @@ jobs:
             find flatpak-artifact -maxdepth 3 -type f
             exit 1
           fi
-          mv "$FILE" "Arroxy-linux-x64.flatpak"
+          mv "$FILE" "Grabbit-linux-x64.flatpak"
           gh release upload "$GITHUB_REF_NAME" \
             --repo "${{ github.repository }}" \
-            "Arroxy-linux-x64.flatpak" \
+            "Grabbit-linux-x64.flatpak" \
             --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -671,7 +671,7 @@ jobs:
       - name: Update manifest
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
-          PORTABLE="Arroxy-win-x64-Portable.exe"
+          PORTABLE="Grabbit-win-x64-Portable.exe"
           HASH=$(grep "$PORTABLE" SHA256SUMS | awk '{print $1}')
           if [ -z "$HASH" ]; then
             echo "::error::Could not find $PORTABLE in SHA256SUMS"
@@ -683,7 +683,7 @@ jobs:
              | .url = "https://github.com/antonio-orionus/Arroxy/releases/download/v\($v)/\($p)"
              | .hash = "sha256:\($h)"
              | .bin = $p
-             | .shortcuts = [[$p, "Arroxy"]]' \
+             | .shortcuts = [[$p, "Grabbit"]]' \
             bucket/arroxy.json > bucket/arroxy.json.tmp
           mv bucket/arroxy.json.tmp bucket/arroxy.json
       - name: Commit & push
@@ -716,8 +716,8 @@ jobs:
         # parts than a sed-replace can safely handle.
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
-          DMG_ARM="Arroxy-mac-arm64.dmg"
-          DMG_X64="Arroxy-mac-x64.dmg"
+          DMG_ARM="Grabbit-mac-arm64.dmg"
+          DMG_X64="Grabbit-mac-x64.dmg"
           HASH_ARM=$(grep "$DMG_ARM" SHA256SUMS | awk '{print $1}')
           HASH_X64=$(grep "$DMG_X64" SHA256SUMS | awk '{print $1}')
           if [ -z "$HASH_ARM" ] || [ -z "$HASH_X64" ]; then
@@ -731,14 +731,14 @@ jobs:
 
             on_arm do
               sha256 "${HASH_ARM}"
-              url "https://github.com/antonio-orionus/Arroxy/releases/download/v#{version}/Arroxy-mac-arm64.dmg"
+              url "https://github.com/antonio-orionus/Arroxy/releases/download/v#{version}/Grabbit-mac-arm64.dmg"
             end
             on_intel do
               sha256 "${HASH_X64}"
-              url "https://github.com/antonio-orionus/Arroxy/releases/download/v#{version}/Arroxy-mac-x64.dmg"
+              url "https://github.com/antonio-orionus/Arroxy/releases/download/v#{version}/Grabbit-mac-x64.dmg"
             end
 
-            name "Arroxy"
+            name "Grabbit"
             desc "YouTube downloader"
             homepage "https://github.com/antonio-orionus/Arroxy"
 
@@ -747,18 +747,18 @@ jobs:
             # symbol is a minimum; the ">= :x" string form is deprecated.
             depends_on macos: :ventura
 
-            app "Arroxy.app"
+            app "Grabbit.app"
 
             # The macOS builds are ad-hoc signed, not notarized, so Homebrew's
             # unconditional quarantine would make first launch fail with
-            # "Apple could not verify Arroxy.app is free of malware". Homebrew
+            # "Apple could not verify Grabbit.app is free of malware". Homebrew
             # removed --no-quarantine in 4.7, so a tap that ships unsigned apps
             # has to strip the attribute itself; upstream tells tap maintainers
             # this post-processing is theirs to do. Drop this stanza once the
             # app is notarized.
             postflight_steps do
               run "/usr/bin/xattr",
-                  args: ["-dr", "com.apple.quarantine", "{{appdir}}/Arroxy.app"]
+                  args: ["-dr", "com.apple.quarantine", "{{appdir}}/Grabbit.app"]
             end
 
             zap trash: [

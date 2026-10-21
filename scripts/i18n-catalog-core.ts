@@ -18,7 +18,7 @@ interface JsonObject {
 	[key: string]: string | JsonObject
 }
 
-const BASE_HEADERS: Record<string, string> = {'project-id-version': 'Arroxy', 'report-msgid-bugs-to': 'https://github.com/antonio-orionus/Arroxy/issues', 'mime-version': '1.0', 'content-type': 'text/plain; charset=UTF-8', 'content-transfer-encoding': '8bit'}
+const BASE_HEADERS: Record<string, string> = {'project-id-version': 'Grabbit', 'report-msgid-bugs-to': 'https://github.com/antonio-orionus/Arroxy/issues', 'mime-version': '1.0', 'content-type': 'text/plain; charset=UTF-8', 'content-transfer-encoding': '8bit'}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
 	return value !== null && typeof value === 'object' && !Array.isArray(value)

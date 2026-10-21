@@ -354,7 +354,7 @@ export interface PlaylistEntry {
 	videoId: string | null // raw yt-dlp %(id)s; null when extractor yields none
 	probeInfoJsonRef?: ProbeInfoJsonRef
 	// Filename templates can name directories after {uploader} / {date}, and
-	// Arroxy renders those itself because it needs the path before downloading.
+	// Grabbit renders those itself because it needs the path before downloading.
 	// Sparse on flat playlist probes — an absent value collapses the folder.
 	uploader?: string // uploader → channel → creator → uploader_id, resolved at probe time
 	uploadDate?: string // raw yt-dlp upload_date (YYYYMMDD)
@@ -386,7 +386,7 @@ export interface ProbeInput {
 	// forces playlist enumeration.
 	playlistMode?: ProbePlaylistMode
 	// Probe-time scope for playlist/channel/search enumeration. Downloads still
-	// split into Arroxy queue items after this filtered flat probe.
+	// split into Grabbit queue items after this filtered flat probe.
 	playlistScope?: PlaylistScope
 	// Optional cancellation key: lets the caller abort exactly this probe
 	// later (probeCancel(key)) without touching other in-flight probes —
@@ -413,6 +413,9 @@ interface ProbeCommon {
 export interface VideoProbeResult extends ProbeCommon {
 	kind: 'video'
 	videoId?: string | null
+	/** One browser-playable HTTPS stream selected for the in-app clip preview. */
+	previewUrl?: string
+	previewFps?: number
 	probeInfoJsonRef?: ProbeInfoJsonRef
 	formats: FormatOption[]
 	title: string

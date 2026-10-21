@@ -39,7 +39,7 @@ describe('journey catalog', () => {
 		// the soft launch-time update check 404s. Environmental, not a defect.
 		const cleanLog = cleanStartupLog()
 		const updater404 =
-			'[2026-08-30 05:22:31.753] [error] (updater) Cannot find latest-mac.yml in the latest release artifacts (https://github.com/antonio-orionus/Arroxy/releases/download/v0.4.8-beta.2/latest-mac.yml): HttpError: 404\n[2026-08-30 05:22:31.760] [error] (updater) checkForUpdates failed Cannot find latest-mac.yml in the latest release artifacts (https://github.com/antonio-orionus/Arroxy/releases/download/v0.4.8-beta.2/latest-mac.yml): HttpError: 404'
+			'[2026-08-30 05:22:31.753] [error] (updater) Cannot find latest-mac.yml in the latest release artifacts (https://github.com/antonio-orionus/Grabbit/releases/download/v0.4.8-beta.2/latest-mac.yml): HttpError: 404\n[2026-08-30 05:22:31.760] [error] (updater) checkForUpdates failed Cannot find latest-mac.yml in the latest release artifacts (https://github.com/antonio-orionus/Grabbit/releases/download/v0.4.8-beta.2/latest-mac.yml): HttpError: 404'
 		for (const journey of journeysForTier('release')) {
 			const violations = inspectStartupLog(`${cleanLog}\n${updater404}`, journey.logPolicy)
 			expect(violations.filter(violation => violation.kind === 'error-line')).toEqual([])
@@ -52,7 +52,7 @@ describe('journey catalog', () => {
 		// beta.yml fetch 404s and it falls back.
 		const cleanLog = cleanStartupLog()
 		const updater404 =
-			'[2026-08-31 04:58:47.392] [error] (updater) Cannot find latest.yml in the latest release artifacts (https://github.com/antonio-orionus/Arroxy/releases/download/v0.4.8-beta.5/latest.yml): HttpError: 404\n[2026-08-31 04:58:47.393] [error] (updater) checkForUpdates failed Cannot find latest.yml in the latest release artifacts (https://github.com/antonio-orionus/Arroxy/releases/download/v0.4.8-beta.5/latest.yml): HttpError: 404'
+			'[2026-08-31 04:58:47.392] [error] (updater) Cannot find latest.yml in the latest release artifacts (https://github.com/antonio-orionus/Grabbit/releases/download/v0.4.8-beta.5/latest.yml): HttpError: 404\n[2026-08-31 04:58:47.393] [error] (updater) checkForUpdates failed Cannot find latest.yml in the latest release artifacts (https://github.com/antonio-orionus/Grabbit/releases/download/v0.4.8-beta.5/latest.yml): HttpError: 404'
 		for (const journey of journeysForTier('release')) {
 			const violations = inspectStartupLog(`${cleanLog}\n${updater404}`, journey.logPolicy)
 			expect(violations.filter(violation => violation.kind === 'error-line')).toEqual([])

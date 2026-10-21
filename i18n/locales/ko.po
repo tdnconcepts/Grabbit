@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "MIT 라이선스 · Antonio Orionus 제작"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "Arroxy 정보"
+msgid "About Grabbit"
+msgstr "Grabbit 정보"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "피드백"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "Arroxy가 마음에 드시나요? 의견을 들려주세요! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "Grabbit가 마음에 드시나요? 의견을 들려주세요! 💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "처음부터"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Arroxy는 계속 실행되며 진행 중인 다운로드를 완료합니다. 나중에 고급 설정에서 변경할 수 있습니다."
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Grabbit는 계속 실행되며 진행 중인 다운로드를 완료합니다. 나중에 고급 설정에서 변경할 수 있습니다."
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "트레이로 숨기기"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "닫을 때 Arroxy를 시스템 트레이로 숨길까요?"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "닫을 때 Grabbit를 시스템 트레이로 숨길까요?"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "렌더러 프로세스가 중단되었습니다({{reason}}). 다시 시도하려면 새로고침하세요."
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Arroxy에 문제가 발생했습니다"
+msgid "Grabbit encountered a problem"
+msgstr "Grabbit에 문제가 발생했습니다"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "이 동영상은 연령 제한이 있어 로그인한 계정 없이는 다운로드할 수 없습니다."
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "봇 보호가 작동했습니다. 사용 중인 IP가 데이터센터 대역이거나 사용자가 많은 VPN 출구라 차단되었을 가능성이 큽니다. IP를 바꾸거나 다른 VPN 엔드포인트를 선택한 뒤 다시 시도하세요. 계속 실패한다면 사이트의 일시적인 변경 때문일 수 있습니다. Arroxy는 시작할 때 yt-dlp를 자동 업데이트하므로 업스트림에서 수정본이 배포되면 자동으로 적용됩니다."
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "봇 보호가 작동했습니다. 사용 중인 IP가 데이터센터 대역이거나 사용자가 많은 VPN 출구라 차단되었을 가능성이 큽니다. IP를 바꾸거나 다른 VPN 엔드포인트를 선택한 뒤 다시 시도하세요. 계속 실패한다면 사이트의 일시적인 변경 때문일 수 있습니다. Grabbit는 시작할 때 yt-dlp를 자동 업데이트하므로 업스트림에서 수정본이 배포되면 자동으로 적용됩니다."
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "디스크 공간이 부족합니다. 공간을 확보하고 다시 시도하세요."
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Arroxy가 다운로드 폴더에 쓸 수 없습니다. 폴더가 읽기 전용이거나, 잠긴 드라이브에 있거나, 시스템의 개인정보 보호 설정으로 차단되었을 수 있습니다. 다른 폴더를 선택하거나 접근을 허용한 뒤 다시 시도하세요."
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Grabbit가 다운로드 폴더에 쓸 수 없습니다. 폴더가 읽기 전용이거나, 잠긴 드라이브에 있거나, 시스템의 개인정보 보호 설정으로 차단되었을 수 있습니다. 다른 폴더를 선택하거나 접근을 허용한 뒤 다시 시도하세요."
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "사이트의 응답을 분석할 수 없습니다. yt-dlp 추출기가 사이트 변경을 따라가지 못했을 수 있습니다. Arroxy는 시작 시 yt-dlp를 자동 업데이트하므로 수정본이 배포된 뒤 몇 분 후 다시 시도하세요."
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "사이트의 응답을 분석할 수 없습니다. yt-dlp 추출기가 사이트 변경을 따라가지 못했을 수 있습니다. Grabbit는 시작 시 yt-dlp를 자동 업데이트하므로 수정본이 배포된 뒤 몇 분 후 다시 시도하세요."
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "알 수 없는 토큰 {{token}}입니다."
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "{id}가 없으면 Arroxy는 이미 다운로드한 재생목록 항목을 감지하거나 .m3u 재생목록을 만들 수 없습니다."
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "{id}가 없으면 Grabbit는 이미 다운로드한 재생목록 항목을 감지하거나 .m3u 재생목록을 만들 수 없습니다."
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "클립보드에 링크가 없습니다. 먼저 링크를 복사하세요"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "여러 링크가 복사되었습니다. Arroxy의 URL 일괄 추가를 사용하세요"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "여러 링크가 복사되었습니다. Grabbit의 URL 일괄 추가를 사용하세요"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "이 링크는 간단한 확인이 필요합니다. Arroxy를 열고 다시 붙여넣으세요"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "이 링크는 간단한 확인이 필요합니다. Grabbit를 열고 다시 붙여넣으세요"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "클립보드에서 다운로드를 대기열에 추가했습니다"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "링크를 추가할 수 없습니다. Arroxy에서 다시 시도하세요"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "링크를 추가할 수 없습니다. Grabbit에서 다시 시도하세요"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "대기열이 일시 중지되었습니다. 다시 시작할 때까지 대기 항목은 시작되지 않습니다"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "다운로드 중"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "마무리 중"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "병합 중"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "남은 시간"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "속도"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "일시 중지된 다운로드를 다시 시작하고 대기열을 계속 진행합니다"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "전체 릴리스 노트 ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "Arroxy {{version}}의 새로운 기능"
+msgid "What's new in Grabbit {{version}}"
+msgstr "Grabbit {{version}}의 새로운 기능"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "링크 복사"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy — Windows, macOS 및 Linux용 무료 오픈 소스 동영상 다운로더. YouTube, Vimeo, Twitch 및 2000개 이상의 사이트를 지원합니다.\n"
+"Grabbit — Windows, macOS 및 Linux용 무료 오픈 소스 동영상 다운로더. YouTube, Vimeo, Twitch 및 2000개 이상의 사이트를 지원합니다.\n"
 "4K · HDR · MP3 · Shorts · 자막 · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Arroxy는 무료 오픈 소스입니다. 공유하면 더 많은 사람이 Arroxy를 발견할 수 있습니다."
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Grabbit는 무료 오픈 소스입니다. 공유하면 더 많은 사람이 Grabbit를 발견할 수 있습니다."
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "공유"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "Arroxy 공유"
+msgid "Share Grabbit"
+msgstr "Grabbit 공유"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "Arroxy 공유"
+msgid "Share Grabbit"
+msgstr "Grabbit 공유"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "Arroxy 공유"
+msgid "Share Grabbit"
+msgstr "Grabbit 공유"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "파일 이동 중…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "{{dir}}에 저장할 수 없습니다 — Arroxy에 그곳에 쓸 권한이 없습니다"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "{{dir}}에 저장할 수 없습니다 — Grabbit에 그곳에 쓸 권한이 없습니다"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "클립보드에서 다운로드"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "Arroxy 열기"
+msgid "Open Grabbit"
+msgstr "Grabbit 열기"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "Arroxy 종료"
+msgid "Quit Grabbit"
+msgstr "Grabbit 종료"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "유휴"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "업데이트 실패"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Arroxy {{version}}을(를) 사용할 수 있습니다. 현재 버전은 {{currentVersion}}입니다."
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Grabbit {{version}}을(를) 사용할 수 있습니다. 현재 버전은 {{currentVersion}}입니다."
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Arroxy {{version}}을(를) 사용할 수 있습니다. Homebrew로 업데이트하세요."
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Grabbit {{version}}을(를) 사용할 수 있습니다. Homebrew로 업데이트하세요."
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Arroxy {{version}}을(를) 사용할 수 있습니다. 새 DMG를 다운로드하세요."
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Grabbit {{version}}을(를) 사용할 수 있습니다. 새 DMG를 다운로드하세요."
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Arroxy {{version}}을(를) 사용할 수 있습니다. 새 빌드를 다운로드하세요."
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Grabbit {{version}}을(를) 사용할 수 있습니다. 새 빌드를 다운로드하세요."
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "준비됨"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "동영상, 재생목록, 채널, 검색 또는 오디오 URL을 붙여넣으세요. Arroxy가 대기열에 추가하기 전에 중복을 제거합니다."
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "동영상, 재생목록, 채널, 검색 또는 오디오 URL을 붙여넣으세요. Grabbit가 대기열에 추가하기 전에 중복을 제거합니다."
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "이 동영상만 다운로드하거나 활성 빠른 다운로드 프로필로 전체 재생목록을 대기열에 추가합니다."
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "Arroxy가 재생목록, 채널 또는 검색 결과를 대기열에 추가하기 전에 분석할 최대 항목 수입니다."
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "Grabbit가 재생목록, 채널 또는 검색 결과를 대기열에 추가하기 전에 분석할 최대 항목 수입니다."
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "불러온 모든 재생목록 항목을 활성 빠른 다운로드 프로필로 대기열에 추가합니다. 분석이 제한에 도달하면 Arroxy가 추가 전에 확인합니다."
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "불러온 모든 재생목록 항목을 활성 빠른 다운로드 프로필로 대기열에 추가합니다. 분석이 제한에 도달하면 Grabbit가 추가 전에 확인합니다."
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "현재 링크"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Arroxy가 링크를 읽고 {{profileName}}을(를) 적용하고 있습니다."
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Grabbit가 링크를 읽고 {{profileName}}을(를) 적용하고 있습니다."
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "빠른 다운로드 준비 중"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "Arroxy가 대기열을 준비하는 동안 이 창을 열어 두세요."
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "Grabbit가 대기열을 준비하는 동안 이 창을 열어 두세요."
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "배경 품질"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "Arroxy의 움직이는 배경에 사용할 동작 수준을 선택하세요."
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "Grabbit의 움직이는 배경에 사용할 동작 수준을 선택하세요."
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "모양 및 성능"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "이 기기에서 하드웨어 WebGL을 사용할 수 없어 Arroxy가 성능 배경을 사용합니다."
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "이 기기에서 하드웨어 WebGL을 사용할 수 없어 Grabbit가 성능 배경을 사용합니다."
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "URL 일괄 추가"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "여러 URL을 추가하고 대기열에 넣습니다."
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "동영상 재생목록"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "Arroxy로 받을 수 있는 항목"
+msgid "What Grabbit can pull"
+msgstr "Grabbit로 받을 수 있는 항목"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "동영상"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "단계별 마법사에서 형식, 화질 등을 선택합니다."
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "URL에서 다운로드"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "이 단축키는 다른 앱에서 사용 중입니다. 다른 단축키를 선택하세요."
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "또는 다음 키 누르기"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "어디서든 동영상 링크를 복사하고 이 단축키를 누르면 창을 전환하지 않아도 Arroxy가 활성 프로필로 대기열에 추가합니다."
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "설정에서 변경하거나 끌 수 있습니다."
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "키를 누르세요…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "기본값으로 재설정"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "Arroxy를 열지 않고 어떤 앱에서든 복사한 링크를 다운로드합니다."
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "Grabbit를 열지 않고 어떤 앱에서든 복사한 링크를 다운로드합니다."
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "끄기"
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "백그라운드에서 다운로드 중… 멀티태스킹도 문제없어요 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "링크를 넣고 Arroxy에 맡기세요 ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "호환 스테레오"
@@ -2962,7 +2958,7 @@ msgid "Prefer surround / Dolby"
 msgstr "서라운드 / Dolby 선호"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
 msgstr "각 다운로드 중 짧게 대기하여 사이트에 지나치게 많은 요청을 보내지 않습니다. 값은 초 단위입니다."
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "신중한 다운로드"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "Arroxy를 얼마나 신중하게 사용할까요?"
+msgid "How cautious should Grabbit be?"
+msgstr "Grabbit를 얼마나 신중하게 사용할까요?"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "다운로드별 고급 제어를 직접 조정합니다."
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "Arroxy가 미디어와 자막에 적용하는 최소한의 기본 대기만 사용합니다."
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "Grabbit가 미디어와 자막에 적용하는 최소한의 기본 대기만 사용합니다."
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "사용자 지정: {{count}}개 항목"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "재생목록, 채널 또는 검색 결과를 열 때 Arroxy가 불러올 최대 항목 수입니다."
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "재생목록, 채널 또는 검색 결과를 열 때 Grabbit가 불러올 최대 항목 수입니다."
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}}개 항목"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "yt-dlp --playlist-end에 해당합니다. Arroxy는 선택 화면을 만들 때 재생목록, 채널 또는 검색 항목을 이 수만큼만 요청합니다."
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "활성 프로필"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "기본 제공"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "사용자 지정"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "숨김"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "수정됨"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "yt-dlp --playlist-end에 해당합니다. Grabbit는 선택 화면을 만들 때 재생목록, 채널 또는 검색 항목을 이 수만큼만 요청합니다."
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "전역 대상 변경"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "대상"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "편집"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "활성 프로필 편집"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "숨긴 프로필은 여기에 남아 있지만 모든 프로필 선택기에서는 사라집니다."
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "선택기에 프로필 표시: {{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "사용 가능한 프로필을 하나 이상 유지하세요."
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "프로필 관리"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "빠른 다운로드, URL 일괄 추가 및 재생목록에 사용할 활성 프로필을 변경합니다."
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "프로필 전환"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "새 프로필"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "재사용 가능한 다운로드 설정을 만들고 선택하고 편집하거나 제거합니다."
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "다운로드 프로필"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "제거"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "재설정"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "다운로드 프로필 전환: {{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "다운로드 프로필 전환"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "분석 실패"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "대기열에 추가됨"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "시작하려면 동영상, 재생목록, 채널 또는 검색 URL을 붙여넣으세요."
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "프로필 기반 다운로드에도 영향을 주는 전역 동작입니다."
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "입력"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "프로필"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "설정"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "고급 옵션"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "링크 분석 중…"
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "최고의 오디오"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "목적지 변경"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "링크를 붙여넣어 자동으로 분석한 다음 여기에서 모든 항목을 선택하세요."
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "다운로드 대상"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "다운로드"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "출력 파일 이름 템플릿"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "유효한 HTTP 또는 HTTPS URL을 입력하세요."
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "다운로드 옵션"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "맞춤 범위"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "SS, MM:SS 또는 HH:MM:SS를 허용합니다."
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "종료 시간"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "시작 및 종료 시간은 동영상 재생 시간 내에 있어야 합니다."
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "유효한 종료 시간을 입력하세요."
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "종료 시간은 시작 시간보다 이후여야 합니다."
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "유효한 시작 시간을 0 이후로 입력하세요."
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "전체 영상"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "특정 부분 다운로드"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "클립 반복"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "다음 프레임"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "타임라인 위치"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "동영상을 재생하거나 탐색하여 정확한 자르기 지점을 선택하세요."
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "클립 미리보기"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "이 소스에서는 미리보기를 사용할 수 없습니다. 타임라인과 시간 입력란은 계속 사용할 수 있습니다."
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "이전 프레임"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "재설정 범위"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "선택한 구간"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "끝 설정"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "시작 설정"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "시작 시간"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "한 단계 뒤로"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "한 단계 앞으로"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "시작 {{start}} — 끝 {{end}} — 클립 길이 {{length}}"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "비디오 끝 사용"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "타임라인 확대/축소"

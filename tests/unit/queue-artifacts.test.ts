@@ -48,7 +48,7 @@ describe('queue artifacts', () => {
 		expect(markMissingArtifacts([media, subtitles], new Set(['/tmp/video.en.vtt']))).toEqual([media, {...subtitles, missing: true}])
 	})
 
-	it('filters internal artifacts by explicit marker and Arroxy sidecar name', () => {
+	it('filters internal artifacts by explicit marker and Grabbit sidecar name', () => {
 		const media = queueArtifactFromPath('/tmp/video.mkv', {discoveredAt: '2026-06-18T10:00:00.000Z'})
 		const userVisibleInfoJson = queueArtifactFromPath('/tmp/video.info.json', {discoveredAt: '2026-06-18T10:00:00.000Z'})
 		const internalResumeInfoJson = queueArtifactFromPath('/tmp/.arroxy-temp/job/_arroxy.info.json', {discoveredAt: '2026-06-18T10:00:00.000Z'})

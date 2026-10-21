@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "mime-version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,7 +19,7 @@ msgid "MIT License · by Antonio Orionus"
 msgstr ""
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
+msgid "About Grabbit"
 msgstr ""
 
 msgctxt "about.tagline"
@@ -39,7 +39,7 @@ msgid "Feedback"
 msgstr ""
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
 msgstr ""
 
 msgctxt "app.logs"
@@ -87,7 +87,7 @@ msgid "Start over"
 msgstr ""
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
 msgstr ""
 
 msgctxt "dialogs.closeToTray.hide"
@@ -95,7 +95,7 @@ msgid "Hide to tray"
 msgstr ""
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
+msgid "Hide Grabbit to the system tray when closing?"
 msgstr ""
 
 msgctxt "dialogs.closeToTray.quit"
@@ -135,7 +135,7 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr ""
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
+msgid "Grabbit encountered a problem"
 msgstr ""
 
 msgctxt "dialogs.rendererCrashed.quit"
@@ -151,7 +151,7 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr ""
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
 msgstr ""
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
@@ -187,11 +187,11 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr ""
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
 msgstr ""
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
 msgstr ""
 
 msgctxt "errors.ytdlp.postprocessFailure"
@@ -255,7 +255,7 @@ msgid "Unknown token {{token}}."
 msgstr ""
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
 msgstr ""
 
 msgctxt "filenameTemplate.label"
@@ -323,11 +323,11 @@ msgid "No link on your clipboard — copy one first"
 msgstr ""
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
 msgstr ""
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
+msgid "That link needs a quick review — open Grabbit and paste it again"
 msgstr ""
 
 msgctxt "notifications.hotkey.queued"
@@ -335,7 +335,7 @@ msgid "Download queued from clipboard"
 msgstr ""
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
+msgid "Could not add that link — try again in Grabbit"
 msgstr ""
 
 msgctxt "notifications.playlistFolderRejected"
@@ -718,6 +718,26 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr ""
 
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr ""
+
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr ""
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr ""
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr ""
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr ""
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr ""
@@ -807,7 +827,7 @@ msgid "Full release notes ↗"
 msgstr ""
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
+msgid "What's new in Grabbit {{version}}"
 msgstr ""
 
 msgctxt "repair.actions.cancel"
@@ -908,12 +928,12 @@ msgstr ""
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
 msgstr ""
 
 msgctxt "share.footerLabel"
@@ -921,15 +941,15 @@ msgid "Share"
 msgstr ""
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
+msgid "Share Grabbit"
 msgstr ""
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
+msgid "Share Grabbit"
 msgstr ""
 
 msgctxt "share.title"
-msgid "Share Arroxy"
+msgid "Share Grabbit"
 msgstr ""
 
 msgctxt "splash.cancel"
@@ -1013,7 +1033,7 @@ msgid "Moving files…"
 msgstr ""
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
 msgstr ""
 
 msgctxt "status.preparingBinaries"
@@ -1101,11 +1121,11 @@ msgid "Download from clipboard"
 msgstr ""
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
+msgid "Open Grabbit"
 msgstr ""
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
+msgid "Quit Grabbit"
 msgstr ""
 
 msgctxt "tray.menu.statusActive_one"
@@ -1121,7 +1141,7 @@ msgid "Idle"
 msgstr ""
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
+msgid "Grabbit"
 msgstr ""
 
 msgctxt "update.copied"
@@ -1157,19 +1177,19 @@ msgid "Update failed"
 msgstr ""
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
 msgstr ""
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
+msgid "Grabbit {{version}} is available — update with Homebrew."
 msgstr ""
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
+msgid "Grabbit {{version}} is available — download the new DMG."
 msgstr ""
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
+msgid "Grabbit {{version}} is available — download the new build."
 msgstr ""
 
 msgctxt "update.retry"
@@ -1185,7 +1205,7 @@ msgid "Ready"
 msgstr ""
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
 msgstr ""
 
 msgctxt "wizard.bulk.emptyPreview"
@@ -1620,11 +1640,11 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr ""
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
 msgstr ""
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
 msgstr ""
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
@@ -2356,7 +2376,7 @@ msgid "Current link"
 msgstr ""
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
+msgid "Grabbit is reading the link and applying {{profileName}}."
 msgstr ""
 
 msgctxt "wizard.quickProgress.failedCount_one"
@@ -2380,7 +2400,7 @@ msgid "Preparing Quick Download"
 msgstr ""
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
+msgid "Keep this open while Grabbit prepares the queue."
 msgstr ""
 
 msgctxt "wizard.sponsorblock.cat.filler"
@@ -2624,7 +2644,7 @@ msgid "Backdrop quality"
 msgstr ""
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
 msgstr ""
 
 msgctxt "wizard.url.backdrop.panelTitle"
@@ -2632,15 +2652,11 @@ msgid "Appearance and performance"
 msgstr ""
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
 msgstr ""
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
-msgstr ""
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
 msgstr ""
 
 msgctxt "wizard.url.clearAria"
@@ -2812,7 +2828,7 @@ msgid "Video playlists"
 msgstr ""
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
+msgid "What Grabbit can pull"
 msgstr ""
 
 msgctxt "wizard.url.features.youtube.channel"
@@ -2843,10 +2859,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr ""
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr ""
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr ""
@@ -2859,18 +2871,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr ""
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr ""
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr ""
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr ""
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr ""
@@ -2880,7 +2880,7 @@ msgid "Reset to default"
 msgstr ""
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
 msgstr ""
 
 msgctxt "wizard.url.hotkey.sectionTitle"
@@ -2931,14 +2931,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr ""
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr ""
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr ""
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr ""
@@ -2956,7 +2948,7 @@ msgid "Prefer surround / Dolby"
 msgstr ""
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
 msgstr ""
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
@@ -2980,7 +2972,7 @@ msgid "Gentle downloads"
 msgstr ""
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
+msgid "How cautious should Grabbit be?"
 msgstr ""
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
@@ -3020,7 +3012,7 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr ""
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
 msgstr ""
 
 msgctxt "wizard.url.networkPacing.units.seconds"
@@ -3060,7 +3052,7 @@ msgid "Custom: {{count}} items"
 msgstr ""
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
 msgstr ""
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
@@ -3076,95 +3068,15 @@ msgid "{{count}} items"
 msgstr ""
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr ""
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr ""
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr ""
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr ""
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr ""
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
 msgstr ""
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr ""
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr ""
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr ""
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr ""
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr ""
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr ""
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr ""
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr ""
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr ""
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr ""
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr ""
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr ""
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr ""
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr ""
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
-msgstr ""
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr ""
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
 msgstr ""
 
 msgctxt "wizard.url.proxy.clear"
@@ -3219,14 +3131,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr ""
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr ""
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr ""
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr ""
@@ -3239,10 +3143,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr ""
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr ""
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
+msgstr ""
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr ""
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr ""
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr ""
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr ""
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr ""
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr ""
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr ""
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr ""
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr ""
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr ""
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
 msgstr ""

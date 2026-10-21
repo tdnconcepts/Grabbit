@@ -96,7 +96,7 @@ export class TrayManager {
 	// caller can fall back to a normal Notification.
 	displayBalloon(body: string): boolean {
 		if (!this.tray || this.tray.isDestroyed()) return false
-		this.tray.displayBalloon({title: 'Arroxy', content: body})
+		this.tray.displayBalloon({title: 'Grabbit', content: body})
 		return true
 	}
 

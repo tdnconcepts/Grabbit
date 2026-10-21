@@ -9,9 +9,7 @@ import {Tooltip, TooltipTrigger, TooltipContent} from '../../ui/tooltip.js'
 import {RadioGroup} from '../../ui/radio-group.js'
 import {ChoiceRow} from '../../shared/ChoiceRow.js'
 import {ScrollArea} from '../../ui/scroll-area.js'
-import {MascotBubble} from '../../shared/MascotBubble.js'
 import {cn} from '@renderer/lib/utils.js'
-import choosingImg from '../../../assets/Choosing.png'
 import {SectionLabel} from '../../shared/SectionLabel.js'
 
 interface AudioColumnProps {
@@ -66,7 +64,7 @@ export function AudioColumn({view, mode, audioSelection, audioExtFilter, onAudio
 	const pickConvert = (target: AudioConvertTarget): AudioSelection => (target === 'wav' ? {kind: 'convert-lossless', target: 'wav'} : {kind: 'convert-lossy', target, bitrateKbps: view.bitrateStrip.value})
 
 	const bitrateStrip = (
-		<div className={cn('flex items-center justify-between mt-2 px-1 transition-opacity', view.bitrateStrip.blocked && 'opacity-40 pointer-events-none')} data-testid="audio-bitrate-strip">
+		<div className={cn('flex items-center justify-between mt-2 px-1 transition-opacity', view.bitrateStrip.blocked && 'opacity-40 pointer-events-none')} data-testid="audio-bitrate-strip" aria-disabled={view.bitrateStrip.blocked}>
 			<SectionLabel render={<span />}>{t('wizard.formats.convert.bitrate')}</SectionLabel>
 			<ToggleGroup
 				size="xs"
@@ -93,7 +91,7 @@ export function AudioColumn({view, mode, audioSelection, audioExtFilter, onAudio
 	const bitrateTooltipMsg = view.bitrateStrip.tooltipKey ? t(view.bitrateStrip.tooltipKey) : null
 
 	return (
-		<div className="flex flex-col gap-0">
+		<div className="grabbit-format-column flex flex-col gap-0">
 			<div className="mb-1.5 flex items-center justify-between">
 				<SectionLabel>{t('wizard.formats.audio')}</SectionLabel>
 				{view.audioExtOptions.length > 1 && (
@@ -155,8 +153,6 @@ export function AudioColumn({view, mode, audioSelection, audioExtFilter, onAudio
 			) : (
 				bitrateStrip
 			)}
-
-			<MascotBubble image={choosingImg} message={t('wizard.formats.mascot')} side="right" className="mt-3" />
 		</div>
 	)
 }

@@ -241,7 +241,7 @@ function trackBinaryProbeAnomaly(id: DependencyId, source: DependencySource, out
 // Resolve absolute path to a build-time-embedded ffmpeg/ffprobe binary.
 //
 // Production: binaries ship via electron-builder `extraResources`, so they
-// land in `process.resourcesPath` (Mac: Arroxy.app/Contents/Resources, Win:
+// land in `process.resourcesPath` (Mac: Grabbit.app/Contents/Resources, Win:
 // <install>/resources, Linux AppImage: /tmp/.mount_*/resources).
 //
 // Development: scripts/build/fetch-embedded.sh populates

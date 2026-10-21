@@ -1,7 +1,6 @@
 import {type ReactNode} from 'react'
 import {useTranslation} from 'react-i18next'
 import {Download, Link2} from 'lucide-react'
-import {resolveActiveDownloadProfile} from '@shared/downloadProfiles.js'
 import {resolvePlaylistProbeLimit} from '@shared/networkPacing.js'
 import type {QuickDownloadProgressPhase} from '@shared/types.js'
 import {cn} from '@renderer/lib/utils.js'
@@ -27,7 +26,6 @@ export function QuickDownloadProgressDialog(): ReactNode {
 	const playlistProbeProgress = useAppStore(state => state.playlistProbeProgress)
 	const settings = useAppStore(state => state.settings)
 	const cancelQuickDownload = useAppStore(state => state.cancelQuickDownload)
-	const activeProfile = resolveActiveDownloadProfile(settings?.profiles).profile
 	const open = quickDownloadStatus === 'preparing'
 	const safeTotal = Math.max(total, 1)
 	const currentLabel = title ?? current ?? t('wizard.quickProgress.currentFallback')
@@ -59,7 +57,7 @@ export function QuickDownloadProgressDialog(): ReactNode {
 						</IconTile>
 						{t('wizard.quickProgress.title')}
 					</DialogTitle>
-					<DialogDescription>{t('wizard.quickProgress.description', {profileName: activeProfile.name})}</DialogDescription>
+					<DialogDescription>{t('wizard.quickProgress.description', {profileName: t('presets.best-quality.label')})}</DialogDescription>
 				</DialogHeader>
 
 				<div className="grid min-w-0 gap-3" data-testid="quick-download-progress-body">

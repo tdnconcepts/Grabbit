@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>io.github.antonio_orionus.Arroxy</id>
 
-  <name>Arroxy</name>
+  <name>Grabbit</name>
   <summary>YouTube downloader for video, audio, and subtitles</summary>
   <summary xml:lang="de">YouTube Downloader für Video, Audio und Untertitel</summary>
   <summary xml:lang="es">Descargador de YouTube para vídeo, audio y subtítulos</summary>
@@ -18,7 +18,7 @@
 
   <description>
     <p>
-      Arroxy is a free open-source YouTube downloader built around a simple step-by-step
+      Grabbit is a free open-source YouTube downloader built around a simple step-by-step
       wizard. Paste a URL, pick a format and quality, choose where to save, and download —
       no command-line flags, no terminal required.
     </p>

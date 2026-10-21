@@ -7,7 +7,7 @@ import {Separator} from '../ui/separator.js'
 import {SettingSwitch} from '../shared/SettingSwitch.js'
 import {WizardStepFooterActions} from './WizardStepFooterActions.js'
 
-export function StepOutput(): ReactNode {
+export function StepOutput({embedded = false}: {embedded?: boolean} = {}): ReactNode {
 	const {t} = useTranslation()
 	const {wizardMode, wizardEmbedChapters, wizardEmbedMetadata, wizardEmbedThumbnail, wizardWriteDescription, wizardWriteThumbnail, wizardWriteM3u, playlistSelection, setEmbedChapters, setEmbedMetadata, setEmbedThumbnail, setWriteDescription, setWriteThumbnail, setWriteM3u, advance, back, settings} = useAppStore()
 	// Playlist files are located by matching `[videoId]`; without {id} in the
@@ -45,7 +45,7 @@ export function StepOutput(): ReactNode {
 				</>
 			)}
 
-			<WizardStepFooterActions onBack={back} onContinue={advance} />
+			{!embedded ? <WizardStepFooterActions onBack={back} onContinue={advance} /> : null}
 		</div>
 	)
 }

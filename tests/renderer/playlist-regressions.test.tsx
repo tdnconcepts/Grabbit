@@ -133,8 +133,8 @@ describe('playlist regressions', () => {
 		const item = vi.mocked(window.appApi.queue.cmd.add).mock.calls[0]?.[0]?.[0]
 		expect(item?.job.kind).toBe('single-format')
 		if (item?.job.kind !== 'single-format') throw new Error('single-format job expected')
-		// The job carries the *bound* filename: tokens Arroxy knows are resolved to
-		// literals sized to the filesystem, and only what Arroxy cannot know — here
+		// The job carries the *bound* filename: tokens Grabbit knows are resolved to
+		// literals sized to the filesystem, and only what Grabbit cannot know — here
 		// the id, absent from this state — is left for yt-dlp.
 		expect(item.job.filenameTemplate).toBe('Single Video [{id}]')
 	})

@@ -18,6 +18,7 @@ import {YOUTUBE_SINGLE_VIDEO_PLAYER_CLIENTS} from '@shared/youtubePlayerClients.
 import {PROBE_TIMEOUT_MESSAGE, YtDlp} from './YtDlp.js'
 import type {ProbeInfoJsonCache} from './ProbeInfoJsonCache.js'
 import {sabrSkippedClient} from './download/formatLimitSignals.js'
+import {selectPreviewSource} from './previewSource.js'
 import {defaultVhxTitleFetcher, deriveRecoveredTitle, extractPageTitleMeta, isLikelyParentPage, isVhxEmbedExtractor, isVhxSentinelTitle, patchInfoJsonTitle, smuggledRefererOf, type VhxTitleFetcher} from './vhxTitleRecovery.js'
 
 const logger = log.scope('probe')
@@ -381,7 +382,7 @@ function mapPlaylistEntriesInner(entries: readonly InfoDict[], jobUrl: string, s
 
 /**
  * Resolve the uploader the same way the compiled `{uploader}` output template
- * does (`%(uploader,channel,creator,uploader_id)`). Arroxy renders `{uploader}`
+ * does (`%(uploader,channel,creator,uploader_id)`). Grabbit renders `{uploader}`
  * itself in directory position, so drifting from that chain would put a video
  * in a folder named differently from the file yt-dlp writes inside it.
  */
@@ -408,9 +409,11 @@ function resolveTimestamp(source: {timestamp?: number}): number | undefined {
 function buildVideoProbeResult(info: VideoInfo, jobUrl: string, degraded: {reasons: ProbeDegradationReason[]} | undefined, probeInfoJsonRef?: ProbeInfoJsonRef): ProbeResult {
 	const extractor = info.extractor ?? ''
 	const site = siteForExtractor(extractor)
+	const preview = selectPreviewSource(info.formats ?? [])
 	return {
 		kind: 'video',
 		videoId: typeof info.id === 'string' && info.id.length > 0 ? info.id : null,
+		...preview,
 		...(probeInfoJsonRef ? {probeInfoJsonRef} : {}),
 		extractor,
 		extractorKey: info.extractor_key ?? '',

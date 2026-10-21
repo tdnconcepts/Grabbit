@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "Ліцензія MIT · by Antonio Orionus"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "Про програму Arroxy"
+msgid "About Grabbit"
+msgstr "Про програму Grabbit"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "Зворотний зв'язок"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "Подобається Arroxy? Я б залюбки почув твою думку! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "Подобається Grabbit? Я б залюбки почув твою думку! 💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "Почати спочатку"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Arroxy продовжить роботу і завершить активні завантаження. Змінити в розширених налаштуваннях."
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Grabbit продовжить роботу і завершить активні завантаження. Змінити в розширених налаштуваннях."
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "Приховати в трей"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "Приховувати Arroxy в системний трей при закритті?"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "Приховувати Grabbit в системний трей при закритті?"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "Процес рендерера завершився аварійно ({{reason}}). Перезавантажте, щоб спробувати ще раз."
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Arroxy зіткнувся з проблемою"
+msgid "Grabbit encountered a problem"
+msgstr "Grabbit зіткнувся з проблемою"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "Це відео має віковий ценз — без авторизації завантажити неможливо."
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "Спрацював захист від ботів. IP-адреса, яку ти використовуєш, найімовірніше заблокована (діапазон датацентру або перевантажений вихідний вузол VPN). Зміни IP або вибери інший сервер VPN і повтори спробу. Якщо помилка повторюється, можливо, це тимчасова зміна на боці YouTube — Arroxy автоматично оновлює yt-dlp під час запуску, тож виправлення з'явиться само після виходу оновлення."
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "Спрацював захист від ботів. IP-адреса, яку ти використовуєш, найімовірніше заблокована (діапазон датацентру або перевантажений вихідний вузол VPN). Зміни IP або вибери інший сервер VPN і повтори спробу. Якщо помилка повторюється, можливо, це тимчасова зміна на боці YouTube — Grabbit автоматично оновлює yt-dlp під час запуску, тож виправлення з'явиться само після виходу оновлення."
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "Недостатньо місця на диску. Звільни місце та спробуй ще раз."
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Arroxy не може записувати в теку завантажень. Можливо, вона лише для читання, розташована на заблокованому диску або заблокована налаштуваннями конфіденційності системи. Вибери іншу теку або дозволь доступ і спробуй ще раз."
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Grabbit не може записувати в теку завантажень. Можливо, вона лише для читання, розташована на заблокованому диску або заблокована налаштуваннями конфіденційності системи. Вибери іншу теку або дозволь доступ і спробуй ще раз."
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "Не вдалося розібрати відповідь сайту. Можливо, екстрактор yt-dlp застарів. Arroxy автоматично оновлює yt-dlp при запуску — спробуй ще раз за кілька хвилин, коли виправлення буде доставлено."
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "Не вдалося розібрати відповідь сайту. Можливо, екстрактор yt-dlp застарів. Grabbit автоматично оновлює yt-dlp при запуску — спробуй ще раз за кілька хвилин, коли виправлення буде доставлено."
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "Невідомий елемент {{token}}."
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "Без {id} Arroxy не може виявляти вже завантажені елементи плейлиста та створювати плейлисти .m3u."
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "Без {id} Grabbit не може виявляти вже завантажені елементи плейлиста та створювати плейлисти .m3u."
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "У буфері обміну немає посилання — скопіюйте його спочатку"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "Скопійовано кілька посилань — скористайтеся «Масові URL» в Arroxy"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "Скопійовано кілька посилань — скористайтеся «Масові URL» в Grabbit"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "Це посилання потребує швидкої перевірки — відкрийте Arroxy і вставте його знову"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "Це посилання потребує швидкої перевірки — відкрийте Grabbit і вставте його знову"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "Завантаження додано з буфера обміну"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "Не вдалося додати це посилання — спробуйте ще раз у Arroxy"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "Не вдалося додати це посилання — спробуйте ще раз у Grabbit"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "Черга на паузі — завантаження в очікуванні не почнуться, доки ви її не відновите"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "Завантаження"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "Завершення"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "Об’єднання"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "Залишилося часу"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "Швидкість"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "Продовжити призупинені завантаження й дати черзі рухатися далі"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "Повні примітки до випуску ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "Що нового в Arroxy {{version}}"
+msgid "What's new in Grabbit {{version}}"
+msgstr "Що нового в Grabbit {{version}}"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "Скопіювати посилання"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy — безкоштовний завантажувач відео з відкритим кодом для Windows, macOS і Linux. Працює з YouTube, Vimeo, Twitch та понад 2000 сайтами.\n"
+"Grabbit — безкоштовний завантажувач відео з відкритим кодом для Windows, macOS і Linux. Працює з YouTube, Vimeo, Twitch та понад 2000 сайтами.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Arroxy — безкоштовний і відкритий. Поділившись, ти допомагаєш більшій кількості людей дізнатися про нього."
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Grabbit — безкоштовний і відкритий. Поділившись, ти допомагаєш більшій кількості людей дізнатися про нього."
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "Поділитися"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "Поділитися Arroxy"
+msgid "Share Grabbit"
+msgstr "Поділитися Grabbit"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "Поділитися Arroxy"
+msgid "Share Grabbit"
+msgstr "Поділитися Grabbit"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "Поділитися Arroxy"
+msgid "Share Grabbit"
+msgstr "Поділитися Grabbit"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "Переміщення файлів…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "Не вдається зберегти в {{dir}} — Arroxy не дозволено туди записувати"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "Не вдається зберегти в {{dir}} — Grabbit не дозволено туди записувати"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "Завантажити з буфера обміну"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "Відкрити Arroxy"
+msgid "Open Grabbit"
+msgstr "Відкрити Grabbit"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "Вийти з Arroxy"
+msgid "Quit Grabbit"
+msgstr "Вийти з Grabbit"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "Очікування"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "Помилка оновлення"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Arroxy {{version}} доступна — у вас {{currentVersion}}."
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Grabbit {{version}} доступна — у вас {{currentVersion}}."
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Arroxy {{version}} доступна — оновіть через Homebrew."
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Grabbit {{version}} доступна — оновіть через Homebrew."
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Arroxy {{version}} доступна — завантажте новий DMG."
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Grabbit {{version}} доступна — завантажте новий DMG."
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Arroxy {{version}} доступна — завантажте нову збірку."
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Grabbit {{version}} доступна — завантажте нову збірку."
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "Готово"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "Вставте URL відео, плейлиста, каналу, пошуку або аудіо. Arroxy очистить дублікати перед додаванням у чергу."
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "Вставте URL відео, плейлиста, каналу, пошуку або аудіо. Grabbit очистить дублікати перед додаванням у чергу."
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "Завантажити лише це відео або поставити весь плейлист у чергу з активним профілем Швидкого завантаження."
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "Максимальна кількість записів, які Arroxy сканує перед додаванням плейлиста, каналу або результату пошуку в чергу."
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "Максимальна кількість записів, які Grabbit сканує перед додаванням плейлиста, каналу або результату пошуку в чергу."
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "Додає в чергу кожен завантажений елемент плейлиста з активним профілем Швидкого завантаження. Якщо сканування досягне твого ліміту, Arroxy запитає перед додаванням у чергу."
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "Додає в чергу кожен завантажений елемент плейлиста з активним профілем Швидкого завантаження. Якщо сканування досягне твого ліміту, Grabbit запитає перед додаванням у чергу."
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -1831,7 +1855,7 @@ msgstr "Вибери хоча б одне відео, щоб продовжит�
 
 msgctxt "wizard.playlist.probeLimitAlertDesc"
 msgid "Showing first {{count}} items. Increase the load limit to see more."
-msgstr "Arroxy знайшов більше {{count}} елементів, тому поточний ліміт сканування приховує решту."
+msgstr "Grabbit знайшов більше {{count}} елементів, тому поточний ліміт сканування приховує решту."
 
 msgctxt "wizard.playlist.probeLimitAlertTitle"
 msgid "Playlist scan is capped"
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "Поточне посилання"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Arroxy читає посилання та застосовує {{profileName}}."
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Grabbit читає посилання та застосовує {{profileName}}."
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "Підготовка швидкого завантаження"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "Залиште це вікно відкритим, поки Arroxy готує чергу."
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "Залиште це вікно відкритим, поки Grabbit готує чергу."
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "Якість тла"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "Виберіть, скільки руху Arroxy використовує для анімованого тла."
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "Виберіть, скільки руху Grabbit використовує для анімованого тла."
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "Вигляд і продуктивність"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "Апаратний WebGL недоступний на цьому пристрої, тому Arroxy використовує фон для кращої продуктивності."
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "Апаратний WebGL недоступний на цьому пристрої, тому Grabbit використовує фон для кращої продуктивності."
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "Масові URL"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "Додайте кілька URL і поставте їх у чергу."
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "Відеоплейлисти"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "Що Arroxy вміє завантажувати"
+msgid "What Grabbit can pull"
+msgstr "Що Grabbit вміє завантажувати"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "Відео"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "Покроковий майстер. Виберіть формат, якість та інші параметри."
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "Завантажити з URL"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "Це сполучення вже зайняте іншою програмою — виберіть інше."
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "Або натисніть"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "Скопіюйте посилання на відео будь-де, натисніть це сполучення клавіш, і Arroxy поставить його в чергу з активним профілем — перемикати вікна не потрібно."
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "Змініть його або вимкніть у Налаштуваннях."
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "Натискайте клавіші…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "Скинути до стандартного"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "Завантажуйте будь-яке скопійоване посилання з будь-якої програми, не відкриваючи Arroxy."
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "Завантажуйте будь-яке скопійоване посилання з будь-якої програми, не відкриваючи Grabbit."
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "Вимкнено"
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "Завантажую у фоні… можу робити кілька справ одночасно 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "Кинь посилання, а Arroxy його забере ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "Сумісне стерео"
@@ -2962,8 +2958,8 @@ msgid "Prefer surround / Dolby"
 msgstr "Надавати перевагу surround / Dolby"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
-msgstr "Додає невеликі паузи під час кожного завантаження, щоб Arroxy не звертався до сайту надто агресивно. Значення в секундах."
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
+msgstr "Додає невеликі паузи під час кожного завантаження, щоб Grabbit не звертався до сайту надто агресивно. Значення в секундах."
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
 msgid "Pause before media starts: max"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "Бережні завантаження"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "Наскільки обережним має бути Arroxy?"
+msgid "How cautious should Grabbit be?"
+msgstr "Наскільки обережним має бути Grabbit?"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "Налаштуйте розширені параметри кожного завантаження самостійно."
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "Використовує лише невеликі базові паузи Arroxy для медіа та субтитрів."
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "Використовує лише невеликі базові паузи Grabbit для медіа та субтитрів."
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "Власне: {{count}} елементів"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "Максимальна кількість записів, які Arroxy завантажує під час відкриття плейлиста, каналу або результатів пошуку."
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "Максимальна кількість записів, які Grabbit завантажує під час відкриття плейлиста, каналу або результатів пошуку."
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}} елементів"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "Відповідає параметру yt-dlp --playlist-end: Arroxy запитує лише таку кількість записів плейлиста, каналу або пошуку під час побудови вибірки."
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "Активний профіль"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "Вбудований"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "Власний"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "Приховано"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "Змінено"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "Відповідає параметру yt-dlp --playlist-end: Grabbit запитує лише таку кількість записів плейлиста, каналу або пошуку під час побудови вибірки."
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "Змінити глобальну теку призначення"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "Тека призначення"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "Редагувати"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "Редагувати активний профіль"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "Приховані профілі залишаються тут, але зникають з усіх списків."
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "Показати профіль у списках: {{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "Залиште доступним хоча б один профіль."
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "Керувати профілями"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "Змініть активний профіль для Quick Download, масових URL і списків відтворення."
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "Перемкнути профіль"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "Новий профіль"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "Створюйте, вибирайте, редагуйте або видаляйте багаторазові налаштування завантаження."
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "Профілі завантаження"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "Видалити"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "Скинути"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "Перемкнути профіль завантаження: {{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "Перемкнути профіль завантаження"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "Перевірка не вдалася"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "Додано в чергу"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "Вставте URL відео, плейлиста, каналу або пошуку, щоб почати."
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "Глобальна поведінка, що впливає також на завантаження, керовані профілями."
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "Введення"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "Профілі"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "Налаштування"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "Розширені параметри"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "Аналіз посилання…"
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "Найкраще аудіо"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "Змінити пункт призначення"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "Вставте посилання, щоб проаналізувати його автоматично, а потім виберіть усе тут."
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "Місце призначення завантаження"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "Завантажити"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "Шаблон імені вихідного файлу"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "Введіть дійсну URL-адресу HTTP або HTTPS."
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "Параметри завантаження"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "Спеціальний діапазон"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "Приймає SS, MM:SS або HH:MM:SS."
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "Час закінчення"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "Час початку та закінчення має бути в межах тривалості відео."
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "Введіть дійсний час завершення."
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "Час завершення має бути пізніше часу початку."
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "Введіть дійсний час початку з нуля або пізніше."
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "Повне відео"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "Завантажте певну частину"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "Повторювати уривок"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "Наступний кадр"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "Положення на часовій шкалі"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "Відтворіть або прокрутіть відео, щоб точно вибрати точки обрізання."
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "Попередній перегляд фрагмента"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "Попередній перегляд недоступний для цього джерела. Ви все одно можете використовувати шкалу та поля часу."
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "Попередній кадр"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "Скинути діапазон"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "Вибраний діапазон"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "Задати кінець"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "Задати початок"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "Час початку"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "Крок назад"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "Крок уперед"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "Початок {{start}} — Кінець {{end}} — Довжина кліпу {{length}}"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "Використовуйте кінець відео"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "Масштаб часової шкали"

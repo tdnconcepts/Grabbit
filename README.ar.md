@@ -25,7 +25,7 @@
 
 > **What is Arroxy?** Arroxy is a free, open-source desktop GUI that downloads videos, audio, playlists, and subtitles from YouTube and 2000+ other [yt-dlp](https://github.com/yt-dlp/yt-dlp)-supported sites. It runs on Windows 10/11, macOS 13+ (Intel + Apple Silicon), and Linux (AppImage, Flatpak, tar.gz). MIT licensed. No account, no ads, no usage limits. Distributed via [Winget](https://winget.run/pkg/AntonioOrionus/Arroxy), [Scoop](https://github.com/antonio-orionus/scoop-bucket), [Homebrew Cask](https://github.com/antonio-orionus/homebrew-arroxy), Flatpak, AppImage, and direct download.
 >
-> _Last updated: 2026-10-15._
+> _Last updated: 2026-10-16._
 
 ---
 
@@ -285,8 +285,7 @@ Arroxy مبني لغرض واحد: الصق رابطاً، احصل على مل�
     <td colspan="2" valign="top" align="center"><img src="build/Per-item-playlist-profiles-screenshot.png" alt="Arroxy — Per-item playlist profiles" width="760" /><br/><img src="https://img.shields.io/badge/NEW-blueviolet?style=flat-square" alt="New" /> <sub><b>ملفات تعريف لكل عنصر في قائمة التشغيل</b><br/>امنح كل فيديو ملف تعريف خاصًا به — احفظ بعضها بدقة 4K وخذ الباقي بصيغة MP3</sub></td>
   </tr>
   <tr>
-    <td width="50%" valign="top" align="center"><img src="build/Main-screenshot.png" alt="Arroxy — Quick Download home" /><br/><sub><b>صفحة التنزيل السريع</b><br/>الصق رابطًا ونزّله فورًا بملفك النشط</sub></td>
-    <td width="50%" valign="top" align="center"><img src="build/Download-profiles-screenshot.png" alt="Arroxy — Download profiles" /><br/><sub><b>ملفات تنزيل قابلة لإعادة الاستخدام</b><br/>احفظ التنسيق والجودة والإخراج كإعدادات مسبقة — أعد استخدامها لكل تنزيل</sub></td>
+    <td colspan="2" valign="top" align="center"><img src="build/Main-screenshot.png" alt="Grabbit — Quick Download home" width="760" /><br/><sub><b>صفحة التنزيل السريع</b><br/>الصق رابطًا ونزّله فورًا بملفك النشط</sub></td>
   </tr>
   <tr>
     <td width="50%" valign="top" align="center"><img src="build/Multi-lang-audio-support-screenshot.png" alt="Arroxy — Multi-language audio" /><br/><sub><b>مسارات صوت متعددة اللغات</b><br/>اختر لغة الصوت الدقيقة التي يوفرها الفيديو</sub></td>

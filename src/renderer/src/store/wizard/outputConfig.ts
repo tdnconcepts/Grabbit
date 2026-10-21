@@ -15,6 +15,9 @@ import type {GetState, OutputConfigSlice, SetState} from '../types.js'
 export function createOutputConfigSlice(set: SetState, get: GetState): OutputConfigSlice {
 	return {
 		wizardOutputDir: '',
+		wizardClipMode: 'full',
+		wizardClipStart: '00:00',
+		wizardClipEnd: '',
 		wizardSubfolderEnabled: false,
 		wizardSubfolderName: '',
 		wizardSponsorBlockMode: DEFAULTS.sponsorBlockMode,
@@ -30,6 +33,10 @@ export function createOutputConfigSlice(set: SetState, get: GetState): OutputCon
 			set({wizardOutputDir: dir, syncedDownloadedIds: []})
 			if (persist) await window.appApi.settings.update({common: {defaultOutputDir: dir}})
 		},
+		setWizardClipMode: mode => set({wizardClipMode: mode}),
+		setWizardClipStart: value => set({wizardClipStart: value}),
+		setWizardClipEnd: value => set({wizardClipEnd: value}),
+		resetWizardClipRange: () => set({wizardClipMode: 'full', wizardClipStart: '00:00', wizardClipEnd: ''}),
 
 		chooseWizardFolder: async () => {
 			// Seed the dialog with the current output dir so it opens there.

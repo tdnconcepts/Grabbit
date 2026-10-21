@@ -118,7 +118,7 @@ export function sha256HexToSri(sha256Hex: string): string {
 
 // Network plumbing handled by `make-fetch-happen`: redirects, proxy support,
 // timeout support, and HTTP-semantics-aware request retry. Stream truncation is
-// still handled by Arroxy because the app owns partial-file and range policy.
+// still handled by Grabbit because the app owns partial-file and range policy.
 const HTTP_HEADERS: Record<string, string> = {'user-agent': 'arroxy/1.0'}
 const HTTP_RETRY = {retries: 5, factor: 2, minTimeout: 1_000, maxTimeout: 60_000, randomize: true}
 const HTTP_TIMEOUT = {request: 600_000}

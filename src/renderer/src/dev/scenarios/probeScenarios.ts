@@ -21,6 +21,10 @@ export function buildProbeResult(scenario: ScenarioLike, params?: ProbeUrlParams
 	switch (scenario.id) {
 		case 'single-normal':
 			return normalVideoProbe()
+		case 'probe-missing-duration':
+			return {...normalVideoProbe(), duration: undefined, previewUrl: 'https://preview.grabbit.test/clip.mp4', previewFps: 30}
+		case 'probe-fractional-duration':
+			return {...normalVideoProbe(), duration: Number('95.16666700000004')}
 		case 'playlist-normal':
 		case 'playlist-scope-empty-reload':
 			return playlistProbe(12, {fullThumbnails: true})

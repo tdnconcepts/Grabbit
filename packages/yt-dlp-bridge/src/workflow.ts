@@ -73,6 +73,7 @@ export interface CallerMediaWorkflowInput {
 	extractor?: {youtube?: {playerClient?: string[]}}
 	embed?: {chapters?: boolean; metadata?: boolean; thumbnail?: boolean; description?: boolean; thumbnailSidecar?: boolean}
 	resume?: {loadInfoJsonPath?: string; writeInfoJson?: boolean; infoJsonBaseName?: string}
+	download?: {sections: string[]}
 }
 
 export interface CallerSubtitlesWorkflowInput {
@@ -291,6 +292,7 @@ function planCallerMediaWorkflow(input: CallerMediaWorkflowInput, options: Workf
 			'--abort-on-unavailable-fragments'
 		)
 	}
+	for (const section of input.download?.sections ?? []) args.push('--download-sections', section)
 
 	const embedSubs = input.subtitles?.embed === true && input.subtitles.languages.length > 0
 	const audioConvert = embedSubs ? undefined : input.audio?.convert
@@ -814,6 +816,7 @@ function requiredPostprocessDependencyReasons(input: Pick<NormalizedPostprocessI
 function callerMediaDependencyReasons(input: CallerMediaWorkflowInput, audioConvert: AudioConvert | undefined, embedSubs: boolean): Map<string, string[]> {
 	const deps = new Map<string, string[]>()
 	addReason(deps, 'yt-dlp', 'execute media workflow')
+	if ((input.download?.sections.length ?? 0) > 0) addReason(deps, 'ffmpeg', 'section download/cutting requested')
 	if (audioConvert) {
 		addReason(deps, 'ffmpeg', 'audio extraction or conversion requires ffmpeg')
 		addReason(deps, 'ffprobe', 'audio extraction/conversion needs stream probing')

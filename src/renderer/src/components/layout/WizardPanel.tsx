@@ -49,7 +49,11 @@ export function WizardPanel(): ReactNode {
 	const visibleSteps = visibleWizardSteps(graph)
 	const activeIndex = graph.activeIndex
 	const activeDescriptor = STEP_REGISTRY.find(d => d.id === wizardStep)
-	const isDownloadHome = graph.isDownloadHome
+	// A normal single-video download remains on the URL workspace throughout
+	// analysis and option selection. Playlist and bulk flows retain their
+	// dedicated item-selection screens.
+	const isDownloadHome = graph.isDownloadHome || wizardMode === 'single'
+	const renderedDescriptor = isDownloadHome ? STEP_REGISTRY.find(d => d.id === 'url') : activeDescriptor
 	const collectionKind = wizardMode === 'playlist' ? collectionKindForWizardUrls(wizardUrl, wizardWebpageUrl) : null
 	const playlistItemsStepLabelKey = collectionKind === 'channel' || collectionKind === 'search' ? 'wizard.steps.playlistItemsGeneric' : 'wizard.steps.playlistItems'
 
@@ -91,7 +95,7 @@ export function WizardPanel(): ReactNode {
 					</div>
 				)}
 
-				{wizardStep === 'error' ? <StepError /> : activeDescriptor ? <Suspense fallback={<WizardStepFallback />}>{activeDescriptor.render()}</Suspense> : null}
+				{wizardStep === 'error' && !isDownloadHome ? <StepError /> : renderedDescriptor ? <Suspense fallback={<WizardStepFallback />}>{renderedDescriptor.render()}</Suspense> : null}
 			</WizardStage>
 			<MixedUrlPromptDialog />
 			<QuickDownloadProgressDialog />

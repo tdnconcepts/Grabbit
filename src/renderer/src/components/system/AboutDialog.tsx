@@ -9,8 +9,8 @@ import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} fro
 import {useAppStore} from '../../store/useAppStore.js'
 import appIcon from '../../assets/App-icon-HQ.png'
 
-const GITHUB_URL = 'https://github.com/antonio-orionus/Arroxy'
-const NOTICES_URL = 'https://github.com/antonio-orionus/Arroxy/blob/main/THIRD_PARTY_NOTICES.txt'
+const GITHUB_URL = 'https://github.com/antonio-orionus/Grabbit'
+const NOTICES_URL = 'https://github.com/antonio-orionus/Grabbit/blob/main/THIRD_PARTY_NOTICES.txt'
 
 function openExternalUrl(url: string): void {
 	void window.appApi.shell.openExternal(url)
@@ -30,7 +30,7 @@ export function AboutDialog(): ReactNode {
 			<DialogContent data-testid="about-dialog">
 				<DialogHeader className="items-center text-center">
 					<img src={appIcon} alt="" width={72} height={72} className="rounded-xl shadow-sm" draggable={false} />
-					<DialogTitle className="text-lg">Arroxy</DialogTitle>
+					<DialogTitle className="text-lg">Grabbit</DialogTitle>
 					<span className="text-xs text-muted-foreground tabular-nums">v{window.appVersion}</span>
 					<DialogDescription className="text-center">{t('about.tagline')}</DialogDescription>
 				</DialogHeader>

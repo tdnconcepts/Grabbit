@@ -5,7 +5,7 @@ import {useAppStore} from '../../store/useAppStore.js'
 import {useFormatSelectionView, type FormatSelectionFilters} from '../../store/formatSelectionView.js'
 import {VideoSummaryCard} from '../shared/VideoSummaryCard.js'
 import {Spinner} from '../ui/spinner.js'
-import downloadingImg from '../../assets/Downloading.png'
+import appIcon from '../../assets/App-icon-HQ.png'
 import {PresetStrip} from './format/PresetStrip.js'
 import {VideoColumn} from './format/VideoColumn.js'
 import {BotWallNotice} from './format/BotWallNotice.js'
@@ -43,7 +43,7 @@ export function StepFormatSelect(): ReactNode {
 		return (
 			<div className="wizard-step flex flex-col items-center gap-4 py-8">
 				<div className="rounded-2xl bg-primary/12 p-4 shadow-glow">
-					<img src={downloadingImg} alt="" aria-hidden className="size-28 object-contain" />
+					<img src={appIcon} alt="" aria-hidden className="size-28 object-contain" />
 				</div>
 				<SpeechBubble tail="top" className="max-w-64 text-center text-sm text-muted-foreground">
 					{t('wizard.formats.sniffing')}
@@ -61,6 +61,12 @@ export function StepFormatSelect(): ReactNode {
 			<VideoSummaryCard thumbnail={wizardThumbnail} title={wizardTitle} duration={wizardDuration} resolution={view.currentResolutionLabel} webpageUrl={wizardWebpageUrl} />
 
 			<PresetStrip activePreset={activePreset} onSelect={setPreset} />
+			<details className="utility-section">
+				<summary className="utility-summary">{t('wizard.url.workspace.advanced')}</summary>
+				<div className="mt-3">
+					<PresetStrip activePreset={activePreset} onSelect={setPreset} advanced />
+				</div>
+			</details>
 
 			<BotWallNotice />
 

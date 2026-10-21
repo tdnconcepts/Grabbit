@@ -26,8 +26,18 @@ interface Shot {
 const SAMPLE_URLS = ['https://www.youtube.com/watch?v=aurora4k01', 'https://www.youtube.com/watch?v=reefdoc002', 'https://www.youtube.com/watch?v=nighttrain3']
 
 const SHOTS: readonly Shot[] = [
-	{name: 'Quick Download home', file: 'Main-screenshot.png', query: 'scenario=profiles-home-clipboard-single', ready: '[data-testid="profiles-quick-download"]:not([disabled])'},
-	{name: 'Download profiles', file: 'Download-profiles-screenshot.png', query: 'scenario=default', ready: '[data-testid="profiles-manage-tab"]', prepare: page => openTab(page, 'Profiles')},
+	{
+		name: 'Quick Download home',
+		file: 'Main-screenshot.png',
+		query: 'scenario=single-normal&mockStep=formats',
+		ready: '[data-testid="download-options-panel"]',
+		prepare: async page => {
+			await page.setViewportSize({width: 1600, height: 1000})
+			await page.getByTestId('clip-range-custom').click()
+			await page.getByTestId('clip-start').fill('00:08')
+			await page.getByTestId('clip-end').fill('00:20.5')
+		}
+	},
 	{
 		name: 'Per-item playlist profiles',
 		file: 'Per-item-playlist-profiles-screenshot.png',
@@ -67,7 +77,7 @@ for (const shot of SHOTS) {
 		await page.goto(`/?${shot.query}&theme=dark&showcase=1&backdropSoftware=1`)
 		await page.waitForSelector('[data-testid="app-root"]')
 		await page.addStyleTag({content: `${HIDE.join(',')}{display:none!important}`})
-		await page.waitForSelector('body.backdrop-webgl-active')
+		await page.waitForSelector('[data-backdrop-layer="matte"]')
 		if (shot.prepare) {
 			// Probe scenarios land on their step only after the mock's probe delay.
 			await page.waitForSelector('[data-testid="profiles-tabs"], [data-testid="wizard-panel"] [data-testid^="step-"]')

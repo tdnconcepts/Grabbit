@@ -93,7 +93,7 @@ function buildBrowserishUserAgent(info?: DeviceInfo): string {
 		osPart = `X11; Linux ${linuxArch}`
 	}
 	const appVer = info?.appVersion ?? '0.0.0'
-	return `Mozilla/5.0 (${osPart}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${chromeVersion} Safari/537.36 Arroxy/${appVer}`
+	return `Mozilla/5.0 (${osPart}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/${chromeVersion} Safari/537.36 Grabbit/${appVer}`
 }
 
 function buildDefaultPayload(info: DeviceInfo): Record<string, string> {

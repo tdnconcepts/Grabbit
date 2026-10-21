@@ -29,7 +29,7 @@ const logger = log.scope('downloads')
 // does not get to delete files it cannot account for.
 const JOB_DIR_NAME = /^[0-9a-f]{8}$/i
 
-// A second Arroxy instance (another checkout, another window) can be mid-job in
+// A second Grabbit instance (another checkout, another window) can be mid-job in
 // the same output folder, and it holds its claim in its own process rather than
 // in our persisted queue. The age gate is what keeps that safe without a lock
 // file: its directory was created when its job started, and a job whose newest

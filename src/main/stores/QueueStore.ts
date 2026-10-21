@@ -63,7 +63,7 @@ function migrateLegacyStatus(raw: Record<string, unknown>): Record<string, unkno
 // playlist item would fail the parse and wipe the user's entire queue on
 // upgrade. Only two shapes were ever emitted, so map them back exactly;
 // anything else falls through to the default rather than being trusted as
-// Arroxy syntax.
+// Grabbit syntax.
 const LEGACY_OUTPUT_TEMPLATES: Record<string, string> = {'%(title).200B [%(id)s].%(ext)s': '{title} [{id}]', '%(title).200B.%(ext)s': '{title}'}
 
 function migrateLegacyOutputTemplate(row: Record<string, unknown>): Record<string, unknown> {

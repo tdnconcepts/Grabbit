@@ -10,7 +10,7 @@ import {Tooltip, TooltipTrigger, TooltipContent} from '../ui/tooltip.js'
 import {WizardFooter} from './WizardFooter.js'
 import {VideoSummaryCard} from '../shared/VideoSummaryCard.js'
 import {PROFILE_ICONS} from './downloadProfileVisuals.js'
-import loveImg from '../../assets/Love.png'
+import appIcon from '../../assets/App-icon-HQ.png'
 import {createTranslationPort} from '../../lib/translation.js'
 import {SectionLabel} from '../shared/SectionLabel.js'
 import {Card} from '../ui/card.js'
@@ -30,7 +30,7 @@ export function StepConfirm(): ReactNode {
 
 			{/* Mascot banner */}
 			<div className="flex shrink-0 items-center gap-4 rounded-lg border border-primary/20 bg-primary/12 p-4">
-				<img src={loveImg} alt="" aria-hidden className="size-16 shrink-0 object-contain" />
+				<img src={appIcon} alt="" aria-hidden className="size-16 shrink-0 object-contain" />
 				<div>
 					<p className="text-sm font-semibold text-foreground">{t('wizard.confirm.readyHeadline')}</p>
 					<p className="text-xs text-muted-foreground mt-1">

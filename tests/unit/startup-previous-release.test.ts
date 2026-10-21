@@ -28,8 +28,8 @@ describe('assetNameFor', () => {
 		// Canonical names per electron-builder.json5 artifactName and the
 		// release-asset-names contract: electron-builder substitutes ${arch}
 		// verbatim, so linux is 'x64' — 'x86_64' matches no release asset.
-		expect(assetNameFor('linux', 'x64')).toBe('Arroxy-linux-x64.AppImage')
-		expect(assetNameFor('darwin', 'arm64')).toBe('Arroxy-mac-arm64.dmg')
-		expect(assetNameFor('win32', 'x64')).toBe('Arroxy-win-x64-Portable.exe')
+		expect(assetNameFor('linux', 'x64')).toBe('Grabbit-linux-x64.AppImage')
+		expect(assetNameFor('darwin', 'arm64')).toBe('Grabbit-mac-arm64.dmg')
+		expect(assetNameFor('win32', 'x64')).toBe('Grabbit-win-x64-Portable.exe')
 	})
 })

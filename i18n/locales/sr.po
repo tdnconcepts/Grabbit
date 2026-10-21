@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "Лиценца MIT · by Antonio Orionus"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "О апликацији Arroxy"
+msgid "About Grabbit"
+msgstr "О апликацији Grabbit"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "Повратна информација"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "Свиђа ти се Arroxy? Радо бих чуо твоје мишљење! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "Свиђа ти се Grabbit? Радо бих чуо твоје мишљење! 💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "Почни испочетка"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Arroxy наставља да ради и завршава активна преузимања. Промени ово касније у Напредним подешавањима."
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Grabbit наставља да ради и завршава активна преузимања. Промени ово касније у Напредним подешавањима."
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "Сакриј у трај"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "Сакрити Arroxy у системски трај при затварању?"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "Сакрити Grabbit у системски трај при затварању?"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "Процес приказивача је пао ({{reason}}). Поново учитај да би покушао/ла поново."
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Arroxy је наишао на проблем"
+msgid "Grabbit encountered a problem"
+msgstr "Grabbit је наишао на проблем"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "Овај видео је ограничен по старости и не може се преузети без пријављеног налога."
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "Покренута је заштита од ботова. IP адреса коју користиш је највероватније означена (опсег дата центра или прометан VPN излаз). Промени IP адресу или одабери другачији VPN сервер и покушај поново. Ако проблем и даље постоји, можда се ради о привременој промени на страни YouTube-а — Arroxy аутоматски ажурира yt-dlp при покретању, тако да ће исправка стићи аутоматски чим је буде објавио узводни пројекат."
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "Покренута је заштита од ботова. IP адреса коју користиш је највероватније означена (опсег дата центра или прометан VPN излаз). Промени IP адресу или одабери другачији VPN сервер и покушај поново. Ако проблем и даље постоји, можда се ради о привременој промени на страни YouTube-а — Grabbit аутоматски ажурира yt-dlp при покретању, тако да ће исправка стићи аутоматски чим је буде објавио узводни пројекат."
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "Нема довољно простора на диску. Ослободи простор и покушај поново."
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Arroxy не може да пише у фасциклу за преузимања. Можда је само за читање, на закључаном диску или је блокирана подешавањима приватности система. Изабери другу фасциклу или дозволи приступ, па покушај поново."
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Grabbit не може да пише у фасциклу за преузимања. Можда је само за читање, на закључаном диску или је блокирана подешавањима приватности система. Изабери другу фасциклу или дозволи приступ, па покушај поново."
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "Није било могуће парсирати одговор сајта. yt-dlp екстрактор је можда застарео. Arroxy аутоматски ажурира yt-dlp при покретању — покушај поново за неколико минута када стигне исправка."
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "Није било могуће парсирати одговор сајта. yt-dlp екстрактор је можда застарео. Grabbit аутоматски ажурира yt-dlp при покретању — покушај поново за неколико минута када стигне исправка."
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "Непозната ознака {{token}}."
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "Без {id} Arroxy не може да препозна већ преузете ставке плејлисте нити да направи .m3u плејлисте."
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "Без {id} Grabbit не може да препозна већ преузете ставке плејлисте нити да направи .m3u плејлисте."
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "Нема везе у остави — прво копирајте једну"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "Копирано је више линкова — користите «Групни URL-ови» у Arroxy"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "Копирано је више линкова — користите «Групни URL-ови» у Grabbit"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "Ова веза захтева брзу проверу — отворите Arroxy и налепите је поново"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "Ова веза захтева брзу проверу — отворите Grabbit и налепите је поново"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "Преузимање је додато из оставе"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "Та веза није могла бити додата — покушајте поново у Arroxy"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "Та веза није могла бити додата — покушајте поново у Grabbit"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "Ред је паузиран — преузимања на чекању не почињу док ред не наставите"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "Преузимање"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "Завршавање"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "Спајање"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "Преостало време"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "Брзина"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "Возобновить приостановленные загрузки и продолжить очередь"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "Комплетне белешке о издању ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "Шта је ново у Arroxy {{version}}"
+msgid "What's new in Grabbit {{version}}"
+msgstr "Шта је ново у Grabbit {{version}}"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "Копирај линк"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy — бесплатни преузимач видео записа отвореног кода за Windows, macOS и Linux. Ради са YouTube-ом, Vimeo-ом, Twitch-ом и преко 2000 сајтова.\n"
+"Grabbit — бесплатни преузимач видео записа отвореног кода за Windows, macOS и Linux. Ради са YouTube-ом, Vimeo-ом, Twitch-ом и преко 2000 сајтова.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Arroxy је бесплатан и отвореног кода. Дељењем помажеш другима да га открију."
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Grabbit је бесплатан и отвореног кода. Дељењем помажеш другима да га открију."
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "Подели"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "Подели Arroxy"
+msgid "Share Grabbit"
+msgstr "Подели Grabbit"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "Подели Arroxy"
+msgid "Share Grabbit"
+msgstr "Подели Grabbit"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "Подели Arroxy"
+msgid "Share Grabbit"
+msgstr "Подели Grabbit"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "Премештање датотека…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "Није могуће сачувати у {{dir}} — Arroxy нема дозволу да пише тамо"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "Није могуће сачувати у {{dir}} — Grabbit нема дозволу да пише тамо"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "Преузми из оставе"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "Отвори Arroxy"
+msgid "Open Grabbit"
+msgstr "Отвори Grabbit"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "Затвори Arroxy"
+msgid "Quit Grabbit"
+msgstr "Затвори Grabbit"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "Неактивно"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "Ажурирање није успело"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Arroxy {{version}} је доступан — имате {{currentVersion}}."
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Grabbit {{version}} је доступан — имате {{currentVersion}}."
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Arroxy {{version}} је доступан — ажурирајте преко Homebrew-а."
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Grabbit {{version}} је доступан — ажурирајте преко Homebrew-а."
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Arroxy {{version}} је доступан — преузмите нови DMG."
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Grabbit {{version}} је доступан — преузмите нови DMG."
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Arroxy {{version}} је доступан — преузмите нову верзију."
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Grabbit {{version}} је доступан — преузмите нову верзију."
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "Спремно"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "Налепите URL-ове видеа, плејлисте, канала, претраге или аудија. Arroxy ће уклонити дупликате пре додавања у ред."
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "Налепите URL-ове видеа, плејлисте, канала, претраге или аудија. Grabbit ће уклонити дупликате пре додавања у ред."
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "Преузми само овај видео или стави целу плејлисту у ред са активним профилом Брзо преузимање."
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "Највећи број ставки које Arroxy скенира пре стављања плејлисте, канала или резултата претраге у ред."
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "Највећи број ставки које Grabbit скенира пре стављања плејлисте, канала или резултата претраге у ред."
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "Ставља сваку учитану ставку плејлисте у ред са активним профилом Брзо преузимање. Ако скенирање достигне твој лимит, Arroxy ће питати пре стављања у ред."
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "Ставља сваку учитану ставку плејлисте у ред са активним профилом Брзо преузимање. Ако скенирање достигне твој лимит, Grabbit ће питати пре стављања у ред."
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -1831,7 +1855,7 @@ msgstr "Изабери барем један видео да би настави
 
 msgctxt "wizard.playlist.probeLimitAlertDesc"
 msgid "Showing first {{count}} items. Increase the load limit to see more."
-msgstr "Arroxy је пронашао више од {{count}} ставки, па тренутно ограничење скенирања скрива остатак."
+msgstr "Grabbit је пронашао више од {{count}} ставки, па тренутно ограничење скенирања скрива остатак."
 
 msgctxt "wizard.playlist.probeLimitAlertTitle"
 msgid "Playlist scan is capped"
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "Тренутна веза"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Arroxy чита везу и примењује {{profileName}}."
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Grabbit чита везу и примењује {{profileName}}."
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "Припрема брзог преузимања"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "Остави ово отворено док Arroxy припрема ред."
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "Остави ово отворено док Grabbit припрема ред."
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "Квалитет позадине"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "Изаберите колико покрета Arroxy користи за анимирану позадину."
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "Изаберите колико покрета Grabbit користи за анимирану позадину."
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "Изглед и перформансе"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "Хардверски WebGL није доступан на овом уређају, па Arroxy користи позадину за боље перформансе."
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "Хардверски WebGL није доступан на овом уређају, па Grabbit користи позадину за боље перформансе."
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "Групни URL-ови"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "Додај више URL-ова и стави их у ред."
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "Видео плејлисте"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "Шта Arroxy може да преузме"
+msgid "What Grabbit can pull"
+msgstr "Шта Grabbit може да преузме"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "Видеа"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "Водич корак по корак. Изабери формат, квалитет и још опција."
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "Преузми са URL-а"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "Ову пречицу већ користи друга апликација — изаберите другу."
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "Ili pritisni"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "Kopiraj video-link bilo gde, pritisni ovu prečicu i Arroxy će ga staviti u red koristeći tvoj aktivni profil — nema potrebe da menjaš prozore."
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "Promeni ga ili ga isključi u Podešavanjima."
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "Притисните тастере…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "Врати на подразумевано"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "Преузимајте било који копирани линк из било које апликације, без отварања Arroxy-ја."
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "Преузимајте било који копирани линк из било које апликације, без отварања Grabbit-ја."
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "Выкл."
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "Преузимање у позадини… Умем да радим више ствари одједном 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "Убаци линк и пусти Arroxy да га преузме ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "Kompatibilni stereo"
@@ -2962,8 +2958,8 @@ msgid "Prefer surround / Dolby"
 msgstr "Daj prednost surround / Dolby"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
-msgstr "Додаје мале паузе током сваког преузимања тако да Arroxy не приступа сајту превише агресивно. Вредности су у секундама."
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
+msgstr "Додаје мале паузе током сваког преузимања тако да Grabbit не приступа сајту превише агресивно. Вредности су у секундама."
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
 msgid "Pause before media starts: max"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "Пажљива преузимања"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "Насколько осторожным должен быть Arroxy?"
+msgid "How cautious should Grabbit be?"
+msgstr "Насколько осторожным должен быть Grabbit?"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "Самостално подеси напредне контроле по преузимању."
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "Користи само мале основне паузе које Arroxy задржава за медије и титлове."
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "Користи само мале основне паузе које Grabbit задржава за медије и титлове."
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "Прилагођено: {{count}} ставки"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "Максималан број уноса које Arroxy учитава када се отвори плејлиста, канал или резултат претраге."
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "Максималан број уноса које Grabbit учитава када се отвори плејлиста, канал или резултат претраге."
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}} ставки"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "Одговара yt-dlp опцији --playlist-end: Arroxy тражи само овај број уноса плејлисте, канала или претраге приликом прављења бирача."
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "Активни профил"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "Уграђено"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "Прилагођено"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "Skriveno"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "Измењено"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "Одговара yt-dlp опцији --playlist-end: Grabbit тражи само овај број уноса плејлисте, канала или претраге приликом прављења бирача."
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "Промени глобално одредиште"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "Одредиште"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "Уреди"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "Измени активни профил"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "Skriveni profili ostaju ovde, ali nestaju iz svakog izbora."
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "Prikaži profil u izboru: {{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "Zadrži bar jedan dostupan profil."
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "Управљај профилима"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "Промени активни профил за Quick Download, групне URL-ове и плејлисте."
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "Промени профил"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "Нови профил"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "Креирај, изабери, уреди или уклони подешавања преузимања која можеш поново да користиш."
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "Профили преузимања"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "Уклони"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "Ресетуј"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "Промени профил преузимања: {{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "Промени профил преузимања"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "Провера није успела"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "Додато у ред"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "Налепи URL видеа, плејлисте, канала или претраге за почетак."
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "Глобално понашање које утиче и на преузимања вођена профилима."
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "Улаз"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "Профили"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "Подешавања"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "Напредне опције"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "Анализа везе…"
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "Најбољи аудио"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "Промените одредиште"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "Налепите везу да бисте је аутоматски анализирали, а затим изаберите све овде."
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "Преузми одредиште"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "Преузми"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "Излаз шаблон имена датотеке"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "Унесите важећи ХТТП или ХТТПС УРЛ."
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "Опције преузимања"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "Прилагођени опсег"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "Прихвата СС, ММ:СС или ХХ:ММ:СС."
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "Време завршетка"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "Време почетка и завршетка морају остати унутар трајања видеа."
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "Унесите важеће време завршетка."
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "Време завршетка мора бити касније од времена почетка."
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "Унесите важеће време почетка на нули или касније."
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "Цео видео"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "Преузмите одређени део"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "Понављај исечак"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "Следећи кадар"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "Положај на временској линији"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "Пустите или премотајте видео да бисте прецизно изабрали тачке сечења."
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "Преглед исечка"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "Преглед није доступан за овај извор. И даље можете да користите временску линију и поља за време."
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "Претходни кадар"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "Ресетуј опсег"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "Изабрани опсег"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "Постави крај"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "Постави почетак"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "Време почетка"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "Корак уназад"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "Корак унапред"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "Почетак __АРРОКСИ_СТАРТ__ — Крај __АРРОКСИ_ЕНД__ — Дужина клипа __АРРОКСИ_ЛЕНГТХ__"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "Користите крај видеа"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "Увећање временске линије"

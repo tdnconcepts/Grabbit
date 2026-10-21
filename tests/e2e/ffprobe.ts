@@ -1,6 +1,6 @@
 // ffprobe oracle for Fixture Product E2E: what streams actually landed in a
 // saved file. Uses the build-time embedded ffprobe so the check matches the
-// ffmpeg build Arroxy ships.
+// ffmpeg build Grabbit ships.
 import {execFileSync} from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'

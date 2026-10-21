@@ -5,11 +5,11 @@
 		"logs": "Protokolle",
 		"saveDiagnostics": "Diagnosedatei speichern",
 		"saveDiagnosticsDescription": "Fasst Protokolle und App-Details in einer Datei im Downloads-Ordner zusammen, bereit zum Anhängen an ein GitHub-Issue. Der Name des Benutzerordners wird entfernt; Videolinks und -titel bleiben erhalten.",
-		"feedbackNudge": "Gefällt dir Arroxy? Ich freue mich über dein Feedback! 💬",
+		"feedbackNudge": "Gefällt dir Grabbit? Ich freue mich über dein Feedback! 💬",
 		"zoomIn": "Vergrößern",
 		"zoomOut": "Verkleinern"
 	},
-	"about": {"button": "Info", "openTitle": "Über Arroxy", "tagline": "Schneller, freundlicher Downloader für YouTube und über 2000 weitere Seiten.", "websiteLink": "Website", "githubLink": "GitHub", "licenseLine": "MIT-Lizenz · von Antonio Orionus", "thirdPartyNotices": "Drittanbieter-Hinweise anzeigen"},
+	"about": {"button": "Info", "openTitle": "Über Grabbit", "tagline": "Schneller, freundlicher Downloader für YouTube und über 2000 weitere Seiten.", "websiteLink": "Website", "githubLink": "GitHub", "licenseLine": "MIT-Lizenz · von Antonio Orionus", "thirdPartyNotices": "Drittanbieter-Hinweise anzeigen"},
 	"titleBar": {"close": "Schließen", "minimize": "Minimieren", "maximize": "Maximieren", "restore": "Wiederherstellen"},
 	"splash": {
 		"greeting": "Hey, schön dich wiederzusehen!",
@@ -116,7 +116,7 @@
 			"nestedPlaylistHint_other": "{{count}} davon sind Wiedergabelisten, keine Videos — füge die Links einzeln ein, um sie herunterzuladen.",
 			"probeLimitAlertTitle": "Playlist-Scan ist begrenzt",
 			"probeLimitAlertTitleGeneric": "Scan ist begrenzt",
-			"probeLimitAlertDesc": "Arroxy hat mehr als {{count}} Einträge gefunden, daher verbirgt das aktuelle Scan-Limit den Rest.",
+			"probeLimitAlertDesc": "Grabbit hat mehr als {{count}} Einträge gefunden, daher verbirgt das aktuelle Scan-Limit den Rest.",
 			"multiProfileEntry": "Profile pro Element zuweisen",
 			"multiProfileEntryTooltip": "Überspringt Qualität, SponsorBlock, Ausgabe und Speichern — weist stattdessen jedem Element ein Download-Profil zu",
 			"removeFromListCount_one": "{{count}} aus der Liste entfernen",
@@ -129,7 +129,7 @@
 		},
 		"bulk": {
 			"title": "Bulk-URLs",
-			"description": "Füge Video-, Playlist-, Kanal-, Such- oder Audio-URLs ein. Arroxy bereinigt Duplikate vor dem Einreihen.",
+			"description": "Füge Video-, Playlist-, Kanal-, Such- oder Audio-URLs ein. Grabbit bereinigt Duplikate vor dem Einreihen.",
 			"textareaLabel": "URL-Liste",
 			"textareaPlaceholder": "https://video.example/one\nhttps://video.example/two\nhttps://video.example/three",
 			"acceptedCount": "Bereit",
@@ -149,63 +149,71 @@
 			"pickFromPlaylist": "Aus Playlist auswählen",
 			"quickWholePlaylist": "Ganze Playlist herunterladen",
 			"playlistLimit": "Playlist-Prüflimit: {{count}} Einträge",
-			"quickLimitDescription": "Maximale Anzahl der Einträge, die Arroxy scannt, bevor eine Playlist, ein Kanal oder ein Suchergebnis in die Warteschlange kommt.",
+			"quickLimitDescription": "Maximale Anzahl der Einträge, die Grabbit scannt, bevor eine Playlist, ein Kanal oder ein Suchergebnis in die Warteschlange kommt.",
 			"singleTooltip": "Verwendet den Einzelvideo-Modus von yt-dlp, sodass die an diese URL angehängte Playlist ignoriert wird.",
 			"quickSingleTooltip": "Stellt einen Download in die Warteschlange und ignoriert die Playlist, die an diese URL angehängt ist.",
 			"playlistTooltip": "Verwendet den Playlist-Modus von yt-dlp und lädt bis zu deinem Playlist-Prüflimit, bevor die Auswahl angezeigt wird.",
-			"quickPlaylistTooltip": "Stellt jeden geladenen Playlist-Eintrag mit dem aktiven Schnelldownload-Profil in die Warteschlange. Wenn der Scan dein Limit erreicht, fragt Arroxy vor dem Einreihen nach."
+			"quickPlaylistTooltip": "Stellt jeden geladenen Playlist-Eintrag mit dem aktiven Schnelldownload-Profil in die Warteschlange. Wenn der Scan dein Limit erreicht, fragt Grabbit vor dem Einreihen nach."
 		},
 		"url": {
 			"heading": "Von URL herunterladen",
 			"placeholder": "https://www.youtube.com/watch?v=...",
-			"tabs": {"profiles": "Profile", "settings": "Einstellungen"},
+			"workspace": {
+				"description": "Fügen Sie einen Link ein, um ihn automatisch zu analysieren, und wählen Sie dann hier alles aus.",
+				"invalidUrl": "Geben Sie eine gültige HTTP- oder HTTPS-URL ein.",
+				"analyzing": "Link wird analysiert…",
+				"options": "Download-Optionen",
+				"advanced": "Erweiterte Optionen",
+				"download": "Herunterladen",
+				"bestAudio": "Bestes Audio",
+				"destination": "Ziel herunterladen",
+				"changeDestination": "Ziel ändern",
+				"filenameTemplate": "Vorlage für den Ausgabedateinamen",
+				"trim": {
+					"heading": "Laden Sie ein bestimmtes Teil herunter",
+					"description": "Akzeptiert SS, MM:SS oder HH:MM:SS.",
+					"previewHeading": "Clip-Vorschau",
+					"previewDescription": "Spiele das Video ab oder spule darin, um präzise Schnittpunkte auszuwählen.",
+					"previewUnavailable": "Für diese Quelle ist keine Vorschau verfügbar. Du kannst weiterhin die Zeitleiste und die Zeitfelder verwenden.",
+					"setStart": "Start setzen",
+					"setEnd": "Ende setzen",
+					"selectedRange": "Ausgewählter Bereich",
+					"zoom": "Zeitleistenzoom",
+					"position": "Position auf der Zeitleiste",
+					"previousFrame": "Vorheriges Bild",
+					"nextFrame": "Nächstes Bild",
+					"stepBack": "Schritt zurück",
+					"stepForward": "Schritt vorwärts",
+					"loop": "Ausschnitt wiederholen",
+					"full": "Vollständiges Video",
+					"custom": "Benutzerdefiniertes Sortiment",
+					"start": "Startzeit",
+					"end": "Endzeit",
+					"useEnd": "Video-Ende verwenden",
+					"reset": "Bereich zurücksetzen",
+					"summary": "Start {{start}} – Ende {{end}} – Cliplänge {{length}}",
+					"error": {"start": "Geben Sie eine gültige Startzeit bei Null oder später ein.", "end": "Geben Sie eine gültige Endzeit ein.", "order": "Die Endzeit muss später als die Startzeit liegen.", "duration": "Start- und Endzeiten müssen innerhalb der Videodauer liegen."}
+				}
+			},
+			"tabs": {"settings": "Einstellungen"},
 			"interactiveDownload": "Formate abrufen",
-			"fetchFormatsTooltip": "Schritt-für-Schritt-Assistent. Wähle Format, Qualität und mehr.",
 			"quickDownload": "Schnelldownload",
 			"quickDownloadTooltip": "Wird mit {{profileName}} heruntergeladen",
 			"quickPreparing": "Wird vorbereitet",
-			"quickQueued": "Zur Warteschlange hinzugefügt",
-			"quickSingleOnly": "Füge eine Video-, Playlist-, Kanal- oder Such-URL ein, um loszulegen.",
 			"quickProbeFailed": "Prüfung fehlgeschlagen",
 			"quickPrepareFailed": "Warteschlangeneintrag konnte nicht vorbereitet werden",
 			"quickBulkAllFailed": "Keine dieser URLs konnte vorbereitet werden",
 			"quickFailed": "Konnte dieses Element nicht hinzufügen: {{error}}",
 			"quickPartialFailed_one": "Was funktioniert hat, wurde eingereiht. {{count}} URL konnte nicht vorbereitet werden.",
 			"quickPartialFailed_other": "Was funktioniert hat, wurde eingereiht. {{count}} URLs konnten nicht vorbereitet werden.",
-			"profile": {
-				"destinationFallback": "Ziel",
-				"switchAria": "Download-Profil wechseln: {{profileName}}",
-				"switchTitle": "Download-Profil wechseln",
-				"activeLabel": "Aktives Profil",
-				"editActive": "Aktives Profil bearbeiten",
-				"changeGlobalDestination": "Globales Ziel ändern",
-				"menuTitle": "Profil wechseln",
-				"menuDescription": "Ändere das aktive Profil für Quick Download, Bulk-URLs und Playlists.",
-				"newProfile": "Neues Profil",
-				"manageProfiles": "Profile verwalten",
-				"panelTitle": "Download-Profile",
-				"panelDescription": "Erstelle, wähle, bearbeite oder entferne wiederverwendbare Download-Einstellungen.",
-				"badgeCustom": "Benutzerdefiniert",
-				"badgeModified": "Geändert",
-				"badgeBuiltIn": "Integriert",
-				"badgeDisabled": "Ausgeblendet",
-				"enableToggleAria": "Profil in Auswahl anzeigen: {{profileName}}",
-				"enableHint": "Ausgeblendete Profile bleiben hier, verschwinden aber aus jeder Profilauswahl.",
-				"lastEnabledHint": "Mindestens ein Profil verfügbar halten.",
-				"edit": "Bearbeiten",
-				"remove": "Entfernen",
-				"reset": "Zurücksetzen"
-			},
+			"profile": {"changeGlobalDestination": "Globales Ziel ändern", "reset": "Zurücksetzen"},
 			"bulkButton": "Bulk-URLs",
-			"bulkTooltip": "Mehrere URLs hinzufügen und in die Warteschlange stellen.",
 			"features": {
-				"heading": "Was Arroxy laden kann",
+				"heading": "Was Grabbit laden kann",
 				"youtube": {"heading": "YouTube", "video": "Videos", "channel": "Kanäle", "playlist": "Wiedergabelisten", "short": "Shorts", "music": "Musik", "podcast": "Podcasts"},
 				"anySite": {"heading": "2000+ Seiten", "video": "Videos", "videoPlaylist": "Video-Playlists", "musicPlaylist": "Musik-Playlists"},
 				"always": {"audioOnly": "Nur Audio", "subtitles": "Untertitel"}
 			},
-			"mascotIdle": "Wirf einen Link rein und lass Arroxy ihn holen ✨",
-			"mascotBusy": "Lade im Hintergrund… ich kann mehrere Dinge gleichzeitig 😎",
 			"advanced": "Erweitert",
 			"settings": {"inputHeading": "Eingabe", "behaviorHeading": "Downloadverhalten", "behaviorDescription": "Globales Verhalten, das auch profilgesteuerte Downloads betrifft."},
 			"clearAria": "URL löschen",
@@ -221,16 +229,13 @@
 			},
 			"hotkey": {
 				"sectionTitle": "Globales Tastenkürzel",
-				"sectionDescription": "Lädt jeden kopierten Link aus jeder App herunter, ohne Arroxy zu öffnen.",
+				"sectionDescription": "Lädt jeden kopierten Link aus jeder App herunter, ohne Grabbit zu öffnen.",
 				"toggle": "Globales Tastenkürzel aktivieren",
 				"toggleDescription": "Drücke das Kürzel mit einem Video-Link in der Zwischenablage.",
 				"changeShortcut": "Kürzel ändern",
 				"recording": "Tasten drücken…",
 				"test": "Testen",
 				"conflict": "Dieses Kürzel wird bereits von einer anderen App verwendet — wähle ein anderes.",
-				"hintLabel": "Oder drücke",
-				"hintTooltip": "Kopiere irgendwo einen Videolink, drücke dieses Kürzel, und Arroxy reiht ihn mit deinem aktiven Profil ein — du musst nicht zwischen Fenstern wechseln.",
-				"hintTooltipSettings": "Ändere es in den Einstellungen oder schalte es dort aus.",
 				"reset": "Auf Standard zurücksetzen"
 			},
 			"cookies": {
@@ -257,14 +262,14 @@
 			"proxy": {"label": "Proxy URL", "description": "Datenverkehr über einen Proxy leiten — nützlich für geo-gesperrte Inhalte.", "placeholder": "http://host:port", "clear": "Löschen"},
 			"backdrop": {
 				"panelTitle": "Darstellung und Leistung",
-				"panelDescription": "Wähle, wie viel Bewegung Arroxy für den animierten Hintergrund verwendet.",
+				"panelDescription": "Wähle, wie viel Bewegung Grabbit für den animierten Hintergrund verwendet.",
 				"modeLabel": "Hintergrundqualität",
 				"modeDescription": "Von der stärksten Animation zur besten Leistung.",
 				"cssOnlyLabel": "Beste Leistung",
 				"cssOnlyDescription": "Nur CSS, kein canvas-Rendering.",
 				"gpuLabel": "Am schönsten",
 				"gpuDescription": "Animierter WebGL-Hintergrund, wenn unterstützt.",
-				"runtimeFallbackNotice": "Hardware-WebGL ist auf diesem Gerät nicht verfügbar, daher verwendet Arroxy den Performance-Hintergrund."
+				"runtimeFallbackNotice": "Hardware-WebGL ist auf diesem Gerät nicht verfügbar, daher verwendet Grabbit den Performance-Hintergrund."
 			},
 			"limitRate": {
 				"label": "Download-Geschwindigkeitslimit",
@@ -277,7 +282,7 @@
 			},
 			"playlistProbeLimit": {
 				"label": "Playlist-Einträge scannen",
-				"description": "Maximale Anzahl der Einträge, die Arroxy beim Öffnen einer Playlist, eines Kanals oder eines Suchergebnisses lädt.",
+				"description": "Maximale Anzahl der Einträge, die Grabbit beim Öffnen einer Playlist, eines Kanals oder eines Suchergebnisses lädt.",
 				"option": "{{count}} Einträge",
 				"current": "Aktuelles Limit: {{count}} Einträge",
 				"customValue": "Benutzerdefiniert: {{count}} Einträge",
@@ -287,7 +292,7 @@
 				"customDialogCancel": "Abbrechen",
 				"customDialogSave": "Limit speichern",
 				"invalid": "Verwende eine ganze Zahl von 1 bis 5000",
-				"tooltip": "Entspricht yt-dlp --playlist-end: Arroxy fragt nur so viele Playlist-, Kanal- oder Suchergebnisse ab, bevor die Auswahl angezeigt wird."
+				"tooltip": "Entspricht yt-dlp --playlist-end: Grabbit fragt nur so viele Playlist-, Kanal- oder Suchergebnisse ab, bevor die Auswahl angezeigt wird."
 			},
 			"nativeAudioPreference": {"label": "Native Audioeinstellung", "description": "Steuert, was „Bestes nativ“ auswählt. Manuelle Audiozeilen und M4A/AAC bleiben explizit.", "compatible": "Kompatibles Stereo", "surround": "Surround / Dolby bevorzugen"},
 			"autoRetry": {"label": "Fehlgeschlagene Downloads wiederholen", "description": "Versucht es nach einem Netzwerk- oder Serverproblem automatisch erneut und wartet vor jedem Versuch länger. Von der Seite blockierte Downloads werden nie automatisch wiederholt.", "unit": "mal"},
@@ -295,13 +300,13 @@
 			"downloadConnections": {"label": "Download-Verbindungen", "description": "Beschleunigt große Downloads, indem mehrere Teile eines Videos gleichzeitig geladen werden. Höhere Werte erhöhen die Wahrscheinlichkeit, dass eine Seite dich drosselt.", "unit": "Verbindungen"},
 			"networkPacing": {
 				"heading": "Sanftes Herunterladen",
-				"description": "Fügt bei jedem Download kleine Pausen ein, damit Arroxy die Seite nicht zu aggressiv belastet. Werte in Sekunden.",
-				"presetLabel": "Wie vorsichtig soll Arroxy sein?",
+				"description": "Fügt bei jedem Download kleine Pausen ein, damit Grabbit die Seite nicht zu aggressiv belastet. Werte in Sekunden.",
+				"presetLabel": "Wie vorsichtig soll Grabbit sein?",
 				"tooltip": "Diese Pausen liegen innerhalb jedes Downloads. Wie viele Downloads gleichzeitig laufen, wird separat unter „Gleichzeitige Downloads“ eingestellt.",
 				"summary": "Pausen: {{requests}} zwischen Abfragen, {{downloads}} vor Medienbeginn, {{subtitles}} vor Untertiteldateien.",
 				"presets": {"off": "Aus", "balanced": "Ausgewogen", "careful": "Vorsichtig", "custom": "Benutzerdefiniert"},
 				"tooltips": {
-					"off": "Nutzt nur die kleinen Basispausen, die Arroxy für Medien und Untertitel beibehält.",
+					"off": "Nutzt nur die kleinen Basispausen, die Grabbit für Medien und Untertitel beibehält.",
 					"balanced": "Standard. Fügt kurze Pausen zwischen Abfragen und vor Medienbeginn hinzu.",
 					"careful": "Fügt längere Pausen für große Playlists oder Netzwerke ein, die häufig an Limits stoßen.",
 					"custom": "Passe die erweiterten Download-Steuerungen selbst an."
@@ -314,9 +319,9 @@
 		},
 		"quickProgress": {
 			"title": "Schnelldownload wird vorbereitet",
-			"description": "Arroxy liest den Link und wendet {{profileName}} an.",
+			"description": "Grabbit liest den Link und wendet {{profileName}} an.",
 			"currentFallback": "Aktueller Link",
-			"waitHint": "Lass dies geöffnet, während Arroxy die Warteschlange vorbereitet.",
+			"waitHint": "Lass dies geöffnet, während Grabbit die Warteschlange vorbereitet.",
 			"failedCount_one": "{{count}} fehlgeschlagen",
 			"failedCount_other": "{{count}} fehlgeschlagen",
 			"cancel": "Vorbereitung abbrechen",
@@ -560,6 +565,7 @@
 			"hideArtifactsFor": "Ausgabedateien für {{title}} ausblenden"
 		},
 		"artifact": {"media": "Medien", "subtitle": "Untertitel", "thumbnail": "Thumbnail", "description": "Beschreibung", "companion": "Begleitdatei", "unknown": "Datei", "missing": "Fehlt"},
+		"progress": {"downloading": "Wird heruntergeladen", "merging": "Wird zusammengeführt", "finishing": "Wird abgeschlossen", "speed": "Geschwindigkeit", "remaining": "Verbleibende Zeit"},
 		"item": {
 			"defaultError": "Download fehlgeschlagen",
 			"retryingSoon": "wird automatisch wiederholt (Versuch {{attempt}})",
@@ -587,10 +593,10 @@
 	},
 	"update": {
 		"message": {
-			"generic": "Arroxy {{version}} ist verfügbar — du hast {{currentVersion}}.",
-			"homebrew": "Arroxy {{version}} ist verfügbar — mit Homebrew aktualisieren.",
-			"macosDirect": "Arroxy {{version}} ist verfügbar — lade die neue DMG herunter.",
-			"portable": "Arroxy {{version}} ist verfügbar — lade den neuen Build herunter."
+			"generic": "Grabbit {{version}} ist verfügbar — du hast {{currentVersion}}.",
+			"homebrew": "Grabbit {{version}} ist verfügbar — mit Homebrew aktualisieren.",
+			"macosDirect": "Grabbit {{version}} ist verfügbar — lade die neue DMG herunter.",
+			"portable": "Grabbit {{version}} ist verfügbar — lade den neuen Build herunter."
 		},
 		"install": "Installieren & neu starten",
 		"downloading": "Wird heruntergeladen…",
@@ -602,7 +608,7 @@
 		"installFailed": "Update fehlgeschlagen",
 		"retry": "Erneut versuchen"
 	},
-	"releaseNotes": {"title": "Neu in Arroxy {{version}}", "description": "Du verwendest ein frisches Update. Hier sind die Highlights.", "fullNotes": "Vollständige Versionshinweise ↗", "continue": "Weiter"},
+	"releaseNotes": {"title": "Neu in Grabbit {{version}}", "description": "Du verwendest ein frisches Update. Hier sind die Highlights.", "fullNotes": "Vollständige Versionshinweise ↗", "continue": "Weiter"},
 	"status": {
 		"preparingBinaries": "Binärdateien werden vorbereitet…",
 		"mintingToken": "YouTube-Token wird erzeugt…",
@@ -627,7 +633,7 @@
 		"downloadingBinary": "Binärdatei {{name}} wird heruntergeladen…",
 		"unknownStartupFailure": "Unbekannter Fehler beim Starten des Downloads",
 		"diskSpaceInsufficient": "Nicht genug Speicherplatz — {{required}} benötigt, nur {{free}} verfügbar",
-		"outputNotWritable": "Speichern in {{dir}} nicht möglich — Arroxy darf dort nicht schreiben",
+		"outputNotWritable": "Speichern in {{dir}} nicht möglich — Grabbit darf dort nicht schreiben",
 		"fetchingSponsorBlock": "SponsorBlock wird kontaktiert…",
 		"retryingSponsorBlock": "SponsorBlock nicht verfügbar, erneuter Versuch ({{attempt}}/{{total}})…",
 		"retryingTransfer": "Verbindung hängt, erneuter Versuch ({{attempt}}/{{total}})…"
@@ -644,28 +650,28 @@
 			"queued": "Download aus der Zwischenablage hinzugefügt",
 			"alreadyQueued": "Bereits in der Warteschlange — keine Kopie hinzugefügt",
 			"invalidClipboard": "Kein Link in der Zwischenablage — kopiere zuerst einen",
-			"multipleUrls": "Mehrere Links kopiert — „Bulk-URLs“ in Arroxy verwenden",
-			"needsReview": "Dieser Link braucht eine kurze Prüfung — Arroxy öffnen und ihn erneut einfügen",
+			"multipleUrls": "Mehrere Links kopiert — „Bulk-URLs“ in Grabbit verwenden",
+			"needsReview": "Dieser Link braucht eine kurze Prüfung — Grabbit öffnen und ihn erneut einfügen",
 			"busy": "Der vorherige Link wird noch verarbeitet",
-			"submissionFailed": "Dieser Link konnte nicht hinzugefügt werden — versuche es erneut in Arroxy"
+			"submissionFailed": "Dieser Link konnte nicht hinzugefügt werden — versuche es erneut in Grabbit"
 		},
 		"queue": {"skippedAlreadyQueued_one": "{{count}} Video ist bereits in der Warteschlange — übersprungen", "skippedAlreadyQueued_other": "{{count}} Videos sind bereits in der Warteschlange — übersprungen"}
 	},
 	"errors": {
 		"ytdlp": {
-			"botBlock": "Bot-Schutz ausgelöst. Die verwendete IP ist höchstwahrscheinlich als verdächtig markiert (Rechenzentrumsbereich oder stark genutzter VPN-Ausgangsknoten). Wechsle deine IP oder wähle einen anderen VPN-Endpunkt und versuche es erneut. Falls das Problem weiterhin besteht, könnte es sich um eine vorübergehende Änderung seitens YouTube handeln – Arroxy aktualisiert yt-dlp beim Start automatisch, sodass der Fix automatisch angewendet wird, sobald er upstream verfügbar ist.",
+			"botBlock": "Bot-Schutz ausgelöst. Die verwendete IP ist höchstwahrscheinlich als verdächtig markiert (Rechenzentrumsbereich oder stark genutzter VPN-Ausgangsknoten). Wechsle deine IP oder wähle einen anderen VPN-Endpunkt und versuche es erneut. Falls das Problem weiterhin besteht, könnte es sich um eine vorübergehende Änderung seitens YouTube handeln – Grabbit aktualisiert yt-dlp beim Start automatisch, sodass der Fix automatisch angewendet wird, sobald er upstream verfügbar ist.",
 			"ipBlock": "Deine IP-Adresse scheint von YouTube blockiert zu sein. Versuch es später oder nutze ein VPN.",
 			"rateLimit": "YouTube drosselt die Anfragen. Warte eine Minute und versuch es dann erneut.",
 			"ageRestricted": "Dieses Video ist altersbeschränkt und kann ohne angemeldetes Konto nicht heruntergeladen werden.",
 			"unavailable": "Dieses Video ist nicht verfügbar — möglicherweise privat, gelöscht oder regional gesperrt.",
 			"geoBlocked": "Dieses Video ist in deiner Region nicht verfügbar.",
 			"outOfDiskSpace": "Nicht genug Speicherplatz. Gib Speicher frei und versuche es erneut.",
-			"outputNotWritable": "Arroxy kann nicht in den Download-Ordner schreiben. Er ist vielleicht schreibgeschützt, liegt auf einem gesperrten Laufwerk oder wird von den Datenschutzeinstellungen deines Systems blockiert. Wähle einen anderen Ordner oder erlaube den Zugriff und versuche es erneut.",
+			"outputNotWritable": "Grabbit kann nicht in den Download-Ordner schreiben. Er ist vielleicht schreibgeschützt, liegt auf einem gesperrten Laufwerk oder wird von den Datenschutzeinstellungen deines Systems blockiert. Wähle einen anderen Ordner oder erlaube den Zugriff und versuche es erneut.",
 			"unsupportedUrl": "Diese URL wird von yt-dlp nicht unterstützt. Versuche einen anderen Link von einer von yt-dlp unterstützten Seite.",
 			"chunkTransferFailure": "Der Server hat den Download wiederholt mittendrin abgebrochen und yt-dlp hat nach mehreren Versuchen aufgegeben. Das betrifft meist die größten Videoformate (4K HDR / VP9 mit hoher Bitrate). Versuche es erneut, wechsle das Netzwerk/VPN oder wähle eine niedrigere Auflösung.",
 			"missingDependency": "yt-dlp konnte ffmpeg oder ffprobe nicht finden. Repariere die gebündelten Binärdateien oder lege einen FFmpeg-Speicherort fest und versuche es erneut.",
 			"postprocessFailure": "yt-dlp hat den Download abgeschlossen, aber die Nachbearbeitung (Merge / Mux / Konvertierung) ist fehlgeschlagen. Oft ist das ein vorübergehendes ffmpeg-Problem — versuche es erneut, und wenn es bestehen bleibt, probiere eine andere Formatkombination.",
-			"parse": "Die Antwort der Seite konnte nicht analysiert werden. Der Extraktor von yt-dlp ist möglicherweise veraltet. Arroxy aktualisiert yt-dlp automatisch beim Start — versuche es in ein paar Minuten erneut, sobald der Fix eintrifft.",
+			"parse": "Die Antwort der Seite konnte nicht analysiert werden. Der Extraktor von yt-dlp ist möglicherweise veraltet. Grabbit aktualisiert yt-dlp automatisch beim Start — versuche es in ein paar Minuten erneut, sobald der Fix eintrifft.",
 			"network": "Netzwerkfehler. Überprüfe deine Verbindung und versuche es erneut.",
 			"drmProtected": "Dieses Video ist DRM-geschützt. yt-dlp kann DRM nicht entfernen, daher kann die Datei nicht heruntergeladen werden.",
 			"loginRequired": "Dieses Video erfordert ein angemeldetes Konto. Richte eine cookies.txt ein (Einstellungen → Cookies) und versuche es erneut.",
@@ -709,7 +715,7 @@
 		"mp4Cap": "H.264 über 1080p ist auf YouTube nicht verfügbar — automatisch auf 1080p begrenzt"
 	},
 	"formatLabel": {"audioFallback": "Audio", "audioOnlyDot": "Nur Audio · {{audio}}", "videoDot": "{{resolution}} · {{audio}}"},
-	"tray": {"tooltip": "Arroxy", "menu": {"statusIdle": "Inaktiv", "statusActive_one": "1 lädt herunter · {{percent}}%", "statusActive_other": "{{count}} laden herunter · {{percent}}%", "downloadFromClipboard": "Aus der Zwischenablage herunterladen", "open": "Arroxy öffnen", "quit": "Arroxy beenden"}},
+	"tray": {"tooltip": "Grabbit", "menu": {"statusIdle": "Inaktiv", "statusActive_one": "1 lädt herunter · {{percent}}%", "statusActive_other": "{{count}} laden herunter · {{percent}}%", "downloadFromClipboard": "Aus der Zwischenablage herunterladen", "open": "Grabbit öffnen", "quit": "Grabbit beenden"}},
 	"dialogs": {
 		"quitWithActiveDownloads": {
 			"message_one": "{{count}} Download läuft",
@@ -719,25 +725,25 @@
 			"pause": "Downloads pausieren & beenden",
 			"keep": "Weiter herunterladen"
 		},
-		"closeToTray": {"message": "Arroxy beim Schließen in den Infobereich minimieren?", "detail": "Arroxy läuft weiter und schließt aktive Downloads ab. Ändern Sie dies in den erweiterten Einstellungen.", "hide": "In Infobereich minimieren", "quit": "Beenden", "remember": "Nicht mehr fragen"},
-		"rendererCrashed": {"message": "Arroxy hat ein Problem festgestellt", "detail": "Der Renderer-Prozess ist abgestürzt ({{reason}}). Neu laden, um es erneut zu versuchen.", "reload": "Neu laden", "quit": "Beenden"}
+		"closeToTray": {"message": "Grabbit beim Schließen in den Infobereich minimieren?", "detail": "Grabbit läuft weiter und schließt aktive Downloads ab. Ändern Sie dies in den erweiterten Einstellungen.", "hide": "In Infobereich minimieren", "quit": "Beenden", "remember": "Nicht mehr fragen"},
+		"rendererCrashed": {"message": "Grabbit hat ein Problem festgestellt", "detail": "Der Renderer-Prozess ist abgestürzt ({{reason}}). Neu laden, um es erneut zu versuchen.", "reload": "Neu laden", "quit": "Beenden"}
 	},
 	"share": {
-		"title": "Arroxy teilen",
-		"description": "Arroxy ist kostenlos und Open-Source. Durch das Teilen helfen mehr Menschen, es zu entdecken.",
+		"title": "Grabbit teilen",
+		"description": "Grabbit ist kostenlos und Open-Source. Durch das Teilen helfen mehr Menschen, es zu entdecken.",
 		"copyLink": "Link kopieren",
 		"copied": "Kopiert!",
-		"defaultMessage": "Arroxy — Kostenloser Open-Source-Video-Downloader für Windows, macOS & Linux. Funktioniert mit YouTube, Vimeo, Twitch und 2000+ weiteren Websites.\n4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock",
-		"footerTooltip": "Arroxy teilen",
+		"defaultMessage": "Grabbit — Kostenloser Open-Source-Video-Downloader für Windows, macOS & Linux. Funktioniert mit YouTube, Vimeo, Twitch und 2000+ weiteren Websites.\n4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock",
+		"footerTooltip": "Grabbit teilen",
 		"footerLabel": "Teilen",
-		"shareAction": "Arroxy teilen"
+		"shareAction": "Grabbit teilen"
 	},
 	"filenameTemplate": {
 		"label": "Dateinamenvorlage",
 		"description": "Lege fest, wie heruntergeladene Dateien benannt werden. Klicke auf einen Platzhalter, um ihn einzufügen. Nutze /, um Downloads in Ordner zu sortieren.",
 		"profileOverrideLabel": "Dateinamenvorlage",
 		"profileOverrideDescription": "Leer lassen, um die globale Vorlage zu übernehmen.",
-		"idWarning": "Ohne {id} kann Arroxy bereits heruntergeladene Playlist-Einträge nicht erkennen und keine .m3u-Playlists erstellen.",
+		"idWarning": "Ohne {id} kann Grabbit bereits heruntergeladene Playlist-Einträge nicht erkennen und keine .m3u-Playlists erstellen.",
 		"m3uDisabled": "Nicht verfügbar, weil deine Dateinamenvorlage entweder {id} nicht enthält oder Downloads in Ordner sortiert.",
 		"previewSingle": "Einzelnes Video",
 		"previewPlaylist": "In einer Wiedergabeliste",

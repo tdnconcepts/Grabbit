@@ -2,6 +2,7 @@ import {DEFAULTS} from './constants.js'
 import {canEmbedThumbnail, mediaIntentSpec, playlistSelectionToMediaIntent, playlistSubtitleOptions} from './mediaIntent.js'
 import type {EmbedOptions, ExtractorIdentity, PreparedJob, SponsorBlockOptions, SubtitleOptions} from './preparedJob.js'
 import type {AudioConvert, MediaIntent, NativeAudioPreference, PlaylistSelection, Preset, SponsorBlockCategory, SponsorBlockMode} from './schemas.js'
+import type {ClipRange} from './clipRange.js'
 
 // Pure builder. Lives in `src/shared/` (not renderer) so future QueueStore
 // migrations in main can synthesize jobs without a renderer dependency.
@@ -22,6 +23,7 @@ export interface PrepareJobInput extends ExtractorIdentity {
 	mediaIntent?: MediaIntent | null
 	nativeAudioPreference?: NativeAudioPreference
 	filenameTemplate?: string
+	clipRange?: ClipRange
 	// shared
 	subtitles?: SubtitleOptions
 	sponsorBlockMode: SponsorBlockMode
@@ -34,6 +36,7 @@ export function prepareJob(input: PrepareJobInput): PreparedJob {
 	const subtitles = input.subtitles && input.subtitles.languages.length > 0 ? input.subtitles : undefined
 	const identity: ExtractorIdentity = {extractor: input.extractor, extractorKey: input.extractorKey}
 	const filenameTemplate = input.filenameTemplate ? {filenameTemplate: input.filenameTemplate} : {}
+	const clipRange = input.clipRange ? {clipRange: input.clipRange} : {}
 
 	if (input.mode === 'playlist') {
 		if (input.playlistSelection?.kind === 'subtitles') {
@@ -48,6 +51,7 @@ export function prepareJob(input: PrepareJobInput): PreparedJob {
 		return {
 			kind: 'ranged-format',
 			...identity,
+			...clipRange,
 			intent,
 			formatSelector: spec.formatSelector,
 			formatSort: spec.formatSort,
@@ -69,11 +73,11 @@ export function prepareJob(input: PrepareJobInput): PreparedJob {
 	}
 
 	if (input.audioConvert) {
-		return {kind: 'audio-convert', ...identity, audioConvert: input.audioConvert, preset: input.activePreset ?? 'custom', ...filenameTemplate, subtitles, sponsorBlock, embed: input.embed}
+		return {kind: 'audio-convert', ...identity, ...clipRange, audioConvert: input.audioConvert, preset: input.activePreset ?? 'custom', ...filenameTemplate, subtitles, sponsorBlock, embed: input.embed}
 	}
 
 	if (!input.formatId) throw new Error('prepareJob: single-format requires formatId')
-	return {kind: 'single-format', ...identity, formatId: input.formatId, preset: input.activePreset ?? 'custom', ...filenameTemplate, subtitles, sponsorBlock, embed: input.embed, expectedBytes: input.expectedBytes}
+	return {kind: 'single-format', ...identity, ...clipRange, formatId: input.formatId, preset: input.activePreset ?? 'custom', ...filenameTemplate, subtitles, sponsorBlock, embed: input.embed, expectedBytes: input.expectedBytes}
 }
 
 function toSponsorBlockOptions(mode: SponsorBlockMode, categories: SponsorBlockCategory[]): SponsorBlockOptions {

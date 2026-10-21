@@ -5,7 +5,7 @@ import {LIVE_PROBE_SMOKE_RESULT_PREFIX, parseLiveProbeSmokeResultLine, probeSmok
 const healthyReport: RuntimeSmokeReport = {
 	runtimeSmoke: true,
 	ok: true,
-	execPath: '/Applications/Arroxy.app/Contents/MacOS/Arroxy',
+	execPath: '/Applications/Grabbit.app/Contents/MacOS/Grabbit',
 	parentElectronRunAsNode: null,
 	nodeVersion: '24.16.0',
 	nodeMajor: 24,
@@ -16,7 +16,7 @@ const healthyReport: RuntimeSmokeReport = {
 		sourceLabel: 'managed',
 		ejsComponents: 'bundled-required',
 		remoteComponentsEnabled: false,
-		args: ['--no-js-runtimes', '--js-runtimes', 'node:/Applications/Arroxy.app/Contents/MacOS/Arroxy'],
+		args: ['--no-js-runtimes', '--js-runtimes', 'node:/Applications/Grabbit.app/Contents/MacOS/Grabbit'],
 		verbose: {hasNodeRuntime: true, hasUnsupportedNodeRuntime: false, hasYtDlpEjs: true, hasDenoRuntime: false, hasEjsNpmRemoteComponent: false, jsRuntimeLines: ['[debug] JS runtimes: node 24.16.0'], optionalLibraryLines: ['[debug] Optional libraries: curl_cffi-0.11.4, yt-dlp-ejs-0.3.0']}
 	},
 	failures: []
@@ -28,13 +28,13 @@ const healthyLiveProbeReport: LiveProbeSmokeReport = {
 	url: 'https://www.youtube.com/watch?v=abc123',
 	platform: 'darwin',
 	arch: 'arm64',
-	execPath: '/Applications/Arroxy.app/Contents/MacOS/Arroxy',
+	execPath: '/Applications/Grabbit.app/Contents/MacOS/Grabbit',
 	parentElectronRunAsNode: null,
 	ytDlp: {
 		path: '/tmp/runtime-cache/yt-dlp',
-		args: ['--no-js-runtimes', '--js-runtimes', 'node:/Applications/Arroxy.app/Contents/MacOS/Arroxy', '--extractor-args', 'youtube:po_token=[REDACTED];visitor_data=[REDACTED]', '--dump-single-json', '--flat-playlist', '--no-playlist', 'https://www.youtube.com/watch?v=abc123'],
+		args: ['--no-js-runtimes', '--js-runtimes', 'node:/Applications/Grabbit.app/Contents/MacOS/Grabbit', '--extractor-args', 'youtube:po_token=[REDACTED];visitor_data=[REDACTED]', '--dump-single-json', '--flat-playlist', '--no-playlist', 'https://www.youtube.com/watch?v=abc123'],
 		jsRuntime: 'electron-node',
-		jsRuntimePath: '/Applications/Arroxy.app/Contents/MacOS/Arroxy',
+		jsRuntimePath: '/Applications/Grabbit.app/Contents/MacOS/Grabbit',
 		jsRuntimeVersion: '24.16.0',
 		ejsComponents: 'bundled-required',
 		usesElectronNode: true,
@@ -46,8 +46,8 @@ const healthyLiveProbeReport: LiveProbeSmokeReport = {
 			{
 				ytDlpPath: '/tmp/runtime-cache/yt-dlp',
 				ffmpegPath: null,
-				args: ['--no-js-runtimes', '--js-runtimes', 'node:/Applications/Arroxy.app/Contents/MacOS/Arroxy', '--extractor-args', 'youtube:po_token=[REDACTED];visitor_data=[REDACTED]', '--dump-single-json', '--flat-playlist', '--no-playlist', 'https://www.youtube.com/watch?v=abc123'],
-				jsRuntime: {jsRuntime: 'electron-node', jsRuntimePath: '/Applications/Arroxy.app/Contents/MacOS/Arroxy', jsRuntimeVersion: '24.16.0', ejsComponents: 'bundled-required'},
+				args: ['--no-js-runtimes', '--js-runtimes', 'node:/Applications/Grabbit.app/Contents/MacOS/Grabbit', '--extractor-args', 'youtube:po_token=[REDACTED];visitor_data=[REDACTED]', '--dump-single-json', '--flat-playlist', '--no-playlist', 'https://www.youtube.com/watch?v=abc123'],
+				jsRuntime: {jsRuntime: 'electron-node', jsRuntimePath: '/Applications/Grabbit.app/Contents/MacOS/Grabbit', jsRuntimeVersion: '24.16.0', ejsComponents: 'bundled-required'},
 				attempt: 'pot',
 				reMint: false
 			}

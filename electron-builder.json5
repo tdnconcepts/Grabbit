@@ -1,6 +1,6 @@
 {
   "appId": "com.arroxy.app",
-  "productName": "Arroxy",
+  "productName": "Grabbit",
   "afterPack": "./build/afterPack.mjs",
   "beforeBuild": "./build/beforeBuild.mjs",
   "toolsets": {
@@ -18,6 +18,10 @@
   },
   "files": ["out/**/*", "!node_modules/**/*"],
   "extraResources": [
+    {
+      "from": "build/icon.png",
+      "to": "icon.png"
+    },
     {
       "from": "build/icon-tray.png",
       "to": "icon-tray.png"

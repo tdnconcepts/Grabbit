@@ -62,6 +62,7 @@ export function buildMediaRequest(params: MediaRequestParams): CallerMediaWorkfl
 		...(sbConfig ? {sponsorBlock: sbConfig} : {}),
 		...(extractor ? {extractor} : {}),
 		embed: {chapters: embedOpts.chapters, metadata: embedOpts.metadata, thumbnail: embedOpts.thumbnail, description: embedOpts.description, thumbnailSidecar: embedOpts.thumbnailSidecar},
+		...(job.clipRange ? {download: {sections: [`*${job.clipRange.startSeconds}-${job.clipRange.endSeconds}`]}} : {}),
 		...(infoJsonPath ? {resume: {loadInfoJsonPath: infoJsonPath}} : {})
 	}
 }

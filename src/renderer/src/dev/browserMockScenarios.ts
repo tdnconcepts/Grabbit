@@ -16,6 +16,8 @@ export type BrowserMockLaunchMode = (typeof BROWSER_MOCK_LAUNCH_MODES)[number]
 export const BROWSER_MOCK_SCENARIO_IDS = [
 	'default',
 	'single-normal',
+	'probe-missing-duration',
+	'probe-fractional-duration',
 	'playlist-normal',
 	'playlist-loading',
 	'playlist-multi-profile',
@@ -148,6 +150,8 @@ const WIN_COMMON_PATHS = {downloads: 'C:\\Users\\User\\Downloads', videos: 'C:\\
 export const BROWSER_MOCK_SCENARIOS: readonly BrowserMockScenario[] = [
 	{id: 'default', group: 'General', title: 'Default app', description: 'Standard mock video flow and clean queue.', kind: 'default'},
 	{id: 'single-normal', group: 'General', title: 'Single video normal', description: 'Screen preset for a YouTube video with formats, subtitles, and SponsorBlock steps.', kind: 'probe'},
+	{id: 'probe-missing-duration', group: 'General', title: 'Preview without source duration', description: 'Playable preview recovers a duration omitted by the source metadata.', kind: 'probe'},
+	{id: 'probe-fractional-duration', group: 'General', title: 'Fractional video duration', description: 'Both trim handles remain usable when the media end rounds up to the displayed millisecond.', kind: 'probe'},
 	{id: 'playlist-normal', group: 'Playlist', title: 'Playlist normal', description: 'Screen preset for a playlist with thumbnails, durations, and default preset selection.', kind: 'probe'},
 	{id: 'playlist-loading', group: 'Playlist', title: 'Playlist loading scaffold', description: 'Playlist loading state with the final controls and full-width row skeletons visible.', kind: 'state'},
 	{id: 'playlist-multi-profile', group: 'Playlist', title: 'Playlist multi-profile', description: 'Playlist profiles step landing directly, with 17 items already split across the baseline, audio-only, and Full HD 1080p profiles.', kind: 'state'},

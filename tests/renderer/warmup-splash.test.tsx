@@ -172,7 +172,9 @@ describe('WarmupSplash', () => {
 		render(<WarmupSplash initialized={false} warmupBlocking={[]} warmupDiagnostics={null} warmupProgress={null} showGreeting={false} />)
 
 		expect(screen.getByTestId('splash-overlay')).toHaveTextContent('Preparing downloads')
-		expect(screen.getByTestId('splash-overlay')).not.toHaveTextContent('Starting Arroxy')
+		expect(screen.getByTestId('splash-overlay')).not.toHaveTextContent('Starting Grabbit')
+		expect(screen.getByText(/Preparing downloads/)).toHaveClass('sr-only')
+		expect(screen.queryByText('Grabbit')).not.toBeInTheDocument()
 	})
 
 	it('keeps concrete binary download progress and byte counts', () => {
@@ -206,6 +208,7 @@ describe('WarmupSplash', () => {
 		rerender(<WarmupSplash initialized={false} warmupBlocking={[]} warmupDiagnostics={null} warmupProgress={null} showGreeting />)
 
 		expect(screen.getByTestId('splash-greeting')).toBeInTheDocument()
+		expect(screen.getByTestId('splash-greeting')).toHaveClass('sr-only')
 	})
 
 	it('does not show cancel during non-cancellable package-manager repair phases', () => {

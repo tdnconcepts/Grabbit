@@ -14,13 +14,13 @@ export interface HotkeyBalloonHost {
 	displayBalloon(body: string): boolean
 }
 
-// Production: the packaged Arroxy.app has its own bundle ID, so Electron's
+// Production: the packaged Grabbit.app has its own bundle ID, so Electron's
 // Notification is properly attributed, appears in System Settings, and the
 // click reveals the queue.
 function electronNotifier(win: BrowserWindow): HotkeyOsNotifier {
 	return {
 		show: body => {
-			const notification = new Notification({title: 'Arroxy', body, silent: false})
+			const notification = new Notification({title: 'Grabbit', body, silent: false})
 			notification.on('click', () => {
 				if (!win.isDestroyed()) {
 					win.show()
@@ -40,7 +40,7 @@ function electronNotifier(win: BrowserWindow): HotkeyOsNotifier {
 function terminalNotifier(fallback: HotkeyOsNotifier): HotkeyOsNotifier {
 	return {
 		show: body => {
-			const child = spawn('terminal-notifier', ['-title', 'Arroxy', '-message', body, '-group', 'arroxy-hotkey', '-execute', 'open -a Electron'], {stdio: 'ignore', detached: true})
+			const child = spawn('terminal-notifier', ['-title', 'Grabbit', '-message', body, '-group', 'arroxy-hotkey', '-execute', 'open -a Electron'], {stdio: 'ignore', detached: true})
 			child.on('error', err => {
 				log.warn('[hotkey] terminal-notifier unavailable — falling back to Electron Notification (install: brew install terminal-notifier)', err)
 				fallback.show(body)

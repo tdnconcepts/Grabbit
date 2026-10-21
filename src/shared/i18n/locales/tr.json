@@ -5,11 +5,11 @@
 		"logs": "Günlükler",
 		"saveDiagnostics": "Tanılama dosyasını kaydet",
 		"saveDiagnosticsDescription": "Günlükleri ve uygulama bilgilerini İndirilenler klasöründe tek bir dosyada toplar; dosya bir GitHub issue'suna eklenmeye hazırdır. Kullanıcı klasörünüzün adı kaldırılır; video bağlantıları ve başlıkları korunur.",
-		"feedbackNudge": "Arroxy hoşuna gidiyor mu? Senden haber almak isterim! 💬",
+		"feedbackNudge": "Grabbit hoşuna gidiyor mu? Senden haber almak isterim! 💬",
 		"zoomIn": "Yakınlaştır",
 		"zoomOut": "Uzaklaştır"
 	},
-	"about": {"button": "Hakkında", "openTitle": "Arroxy Hakkında", "tagline": "YouTube ve 2000+ diğer site için hızlı, dost canlısı indirici.", "websiteLink": "Web sitesi", "githubLink": "GitHub", "licenseLine": "MIT Lisansı · Antonio Orionus tarafından", "thirdPartyNotices": "Üçüncü taraf bildirimlerini görüntüle"},
+	"about": {"button": "Hakkında", "openTitle": "Grabbit Hakkında", "tagline": "YouTube ve 2000+ diğer site için hızlı, dost canlısı indirici.", "websiteLink": "Web sitesi", "githubLink": "GitHub", "licenseLine": "MIT Lisansı · Antonio Orionus tarafından", "thirdPartyNotices": "Üçüncü taraf bildirimlerini görüntüle"},
 	"titleBar": {"close": "Kapat", "minimize": "Simge durumuna küçült", "maximize": "Büyüt", "restore": "Geri yükle"},
 	"splash": {
 		"greeting": "Selam, tekrar hoş geldin!",
@@ -129,7 +129,7 @@
 		},
 		"bulk": {
 			"title": "Toplu URL’ler",
-			"description": "Video, oynatma listesi, kanal, arama veya ses URL’leri yapıştır. Arroxy kuyruğa almadan önce yinelenenleri temizler.",
+			"description": "Video, oynatma listesi, kanal, arama veya ses URL’leri yapıştır. Grabbit kuyruğa almadan önce yinelenenleri temizler.",
 			"textareaLabel": "URL listesi",
 			"textareaPlaceholder": "https://ornek.com/video-1\nhttps://ornek.com/video-2\nhttps://ornek.com/video-3",
 			"acceptedCount": "Hazır",
@@ -149,63 +149,71 @@
 			"pickFromPlaylist": "Oynatma listesinden seç",
 			"quickWholePlaylist": "Tüm oynatma listesini indir",
 			"playlistLimit": "Oynatma listesi denetim sınırı: {{count}} öğe",
-			"quickLimitDescription": "Arroxy’nin bir oynatma listesini, kanalı veya arama sonucunu kuyruğa almadan önce taradığı en fazla kayıt sayısı.",
+			"quickLimitDescription": "Grabbit’nin bir oynatma listesini, kanalı veya arama sonucunu kuyruğa almadan önce taradığı en fazla kayıt sayısı.",
 			"singleTooltip": "yt-dlp tek video modunu kullanır, böylece bu URL’ye bağlı oynatma listesi yoksayılır.",
 			"quickSingleTooltip": "Bir indirme kuyruğa alır ve bu URL’ye bağlı oynatma listesini yoksayar.",
 			"playlistTooltip": "yt-dlp oynatma listesi modunu kullanır ve seçiciyi göstermeden önce oynatma listesi denetim sınırına kadar öğe alır.",
-			"quickPlaylistTooltip": "Yüklenen her oynatma listesi öğesini etkin Hızlı İndirme profiliyle kuyruğa alır. Tarama sınırına ulaşırsa Arroxy kuyruğa almadan önce sorar."
+			"quickPlaylistTooltip": "Yüklenen her oynatma listesi öğesini etkin Hızlı İndirme profiliyle kuyruğa alır. Tarama sınırına ulaşırsa Grabbit kuyruğa almadan önce sorar."
 		},
 		"url": {
 			"heading": "URL’den indir",
 			"placeholder": "https://...",
-			"tabs": {"profiles": "Profiller", "settings": "Ayarlar"},
+			"workspace": {
+				"description": "Otomatik olarak analiz etmek için bir bağlantı yapıştırın ve ardından her şeyi burada seçin.",
+				"invalidUrl": "Geçerli bir HTTP veya HTTPS URL'si girin.",
+				"analyzing": "Bağlantı analiz ediliyor…",
+				"options": "İndirme seçenekleri",
+				"advanced": "Gelişmiş seçenekler",
+				"download": "İndir",
+				"bestAudio": "En iyi ses",
+				"destination": "İndirme hedefi",
+				"changeDestination": "Hedefi değiştir",
+				"filenameTemplate": "Çıktı dosya adı şablonu",
+				"trim": {
+					"heading": "Belirli bir bölümü indirin",
+					"description": "SS, MM:SS veya SS:MM:SS'yi kabul eder.",
+					"previewHeading": "Klip önizlemesi",
+					"previewDescription": "Kesme noktalarını hassas biçimde seçmek için videoyu oynatın veya ilerletin.",
+					"previewUnavailable": "Bu kaynak için önizleme kullanılamıyor. Zaman çizelgesini ve zaman alanlarını yine de kullanabilirsiniz.",
+					"setStart": "Başlangıcı ayarla",
+					"setEnd": "Bitişi ayarla",
+					"selectedRange": "Seçilen aralık",
+					"zoom": "Zaman çizelgesi yakınlaştırması",
+					"position": "Zaman çizelgesi konumu",
+					"previousFrame": "Önceki kare",
+					"nextFrame": "Sonraki kare",
+					"stepBack": "Geri adım",
+					"stepForward": "İleri adım",
+					"loop": "Klibi döngüye al",
+					"full": "Videonun tamamı",
+					"custom": "Özel aralık",
+					"start": "Başlangıç zamanı",
+					"end": "Bitiş zamanı",
+					"useEnd": "Video sonunu kullan",
+					"reset": "Aralığı sıfırla",
+					"summary": "Başlangıç {{start}} — Bitiş {{end}} — Klip uzunluğu {{length}}",
+					"error": {"start": "Sıfır veya daha sonra geçerli bir başlangıç zamanı girin.", "end": "Geçerli bir bitiş zamanı girin.", "order": "Bitiş zamanı başlangıç zamanından sonra olmalıdır.", "duration": "Başlangıç ve bitiş saatleri video süresi içerisinde kalmalıdır."}
+				}
+			},
+			"tabs": {"settings": "Ayarlar"},
 			"interactiveDownload": "Etkileşimli İndirme",
-			"fetchFormatsTooltip": "Adım adım sihirbaz. Biçimi, kaliteyi ve daha fazlasını seç.",
 			"quickDownload": "Hızlı İndirme",
 			"quickDownloadTooltip": "Şununla indirilecek: {{profileName}}",
 			"quickPreparing": "Hazırlanıyor",
-			"quickQueued": "Kuyruğa eklendi",
-			"quickSingleOnly": "Başlamak için bir video, oynatma listesi, kanal veya arama URL’si yapıştır.",
 			"quickProbeFailed": "Denetim başarısız oldu",
 			"quickPrepareFailed": "Kuyruk öğesi hazırlanamadı",
 			"quickBulkAllFailed": "Bu URL’lerin hiçbiri hazırlanamadı",
 			"quickFailed": "Bu öğe eklenemedi: {{error}}",
 			"quickPartialFailed_one": "Çalışanlar kuyruğa alındı. {{count}} URL hazırlanamadı.",
 			"quickPartialFailed_other": "Çalışanlar kuyruğa alındı. {{count}} URL hazırlanamadı.",
-			"profile": {
-				"destinationFallback": "Hedef",
-				"switchAria": "İndirme profilini değiştir: {{profileName}}",
-				"switchTitle": "İndirme profilini değiştir",
-				"activeLabel": "Etkin profil",
-				"editActive": "Etkin profili düzenle",
-				"changeGlobalDestination": "Genel hedefi değiştir",
-				"menuTitle": "Profili değiştir",
-				"menuDescription": "Hızlı İndirme, Toplu URL’ler ve oynatma listeleri için etkin profili değiştir.",
-				"newProfile": "Yeni profil",
-				"manageProfiles": "Profilleri yönet",
-				"panelTitle": "İndirme Profilleri",
-				"panelDescription": "Yeniden kullanılabilir indirme kurulumları oluştur, seç, düzenle veya kaldır.",
-				"badgeCustom": "Özel",
-				"badgeModified": "Değiştirildi",
-				"badgeBuiltIn": "Yerleşik",
-				"badgeDisabled": "Gizli",
-				"enableToggleAria": "Profili seçicilerde göster: {{profileName}}",
-				"enableHint": "Gizli profiller burada kalır, ancak tüm seçicilerden kaybolur.",
-				"lastEnabledHint": "En az bir profili kullanılabilir tut.",
-				"edit": "Düzenle",
-				"remove": "Kaldır",
-				"reset": "Sıfırla"
-			},
+			"profile": {"changeGlobalDestination": "Genel hedefi değiştir", "reset": "Sıfırla"},
 			"bulkButton": "Toplu URL’ler",
-			"bulkTooltip": "Birden fazla URL ekle ve kuyruğa al.",
 			"features": {
-				"heading": "Arroxy neleri çekebilir",
+				"heading": "Grabbit neleri çekebilir",
 				"youtube": {"heading": "YouTube", "video": "Videolar", "channel": "Kanallar", "playlist": "Oynatma listeleri", "short": "Shorts", "music": "Music", "podcast": "Podcast’ler"},
 				"anySite": {"heading": "2000+ site", "video": "Videolar", "videoPlaylist": "Video oynatma listeleri", "musicPlaylist": "Müzik oynatma listeleri"},
 				"always": {"audioOnly": "Yalnızca ses", "subtitles": "Altyazılar"}
 			},
-			"mascotIdle": "Bir bağlantı bırak, Arroxy onu çeksin ✨",
-			"mascotBusy": "Arka planda indiriliyor… Aynı anda birkaç işi halledebilirim 😎",
 			"advanced": "Gelişmiş",
 			"settings": {"inputHeading": "Giriş", "behaviorHeading": "İndirme davranışı", "behaviorDescription": "Profil kaynaklı indirmeleri de etkileyen genel davranış."},
 			"clearAria": "URL’yi temizle",
@@ -221,16 +229,13 @@
 			},
 			"hotkey": {
 				"sectionTitle": "Genel kısayol",
-				"sectionDescription": "Kopyaladığınız bağlantıyı, Arroxy’yi açmadan herhangi bir uygulamadan indirin.",
+				"sectionDescription": "Kopyaladığınız bağlantıyı, Grabbit’yi açmadan herhangi bir uygulamadan indirin.",
 				"toggle": "Genel kısayolu etkinleştir",
 				"toggleDescription": "Panoda video bağlantısı varken kısayola basın.",
 				"changeShortcut": "Kısayolu değiştir",
 				"recording": "Tuşlara basın…",
 				"test": "Test et",
 				"conflict": "Bu kısayol başka bir uygulamada kullanılıyor — başka bir tane seçin.",
-				"hintLabel": "Veya basın",
-				"hintTooltip": "Bir video bağlantısını istediğiniz yerde kopyalayın, bu kısayola basın; Arroxy onu etkin profilinizle sıraya ekler — pencereler arasında geçiş yapmanız gerekmez.",
-				"hintTooltipSettings": "Ayarlar'dan değiştirin veya kapatın.",
 				"reset": "Varsayılana sıfırla"
 			},
 			"cookies": {
@@ -257,14 +262,14 @@
 			"proxy": {"label": "Proxy URL’si", "description": "Trafiği bir proxy üzerinden yönlendir — coğrafi kısıtlı içerikler için kullanışlıdır.", "placeholder": "http://host:port", "clear": "Temizle"},
 			"backdrop": {
 				"panelTitle": "Görünüm ve performans",
-				"panelDescription": "Arroxy’nin animasyonlu arka plan için ne kadar hareket kullanacağını seç.",
+				"panelDescription": "Grabbit’nin animasyonlu arka plan için ne kadar hareket kullanacağını seç.",
 				"modeLabel": "Arka plan kalitesi",
 				"modeDescription": "En animasyonlu görünümden en iyi performansa geç.",
 				"cssOnlyLabel": "En iyi performans",
 				"cssOnlyDescription": "Yalnızca CSS, canvas çizimi yok.",
 				"gpuLabel": "En güzel görünüm",
 				"gpuDescription": "Destekleniyorsa animasyonlu WebGL arka planı.",
-				"runtimeFallbackNotice": "Bu cihazda donanımsal WebGL kullanılamıyor, bu yüzden Arroxy performans arka planını kullanıyor."
+				"runtimeFallbackNotice": "Bu cihazda donanımsal WebGL kullanılamıyor, bu yüzden Grabbit performans arka planını kullanıyor."
 			},
 			"limitRate": {
 				"label": "İndirme hızı sınırı",
@@ -277,7 +282,7 @@
 			},
 			"playlistProbeLimit": {
 				"label": "Taranacak oynatma listesi öğeleri",
-				"description": "Bir oynatma listesi, kanal veya arama sonucu açıldığında Arroxy’nin yükleyeceği en fazla kayıt sayısı.",
+				"description": "Bir oynatma listesi, kanal veya arama sonucu açıldığında Grabbit’nin yükleyeceği en fazla kayıt sayısı.",
 				"option": "{{count}} öğe",
 				"current": "Geçerli sınır: {{count}} öğe",
 				"customValue": "Özel: {{count}} öğe",
@@ -287,7 +292,7 @@
 				"customDialogCancel": "İptal",
 				"customDialogSave": "Sınırı kaydet",
 				"invalid": "1 ile 5000 arasında bir tam sayı kullan",
-				"tooltip": "yt-dlp --playlist-end seçeneğine karşılık gelir: Arroxy seçiciyi oluştururken yalnızca bu kadar oynatma listesi, kanal veya arama kaydı ister."
+				"tooltip": "yt-dlp --playlist-end seçeneğine karşılık gelir: Grabbit seçiciyi oluştururken yalnızca bu kadar oynatma listesi, kanal veya arama kaydı ister."
 			},
 			"nativeAudioPreference": {"label": "Yerel ses tercihi", "description": "En iyi yerel seçeneğinin neyi seçeceğini belirler. Manuel ses satırları ve M4A/AAC açık seçim olarak kalır.", "compatible": "Uyumlu stereo", "surround": "Surround / Dolby tercih et"},
 			"autoRetry": {"label": "Başarısız indirmeleri yeniden dene", "description": "Ağ veya sunucu kaynaklı bir aksaklıktan sonra otomatik olarak yeniden dener ve her denemeden önce daha uzun bekler. Sitenin engellediği indirmeler asla otomatik olarak yeniden denenmez.", "unit": "kez"},
@@ -295,13 +300,13 @@
 			"downloadConnections": {"label": "İndirme bağlantıları", "description": "Bir videonun birkaç parçasını aynı anda alarak büyük indirmeleri hızlandırır. Yüksek değerler sitenin sizi sınırlama ihtimalini artırır.", "unit": "bağlantı"},
 			"networkPacing": {
 				"heading": "Nazik indirmeler",
-				"description": "Arroxy’nin siteye fazla agresif davranmaması için her indirme sırasında küçük beklemeler ekle. Değerler saniye cinsindendir.",
-				"presetLabel": "Arroxy ne kadar temkinli olsun?",
+				"description": "Grabbit’nin siteye fazla agresif davranmaması için her indirme sırasında küçük beklemeler ekle. Değerler saniye cinsindendir.",
+				"presetLabel": "Grabbit ne kadar temkinli olsun?",
 				"tooltip": "Bu beklemeler her indirmenin içinde gerçekleşir. Aynı anda kaç indirmenin çalışacağı ayrı olarak «Aynı anda indirme» altında ayarlanır.",
 				"summary": "Beklemeler: kontroller arasında {{requests}}, medya başlamadan önce {{downloads}}, altyazı dosyalarından önce {{subtitles}}.",
 				"presets": {"off": "Kapalı", "balanced": "Dengeli", "careful": "Temkinli", "custom": "Özel"},
 				"tooltips": {
-					"off": "Arroxy’nin medya ve altyazılar için tuttuğu küçük temel duraklamaları kullanır.",
+					"off": "Grabbit’nin medya ve altyazılar için tuttuğu küçük temel duraklamaları kullanır.",
 					"balanced": "Varsayılan. İstekler arasında ve medya başlamadan önce kısa duraklamalar ekler.",
 					"careful": "Büyük oynatma listeleri veya sık sınırla karşılaşan ağlar için daha uzun duraklamalar ekler.",
 					"custom": "Gelişmiş indirme başına kontrolleri kendin ayarla."
@@ -314,9 +319,9 @@
 		},
 		"quickProgress": {
 			"title": "Hızlı İndirme hazırlanıyor",
-			"description": "Arroxy bağlantıyı okuyor ve {{profileName}} profilini uyguluyor.",
+			"description": "Grabbit bağlantıyı okuyor ve {{profileName}} profilini uyguluyor.",
 			"currentFallback": "Geçerli bağlantı",
-			"waitHint": "Arroxy kuyruğu hazırlarken bunu açık tut.",
+			"waitHint": "Grabbit kuyruğu hazırlarken bunu açık tut.",
 			"failedCount_one": "{{count}} başarısız",
 			"failedCount_other": "{{count}} başarısız",
 			"cancel": "Hazırlığı iptal et",
@@ -560,6 +565,7 @@
 			"hideArtifactsFor": "{{title}} için çıktıları gizle"
 		},
 		"artifact": {"media": "Medya", "subtitle": "Altyazı", "thumbnail": "Küçük resim", "description": "Açıklama", "companion": "Eşlikçi", "unknown": "Çıktı", "missing": "Eksik"},
+		"progress": {"downloading": "İndiriliyor", "merging": "Birleştiriliyor", "finishing": "Tamamlanıyor", "speed": "Hız", "remaining": "Kalan süre"},
 		"item": {
 			"defaultError": "İndirme başarısız oldu",
 			"retryingSoon": "otomatik yeniden deneniyor (deneme {{attempt}})",
@@ -586,7 +592,7 @@
 		}
 	},
 	"update": {
-		"message": {"generic": "Arroxy {{version}} kullanılabilir — sende {{currentVersion}} var.", "homebrew": "Arroxy {{version}} kullanılabilir — Homebrew ile güncelle.", "macosDirect": "Arroxy {{version}} kullanılabilir — yeni DMG’yi indir.", "portable": "Arroxy {{version}} kullanılabilir — yeni derlemeyi indir."},
+		"message": {"generic": "Grabbit {{version}} kullanılabilir — sende {{currentVersion}} var.", "homebrew": "Grabbit {{version}} kullanılabilir — Homebrew ile güncelle.", "macosDirect": "Grabbit {{version}} kullanılabilir — yeni DMG’yi indir.", "portable": "Grabbit {{version}} kullanılabilir — yeni derlemeyi indir."},
 		"install": "Yükle ve Yeniden Başlat",
 		"downloading": "İndiriliyor…",
 		"download": "İndir ↗",
@@ -597,7 +603,7 @@
 		"installFailed": "Güncelleme başarısız oldu",
 		"retry": "Tekrar dene"
 	},
-	"releaseNotes": {"title": "Arroxy {{version}} sürümündeki yenilikler", "description": "Yeni bir güncelleme kullanıyorsun. Öne çıkanlar burada.", "fullNotes": "Tam sürüm notları ↗", "continue": "Devam et"},
+	"releaseNotes": {"title": "Grabbit {{version}} sürümündeki yenilikler", "description": "Yeni bir güncelleme kullanıyorsun. Öne çıkanlar burada.", "fullNotes": "Tam sürüm notları ↗", "continue": "Devam et"},
 	"status": {
 		"preparingBinaries": "İkili dosyalar hazırlanıyor…",
 		"mintingToken": "YouTube jetonu oluşturuluyor…",
@@ -622,7 +628,7 @@
 		"downloadingBinary": "{{name}} ikili dosyası indiriliyor…",
 		"unknownStartupFailure": "Bilinmeyen indirme başlatma hatası",
 		"diskSpaceInsufficient": "Yeterli disk alanı yok — {{required}} gerekiyor, yalnızca {{free}} kullanılabilir",
-		"outputNotWritable": "{{dir}} konumuna kaydedilemiyor — Arroxy'nin oraya yazma izni yok",
+		"outputNotWritable": "{{dir}} konumuna kaydedilemiyor — Grabbit'nin oraya yazma izni yok",
 		"fetchingSponsorBlock": "SponsorBlock ile iletişim kuruluyor…",
 		"retryingSponsorBlock": "SponsorBlock kullanılamıyor, tekrar deneniyor ({{attempt}}/{{total}})…",
 		"retryingTransfer": "Bağlantı takıldı, yeniden deneniyor ({{attempt}}/{{total}})…"
@@ -639,28 +645,28 @@
 			"queued": "İndirme panodan eklendi",
 			"alreadyQueued": "Zaten kuyrukta — kopya eklenmedi",
 			"invalidClipboard": "Panoda bağlantı yok — önce bir tane kopyalayın",
-			"multipleUrls": "Birden fazla bağlantı kopyalandı — Arroxy'de Toplu URL'leri kullanın",
-			"needsReview": "Bu bağlantı hızlı bir inceleme gerektiriyor — Arroxy'yi açıp yeniden yapıştırın",
+			"multipleUrls": "Birden fazla bağlantı kopyalandı — Grabbit'de Toplu URL'leri kullanın",
+			"needsReview": "Bu bağlantı hızlı bir inceleme gerektiriyor — Grabbit'yi açıp yeniden yapıştırın",
 			"busy": "Önceki bağlantı hâlâ işleniyor",
-			"submissionFailed": "Bu bağlantı eklenemedi — Arroxy'de yeniden deneyin"
+			"submissionFailed": "Bu bağlantı eklenemedi — Grabbit'de yeniden deneyin"
 		},
 		"queue": {"skippedAlreadyQueued_one": "{{count}} video zaten kuyrukta — atlandı", "skippedAlreadyQueued_other": "{{count}} video zaten kuyrukta — atlandı"}
 	},
 	"errors": {
 		"ytdlp": {
-			"botBlock": "Bot koruması tetiklendi. Kullandığın IP büyük olasılıkla işaretlenmiş (veri merkezi aralığı veya yoğun VPN çıkışı). IP’ni değiştir veya farklı bir VPN uç noktası seçip tekrar dene. Sorun sürerse bu geçici bir site tarafı değişikliği olabilir — Arroxy açılışta yt-dlp’yi otomatik günceller, bu yüzden üst kaynak düzeltmeyi yayınladığında çözüm otomatik gelir.",
+			"botBlock": "Bot koruması tetiklendi. Kullandığın IP büyük olasılıkla işaretlenmiş (veri merkezi aralığı veya yoğun VPN çıkışı). IP’ni değiştir veya farklı bir VPN uç noktası seçip tekrar dene. Sorun sürerse bu geçici bir site tarafı değişikliği olabilir — Grabbit açılışta yt-dlp’yi otomatik günceller, bu yüzden üst kaynak düzeltmeyi yayınladığında çözüm otomatik gelir.",
 			"ipBlock": "IP adresin engellenmiş görünüyor. Daha sonra tekrar dene veya VPN kullan.",
 			"rateLimit": "Site istekleri hız sınırlıyor. Bir dakika bekleyip tekrar dene.",
 			"ageRestricted": "Bu video yaş kısıtlamalı ve oturum açılmış hesap olmadan indirilemez.",
 			"unavailable": "Bu video kullanılamıyor — özel, silinmiş veya bölge kilitli olabilir.",
 			"geoBlocked": "Bu video bölgenizde kullanılamıyor.",
 			"outOfDiskSpace": "Yeterli disk alanı yok. Yer açıp tekrar dene.",
-			"outputNotWritable": "Arroxy indirme klasörüne yazamıyor. Klasör salt okunur olabilir, kilitli bir sürücüde olabilir ya da sisteminin gizlilik ayarları tarafından engelleniyor olabilir. Başka bir klasör seç veya erişime izin ver, sonra tekrar dene.",
+			"outputNotWritable": "Grabbit indirme klasörüne yazamıyor. Klasör salt okunur olabilir, kilitli bir sürücüde olabilir ya da sisteminin gizlilik ayarları tarafından engelleniyor olabilir. Başka bir klasör seç veya erişime izin ver, sonra tekrar dene.",
 			"unsupportedUrl": "Bu URL yt-dlp tarafından desteklenmiyor. yt-dlp’nin desteklediği sitelerden farklı bir bağlantı dene.",
 			"chunkTransferFailure": "Sunucu indirmeyi akış ortasında kesmeye devam etti ve yt-dlp tekrar denemelerden sonra vazgeçti. Bu genelde en büyük video biçimlerinde görülür (4K HDR / yüksek bit hızlı VP9). Tekrar dene, ağı/VPN’i değiştir veya daha düşük çözünürlük seç.",
 			"missingDependency": "yt-dlp ffmpeg veya ffprobe bulamadı. Paketlenen ikili dosyaları onar veya bir FFmpeg konumu ayarla, sonra tekrar dene.",
 			"postprocessFailure": "yt-dlp indirmeyi bitirdi ama son işleme (birleştirme / mux / dönüştürme) başarısız oldu. Çoğu zaman geçici bir ffmpeg sorunudur — tekrar dene; sürerse farklı bir biçim kombinasyonu dene.",
-			"parse": "Siteden gelen yanıt ayrıştırılamadı. yt-dlp çıkarıcısı değişmiş olabilir. Arroxy açılışta yt-dlp’yi otomatik günceller — düzeltme yayınlandıktan birkaç dakika sonra tekrar dene.",
+			"parse": "Siteden gelen yanıt ayrıştırılamadı. yt-dlp çıkarıcısı değişmiş olabilir. Grabbit açılışta yt-dlp’yi otomatik günceller — düzeltme yayınlandıktan birkaç dakika sonra tekrar dene.",
 			"network": "Ağ hatası. Bağlantını kontrol edip tekrar dene.",
 			"drmProtected": "Bu video DRM korumalı. yt-dlp DRM’i kaldıramaz, bu yüzden dosya indirilemez.",
 			"loginRequired": "Bu video oturum açılmış hesap gerektiriyor. Bir cookies.txt ayarla (Ayarlar → Çerezler) ve tekrar dene.",
@@ -697,28 +703,28 @@
 		"mp4Cap": "YouTube’da 1080p üzeri H.264 kullanılamaz — otomatik olarak 1080p ile sınırlanır"
 	},
 	"formatLabel": {"audioFallback": "Ses", "audioOnlyDot": "Yalnızca ses · {{audio}}", "videoDot": "{{resolution}} · {{audio}}"},
-	"tray": {"tooltip": "Arroxy", "menu": {"statusIdle": "Boşta", "statusActive_one": "1 indiriliyor · {{percent}}%", "statusActive_other": "{{count}} indiriliyor · {{percent}}%", "downloadFromClipboard": "Panodan indir", "open": "Arroxy’yi aç", "quit": "Arroxy’den çık"}},
+	"tray": {"tooltip": "Grabbit", "menu": {"statusIdle": "Boşta", "statusActive_one": "1 indiriliyor · {{percent}}%", "statusActive_other": "{{count}} indiriliyor · {{percent}}%", "downloadFromClipboard": "Panodan indir", "open": "Grabbit’yi aç", "quit": "Grabbit’den çık"}},
 	"dialogs": {
 		"quitWithActiveDownloads": {"message_one": "{{count}} indirme sürüyor", "message_other": "{{count}} indirme sürüyor", "detail": "Daha sonra sürdürmek için duraklat veya ilerlemeyi silmek için iptal et.", "confirm": "İndirmeleri İptal Et ve Çık", "pause": "İndirmeleri Duraklat ve Çık", "keep": "İndirmeye Devam Et"},
-		"closeToTray": {"message": "Kapatırken Arroxy sistem tepsisine gizlensin mi?", "detail": "Arroxy çalışmaya devam eder ve etkin indirmeleri bitirir. Bunu daha sonra Gelişmiş ayarlardan değiştirebilirsin.", "hide": "Tepsiye gizle", "quit": "Çık", "remember": "Bir daha sorma"},
-		"rendererCrashed": {"message": "Arroxy bir sorunla karşılaştı", "detail": "Renderer süreci çöktü ({{reason}}). Tekrar denemek için yeniden yükle.", "reload": "Yeniden yükle", "quit": "Çık"}
+		"closeToTray": {"message": "Kapatırken Grabbit sistem tepsisine gizlensin mi?", "detail": "Grabbit çalışmaya devam eder ve etkin indirmeleri bitirir. Bunu daha sonra Gelişmiş ayarlardan değiştirebilirsin.", "hide": "Tepsiye gizle", "quit": "Çık", "remember": "Bir daha sorma"},
+		"rendererCrashed": {"message": "Grabbit bir sorunla karşılaştı", "detail": "Renderer süreci çöktü ({{reason}}). Tekrar denemek için yeniden yükle.", "reload": "Yeniden yükle", "quit": "Çık"}
 	},
 	"share": {
-		"title": "Arroxy’yi paylaş",
-		"description": "Arroxy ücretsiz ve açık kaynaklıdır. Paylaşmak daha fazla kişinin keşfetmesine yardımcı olur.",
+		"title": "Grabbit’yi paylaş",
+		"description": "Grabbit ücretsiz ve açık kaynaklıdır. Paylaşmak daha fazla kişinin keşfetmesine yardımcı olur.",
 		"copyLink": "Bağlantıyı kopyala",
 		"copied": "Kopyalandı!",
-		"defaultMessage": "Arroxy — Windows, macOS ve Linux için ücretsiz, açık kaynaklı video indirici. YouTube, Vimeo, Twitch ve 2000+ siteyle çalışır.\n4K · HDR · MP3 · Shorts · Altyazılar · SponsorBlock",
-		"footerTooltip": "Arroxy’yi paylaş",
+		"defaultMessage": "Grabbit — Windows, macOS ve Linux için ücretsiz, açık kaynaklı video indirici. YouTube, Vimeo, Twitch ve 2000+ siteyle çalışır.\n4K · HDR · MP3 · Shorts · Altyazılar · SponsorBlock",
+		"footerTooltip": "Grabbit’yi paylaş",
 		"footerLabel": "Paylaş",
-		"shareAction": "Arroxy’yi paylaş"
+		"shareAction": "Grabbit’yi paylaş"
 	},
 	"filenameTemplate": {
 		"label": "Dosya adı şablonu",
 		"description": "İndirilen dosyaların nasıl adlandırılacağını seç. Eklemek için bir simgeye tıkla. İndirmeleri klasörlere ayırmak için / kullan.",
 		"profileOverrideLabel": "Dosya adı şablonu",
 		"profileOverrideDescription": "Genel şablonu kullanmak için boş bırakın.",
-		"idWarning": "{id} olmadan Arroxy, daha önce indirilmiş oynatma listesi öğelerini algılayamaz ve .m3u oynatma listeleri oluşturamaz.",
+		"idWarning": "{id} olmadan Grabbit, daha önce indirilmiş oynatma listesi öğelerini algılayamaz ve .m3u oynatma listeleri oluşturamaz.",
 		"m3uDisabled": "Kullanılamıyor çünkü dosya adı şablonun ya {id} içermiyor ya da indirmeleri klasörlere ayırıyor.",
 		"previewSingle": "Tek video",
 		"previewPlaylist": "Oynatma listesinde",

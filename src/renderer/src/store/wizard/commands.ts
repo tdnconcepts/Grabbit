@@ -22,6 +22,8 @@ export const RESET_WIZARD_STATE = {
 	wizardTitle: '',
 	wizardThumbnail: '',
 	wizardDuration: undefined as number | undefined,
+	wizardPreviewUrl: undefined as string | undefined,
+	wizardPreviewFps: undefined as number | undefined,
 	wizardVideoId: '',
 	wizardUploader: '',
 	wizardUploadDate: '',
@@ -76,6 +78,9 @@ export const RESET_WIZARD_STATE = {
 	wizardWriteDescription: DEFAULTS.writeDescription,
 	wizardWriteThumbnail: DEFAULTS.writeThumbnail,
 	wizardWriteM3u: DEFAULTS.writeM3u,
+	wizardClipMode: 'full' as const,
+	wizardClipStart: '00:00',
+	wizardClipEnd: '',
 	wizardSubfolderEnabled: false,
 	wizardSubfolderName: '',
 	// sync-with-folder

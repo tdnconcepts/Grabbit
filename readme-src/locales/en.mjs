@@ -177,9 +177,7 @@ export const en = {
   feat_sites_4:
     "If a site changes, yt-dlp ships fixes weekly and Arroxy auto-updates the binary on launch",
   shot1_cap:
-    "<b>Quick Download home</b><br/>Paste a URL and pull it instantly with your active profile",
-  shot2_cap:
-    "<b>Reusable download profiles</b><br/>Save format, quality, and output presets — reuse per download",
+    "<b>Quick Download home</b><br/>Paste a URL and download with best quality instantly",
   shot3_cap:
     "<b>Multi-language audio tracks</b><br/>Pick the exact audio language a video ships",
   shot4_cap:

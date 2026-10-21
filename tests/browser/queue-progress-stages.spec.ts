@@ -1,0 +1,20 @@
+import {expect, test} from '@playwright/test'
+
+test('downloads show transfer speed and ETA, then distinct merging and finishing states', async ({page}) => {
+	await page.setViewportSize({width: 1500, height: 950})
+	await page.goto('/?scenario=queue-parallel&locale=fr&theme=dark')
+	await page.getByRole('tab', {name: /Téléchargements/}).click()
+	const download = page.getByTestId('queue-manager-row-queue-parallel-1')
+	await expect(download.getByTestId('queue-speed')).toHaveText('18.4 MiB/s')
+	await expect(download.getByTestId('queue-eta')).toHaveText('0:42')
+	const merging = page.getByTestId('queue-manager-row-queue-parallel-2')
+	await expect(merging.getByTestId('queue-progress-label')).toHaveText('Fusion')
+	await expect(merging.getByRole('progressbar')).not.toHaveAttribute('aria-valuenow')
+	await expect(merging.getByTestId('queue-speed')).toHaveCount(0)
+	const finishing = page.getByTestId('queue-manager-row-queue-parallel-3')
+	await expect(finishing.getByTestId('queue-progress-label')).toHaveText('Finalisation')
+	await expect(finishing.getByTestId('queue-eta')).toHaveCount(0)
+	await page.screenshot({path: 'dist/Grabbit-progress-stages.png'})
+	await page.setViewportSize({width: 760, height: 800})
+	await expect(download.getByTestId('queue-speed')).toBeVisible()
+})

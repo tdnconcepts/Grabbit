@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import {fireEvent, render, screen, within} from '@testing-library/react'
+import {render, screen, within} from '@testing-library/react'
 import {beforeEach, describe, expect, it, vi} from 'vite-plus/test'
 import {App} from '@renderer/App.js'
 import {StepUrlInput} from '@renderer/components/wizard/StepUrlInput.js'
@@ -13,22 +13,21 @@ describe('DownloadProfilesHome action rows', () => {
 		window.history.replaceState(null, '', '/')
 		window.appApi = buildMockAppApi()
 		window.platform = 'linux'
-		useAppStore.setState({initialized: true, initializing: false, settings: defaultAppSettings('/tmp'), wizardStep: 'url', wizardUrl: '', formatsLoading: false, quickDownloadStatus: 'idle', quickDownloadFailure: null, quickDownloadQueueIds: [], queue: []})
+		useAppStore.setState({initialized: true, initializing: false, aboutDialogOpen: false, settings: defaultAppSettings('/tmp'), wizardStep: 'url', wizardUrl: '', formatsLoading: false, quickDownloadStatus: 'idle', quickDownloadFailure: null, quickDownloadQueueIds: [], queue: []})
 		vi.clearAllMocks()
 	})
 
-	it('keeps secondary actions compact instead of stretching across wide panels', () => {
+	it('keeps the URL panel compact and separate from analyzed options', () => {
 		render(
 			<TooltipProvider>
 				<StepUrlInput />
 			</TooltipProvider>
 		)
 
-		const actionRows = screen.getByTestId('profiles-action-rows')
-
-		expect(actionRows).toHaveClass('w-full')
-		expect(actionRows).toHaveClass('lg:grid-cols-[repeat(2,minmax(0,35rem))]')
-		expect(actionRows).toHaveClass('lg:justify-start')
+		const panel = screen.getByTestId('profiles-download-panel')
+		expect(panel).toHaveClass('utility-panel')
+		expect(within(panel).getByTestId('profiles-quick-download')).toBeInTheDocument()
+		expect(screen.queryByTestId('profiles-interactive-download')).not.toBeInTheDocument()
 	})
 
 	it('keeps static supported-site proof out of the main URL workflow', () => {
@@ -42,7 +41,7 @@ describe('DownloadProfilesHome action rows', () => {
 		expect(screen.queryByText('2000+ sites')).not.toBeInTheDocument()
 	})
 
-	it('uses the mascot as dynamic URL-panel guidance instead of a separate helper block', () => {
+	it('uses concise inline guidance instead of a decorative helper block', () => {
 		render(
 			<TooltipProvider>
 				<StepUrlInput />
@@ -51,9 +50,8 @@ describe('DownloadProfilesHome action rows', () => {
 
 		const panel = screen.getByTestId('profiles-download-panel')
 
-		expect(within(panel).getByTestId('profiles-mascot-header')).toBeInTheDocument()
-		expect(within(panel).getByTestId('profiles-mascot-copy')).toHaveTextContent('Drop a link and let Arroxy pull it ✨')
-		expect(within(panel).queryByText('Paste a video, playlist, channel, or search URL to get started.')).not.toBeInTheDocument()
+		expect(within(panel).getByText('Paste a link to analyze it automatically, then choose everything here.')).toBeInTheDocument()
+		expect(within(panel).queryByTestId('profiles-mascot-header')).not.toBeInTheDocument()
 		expect(screen.queryByTestId('profiles-mascot-help')).not.toBeInTheDocument()
 	})
 })
@@ -69,9 +67,8 @@ describe('About capabilities', () => {
 	})
 
 	it('moves the static supported-site proof into the About dialog', async () => {
+		useAppStore.setState({aboutDialogOpen: true})
 		render(<App />)
-
-		fireEvent.click(await screen.findByTestId('btn-about'))
 
 		const about = await screen.findByTestId('about-dialog')
 		const capabilities = within(about).getByTestId('about-capabilities')

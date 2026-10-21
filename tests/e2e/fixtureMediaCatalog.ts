@@ -61,7 +61,7 @@ export const SPLIT_MEDIA_VIDEO_ID = splitMediaVideo.id
 const awkwardTitleVideo = catalog.videos.find(video => titleOverride(video) !== undefined)
 if (!awkwardTitleVideo) throw new Error('fixture-media-catalog.json must define a video with an awkward title')
 export const AWKWARD_TITLE_VIDEO_ID = awkwardTitleVideo.id
-/** The raw title, before any sanitizing or shortening Arroxy applies. */
+/** The raw title, before any sanitizing or shortening Grabbit applies. */
 export const AWKWARD_TITLE = titleOverride(awkwardTitleVideo) ?? ''
 // Mimics a signed-in session YouTube limited: the 720p format comes back without
 // a URL and yt-dlp prints its SABR warning, leaving only the 360p fallback.

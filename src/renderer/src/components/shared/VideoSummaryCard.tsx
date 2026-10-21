@@ -11,6 +11,7 @@ interface Props {
 	// the meta line's first chunk. Empty pre-probe (e.g. queue items restored
 	// before extractor identity was tracked) drops the chunk.
 	webpageUrl?: string
+	uploader?: string
 }
 
 function safeHost(url: string | undefined): string | null {
@@ -22,7 +23,7 @@ function safeHost(url: string | undefined): string | null {
 	}
 }
 
-export function VideoSummaryCard({thumbnail, title, duration, resolution, webpageUrl}: Props): ReactNode {
+export function VideoSummaryCard({thumbnail, title, duration, resolution, webpageUrl, uploader}: Props): ReactNode {
 	const {t} = useTranslation()
 	const host = safeHost(webpageUrl)
 	const meta = [host, duration !== undefined ? formatDuration(duration) : null, resolution ?? null].filter(Boolean).join(' · ')
@@ -34,6 +35,7 @@ export function VideoSummaryCard({thumbnail, title, duration, resolution, webpag
 			</div>
 			<div className="flex flex-col gap-[2px] flex-1 min-w-0">
 				<p className="truncate text-sm leading-snug font-bold text-foreground">{title || t('videoCard.titlePlaceholder')}</p>
+				{uploader ? <p className="truncate text-xs text-muted-foreground">{uploader}</p> : null}
 				<p className="text-xs text-subtle-foreground">{meta}</p>
 			</div>
 		</div>

@@ -5,13 +5,13 @@
 		"logs": "Jurnallar",
 		"saveDiagnostics": "Diagnostika faylini saqlash",
 		"saveDiagnosticsDescription": "Jurnallar va ilova ma'lumotlarini Yuklanmalar jildidagi bitta faylga to'playdi, uni GitHub issue'ga biriktirish mumkin. Foydalanuvchi jildingiz nomi olib tashlanadi; video havolalari va sarlavhalari qoladi.",
-		"feedbackNudge": "Arroxy yoqdimi? Fikringizni bilmoqchiman! 💬",
+		"feedbackNudge": "Grabbit yoqdimi? Fikringizni bilmoqchiman! 💬",
 		"zoomIn": "Kattalashtirish",
 		"zoomOut": "Kichraytirish"
 	},
 	"about": {
 		"button": "Dastur haqida",
-		"openTitle": "Arroxy haqida",
+		"openTitle": "Grabbit haqida",
 		"tagline": "YouTube va 2000+ boshqa saytlar uchun tez va qulay yuklab oluvchi.",
 		"websiteLink": "Veb-sayt",
 		"githubLink": "GitHub",
@@ -124,7 +124,7 @@
 			"nestedPlaylistHint_other": "Bulardan {{count}} tasi video emas, ijro roʻyxati — ularni yuklab olish uchun havolalarini bittalab joylashtiring.",
 			"probeLimitAlertTitle": "Pleylist skaneri cheklangan",
 			"probeLimitAlertTitleGeneric": "Skanlash cheklangan",
-			"probeLimitAlertDesc": "Arroxy {{count}} tadan ortiq element topdi, shuning uchun joriy skaner chekovi qolganlarini yashirmoqda.",
+			"probeLimitAlertDesc": "Grabbit {{count}} tadan ortiq element topdi, shuning uchun joriy skaner chekovi qolganlarini yashirmoqda.",
 			"multiProfileEntry": "Har bir element uchun profil belgilash",
 			"multiProfileEntryTooltip": "Sifat, SponsorBlock, Chiqish va Saqlashni oʻtkazib yuboradi — buning oʻrniga har bir element uchun yuklab olish profilini belgilaydi",
 			"removeFromListCount_one": "Ro'yxatdan {{count}} tasini o'chirish",
@@ -137,7 +137,7 @@
 		},
 		"bulk": {
 			"title": "Ommaviy URLlar",
-			"description": "Video, pleylist, kanal, qidiruv yoki audio URLlarini joylashtiring. Arroxy navbatga qo'shishdan oldin dublikatlarni tozalaydi.",
+			"description": "Video, pleylist, kanal, qidiruv yoki audio URLlarini joylashtiring. Grabbit navbatga qo'shishdan oldin dublikatlarni tozalaydi.",
 			"textareaLabel": "URL ro‘yxati",
 			"textareaPlaceholder": "https://video.example/one\nhttps://video.example/two\nhttps://video.example/three",
 			"acceptedCount": "Tayyor",
@@ -157,63 +157,71 @@
 			"pickFromPlaylist": "Playlist dan tanlash",
 			"quickWholePlaylist": "Butun pleylistni yuklab olish",
 			"playlistLimit": "Pleylist tekshiruv chegarasi: {{count}} ta element",
-			"quickLimitDescription": "Pleylist, kanal yoki qidiruv natijasini navbatga qo‘yishdan oldin Arroxy skanerlaydigan eng ko‘p elementlar soni.",
+			"quickLimitDescription": "Pleylist, kanal yoki qidiruv natijasini navbatga qo‘yishdan oldin Grabbit skanerlaydigan eng ko‘p elementlar soni.",
 			"singleTooltip": "Bu URLga ulangan pleylist e’tiborsiz qolishi uchun yt-dlp bitta video rejimidan foydalanadi.",
 			"quickSingleTooltip": "Bitta yuklab olishni navbatga qo‘yadi va bu URLga biriktirilgan pleylistni e’tiborsiz qoldiradi.",
 			"playlistTooltip": "Tanlagichni ko‘rsatishdan oldin yt-dlp pleylist rejimida belgilangan chegaragacha yuklaydi.",
-			"quickPlaylistTooltip": "Yuklangan har bir pleylist elementini faol Tez yuklab olish profili bilan navbatga qo‘yadi. Skanerlash limitingizga yetsa, Arroxy navbatga qo‘yishdan oldin so‘raydi."
+			"quickPlaylistTooltip": "Yuklangan har bir pleylist elementini faol Tez yuklab olish profili bilan navbatga qo‘yadi. Skanerlash limitingizga yetsa, Grabbit navbatga qo‘yishdan oldin so‘raydi."
 		},
 		"url": {
 			"heading": "URL orqali yuklab olish",
 			"placeholder": "https://www.youtube.com/watch?v=...",
-			"tabs": {"profiles": "Profillar", "settings": "Sozlamalar"},
+			"workspace": {
+				"description": "Avtomatik tahlil qilish uchun havolani joylashtiring, so'ngra bu erda hamma narsani tanlang.",
+				"invalidUrl": "Yaroqli HTTP yoki HTTPS URL manzilini kiriting.",
+				"analyzing": "Havola tahlil qilinmoqda…",
+				"options": "Yuklab olish imkoniyatlari",
+				"advanced": "Kengaytirilgan variantlar",
+				"download": "Yuklab oling",
+				"bestAudio": "Eng yaxshi audio",
+				"destination": "Belgilangan manzilni yuklab oling",
+				"changeDestination": "Belgilangan manzilni o'zgartirish",
+				"filenameTemplate": "Chiqish fayl nomi shabloni",
+				"trim": {
+					"heading": "Muayyan qismni yuklab oling",
+					"description": "SS, MM:SS yoki HH:MM:SS ni qabul qiladi.",
+					"previewHeading": "Klipni oldindan ko‘rish",
+					"previewDescription": "Aniq kesish nuqtalarini tanlash uchun videoni ijro eting yoki suring.",
+					"previewUnavailable": "Bu manba uchun oldindan ko‘rish mavjud emas. Vaqt shkalasi va vaqt maydonlaridan foydalanishingiz mumkin.",
+					"setStart": "Boshlanishni belgilash",
+					"setEnd": "Tugashni belgilash",
+					"selectedRange": "Tanlangan oraliq",
+					"zoom": "Vaqt chizig‘ini kattalashtirish",
+					"position": "Vaqt chizig‘idagi joy",
+					"previousFrame": "Oldingi kadr",
+					"nextFrame": "Keyingi kadr",
+					"stepBack": "Bir qadam orqaga",
+					"stepForward": "Bir qadam oldinga",
+					"loop": "Lavhani takrorlash",
+					"full": "To'liq video",
+					"custom": "Maxsus diapazon",
+					"start": "Boshlanish vaqti",
+					"end": "Tugash vaqti",
+					"useEnd": "Video oxiridan foydalaning",
+					"reset": "Diapazonni tiklash",
+					"summary": "Boshlash {{start}} — Tugash {{end}} — Klip uzunligi {{length}}",
+					"error": {"start": "Nol yoki undan keyin to'g'ri boshlanish vaqtini kiriting.", "end": "Yaroqli tugash vaqtini kiriting.", "order": "Tugash vaqti boshlanish vaqtidan kechroq bo'lishi kerak.", "duration": "Boshlanish va tugash vaqtlari video davomiyligi ichida qolishi kerak."}
+				}
+			},
+			"tabs": {"settings": "Sozlamalar"},
 			"interactiveDownload": "Formatlarni olish",
-			"fetchFormatsTooltip": "Bosqichma-bosqich yordamchi. Format, sifat va boshqalarni tanlang.",
 			"quickDownload": "Tez yuklab olish",
 			"quickDownloadTooltip": "{{profileName}} orqali yuklab olinadi",
 			"quickPreparing": "Tayyorlanmoqda",
-			"quickQueued": "Navbatga qo‘shildi",
-			"quickSingleOnly": "Boshlash uchun video, pleylist, kanal yoki qidiruv URL manzilini joylang.",
 			"quickProbeFailed": "Tekshiruv muvaffaqiyatsiz",
 			"quickPrepareFailed": "Navbat elementi tayyorlanmadi",
 			"quickBulkAllFailed": "Bu URLlarning hech birini tayyorlab bo‘lmadi",
 			"quickFailed": "Buni qo‘shib bo‘lmadi: {{error}}",
 			"quickPartialFailed_one": "Ishlagani navbatga qo‘shildi. {{count}} ta URL tayyorlanmadi.",
 			"quickPartialFailed_other": "Ishlaganlari navbatga qo‘shildi. {{count}} ta URL tayyorlanmadi.",
-			"profile": {
-				"destinationFallback": "Manzil",
-				"switchAria": "Yuklab olish profilini almashtirish: {{profileName}}",
-				"switchTitle": "Yuklab olish profilini almashtirish",
-				"activeLabel": "Faol profil",
-				"editActive": "Faol profilni tahrirlash",
-				"changeGlobalDestination": "Umumiy saqlash manzilini o'zgartirish",
-				"menuTitle": "Profilni almashtirish",
-				"menuDescription": "Quick Download, ko'p URL va pleylistlar uchun faol profilni o'zgartiring.",
-				"newProfile": "Yangi profil",
-				"manageProfiles": "Profillarni boshqarish",
-				"panelTitle": "Yuklab olish profillari",
-				"panelDescription": "Qayta ishlatiladigan yuklab olish sozlamalarini yarating, tanlang, tahrirlang yoki olib tashlang.",
-				"badgeCustom": "Maxsus",
-				"badgeModified": "O‘zgartirilgan",
-				"badgeBuiltIn": "Ichki",
-				"badgeDisabled": "Yashirin",
-				"enableToggleAria": "Tanlagichlarda profilni ko'rsatish: {{profileName}}",
-				"enableHint": "Yashirin profillar shu yerda qoladi, lekin barcha tanlagichlardan yo'qoladi.",
-				"lastEnabledHint": "Kamida bitta profilni mavjud saqlang.",
-				"edit": "Tahrirlash",
-				"remove": "Olib tashlash",
-				"reset": "Qayta tiklash"
-			},
+			"profile": {"changeGlobalDestination": "Umumiy saqlash manzilini o'zgartirish", "reset": "Qayta tiklash"},
 			"bulkButton": "Ommaviy URLlar",
-			"bulkTooltip": "Bir nechta URLni qo‘shing va navbatga qo‘ying.",
 			"features": {
-				"heading": "Arroxy nima yuklab olishi mumkin",
+				"heading": "Grabbit nima yuklab olishi mumkin",
 				"youtube": {"heading": "YouTube", "video": "Videolar", "channel": "Kanallar", "playlist": "Ijro roʻyxatlari", "short": "Shortlar", "music": "Musiqa", "podcast": "Podkastlar"},
 				"anySite": {"heading": "2000+ sayt", "video": "Videolar", "videoPlaylist": "Video pleylistlar", "musicPlaylist": "Musiqa pleylistlar"},
 				"always": {"audioOnly": "Faqat audio", "subtitles": "Subtitrlar"}
 			},
-			"mascotIdle": "Havolani tashlang, Arroxy uni tortib olsin ✨",
-			"mascotBusy": "Fonda yuklanmoqda… Men bir vaqtda ko'p ish qila olaman 😎",
 			"advanced": "Kengaytirilgan",
 			"settings": {"inputHeading": "Kiritish", "behaviorHeading": "Yuklash xatti-harakati", "behaviorDescription": "Profillar orqali boshqariladigan yuklamalarga ham taʼsir qiluvchi global xatti-harakat."},
 			"clearAria": "URLni tozalash",
@@ -229,16 +237,13 @@
 			},
 			"hotkey": {
 				"sectionTitle": "Global tez tugma",
-				"sectionDescription": "Nusxa olingan havolani, Arroxy ochmasdan, istalgan ilovadan yuklab oling.",
+				"sectionDescription": "Nusxa olingan havolani, Grabbit ochmasdan, istalgan ilovadan yuklab oling.",
 				"toggle": "Global tez tugmani yoqish",
 				"toggleDescription": "Buferda video havolasi bo‘lganda tez tugmani bosing.",
 				"changeShortcut": "Tez tugmani o‘zgartirish",
 				"recording": "Tugmalarni bosing…",
 				"test": "Sinash",
 				"conflict": "Bu tez tugma boshqa ilova tomonidan band — boshqasini tanlang.",
-				"hintLabel": "Yoki bosing",
-				"hintTooltip": "Video havolasini istalgan joyda nusxalang, shu yorliqni bosing, Arroxy esa uni faol profilingiz bilan navbatga qo‘shadi — oynalarni almashtirish shart emas.",
-				"hintTooltipSettings": "Uni Sozlamalarda o‘zgartiring yoki o‘chirib qo‘ying.",
 				"reset": "Standartga qaytarish"
 			},
 			"cookies": {
@@ -265,14 +270,14 @@
 			"proxy": {"label": "Proxy URL", "description": "Trafikni proksi orqali yo'naltirish — geo-cheklangan kontent uchun foydali.", "placeholder": "http://host:port", "clear": "Tozalash"},
 			"backdrop": {
 				"panelTitle": "Ko‘rinish va unumdorlik",
-				"panelDescription": "Arroxy animatsiyali fon uchun qancha harakat ishlatishini tanlang.",
+				"panelDescription": "Grabbit animatsiyali fon uchun qancha harakat ishlatishini tanlang.",
 				"modeLabel": "Fon sifati",
 				"modeDescription": "Eng animatsiyali ko‘rinishdan eng yaxshi unumdorlikka o‘ting.",
 				"cssOnlyLabel": "Eng yaxshi unumdorlik",
 				"cssOnlyDescription": "Faqat CSS, canvas render qilinmaydi.",
 				"gpuLabel": "Eng chiroyli",
 				"gpuDescription": "Qo‘llab-quvvatlansa, animatsiyali WebGL fon.",
-				"runtimeFallbackNotice": "Bu qurilmada apparat WebGL mavjud emas, shuning uchun Arroxy unumdorlik fonidan foydalanmoqda."
+				"runtimeFallbackNotice": "Bu qurilmada apparat WebGL mavjud emas, shuning uchun Grabbit unumdorlik fonidan foydalanmoqda."
 			},
 			"limitRate": {
 				"label": "Yuklab olish tezligi chegarasi",
@@ -285,7 +290,7 @@
 			},
 			"playlistProbeLimit": {
 				"label": "Skanerlash uchun pleylist elementlari",
-				"description": "Arroxy pleylist, kanal yoki qidiruv natijasi ochilganda yuklaydigan maksimal yozuvlar soni.",
+				"description": "Grabbit pleylist, kanal yoki qidiruv natijasi ochilganda yuklaydigan maksimal yozuvlar soni.",
 				"option": "{{count}} ta element",
 				"current": "Joriy chegara: {{count}} ta element",
 				"customValue": "Maxsus: {{count}} ta element",
@@ -295,7 +300,7 @@
 				"customDialogCancel": "Bekor qilish",
 				"customDialogSave": "Chegarani saqlash",
 				"invalid": "1 dan 5000 gacha bo'lgan butun son kiriting",
-				"tooltip": "yt-dlp --playlist-end ga to'g'ri keladi: Arroxy tanlagichni qurishdan oldin faqat shu miqdordagi pleylist, kanal yoki qidiruv yozuvlarini so'raydi."
+				"tooltip": "yt-dlp --playlist-end ga to'g'ri keladi: Grabbit tanlagichni qurishdan oldin faqat shu miqdordagi pleylist, kanal yoki qidiruv yozuvlarini so'raydi."
 			},
 			"nativeAudioPreference": {"label": "Asl audio afzalligi", "description": "“Best native” nimani tanlashini boshqaradi. Qo‘lda tanlangan audio qatorlari va M4A/AAC aniq tanlov bo‘lib qoladi.", "compatible": "Mos stereo", "surround": "Surround / Dolbyni afzal ko‘rish"},
 			"autoRetry": {"label": "Muvaffaqiyatsiz yuklamalarni qayta urinish", "description": "Tarmoq yoki server nosozligidan so'ng avtomatik qayta urinadi va har urinishdan oldin uzoqroq kutadi. Sayt tomonidan bloklangan yuklamalar hech qachon avtomatik qayta urinilmaydi.", "unit": "marta"},
@@ -303,13 +308,13 @@
 			"downloadConnections": {"label": "Yuklab olish ulanishlari", "description": "Videoning bir nechta qismini bir vaqtda olib, katta yuklamalarni tezlashtiradi. Yuqori qiymatlar sayt sizni cheklash ehtimolini oshiradi.", "unit": "ulanish"},
 			"networkPacing": {
 				"heading": "Yumshoq yuklamalar",
-				"description": "Arroxy saytga haddan tashqari agressiv murojaat qilmasligi uchun har bir yuklab olish paytida kichik kutish vaqtlari qo'shadi. Qiymatlar soniyalarda.",
-				"presetLabel": "Arroxy qanchalik ehtiyotkor bo‘lsin?",
+				"description": "Grabbit saytga haddan tashqari agressiv murojaat qilmasligi uchun har bir yuklab olish paytida kichik kutish vaqtlari qo'shadi. Qiymatlar soniyalarda.",
+				"presetLabel": "Grabbit qanchalik ehtiyotkor bo‘lsin?",
 				"tooltip": "Bu kutishlar har bir yuklama ichida sodir bo'ladi. Bir vaqtda qancha yuklama ishlashi «Bir vaqtda yuklamalar» bo'limida alohida belgilanadi.",
 				"summary": "Kutish: {{requests}} tekshiruvlar orasida, {{downloads}} media boshlanishidan oldin, {{subtitles}} subtitrl fayllaridan oldin.",
 				"presets": {"off": "O'chiriq", "balanced": "Muvozanatli", "careful": "Ehtiyotkor", "custom": "Maxsus"},
 				"tooltips": {
-					"off": "Arroxy media va subtitrlar uchun saqlaydigan kichik asosiy tanaffuslarnigina ishlatadi.",
+					"off": "Grabbit media va subtitrlar uchun saqlaydigan kichik asosiy tanaffuslarnigina ishlatadi.",
 					"balanced": "Standart. So'rovlar orasida va media boshlanishidan oldin qisqa tanaffuslar qo'shadi.",
 					"careful": "Katta pleylistlar yoki tez-tez cheklovlarga duch keladigan tarmoqlar uchun uzunroq tanaffuslar qo'shadi.",
 					"custom": "Yuklab olish boshqaruvlarini o'zingiz sozlang."
@@ -322,9 +327,9 @@
 		},
 		"quickProgress": {
 			"title": "Tez yuklab olish tayyorlanmoqda",
-			"description": "Arroxy havolani o‘qiyapti va {{profileName}} profilini qo‘llayapti.",
+			"description": "Grabbit havolani o‘qiyapti va {{profileName}} profilini qo‘llayapti.",
 			"currentFallback": "Joriy havola",
-			"waitHint": "Arroxy navbatni tayyorlayotganda buni ochiq qoldiring.",
+			"waitHint": "Grabbit navbatni tayyorlayotganda buni ochiq qoldiring.",
 			"failedCount_one": "{{count}} ta muvaffaqiyatsiz",
 			"failedCount_other": "{{count}} ta muvaffaqiyatsiz",
 			"cancel": "Tayyorlashni bekor qilish",
@@ -568,6 +573,7 @@
 			"hideArtifactsFor": "{{title}} uchun fayllarni yashirish"
 		},
 		"artifact": {"media": "Media", "subtitle": "Subtitr", "thumbnail": "Eskiz", "description": "Tavsif", "companion": "Qo‘shimcha fayl", "unknown": "Fayl", "missing": "Yo‘q"},
+		"progress": {"downloading": "Yuklab olinmoqda", "merging": "Birlashtirilmoqda", "finishing": "Yakunlanmoqda", "speed": "Tezlik", "remaining": "Qolgan vaqt"},
 		"item": {
 			"defaultError": "Yuklama muvaffaqiyatsiz",
 			"retryingSoon": "avtomatik qayta urinilmoqda ({{attempt}}-urinish)",
@@ -594,7 +600,7 @@
 		}
 	},
 	"update": {
-		"message": {"generic": "Arroxy {{version}} mavjud — sizda {{currentVersion}} bor.", "homebrew": "Arroxy {{version}} mavjud — Homebrew orqali yangilang.", "macosDirect": "Arroxy {{version}} mavjud — yangi DMG ni yuklab oling.", "portable": "Arroxy {{version}} mavjud — yangi build ni yuklab oling."},
+		"message": {"generic": "Grabbit {{version}} mavjud — sizda {{currentVersion}} bor.", "homebrew": "Grabbit {{version}} mavjud — Homebrew orqali yangilang.", "macosDirect": "Grabbit {{version}} mavjud — yangi DMG ni yuklab oling.", "portable": "Grabbit {{version}} mavjud — yangi build ni yuklab oling."},
 		"install": "O'rnatish va qayta ishga tushirish",
 		"downloading": "Yuklanmoqda…",
 		"download": "Download ↗",
@@ -605,7 +611,7 @@
 		"installFailed": "Yangilanish muvaffaqiyatsiz",
 		"retry": "Qayta urinish"
 	},
-	"releaseNotes": {"title": "Arroxy {{version}} dagi yangiliklar", "description": "Siz yangi yangilanishdan foydalanmoqdasiz. Asosiy yangiliklar quyida.", "fullNotes": "To'liq reliz qaydlari ↗", "continue": "Davom etish"},
+	"releaseNotes": {"title": "Grabbit {{version}} dagi yangiliklar", "description": "Siz yangi yangilanishdan foydalanmoqdasiz. Asosiy yangiliklar quyida.", "fullNotes": "To'liq reliz qaydlari ↗", "continue": "Davom etish"},
 	"status": {
 		"preparingBinaries": "Ikkilik fayllar tayyorlanmoqda…",
 		"mintingToken": "YouTube tokeni yaratilmoqda…",
@@ -630,7 +636,7 @@
 		"downloadingBinary": "{{name}} ikkilik fayli yuklanmoqda…",
 		"unknownStartupFailure": "Noma'lum yuklama ishga tushirish xatosi",
 		"diskSpaceInsufficient": "Disk xotirasi yetarli emas — {{required}} kerak, faqat {{free}} mavjud",
-		"outputNotWritable": "{{dir}} ga saqlab bo'lmaydi — Arroxy'ga u yerga yozishga ruxsat berilmagan",
+		"outputNotWritable": "{{dir}} ga saqlab bo'lmaydi — Grabbit'ga u yerga yozishga ruxsat berilmagan",
 		"fetchingSponsorBlock": "SponsorBlock bilan bog'lanilmoqda…",
 		"retryingSponsorBlock": "SponsorBlock mavjud emas, qayta urinilmoqda ({{attempt}}/{{total}})…",
 		"retryingTransfer": "Ulanish to'xtadi, qayta urinilmoqda ({{attempt}}/{{total}})…"
@@ -647,28 +653,28 @@
 			"queued": "Yuklab olish navbatga qo'shildi",
 			"alreadyQueued": "Allaqachon navbatda — nusxa qo'shilmadi",
 			"invalidClipboard": "Vaqtinchalik buferda havola yo'q — avval birini nusxalang",
-			"multipleUrls": "Bir nechta havola nusxalandi — Arroxyda “Ommaviy URLlar”dan foydalaning",
-			"needsReview": "Bu havola tezkor tekshiruvni talab qiladi — Arroxy'ni ochib qayta joylang",
+			"multipleUrls": "Bir nechta havola nusxalandi — Grabbitda “Ommaviy URLlar”dan foydalaning",
+			"needsReview": "Bu havola tezkor tekshiruvni talab qiladi — Grabbit'ni ochib qayta joylang",
 			"busy": "Oldingi havola hali ishlanmoqda",
-			"submissionFailed": "Bu havolani qo'shib bo'lmadi — Arroxyda qayta urinib ko'ring"
+			"submissionFailed": "Bu havolani qo'shib bo'lmadi — Grabbitda qayta urinib ko'ring"
 		},
 		"queue": {"skippedAlreadyQueued_one": "{{count}} ta video allaqachon navbatda — o‘tkazib yuborildi", "skippedAlreadyQueued_other": "{{count}} ta video allaqachon navbatda — o‘tkazib yuborildi"}
 	},
 	"errors": {
 		"ytdlp": {
-			"botBlock": "Bot himoyasi ishga tushdi. Siz foydalanayotgan IP manzil, ehtimol, bloklangan (ma'lumot markazi diapazoni yoki band VPN chiqish nuqtasi). IP manzilingizni o'zgartiring yoki boshqa VPN nuqtasini tanlang va qayta urinib ko'ring. Muammo davom etsa, bu YouTube tomonidan vaqtinchalik o'zgarish bo'lishi mumkin — Arroxy ishga tushganda yt-dlp ni avtomatik yangilaydi, shuning uchun tuzatish yuqori oqim chiqarilishi bilan avtomatik amalga oshiriladi.",
+			"botBlock": "Bot himoyasi ishga tushdi. Siz foydalanayotgan IP manzil, ehtimol, bloklangan (ma'lumot markazi diapazoni yoki band VPN chiqish nuqtasi). IP manzilingizni o'zgartiring yoki boshqa VPN nuqtasini tanlang va qayta urinib ko'ring. Muammo davom etsa, bu YouTube tomonidan vaqtinchalik o'zgarish bo'lishi mumkin — Grabbit ishga tushganda yt-dlp ni avtomatik yangilaydi, shuning uchun tuzatish yuqori oqim chiqarilishi bilan avtomatik amalga oshiriladi.",
 			"ipBlock": "IP manzilingiz YouTube tomonidan bloklangan ko'rinadi. Keyinroq urinib ko'ring yoki VPN ishlating.",
 			"rateLimit": "YouTube so'rovlarni cheklayapti. Bir daqiqa kuting va qayta urinib ko'ring.",
 			"ageRestricted": "Bu video yosh cheklovli va tizimga kirgan hisob bo'lmasdan yuklab bo'lmaydi.",
 			"unavailable": "Bu video mavjud emas — u shaxsiy, o'chirilgan yoki mintaqa bilan cheklangan bo'lishi mumkin.",
 			"geoBlocked": "Bu video sizning mintaqangizda mavjud emas.",
 			"outOfDiskSpace": "Disk xotirasi yetarli emas. Bo'sh joy ajrating va qayta urinib ko'ring.",
-			"outputNotWritable": "Arroxy yuklab olish jildiga yoza olmayapti. Jild faqat o'qish uchun bo'lishi, qulflangan diskda turishi yoki tizimingizning maxfiylik sozlamalari tomonidan bloklangan bo'lishi mumkin. Boshqa jildni tanlang yoki kirishga ruxsat bering, so'ng qayta urinib ko'ring.",
+			"outputNotWritable": "Grabbit yuklab olish jildiga yoza olmayapti. Jild faqat o'qish uchun bo'lishi, qulflangan diskda turishi yoki tizimingizning maxfiylik sozlamalari tomonidan bloklangan bo'lishi mumkin. Boshqa jildni tanlang yoki kirishga ruxsat bering, so'ng qayta urinib ko'ring.",
 			"unsupportedUrl": "Bu URL yt-dlp tomonidan qo'llab-quvvatlanmaydi. yt-dlp qo'llab-quvvatlaydigan saytlardan boshqa havolani sinab ko'ring.",
 			"chunkTransferFailure": "Server yuklab olishni o'rtasida uzib qo'ydi va yt-dlp qayta urinishlardan so'ng voz kechdi. Bu odatda eng katta video formatlarida (4K HDR / yuqori bitreytli VP9) uchraydi. Qayta urining, tarmoq/VPN almashtiring yoki pastroq ruxsat formatini tanlang.",
 			"missingDependency": "yt-dlp ffmpeg yoki ffprobe ni topa olmadi. Ichki binar fayllarni tuzating yoki FFmpeg joylashuvini belgilang, keyin qayta urinib ko'ring.",
 			"postprocessFailure": "yt-dlp yuklab olishni tugatdi, biroq keyingi qayta ishlash (birlashtirish / mux / o'girish) muvaffaqiyatsiz tugadi. Ko'pincha bu ffmpeg ning vaqtinchalik muammosi — qayta urining, agar davom etsa, boshqa format kombinatsiyasini sinab ko'ring.",
-			"parse": "Saytdan kelgan javobni tahlil qilib bo'lmadi. yt-dlp ekstraktori eskirib qolgan bo'lishi mumkin. Arroxy ishga tushganda yt-dlp ni avtomatik yangilaydi — bir necha daqiqadan so'ng tuzatish kelgach qayta urinib ko'ring.",
+			"parse": "Saytdan kelgan javobni tahlil qilib bo'lmadi. yt-dlp ekstraktori eskirib qolgan bo'lishi mumkin. Grabbit ishga tushganda yt-dlp ni avtomatik yangilaydi — bir necha daqiqadan so'ng tuzatish kelgach qayta urinib ko'ring.",
 			"network": "Tarmoq xatosi. Aloqangizni tekshiring va qayta urining.",
 			"drmProtected": "Bu video DRM bilan himoyalangan. yt-dlp DRM ni olib tashlayolmaydi, shuning uchun fayl yuklab bo'lmaydi.",
 			"loginRequired": "Bu video uchun tizimga kirgan hisob zarur. cookies.txt ni sozlang (Sozlamalar → Cookies) va qayta urinib ko'ring.",
@@ -712,7 +718,7 @@
 		"mp4Cap": "YouTube’da 1080p dan yuqori H.264 mavjud emas — avtomatik 1080p bilan cheklanadi"
 	},
 	"formatLabel": {"audioFallback": "Audio", "audioOnlyDot": "Faqat audio · {{audio}}", "videoDot": "{{resolution}} · {{audio}}"},
-	"tray": {"tooltip": "Arroxy", "menu": {"statusIdle": "Faoliyatsiz", "statusActive_one": "1 ta yuklanmoqda · {{percent}}%", "statusActive_other": "{{count}} ta yuklanmoqda · {{percent}}%", "downloadFromClipboard": "Vaqtinchalik buferdan yuklab olish", "open": "Arroxy ni ochish", "quit": "Arroxy dan chiqish"}},
+	"tray": {"tooltip": "Grabbit", "menu": {"statusIdle": "Faoliyatsiz", "statusActive_one": "1 ta yuklanmoqda · {{percent}}%", "statusActive_other": "{{count}} ta yuklanmoqda · {{percent}}%", "downloadFromClipboard": "Vaqtinchalik buferdan yuklab olish", "open": "Grabbit ni ochish", "quit": "Grabbit dan chiqish"}},
 	"dialogs": {
 		"quitWithActiveDownloads": {
 			"message_one": "{{count}} ta yuklama jarayonda",
@@ -722,25 +728,25 @@
 			"pause": "Yuklab olishlarni pauzalab chiqish",
 			"keep": "Yuklab olishni davom ettirish"
 		},
-		"closeToTray": {"message": "Yopilganda Arroxy ni tizim soatiga yashirasizmi?", "detail": "Arroxy ishlashda davom etadi va faol yuklamalarni yakunlaydi. Buni keyinroq Kengaytirilgan sozlamalarda o'zgartiring.", "hide": "Tizim soatiga yashirish", "quit": "Chiqish", "remember": "Boshqa so'ramaslik"},
-		"rendererCrashed": {"message": "Arroxy muammo bilan duch keldi", "detail": "Renderlovchi jarayon ishdan chiqdi ({{reason}}). Qayta urinish uchun yangilang.", "reload": "Yangilash", "quit": "Chiqish"}
+		"closeToTray": {"message": "Yopilganda Grabbit ni tizim soatiga yashirasizmi?", "detail": "Grabbit ishlashda davom etadi va faol yuklamalarni yakunlaydi. Buni keyinroq Kengaytirilgan sozlamalarda o'zgartiring.", "hide": "Tizim soatiga yashirish", "quit": "Chiqish", "remember": "Boshqa so'ramaslik"},
+		"rendererCrashed": {"message": "Grabbit muammo bilan duch keldi", "detail": "Renderlovchi jarayon ishdan chiqdi ({{reason}}). Qayta urinish uchun yangilang.", "reload": "Yangilash", "quit": "Chiqish"}
 	},
 	"share": {
-		"title": "Arroxy ni ulashing",
-		"description": "Arroxy bepul va ochiq manbali. Ulashish ko'proq odamlar uni topishiga yordam beradi.",
+		"title": "Grabbit ni ulashing",
+		"description": "Grabbit bepul va ochiq manbali. Ulashish ko'proq odamlar uni topishiga yordam beradi.",
 		"copyLink": "Havolani nusxalash",
 		"copied": "Nusxalandi!",
-		"defaultMessage": "Arroxy — Windows, macOS va Linux uchun bepul, ochiq manbali video yuklab oluvchi. YouTube, Vimeo, Twitch va 2000+ sayt bilan ishlaydi.\n4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock",
-		"footerTooltip": "Arroxy ulashish",
+		"defaultMessage": "Grabbit — Windows, macOS va Linux uchun bepul, ochiq manbali video yuklab oluvchi. YouTube, Vimeo, Twitch va 2000+ sayt bilan ishlaydi.\n4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock",
+		"footerTooltip": "Grabbit ulashish",
 		"footerLabel": "Ulashish",
-		"shareAction": "Arroxy ulashish"
+		"shareAction": "Grabbit ulashish"
 	},
 	"filenameTemplate": {
 		"label": "Fayl nomi shabloni",
 		"description": "Yuklab olingan fayllar qanday nomlanishini tanlang. Qo'shish uchun tokenni bosing. Yuklamalarni papkalarga ajratish uchun / dan foydalaning.",
 		"profileOverrideLabel": "Fayl nomi shabloni",
 		"profileOverrideDescription": "Umumiy shablondan foydalanish uchun bo'sh qoldiring.",
-		"idWarning": "{id} bo'lmasa, Arroxy allaqachon yuklab olingan pleylist elementlarini aniqlay olmaydi va .m3u pleylistlar yarata olmaydi.",
+		"idWarning": "{id} bo'lmasa, Grabbit allaqachon yuklab olingan pleylist elementlarini aniqlay olmaydi va .m3u pleylistlar yarata olmaydi.",
 		"m3uDisabled": "Mavjud emas, chunki fayl nomi shabloningizda {id} yo'q yoki u yuklamalarni papkalarga ajratadi.",
 		"previewSingle": "Yakka video",
 		"previewPlaylist": "Pleylistda",

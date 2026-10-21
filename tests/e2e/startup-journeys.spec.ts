@@ -50,7 +50,7 @@ function writeFakeTools(dir: string): string {
 test('every declared journey reaches its expected end state with clean logs', async () => {
 	const tier = tierFromEnv()
 	const packagedExe = process.env.PACKAGED_EXE
-	if (!packagedExe) throw new Error('startup-journeys: PACKAGED_EXE is required (path to the packaged Arroxy executable)')
+	if (!packagedExe) throw new Error('startup-journeys: PACKAGED_EXE is required (path to the packaged Grabbit executable)')
 
 	const baseDir = fs.mkdtempSync(path.join(process.env.ARROXY_COLD_TMPDIR ?? os.tmpdir(), 'arroxy-startup-'))
 	const archive = process.env.ARROXY_LOG_ARCHIVE

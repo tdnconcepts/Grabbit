@@ -76,7 +76,9 @@ export interface ProbeOrchestratorSlice {
 	wizardTitle: string
 	wizardThumbnail: string
 	wizardDuration?: number
-	// Fields a filename template may name a *directory* after. Arroxy renders
+	wizardPreviewUrl?: string
+	wizardPreviewFps?: number
+	// Fields a filename template may name a *directory* after. Grabbit renders
 	// directory segments itself (it needs the path before the download starts),
 	// so these must be in state rather than left to yt-dlp. Empty when the
 	// extractor did not supply one — the segment then collapses.
@@ -146,6 +148,7 @@ export interface ProbeOrchestratorSlice {
 	syncScanState: 'idle' | 'scanning' | 'done'
 
 	setWizardUrl: (url: string) => void
+	setWizardPreviewDuration: (previewUrl: string, durationSeconds: number) => void
 	submitUrl: () => Promise<void>
 	quickDownload: () => Promise<void>
 	quickDownloadUrls: (urls: string[]) => Promise<void>
@@ -213,6 +216,9 @@ export interface FormatPickerSlice {
 // OutputConfig — output dir / subfolder / SponsorBlock / output artifact flags.
 export interface OutputConfigSlice {
 	wizardOutputDir: string
+	wizardClipMode: 'full' | 'range'
+	wizardClipStart: string
+	wizardClipEnd: string
 	wizardSubfolderEnabled: boolean
 	wizardSubfolderName: string
 	wizardSponsorBlockMode: SponsorBlockMode
@@ -225,6 +231,10 @@ export interface OutputConfigSlice {
 	wizardWriteM3u: boolean
 
 	setWizardOutputDir: (dir: string, persist?: boolean) => Promise<void>
+	setWizardClipMode: (mode: 'full' | 'range') => void
+	setWizardClipStart: (value: string) => void
+	setWizardClipEnd: (value: string) => void
+	resetWizardClipRange: () => void
 	chooseWizardFolder: () => Promise<void>
 	setPlaylistFolder: (dir: string) => Promise<void>
 	setWizardSubfolderEnabled: (enabled: boolean) => void

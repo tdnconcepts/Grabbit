@@ -438,7 +438,7 @@ export async function startDenyProxy(): Promise<DenyProxy> {
 	const server = http.createServer((req, res) => {
 		requests.push({method: req.method ?? 'GET', target: req.url ?? ''})
 		res.writeHead(502, {'Content-Type': 'text/plain; charset=utf-8'})
-		res.end('External network is disabled for Arroxy fixture E2E')
+		res.end('External network is disabled for Grabbit fixture E2E')
 	})
 	server.on('connect', (req, socket) => {
 		requests.push({method: 'CONNECT', target: req.url ?? ''})
@@ -651,7 +651,7 @@ export function writeE2eSettings(userDataDir: string, outputDir: string, configu
 	settings.common.writeDescription = false
 	settings.common.writeThumbnail = false
 	settings.common.firstRunCompleted = true
-	// Suppress the "What's new in Arroxy <version>" dialog. shouldShowWhatsNew()
+	// Suppress the "What's new in Grabbit <version>" dialog. shouldShowWhatsNew()
 	// fires whenever lastReleaseNotesVersionShown is unset and launchCount > 1,
 	// and its modal overlay covers the tab strip — which blocks every workflow
 	// test that clicks a tab. A sentinel above any real version keeps this from

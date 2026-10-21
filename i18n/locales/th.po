@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "สัญญาอนุญาต MIT · โดย Antonio Orionus"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "เกี่ยวกับ Arroxy"
+msgid "About Grabbit"
+msgstr "เกี่ยวกับ Grabbit"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "ข้อเสนอแนะ"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "ชอบ Arroxy ไหม? ฉันอยากฟังความคิดเห็นของคุณ! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "ชอบ Grabbit ไหม? ฉันอยากฟังความคิดเห็นของคุณ! 💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "เริ่มใหม่"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Arroxy จะทำงานต่อและดาวน์โหลดที่กำลังดำเนินการให้เสร็จ คุณเปลี่ยนค่านี้ภายหลังได้ในการตั้งค่าขั้นสูง"
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Grabbit จะทำงานต่อและดาวน์โหลดที่กำลังดำเนินการให้เสร็จ คุณเปลี่ยนค่านี้ภายหลังได้ในการตั้งค่าขั้นสูง"
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "ซ่อนไว้ในถาดระบบ"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "ซ่อน Arroxy ไว้ในถาดระบบเมื่อปิดหรือไม่?"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "ซ่อน Grabbit ไว้ในถาดระบบเมื่อปิดหรือไม่?"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "กระบวนการเรนเดอร์ขัดข้อง ({{reason}}) โหลดใหม่เพื่อลองอีกครั้ง"
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Arroxy พบปัญหา"
+msgid "Grabbit encountered a problem"
+msgstr "Grabbit พบปัญหา"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "วิดีโอนี้จำกัดอายุและไม่สามารถดาวน์โหลดได้หากไม่ได้ลงชื่อเข้าใช้บัญชี"
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "ระบบป้องกันบอตทำงาน IP ที่คุณใช้น่าจะถูกทำเครื่องหมายไว้ (ช่วงที่อยู่ของศูนย์ข้อมูลหรือจุดออก VPN ที่มีผู้ใช้หนาแน่น) เปลี่ยน IP หรือเลือกปลายทาง VPN อื่นแล้วลองใหม่ หากยังล้มเหลว อาจเป็นการเปลี่ยนแปลงชั่วคราวจากฝั่งเว็บไซต์ — Arroxy อัปเดต yt-dlp อัตโนมัติเมื่อเปิด ดังนั้นการแก้ไขจะมาถึงโดยอัตโนมัติทันทีที่ต้นทางเผยแพร่"
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "ระบบป้องกันบอตทำงาน IP ที่คุณใช้น่าจะถูกทำเครื่องหมายไว้ (ช่วงที่อยู่ของศูนย์ข้อมูลหรือจุดออก VPN ที่มีผู้ใช้หนาแน่น) เปลี่ยน IP หรือเลือกปลายทาง VPN อื่นแล้วลองใหม่ หากยังล้มเหลว อาจเป็นการเปลี่ยนแปลงชั่วคราวจากฝั่งเว็บไซต์ — Grabbit อัปเดต yt-dlp อัตโนมัติเมื่อเปิด ดังนั้นการแก้ไขจะมาถึงโดยอัตโนมัติทันทีที่ต้นทางเผยแพร่"
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "พื้นที่ดิสก์ไม่เพียงพอ เพิ่มพื้นที่ว่างแล้วลองใหม่"
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Arroxy เขียนลงโฟลเดอร์ดาวน์โหลดไม่ได้ โฟลเดอร์อาจเป็นแบบอ่านอย่างเดียว อยู่บนไดรฟ์ที่ถูกล็อก หรือถูกบล็อกโดยการตั้งค่าความเป็นส่วนตัวของระบบ เลือกโฟลเดอร์อื่นหรืออนุญาตการเข้าถึง แล้วลองใหม่"
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Grabbit เขียนลงโฟลเดอร์ดาวน์โหลดไม่ได้ โฟลเดอร์อาจเป็นแบบอ่านอย่างเดียว อยู่บนไดรฟ์ที่ถูกล็อก หรือถูกบล็อกโดยการตั้งค่าความเป็นส่วนตัวของระบบ เลือกโฟลเดอร์อื่นหรืออนุญาตการเข้าถึง แล้วลองใหม่"
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "แยกวิเคราะห์การตอบกลับจากเว็บไซต์ไม่ได้ ตัวแยกข้อมูลของ yt-dlp อาจตามการเปลี่ยนแปลงไม่ทัน Arroxy อัปเดต yt-dlp อัตโนมัติเมื่อเปิด — ลองอีกครั้งในอีกไม่กี่นาทีหลังมีการเผยแพร่การแก้ไข"
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "แยกวิเคราะห์การตอบกลับจากเว็บไซต์ไม่ได้ ตัวแยกข้อมูลของ yt-dlp อาจตามการเปลี่ยนแปลงไม่ทัน Grabbit อัปเดต yt-dlp อัตโนมัติเมื่อเปิด — ลองอีกครั้งในอีกไม่กี่นาทีหลังมีการเผยแพร่การแก้ไข"
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "โทเค็น {{token}} ที่ไม่รู้จัก"
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "หากไม่มี {id} Arroxy จะตรวจหารายการในเพลย์ลิสต์ที่ดาวน์โหลดไว้แล้วหรือสร้างเพลย์ลิสต์ .m3u ไม่ได้"
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "หากไม่มี {id} Grabbit จะตรวจหารายการในเพลย์ลิสต์ที่ดาวน์โหลดไว้แล้วหรือสร้างเพลย์ลิสต์ .m3u ไม่ได้"
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "ไม่มีลิงก์ในคลิปบอร์ด — คัดลอกลิงก์ก่อน"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "คัดลอกหลายลิงก์ — ใช้ URL แบบกลุ่มใน Arroxy"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "คัดลอกหลายลิงก์ — ใช้ URL แบบกลุ่มใน Grabbit"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "ลิงก์นี้ต้องตรวจสอบเล็กน้อย — เปิด Arroxy แล้ววางอีกครั้ง"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "ลิงก์นี้ต้องตรวจสอบเล็กน้อย — เปิด Grabbit แล้ววางอีกครั้ง"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "เพิ่มการดาวน์โหลดจากคลิปบอร์ดลงในคิวแล้ว"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "เพิ่มลิงก์นั้นไม่ได้ — ลองอีกครั้งใน Arroxy"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "เพิ่มลิงก์นั้นไม่ได้ — ลองอีกครั้งใน Grabbit"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "คิวหยุดชั่วคราว — รายการที่รอจะไม่เริ่มจนกว่าคุณจะทำคิวต่อ"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "กำลังดาวน์โหลด"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "กำลังดำเนินการขั้นสุดท้าย"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "กำลังรวม"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "เวลาที่เหลือ"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "ความเร็ว"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "ทำรายการดาวน์โหลดที่หยุดไว้ต่อและให้คิวดำเนินต่อไป"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "บันทึกประจำรุ่นฉบับเต็ม ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "มีอะไรใหม่ใน Arroxy {{version}}"
+msgid "What's new in Grabbit {{version}}"
+msgstr "มีอะไรใหม่ใน Grabbit {{version}}"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "คัดลอกลิงก์"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy — เครื่องมือดาวน์โหลดวิดีโอฟรีและโอเพนซอร์สสำหรับ Windows, macOS และ Linux ใช้ได้กับ YouTube, Vimeo, Twitch และเว็บไซต์กว่า 2000 แห่ง\n"
+"Grabbit — เครื่องมือดาวน์โหลดวิดีโอฟรีและโอเพนซอร์สสำหรับ Windows, macOS และ Linux ใช้ได้กับ YouTube, Vimeo, Twitch และเว็บไซต์กว่า 2000 แห่ง\n"
 "4K · HDR · MP3 · Shorts · คำบรรยาย · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Arroxy ฟรีและเป็นโอเพนซอร์ส การแชร์ช่วยให้ผู้คนค้นพบแอปมากขึ้น"
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Grabbit ฟรีและเป็นโอเพนซอร์ส การแชร์ช่วยให้ผู้คนค้นพบแอปมากขึ้น"
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "แชร์"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "แชร์ Arroxy"
+msgid "Share Grabbit"
+msgstr "แชร์ Grabbit"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "แชร์ Arroxy"
+msgid "Share Grabbit"
+msgstr "แชร์ Grabbit"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "แชร์ Arroxy"
+msgid "Share Grabbit"
+msgstr "แชร์ Grabbit"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "กำลังย้ายไฟล์…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "บันทึกไปที่ {{dir}} ไม่ได้ — Arroxy ไม่ได้รับอนุญาตให้เขียนที่นั่น"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "บันทึกไปที่ {{dir}} ไม่ได้ — Grabbit ไม่ได้รับอนุญาตให้เขียนที่นั่น"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "ดาวน์โหลดจากคลิปบอร์ด"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "เปิด Arroxy"
+msgid "Open Grabbit"
+msgstr "เปิด Grabbit"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "ออกจาก Arroxy"
+msgid "Quit Grabbit"
+msgstr "ออกจาก Grabbit"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "ไม่ได้ใช้งาน"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "อัปเดตไม่สำเร็จ"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Arroxy {{version}} พร้อมใช้งานแล้ว — คุณมีเวอร์ชัน {{currentVersion}}"
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Grabbit {{version}} พร้อมใช้งานแล้ว — คุณมีเวอร์ชัน {{currentVersion}}"
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Arroxy {{version}} พร้อมใช้งานแล้ว — อัปเดตด้วย Homebrew"
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Grabbit {{version}} พร้อมใช้งานแล้ว — อัปเดตด้วย Homebrew"
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Arroxy {{version}} พร้อมใช้งานแล้ว — ดาวน์โหลด DMG ใหม่"
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Grabbit {{version}} พร้อมใช้งานแล้ว — ดาวน์โหลด DMG ใหม่"
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Arroxy {{version}} พร้อมใช้งานแล้ว — ดาวน์โหลดบิลด์ใหม่"
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Grabbit {{version}} พร้อมใช้งานแล้ว — ดาวน์โหลดบิลด์ใหม่"
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "พร้อม"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "วาง URL ของวิดีโอ เพลย์ลิสต์ ช่อง การค้นหา หรือเสียง Arroxy จะลบรายการซ้ำก่อนเพิ่มลงคิว"
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "วาง URL ของวิดีโอ เพลย์ลิสต์ ช่อง การค้นหา หรือเสียง Grabbit จะลบรายการซ้ำก่อนเพิ่มลงคิว"
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "ดาวน์โหลดเฉพาะวิดีโอนี้ หรือเพิ่มทั้งเพลย์ลิสต์ลงคิวด้วยโปรไฟล์ดาวน์โหลดด่วนที่ใช้อยู่"
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "จำนวนรายการสูงสุดที่ Arroxy ตรวจสอบก่อนเพิ่มเพลย์ลิสต์ ช่อง หรือผลการค้นหาลงคิว"
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "จำนวนรายการสูงสุดที่ Grabbit ตรวจสอบก่อนเพิ่มเพลย์ลิสต์ ช่อง หรือผลการค้นหาลงคิว"
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "เพิ่มทุกรายการในเพลย์ลิสต์ที่โหลดแล้วลงคิวด้วยโปรไฟล์ดาวน์โหลดด่วน หากการตรวจสอบถึงขีดจำกัด Arroxy จะถามก่อนเพิ่ม"
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "เพิ่มทุกรายการในเพลย์ลิสต์ที่โหลดแล้วลงคิวด้วยโปรไฟล์ดาวน์โหลดด่วน หากการตรวจสอบถึงขีดจำกัด Grabbit จะถามก่อนเพิ่ม"
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "ลิงก์ปัจจุบัน"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Arroxy กำลังอ่านลิงก์และใช้ {{profileName}}"
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Grabbit กำลังอ่านลิงก์และใช้ {{profileName}}"
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "กำลังเตรียมดาวน์โหลดด่วน"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "เปิดหน้าต่างนี้ไว้ขณะที่ Arroxy เตรียมคิว"
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "เปิดหน้าต่างนี้ไว้ขณะที่ Grabbit เตรียมคิว"
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "คุณภาพฉากหลัง"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "เลือกปริมาณการเคลื่อนไหวที่ Arroxy ใช้กับฉากหลังแบบเคลื่อนไหว"
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "เลือกปริมาณการเคลื่อนไหวที่ Grabbit ใช้กับฉากหลังแบบเคลื่อนไหว"
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "รูปลักษณ์และประสิทธิภาพ"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "ฮาร์ดแวร์ WebGL ใช้งานไม่ได้บนอุปกรณ์นี้ Arroxy จึงใช้ฉากหลังที่เน้นประสิทธิภาพ"
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "ฮาร์ดแวร์ WebGL ใช้งานไม่ได้บนอุปกรณ์นี้ Grabbit จึงใช้ฉากหลังที่เน้นประสิทธิภาพ"
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "URL แบบกลุ่ม"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "เพิ่ม URL หลายรายการลงคิว"
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "เพลย์ลิสต์วิดีโอ"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "สิ่งที่ Arroxy ดาวน์โหลดได้"
+msgid "What Grabbit can pull"
+msgstr "สิ่งที่ Grabbit ดาวน์โหลดได้"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "วิดีโอ"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "ตัวช่วยทีละขั้น เลือกรูปแบบ คุณภาพ และอื่น ๆ"
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "ดาวน์โหลดจาก URL"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "แป้นลัดนี้ถูกแอปอื่นใช้แล้ว — เลือกแป้นลัดอื่น"
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "หรือกด"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "คัดลอกลิงก์วิดีโอจากที่ใดก็ได้ กดแป้นลัดนี้ แล้ว Arroxy จะเพิ่มลงคิวด้วยโปรไฟล์ที่ใช้อยู่โดยไม่ต้องสลับหน้าต่าง"
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "เปลี่ยนหรือปิดได้ในการตั้งค่า"
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "กดปุ่ม…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "รีเซ็ตเป็นค่าเริ่มต้น"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "ดาวน์โหลดลิงก์ที่คัดลอกจากแอปใดก็ได้โดยไม่ต้องเปิด Arroxy"
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "ดาวน์โหลดลิงก์ที่คัดลอกจากแอปใดก็ได้โดยไม่ต้องเปิด Grabbit"
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "ปิด"
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "กำลังดาวน์โหลดในเบื้องหลัง… ฉันทำหลายอย่างพร้อมกันได้ 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "ใส่ลิงก์แล้วปล่อยให้ Arroxy ดาวน์โหลด ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "สเตอริโอที่รองรับกว้าง"
@@ -2962,8 +2958,8 @@ msgid "Prefer surround / Dolby"
 msgstr "เลือกเสียงรอบทิศทาง / Dolby"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
-msgstr "เพิ่มช่วงรอสั้น ๆ ระหว่างแต่ละการดาวน์โหลด เพื่อไม่ให้ Arroxy เข้าถึงเว็บไซต์ถี่เกินไป ค่าเป็นวินาที"
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
+msgstr "เพิ่มช่วงรอสั้น ๆ ระหว่างแต่ละการดาวน์โหลด เพื่อไม่ให้ Grabbit เข้าถึงเว็บไซต์ถี่เกินไป ค่าเป็นวินาที"
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
 msgid "Pause before media starts: max"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "ดาวน์โหลดแบบนุ่มนวล"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "ให้ Arroxy ระมัดระวังแค่ไหน?"
+msgid "How cautious should Grabbit be?"
+msgstr "ให้ Grabbit ระมัดระวังแค่ไหน?"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "ปรับการควบคุมขั้นสูงต่อการดาวน์โหลดด้วยตนเอง"
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "ใช้เฉพาะช่วงพักพื้นฐานสั้น ๆ ที่ Arroxy ใช้กับสื่อและคำบรรยาย"
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "ใช้เฉพาะช่วงพักพื้นฐานสั้น ๆ ที่ Grabbit ใช้กับสื่อและคำบรรยาย"
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "กำหนดเอง: {{count}} รายการ"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "จำนวนรายการสูงสุดที่ Arroxy โหลดเมื่อเปิดเพลย์ลิสต์ ช่อง หรือผลการค้นหา"
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "จำนวนรายการสูงสุดที่ Grabbit โหลดเมื่อเปิดเพลย์ลิสต์ ช่อง หรือผลการค้นหา"
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}} รายการ"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "ตรงกับ --playlist-end ของ yt-dlp: Arroxy จะขอรายการเพลย์ลิสต์ ช่อง หรือผลการค้นหาเพียงเท่านี้ขณะสร้างตัวเลือก"
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "โปรไฟล์ที่ใช้อยู่"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "มีในตัว"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "กำหนดเอง"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "ซ่อนอยู่"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "แก้ไขแล้ว"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "ตรงกับ --playlist-end ของ yt-dlp: Grabbit จะขอรายการเพลย์ลิสต์ ช่อง หรือผลการค้นหาเพียงเท่านี้ขณะสร้างตัวเลือก"
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "เปลี่ยนปลายทางส่วนกลาง"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "ปลายทาง"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "แก้ไข"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "แก้ไขโปรไฟล์ที่ใช้อยู่"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "โปรไฟล์ที่ซ่อนจะยังอยู่ที่นี่ แต่ไม่แสดงในตัวเลือกโปรไฟล์ทั้งหมด"
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "แสดงโปรไฟล์ในตัวเลือก: {{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "ต้องมีโปรไฟล์พร้อมใช้งานอย่างน้อยหนึ่งรายการ"
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "จัดการโปรไฟล์"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "เปลี่ยนโปรไฟล์ที่ใช้อยู่สำหรับดาวน์โหลดด่วน URL แบบกลุ่ม และเพลย์ลิสต์"
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "สลับโปรไฟล์"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "โปรไฟล์ใหม่"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "สร้าง เลือก แก้ไข หรือลบการตั้งค่าดาวน์โหลดที่ใช้ซ้ำได้"
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "โปรไฟล์ดาวน์โหลด"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "นำออก"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "รีเซ็ต"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "สลับโปรไฟล์ดาวน์โหลด: {{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "สลับโปรไฟล์ดาวน์โหลด"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "ตรวจสอบไม่สำเร็จ"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "เพิ่มลงคิวแล้ว"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "วาง URL ของวิดีโอ เพลย์ลิสต์ ช่อง หรือการค้นหาเพื่อเริ่มต้น"
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "การทำงานส่วนกลางที่มีผลต่อการดาวน์โหลดผ่านโปรไฟล์ด้วย"
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "ข้อมูลเข้า"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "โปรไฟล์"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "การตั้งค่า"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "ตัวเลือกขั้นสูง"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "กำลังวิเคราะห์ลิงก์..."
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "เสียงที่ดีที่สุด"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "เปลี่ยนจุดหมายปลายทาง"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "วางลิงก์เพื่อวิเคราะห์โดยอัตโนมัติ จากนั้นเลือกทุกอย่างที่นี่"
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "ดาวน์โหลดปลายทาง"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "ดาวน์โหลด"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "เทมเพลตชื่อไฟล์เอาต์พุต"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "ป้อน HTTP หรือ HTTPS URL ที่ถูกต้อง"
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "ตัวเลือกการดาวน์โหลด"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "ช่วงที่กำหนดเอง"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "ยอมรับ SS, MM:SS หรือ HH:MM:SS"
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "เวลาสิ้นสุด"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "เวลาเริ่มต้นและสิ้นสุดจะต้องอยู่ภายในระยะเวลาของวิดีโอ"
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "ป้อนเวลาสิ้นสุดที่ถูกต้อง"
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "เวลาสิ้นสุดต้องอยู่หลังเวลาเริ่มต้น"
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "ป้อนเวลาเริ่มต้นที่ถูกต้องเป็นศูนย์หรือหลังจากนั้น"
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "วิดีโอฉบับเต็ม"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "ดาวน์โหลดส่วนเฉพาะ"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "เล่นคลิปวนซ้ำ"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "เฟรมถัดไป"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "ตำแหน่งบนไทม์ไลน์"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "เล่นหรือเลื่อนดูวิดีโอเพื่อเลือกจุดตัดที่แม่นยำ"
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "ตัวอย่างคลิป"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "ไม่มีตัวอย่างสำหรับแหล่งที่มานี้ คุณยังคงใช้ไทม์ไลน์และช่องเวลาได้"
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "เฟรมก่อนหน้า"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "รีเซ็ตช่วง"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "ช่วงที่เลือก"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "กำหนดจุดสิ้นสุด"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "กำหนดจุดเริ่มต้น"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "เวลาเริ่มต้น"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "ย้อนกลับหนึ่งขั้น"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "เดินหน้าหนึ่งขั้น"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "เริ่มต้น {{start}} — สิ้นสุด {{end}} — ความยาวคลิป {{length}}"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "ใช้การสิ้นสุดวิดีโอ"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "ซูมไทม์ไลน์"

@@ -5,7 +5,7 @@
 // long its output will be. Budgeting it requires assuming every token
 // simultaneously hits a ceiling, which rejects ordinary templates whose real
 // output is a third of the assumed size. By the time a download is queued
-// Arroxy knows the actual title, uploader, id, and playlist fields from the
+// Grabbit knows the actual title, uploader, id, and playlist fields from the
 // probe, plus the resolved output directory and the platform — so the budget
 // becomes arithmetic on known values instead of a guess.
 //
@@ -13,7 +13,7 @@
 // truncates to 150 bytes and *then* sanitizes, and sanitization grows the
 // string. `:` becomes " -" (one character to two) and `|`, `*`, `<`, `>` become
 // their full-width counterparts (one byte to three). A cap applied before that
-// pass is advisory, not binding — so Arroxy resolves the name itself and hands
+// pass is advisory, not binding — so Grabbit resolves the name itself and hands
 // yt-dlp literal text.
 
 import {graphemes, measure, normalizeName, truncateTo, type PlatformLimits} from './pathLimits.js'

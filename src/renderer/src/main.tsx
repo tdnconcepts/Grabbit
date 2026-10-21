@@ -6,6 +6,7 @@ import {initI18n, pickLanguage, isRtl} from '@shared/i18n/index.js'
 import {ensureAppBridge, renderBridgeFailure} from './bootstrapBridge.js'
 import {readStaticBootSplashPreviewTheme, shouldHoldStaticBootSplash} from './bootstrapPreview.js'
 import './styles.css'
+import './grabbit.css'
 
 async function bootstrap(): Promise<void> {
 	const mode = import.meta.env.MODE

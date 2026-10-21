@@ -182,8 +182,6 @@ export const vi = {
     "Nếu một trang thay đổi, yt-dlp phát hành bản sửa lỗi hàng tuần và Arroxy tự động cập nhật nhị phân khi khởi động",
   shot1_cap:
     "<b>Trang Tải nhanh</b><br/>Dán URL và tải ngay với hồ sơ đang dùng",
-  shot2_cap:
-    "<b>Hồ sơ tải tái sử dụng</b><br/>Lưu định dạng, chất lượng và đầu ra thành cài sẵn — dùng lại cho mỗi lần tải",
   shot3_cap:
     "<b>Bản âm thanh đa ngôn ngữ</b><br/>Chọn đúng ngôn ngữ âm thanh video cung cấp",
   shot4_cap:

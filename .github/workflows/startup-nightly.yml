@@ -45,9 +45,9 @@ jobs:
         shell: bash
         run: |
           if [ "$RUNNER_OS" = "macOS" ]; then
-            exe=$(find dist -name "Arroxy" -path "*/MacOS/Arroxy" | head -1)
+            exe=$(find dist -name "Grabbit" -path "*/MacOS/Grabbit" | head -1)
           elif [ "$RUNNER_OS" = "Windows" ]; then
-            exe="dist/win-unpacked/Arroxy.exe"
+            exe="dist/win-unpacked/Grabbit.exe"
           else
             exe="dist/linux-unpacked/arroxy"
           fi

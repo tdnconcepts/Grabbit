@@ -182,8 +182,6 @@ export const es = {
     "Si un sitio cambia, yt-dlp publica correcciones semanalmente y Arroxy actualiza el binario automáticamente al iniciar",
   shot1_cap:
     "<b>Inicio de Descarga rápida</b><br/>Pega una URL y descárgala al instante con tu perfil activo",
-  shot2_cap:
-    "<b>Perfiles de descarga reutilizables</b><br/>Guarda formato, calidad y salida como preajustes — reutiliza en cada descarga",
   shot3_cap:
     "<b>Pistas de audio multiidioma</b><br/>Elige el idioma de audio exacto que trae el vídeo",
   shot4_cap:

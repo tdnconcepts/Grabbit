@@ -3,7 +3,7 @@
 // callers inject the platform and tests cover every OS from any host.
 //
 // The unit is the whole point of this module. A single byte budget is wrong on
-// two of the three platforms Arroxy ships to:
+// two of the three platforms Grabbit ships to:
 //
 //   macOS (APFS)   255 UTF-16 code units  — measured on APFS: 255 CJK chars
 //                                           (765 bytes) write fine, 128 emoji
@@ -34,7 +34,7 @@ export interface PlatformLimits {
 // executable's manifest declares longPathAware. yt-dlp's exe is long-path aware
 // (PyInstaller ships longPathAware in its default manifest), but Electron's is
 // not and libuv never prepends the `\\?\` prefix itself — it only ever strips
-// it, in realpath. So Arroxy's own filesystem work (playlist dedupe scanning,
+// it, in realpath. So Grabbit's own filesystem work (playlist dedupe scanning,
 // M3U writing, output directory creation) is capped at 260 regardless of what
 // yt-dlp could manage. We budget against 260 rather than shipping a manifest
 // change, because the registry half of the opt-in is not ours to set.

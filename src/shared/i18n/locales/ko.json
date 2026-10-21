@@ -5,11 +5,11 @@
 		"logs": "로그",
 		"saveDiagnostics": "진단 파일 저장",
 		"saveDiagnosticsDescription": "로그와 앱 정보를 다운로드 폴더의 파일 하나로 모아 GitHub 이슈에 바로 첨부할 수 있게 합니다. 사용자 폴더 이름은 제거되지만 동영상 링크와 제목은 유지됩니다.",
-		"feedbackNudge": "Arroxy가 마음에 드시나요? 의견을 들려주세요! 💬",
+		"feedbackNudge": "Grabbit가 마음에 드시나요? 의견을 들려주세요! 💬",
 		"zoomIn": "확대",
 		"zoomOut": "축소"
 	},
-	"about": {"button": "정보", "openTitle": "Arroxy 정보", "tagline": "YouTube 및 2000개 이상의 사이트를 위한 빠르고 편리한 다운로더입니다.", "websiteLink": "웹사이트", "githubLink": "GitHub", "licenseLine": "MIT 라이선스 · Antonio Orionus 제작", "thirdPartyNotices": "타사 고지 사항 보기"},
+	"about": {"button": "정보", "openTitle": "Grabbit 정보", "tagline": "YouTube 및 2000개 이상의 사이트를 위한 빠르고 편리한 다운로더입니다.", "websiteLink": "웹사이트", "githubLink": "GitHub", "licenseLine": "MIT 라이선스 · Antonio Orionus 제작", "thirdPartyNotices": "타사 고지 사항 보기"},
 	"titleBar": {"close": "닫기", "minimize": "최소화", "maximize": "최대화", "restore": "복원"},
 	"splash": {
 		"greeting": "다시 오신 것을 환영합니다!",
@@ -120,7 +120,7 @@
 		},
 		"bulk": {
 			"title": "URL 일괄 추가",
-			"description": "동영상, 재생목록, 채널, 검색 또는 오디오 URL을 붙여넣으세요. Arroxy가 대기열에 추가하기 전에 중복을 제거합니다.",
+			"description": "동영상, 재생목록, 채널, 검색 또는 오디오 URL을 붙여넣으세요. Grabbit가 대기열에 추가하기 전에 중복을 제거합니다.",
 			"textareaLabel": "URL 목록",
 			"textareaPlaceholder": "https://video.example/one\nhttps://video.example/two\nhttps://video.example/three",
 			"acceptedCount": "준비됨",
@@ -140,63 +140,71 @@
 			"pickFromPlaylist": "재생목록에서 선택",
 			"quickWholePlaylist": "전체 재생목록 다운로드",
 			"playlistLimit": "재생목록 분석 제한: {{count}}개 항목",
-			"quickLimitDescription": "Arroxy가 재생목록, 채널 또는 검색 결과를 대기열에 추가하기 전에 분석할 최대 항목 수입니다.",
+			"quickLimitDescription": "Grabbit가 재생목록, 채널 또는 검색 결과를 대기열에 추가하기 전에 분석할 최대 항목 수입니다.",
 			"singleTooltip": "yt-dlp 단일 동영상 모드를 사용하므로 이 URL에 연결된 재생목록은 무시됩니다.",
 			"quickSingleTooltip": "하나의 다운로드만 대기열에 추가하고 이 URL에 연결된 재생목록은 무시합니다.",
 			"playlistTooltip": "yt-dlp 재생목록 모드를 사용하며 선택 화면을 표시하기 전에 분석 제한까지 가져옵니다.",
-			"quickPlaylistTooltip": "불러온 모든 재생목록 항목을 활성 빠른 다운로드 프로필로 대기열에 추가합니다. 분석이 제한에 도달하면 Arroxy가 추가 전에 확인합니다."
+			"quickPlaylistTooltip": "불러온 모든 재생목록 항목을 활성 빠른 다운로드 프로필로 대기열에 추가합니다. 분석이 제한에 도달하면 Grabbit가 추가 전에 확인합니다."
 		},
 		"url": {
 			"heading": "URL에서 다운로드",
 			"placeholder": "https://...",
-			"tabs": {"profiles": "프로필", "settings": "설정"},
+			"workspace": {
+				"description": "링크를 붙여넣어 자동으로 분석한 다음 여기에서 모든 항목을 선택하세요.",
+				"invalidUrl": "유효한 HTTP 또는 HTTPS URL을 입력하세요.",
+				"analyzing": "링크 분석 중…",
+				"options": "다운로드 옵션",
+				"advanced": "고급 옵션",
+				"download": "다운로드",
+				"bestAudio": "최고의 오디오",
+				"destination": "다운로드 대상",
+				"changeDestination": "목적지 변경",
+				"filenameTemplate": "출력 파일 이름 템플릿",
+				"trim": {
+					"heading": "특정 부분 다운로드",
+					"description": "SS, MM:SS 또는 HH:MM:SS를 허용합니다.",
+					"previewHeading": "클립 미리보기",
+					"previewDescription": "동영상을 재생하거나 탐색하여 정확한 자르기 지점을 선택하세요.",
+					"previewUnavailable": "이 소스에서는 미리보기를 사용할 수 없습니다. 타임라인과 시간 입력란은 계속 사용할 수 있습니다.",
+					"setStart": "시작 설정",
+					"setEnd": "끝 설정",
+					"selectedRange": "선택한 구간",
+					"zoom": "타임라인 확대/축소",
+					"position": "타임라인 위치",
+					"previousFrame": "이전 프레임",
+					"nextFrame": "다음 프레임",
+					"stepBack": "한 단계 뒤로",
+					"stepForward": "한 단계 앞으로",
+					"loop": "클립 반복",
+					"full": "전체 영상",
+					"custom": "맞춤 범위",
+					"start": "시작 시간",
+					"end": "종료 시간",
+					"useEnd": "비디오 끝 사용",
+					"reset": "재설정 범위",
+					"summary": "시작 {{start}} — 끝 {{end}} — 클립 길이 {{length}}",
+					"error": {"start": "유효한 시작 시간을 0 이후로 입력하세요.", "end": "유효한 종료 시간을 입력하세요.", "order": "종료 시간은 시작 시간보다 이후여야 합니다.", "duration": "시작 및 종료 시간은 동영상 재생 시간 내에 있어야 합니다."}
+				}
+			},
+			"tabs": {"settings": "설정"},
 			"interactiveDownload": "대화형 다운로드",
-			"fetchFormatsTooltip": "단계별 마법사에서 형식, 화질 등을 선택합니다.",
 			"quickDownload": "빠른 다운로드",
 			"quickDownloadTooltip": "다음 프로필로 다운로드: {{profileName}}",
 			"quickPreparing": "준비 중",
-			"quickQueued": "대기열에 추가됨",
-			"quickSingleOnly": "시작하려면 동영상, 재생목록, 채널 또는 검색 URL을 붙여넣으세요.",
 			"quickProbeFailed": "분석 실패",
 			"quickPrepareFailed": "대기열 항목을 준비할 수 없습니다",
 			"quickBulkAllFailed": "어떤 URL도 준비할 수 없습니다",
 			"quickFailed": "이 항목을 추가할 수 없습니다: {{error}}",
 			"quickPartialFailed_one": "처리된 항목은 대기열에 추가했습니다. URL {{count}}개를 준비하지 못했습니다.",
 			"quickPartialFailed_other": "처리된 항목은 대기열에 추가했습니다. URL {{count}}개를 준비하지 못했습니다.",
-			"profile": {
-				"destinationFallback": "대상",
-				"switchAria": "다운로드 프로필 전환: {{profileName}}",
-				"switchTitle": "다운로드 프로필 전환",
-				"activeLabel": "활성 프로필",
-				"editActive": "활성 프로필 편집",
-				"changeGlobalDestination": "전역 대상 변경",
-				"menuTitle": "프로필 전환",
-				"menuDescription": "빠른 다운로드, URL 일괄 추가 및 재생목록에 사용할 활성 프로필을 변경합니다.",
-				"newProfile": "새 프로필",
-				"manageProfiles": "프로필 관리",
-				"panelTitle": "다운로드 프로필",
-				"panelDescription": "재사용 가능한 다운로드 설정을 만들고 선택하고 편집하거나 제거합니다.",
-				"badgeCustom": "사용자 지정",
-				"badgeModified": "수정됨",
-				"badgeBuiltIn": "기본 제공",
-				"badgeDisabled": "숨김",
-				"enableToggleAria": "선택기에 프로필 표시: {{profileName}}",
-				"enableHint": "숨긴 프로필은 여기에 남아 있지만 모든 프로필 선택기에서는 사라집니다.",
-				"lastEnabledHint": "사용 가능한 프로필을 하나 이상 유지하세요.",
-				"edit": "편집",
-				"remove": "제거",
-				"reset": "재설정"
-			},
+			"profile": {"changeGlobalDestination": "전역 대상 변경", "reset": "재설정"},
 			"bulkButton": "URL 일괄 추가",
-			"bulkTooltip": "여러 URL을 추가하고 대기열에 넣습니다.",
 			"features": {
-				"heading": "Arroxy로 받을 수 있는 항목",
+				"heading": "Grabbit로 받을 수 있는 항목",
 				"youtube": {"heading": "YouTube", "video": "동영상", "channel": "채널", "playlist": "재생목록", "short": "Shorts", "music": "음악", "podcast": "팟캐스트"},
 				"anySite": {"heading": "2000개 이상의 사이트", "video": "동영상", "videoPlaylist": "동영상 재생목록", "musicPlaylist": "음악 재생목록"},
 				"always": {"audioOnly": "오디오만", "subtitles": "자막"}
 			},
-			"mascotIdle": "링크를 넣고 Arroxy에 맡기세요 ✨",
-			"mascotBusy": "백그라운드에서 다운로드 중… 멀티태스킹도 문제없어요 😎",
 			"advanced": "고급",
 			"settings": {"inputHeading": "입력", "behaviorHeading": "다운로드 동작", "behaviorDescription": "프로필 기반 다운로드에도 영향을 주는 전역 동작입니다."},
 			"clearAria": "URL 지우기",
@@ -212,16 +220,13 @@
 			},
 			"hotkey": {
 				"sectionTitle": "전역 단축키",
-				"sectionDescription": "Arroxy를 열지 않고 어떤 앱에서든 복사한 링크를 다운로드합니다.",
+				"sectionDescription": "Grabbit를 열지 않고 어떤 앱에서든 복사한 링크를 다운로드합니다.",
 				"toggle": "전역 단축키 사용",
 				"toggleDescription": "클립보드에 동영상 링크를 복사한 상태에서 단축키를 누르세요.",
 				"changeShortcut": "단축키 변경",
 				"recording": "키를 누르세요…",
 				"test": "테스트",
 				"conflict": "이 단축키는 다른 앱에서 사용 중입니다. 다른 단축키를 선택하세요.",
-				"hintLabel": "또는 다음 키 누르기",
-				"hintTooltip": "어디서든 동영상 링크를 복사하고 이 단축키를 누르면 창을 전환하지 않아도 Arroxy가 활성 프로필로 대기열에 추가합니다.",
-				"hintTooltipSettings": "설정에서 변경하거나 끌 수 있습니다.",
 				"reset": "기본값으로 재설정"
 			},
 			"cookies": {
@@ -248,14 +253,14 @@
 			"proxy": {"label": "프록시 URL", "description": "프록시를 통해 트래픽을 라우팅합니다. 지역 제한 콘텐츠에 유용합니다.", "placeholder": "http://host:port", "clear": "지우기"},
 			"backdrop": {
 				"panelTitle": "모양 및 성능",
-				"panelDescription": "Arroxy의 움직이는 배경에 사용할 동작 수준을 선택하세요.",
+				"panelDescription": "Grabbit의 움직이는 배경에 사용할 동작 수준을 선택하세요.",
 				"modeLabel": "배경 품질",
 				"modeDescription": "가장 역동적인 모양에서 최고 성능까지 조절합니다.",
 				"cssOnlyLabel": "최고 성능",
 				"cssOnlyDescription": "CSS만 사용하며 캔버스 렌더링은 없습니다.",
 				"gpuLabel": "가장 아름답게",
 				"gpuDescription": "지원되는 경우 움직이는 WebGL 배경을 사용합니다.",
-				"runtimeFallbackNotice": "이 기기에서 하드웨어 WebGL을 사용할 수 없어 Arroxy가 성능 배경을 사용합니다."
+				"runtimeFallbackNotice": "이 기기에서 하드웨어 WebGL을 사용할 수 없어 Grabbit가 성능 배경을 사용합니다."
 			},
 			"limitRate": {
 				"label": "다운로드 속도 제한",
@@ -268,7 +273,7 @@
 			},
 			"playlistProbeLimit": {
 				"label": "분석할 재생목록 항목",
-				"description": "재생목록, 채널 또는 검색 결과를 열 때 Arroxy가 불러올 최대 항목 수입니다.",
+				"description": "재생목록, 채널 또는 검색 결과를 열 때 Grabbit가 불러올 최대 항목 수입니다.",
 				"option": "{{count}}개 항목",
 				"current": "현재 제한: {{count}}개 항목",
 				"customValue": "사용자 지정: {{count}}개 항목",
@@ -278,7 +283,7 @@
 				"customDialogCancel": "취소",
 				"customDialogSave": "제한 저장",
 				"invalid": "1부터 5000까지의 정수를 사용하세요",
-				"tooltip": "yt-dlp --playlist-end에 해당합니다. Arroxy는 선택 화면을 만들 때 재생목록, 채널 또는 검색 항목을 이 수만큼만 요청합니다."
+				"tooltip": "yt-dlp --playlist-end에 해당합니다. Grabbit는 선택 화면을 만들 때 재생목록, 채널 또는 검색 항목을 이 수만큼만 요청합니다."
 			},
 			"nativeAudioPreference": {"label": "원본 오디오 환경설정", "description": "최상의 원본이 선택할 항목을 제어합니다. 수동 오디오 행과 M4A/AAC는 명시적으로 유지됩니다.", "compatible": "호환 스테레오", "surround": "서라운드 / Dolby 선호"},
 			"autoRetry": {"label": "실패한 다운로드 재시도", "description": "네트워크나 서버 문제가 발생하면 재시도 간격을 늘려 자동으로 다시 시도합니다. 사이트에서 차단한 다운로드는 자동으로 재시도하지 않습니다.", "unit": "회"},
@@ -287,12 +292,12 @@
 			"networkPacing": {
 				"heading": "신중한 다운로드",
 				"description": "각 다운로드 중 짧게 대기하여 사이트에 지나치게 많은 요청을 보내지 않습니다. 값은 초 단위입니다.",
-				"presetLabel": "Arroxy를 얼마나 신중하게 사용할까요?",
+				"presetLabel": "Grabbit를 얼마나 신중하게 사용할까요?",
 				"tooltip": "이 대기는 각 다운로드 안에서 적용됩니다. 동시에 실행할 다운로드 수는 동시 다운로드에서 별도로 설정합니다.",
 				"summary": "대기: 확인 사이 {{requests}}, 미디어 시작 전 {{downloads}}, 자막 파일 전 {{subtitles}}.",
 				"presets": {"off": "끄기", "balanced": "균형", "careful": "신중하게", "custom": "사용자 지정"},
 				"tooltips": {
-					"off": "Arroxy가 미디어와 자막에 적용하는 최소한의 기본 대기만 사용합니다.",
+					"off": "Grabbit가 미디어와 자막에 적용하는 최소한의 기본 대기만 사용합니다.",
 					"balanced": "기본값입니다. 요청 사이와 미디어 시작 전에 짧은 대기를 추가합니다.",
 					"careful": "대규모 재생목록이나 제한이 자주 발생하는 네트워크에 더 긴 대기를 추가합니다.",
 					"custom": "다운로드별 고급 제어를 직접 조정합니다."
@@ -305,9 +310,9 @@
 		},
 		"quickProgress": {
 			"title": "빠른 다운로드 준비 중",
-			"description": "Arroxy가 링크를 읽고 {{profileName}}을(를) 적용하고 있습니다.",
+			"description": "Grabbit가 링크를 읽고 {{profileName}}을(를) 적용하고 있습니다.",
 			"currentFallback": "현재 링크",
-			"waitHint": "Arroxy가 대기열을 준비하는 동안 이 창을 열어 두세요.",
+			"waitHint": "Grabbit가 대기열을 준비하는 동안 이 창을 열어 두세요.",
 			"failedCount_one": "{{count}}개 실패",
 			"failedCount_other": "{{count}}개 실패",
 			"cancel": "준비 취소",
@@ -551,6 +556,7 @@
 			"hideArtifactsFor": "{{title}}의 결과물 숨기기"
 		},
 		"artifact": {"media": "미디어", "subtitle": "자막", "thumbnail": "미리보기 이미지", "description": "설명", "companion": "보조 파일", "unknown": "결과물", "missing": "누락됨"},
+		"progress": {"downloading": "다운로드 중", "merging": "병합 중", "finishing": "마무리 중", "speed": "속도", "remaining": "남은 시간"},
 		"item": {
 			"defaultError": "다운로드 실패",
 			"retryingSoon": "자동 재시도 중({{attempt}}번째 시도)",
@@ -578,10 +584,10 @@
 	},
 	"update": {
 		"message": {
-			"generic": "Arroxy {{version}}을(를) 사용할 수 있습니다. 현재 버전은 {{currentVersion}}입니다.",
-			"homebrew": "Arroxy {{version}}을(를) 사용할 수 있습니다. Homebrew로 업데이트하세요.",
-			"macosDirect": "Arroxy {{version}}을(를) 사용할 수 있습니다. 새 DMG를 다운로드하세요.",
-			"portable": "Arroxy {{version}}을(를) 사용할 수 있습니다. 새 빌드를 다운로드하세요."
+			"generic": "Grabbit {{version}}을(를) 사용할 수 있습니다. 현재 버전은 {{currentVersion}}입니다.",
+			"homebrew": "Grabbit {{version}}을(를) 사용할 수 있습니다. Homebrew로 업데이트하세요.",
+			"macosDirect": "Grabbit {{version}}을(를) 사용할 수 있습니다. 새 DMG를 다운로드하세요.",
+			"portable": "Grabbit {{version}}을(를) 사용할 수 있습니다. 새 빌드를 다운로드하세요."
 		},
 		"install": "설치 후 다시 시작",
 		"downloading": "다운로드 중…",
@@ -593,7 +599,7 @@
 		"installFailed": "업데이트 실패",
 		"retry": "다시 시도"
 	},
-	"releaseNotes": {"title": "Arroxy {{version}}의 새로운 기능", "description": "새 업데이트를 실행 중입니다. 주요 변경 사항을 확인하세요.", "fullNotes": "전체 릴리스 노트 ↗", "continue": "계속"},
+	"releaseNotes": {"title": "Grabbit {{version}}의 새로운 기능", "description": "새 업데이트를 실행 중입니다. 주요 변경 사항을 확인하세요.", "fullNotes": "전체 릴리스 노트 ↗", "continue": "계속"},
 	"status": {
 		"preparingBinaries": "바이너리 준비 중…",
 		"mintingToken": "YouTube 토큰 생성 중…",
@@ -618,7 +624,7 @@
 		"downloadingBinary": "{{name}} 바이너리 다운로드 중…",
 		"unknownStartupFailure": "알 수 없는 다운로드 시작 오류",
 		"diskSpaceInsufficient": "디스크 공간 부족 — {{required}}이(가) 필요하지만 {{free}}만 사용할 수 있습니다",
-		"outputNotWritable": "{{dir}}에 저장할 수 없습니다 — Arroxy에 그곳에 쓸 권한이 없습니다",
+		"outputNotWritable": "{{dir}}에 저장할 수 없습니다 — Grabbit에 그곳에 쓸 권한이 없습니다",
 		"fetchingSponsorBlock": "SponsorBlock에 연결 중…",
 		"retryingSponsorBlock": "SponsorBlock을 사용할 수 없어 재시도 중({{attempt}}/{{total}})…",
 		"retryingTransfer": "연결이 멈춰 재시도 중({{attempt}}/{{total}})…"
@@ -635,28 +641,28 @@
 			"queued": "클립보드에서 다운로드를 대기열에 추가했습니다",
 			"alreadyQueued": "이미 대기열에 있음 — 사본을 추가하지 않았습니다",
 			"invalidClipboard": "클립보드에 링크가 없습니다. 먼저 링크를 복사하세요",
-			"multipleUrls": "여러 링크가 복사되었습니다. Arroxy의 URL 일괄 추가를 사용하세요",
-			"needsReview": "이 링크는 간단한 확인이 필요합니다. Arroxy를 열고 다시 붙여넣으세요",
+			"multipleUrls": "여러 링크가 복사되었습니다. Grabbit의 URL 일괄 추가를 사용하세요",
+			"needsReview": "이 링크는 간단한 확인이 필요합니다. Grabbit를 열고 다시 붙여넣으세요",
 			"busy": "이전 링크를 처리하는 중입니다",
-			"submissionFailed": "링크를 추가할 수 없습니다. Arroxy에서 다시 시도하세요"
+			"submissionFailed": "링크를 추가할 수 없습니다. Grabbit에서 다시 시도하세요"
 		},
 		"queue": {"skippedAlreadyQueued_one": "이미 대기열에 있는 동영상 {{count}}개를 건너뛰었습니다", "skippedAlreadyQueued_other": "이미 대기열에 있는 동영상 {{count}}개를 건너뛰었습니다"}
 	},
 	"errors": {
 		"ytdlp": {
-			"botBlock": "봇 보호가 작동했습니다. 사용 중인 IP가 데이터센터 대역이거나 사용자가 많은 VPN 출구라 차단되었을 가능성이 큽니다. IP를 바꾸거나 다른 VPN 엔드포인트를 선택한 뒤 다시 시도하세요. 계속 실패한다면 사이트의 일시적인 변경 때문일 수 있습니다. Arroxy는 시작할 때 yt-dlp를 자동 업데이트하므로 업스트림에서 수정본이 배포되면 자동으로 적용됩니다.",
+			"botBlock": "봇 보호가 작동했습니다. 사용 중인 IP가 데이터센터 대역이거나 사용자가 많은 VPN 출구라 차단되었을 가능성이 큽니다. IP를 바꾸거나 다른 VPN 엔드포인트를 선택한 뒤 다시 시도하세요. 계속 실패한다면 사이트의 일시적인 변경 때문일 수 있습니다. Grabbit는 시작할 때 yt-dlp를 자동 업데이트하므로 업스트림에서 수정본이 배포되면 자동으로 적용됩니다.",
 			"ipBlock": "IP 주소가 차단된 것 같습니다. 나중에 다시 시도하거나 VPN을 사용하세요.",
 			"rateLimit": "사이트에서 요청 속도를 제한하고 있습니다. 잠시 기다렸다가 다시 시도하세요.",
 			"ageRestricted": "이 동영상은 연령 제한이 있어 로그인한 계정 없이는 다운로드할 수 없습니다.",
 			"unavailable": "이 동영상을 사용할 수 없습니다. 비공개이거나 삭제되었거나 지역 제한이 있을 수 있습니다.",
 			"geoBlocked": "이 동영상은 현재 지역에서 볼 수 없습니다.",
 			"outOfDiskSpace": "디스크 공간이 부족합니다. 공간을 확보하고 다시 시도하세요.",
-			"outputNotWritable": "Arroxy가 다운로드 폴더에 쓸 수 없습니다. 폴더가 읽기 전용이거나, 잠긴 드라이브에 있거나, 시스템의 개인정보 보호 설정으로 차단되었을 수 있습니다. 다른 폴더를 선택하거나 접근을 허용한 뒤 다시 시도하세요.",
+			"outputNotWritable": "Grabbit가 다운로드 폴더에 쓸 수 없습니다. 폴더가 읽기 전용이거나, 잠긴 드라이브에 있거나, 시스템의 개인정보 보호 설정으로 차단되었을 수 있습니다. 다른 폴더를 선택하거나 접근을 허용한 뒤 다시 시도하세요.",
 			"unsupportedUrl": "이 URL은 yt-dlp에서 지원하지 않습니다. yt-dlp가 지원하는 다른 사이트의 링크를 사용해 보세요.",
 			"chunkTransferFailure": "서버가 다운로드 도중 연결을 계속 끊어 yt-dlp가 재시도 후 포기했습니다. 주로 가장 큰 동영상 형식(4K HDR/고비트레이트 VP9)에서 발생합니다. 다시 시도하거나 네트워크/VPN을 바꾸거나 더 낮은 해상도의 형식을 선택하세요.",
 			"missingDependency": "yt-dlp에서 ffmpeg 또는 ffprobe를 찾을 수 없습니다. 번들 바이너리를 복구하거나 FFmpeg 위치를 설정한 뒤 다시 시도하세요.",
 			"postprocessFailure": "yt-dlp가 다운로드를 완료했지만 후처리(병합/먹싱/변환)에 실패했습니다. 일시적인 ffmpeg 문제인 경우가 많으니 다시 시도하고, 문제가 계속되면 다른 형식 조합을 사용해 보세요.",
-			"parse": "사이트의 응답을 분석할 수 없습니다. yt-dlp 추출기가 사이트 변경을 따라가지 못했을 수 있습니다. Arroxy는 시작 시 yt-dlp를 자동 업데이트하므로 수정본이 배포된 뒤 몇 분 후 다시 시도하세요.",
+			"parse": "사이트의 응답을 분석할 수 없습니다. yt-dlp 추출기가 사이트 변경을 따라가지 못했을 수 있습니다. Grabbit는 시작 시 yt-dlp를 자동 업데이트하므로 수정본이 배포된 뒤 몇 분 후 다시 시도하세요.",
 			"network": "네트워크 오류입니다. 연결을 확인하고 다시 시도하세요.",
 			"drmProtected": "이 동영상은 DRM으로 보호됩니다. yt-dlp는 DRM을 제거할 수 없으므로 파일을 다운로드할 수 없습니다.",
 			"loginRequired": "이 동영상은 로그인한 계정이 필요합니다. cookies.txt(설정 → 쿠키)를 설정하고 다시 시도하세요.",
@@ -693,28 +699,28 @@
 		"mp4Cap": "YouTube에서는 1080p를 초과하는 H.264를 사용할 수 없어 자동으로 1080p로 제한됩니다"
 	},
 	"formatLabel": {"audioFallback": "오디오", "audioOnlyDot": "오디오만 · {{audio}}", "videoDot": "{{resolution}} · {{audio}}"},
-	"tray": {"tooltip": "Arroxy", "menu": {"statusIdle": "유휴", "statusActive_one": "1개 다운로드 중 · {{percent}}%", "statusActive_other": "{{count}}개 다운로드 중 · {{percent}}%", "downloadFromClipboard": "클립보드에서 다운로드", "open": "Arroxy 열기", "quit": "Arroxy 종료"}},
+	"tray": {"tooltip": "Grabbit", "menu": {"statusIdle": "유휴", "statusActive_one": "1개 다운로드 중 · {{percent}}%", "statusActive_other": "{{count}}개 다운로드 중 · {{percent}}%", "downloadFromClipboard": "클립보드에서 다운로드", "open": "Grabbit 열기", "quit": "Grabbit 종료"}},
 	"dialogs": {
 		"quitWithActiveDownloads": {"message_one": "{{count}}개 다운로드 진행 중", "message_other": "{{count}}개 다운로드 진행 중", "detail": "나중에 다시 시작하려면 일시 중지하고, 진행 상황을 버리려면 취소하세요.", "confirm": "다운로드 취소 후 종료", "pause": "다운로드 일시 중지 후 종료", "keep": "계속 다운로드"},
-		"closeToTray": {"message": "닫을 때 Arroxy를 시스템 트레이로 숨길까요?", "detail": "Arroxy는 계속 실행되며 진행 중인 다운로드를 완료합니다. 나중에 고급 설정에서 변경할 수 있습니다.", "hide": "트레이로 숨기기", "quit": "종료", "remember": "다시 묻지 않기"},
-		"rendererCrashed": {"message": "Arroxy에 문제가 발생했습니다", "detail": "렌더러 프로세스가 중단되었습니다({{reason}}). 다시 시도하려면 새로고침하세요.", "reload": "새로고침", "quit": "종료"}
+		"closeToTray": {"message": "닫을 때 Grabbit를 시스템 트레이로 숨길까요?", "detail": "Grabbit는 계속 실행되며 진행 중인 다운로드를 완료합니다. 나중에 고급 설정에서 변경할 수 있습니다.", "hide": "트레이로 숨기기", "quit": "종료", "remember": "다시 묻지 않기"},
+		"rendererCrashed": {"message": "Grabbit에 문제가 발생했습니다", "detail": "렌더러 프로세스가 중단되었습니다({{reason}}). 다시 시도하려면 새로고침하세요.", "reload": "새로고침", "quit": "종료"}
 	},
 	"share": {
-		"title": "Arroxy 공유",
-		"description": "Arroxy는 무료 오픈 소스입니다. 공유하면 더 많은 사람이 Arroxy를 발견할 수 있습니다.",
+		"title": "Grabbit 공유",
+		"description": "Grabbit는 무료 오픈 소스입니다. 공유하면 더 많은 사람이 Grabbit를 발견할 수 있습니다.",
 		"copyLink": "링크 복사",
 		"copied": "복사됨!",
-		"defaultMessage": "Arroxy — Windows, macOS 및 Linux용 무료 오픈 소스 동영상 다운로더. YouTube, Vimeo, Twitch 및 2000개 이상의 사이트를 지원합니다.\n4K · HDR · MP3 · Shorts · 자막 · SponsorBlock",
-		"footerTooltip": "Arroxy 공유",
+		"defaultMessage": "Grabbit — Windows, macOS 및 Linux용 무료 오픈 소스 동영상 다운로더. YouTube, Vimeo, Twitch 및 2000개 이상의 사이트를 지원합니다.\n4K · HDR · MP3 · Shorts · 자막 · SponsorBlock",
+		"footerTooltip": "Grabbit 공유",
 		"footerLabel": "공유",
-		"shareAction": "Arroxy 공유"
+		"shareAction": "Grabbit 공유"
 	},
 	"filenameTemplate": {
 		"label": "파일 이름 템플릿",
 		"description": "다운로드한 파일의 이름 지정 방식을 선택하세요. 토큰을 클릭해 삽입하고 /를 사용해 다운로드를 폴더로 분류하세요.",
 		"profileOverrideLabel": "파일 이름 템플릿",
 		"profileOverrideDescription": "전역 템플릿을 사용하려면 비워 두세요.",
-		"idWarning": "{id}가 없으면 Arroxy는 이미 다운로드한 재생목록 항목을 감지하거나 .m3u 재생목록을 만들 수 없습니다.",
+		"idWarning": "{id}가 없으면 Grabbit는 이미 다운로드한 재생목록 항목을 감지하거나 .m3u 재생목록을 만들 수 없습니다.",
 		"m3uDisabled": "파일 이름 템플릿에 {id}가 없거나 다운로드를 폴더로 분류하므로 사용할 수 없습니다.",
 		"previewSingle": "단일 동영상",
 		"previewPlaylist": "재생목록에서",

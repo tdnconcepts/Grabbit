@@ -124,7 +124,7 @@ describe('UpdateBanner integration in App', () => {
 			capturedListener!({version: '3.1.0', currentVersion: '2.5.1', installChannel: 'direct'})
 		})
 
-		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Arroxy 3.1.0 is available — you have 2.5.1.')
+		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Grabbit 3.1.0 is available — you have 2.5.1.')
 	})
 
 	it('dismiss button hides the banner', async () => {
@@ -235,7 +235,7 @@ describe('UpdateBanner integration in App', () => {
 			capturedListener!({version: '2.0.0', currentVersion: '1.0.0', installChannel: 'direct'})
 		})
 
-		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Arroxy 2.0.0 is available — download the new DMG.')
+		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Grabbit 2.0.0 is available — download the new DMG.')
 		expect(screen.getByRole('button', {name: 'Download DMG ↗'})).toBeInTheDocument()
 		expect(screen.queryByRole('button', {name: /Install/i})).not.toBeInTheDocument()
 	})

@@ -113,7 +113,7 @@ export function UiKit({onExit}: {onExit: () => void}): ReactNode {
 	return (
 		<div className="relative z-10 flex h-screen flex-col" data-testid="ui-kit">
 			<header className="chrome-glass flex flex-wrap items-center gap-3 border-b px-5 py-3">
-				<h1 className="text-title">Arroxy UI Kit</h1>
+				<h1 className="text-title">Grabbit UI Kit</h1>
 				<div className="ms-auto flex flex-wrap items-center gap-2">
 					<ThemeToggle />
 					<DirectionToggle />

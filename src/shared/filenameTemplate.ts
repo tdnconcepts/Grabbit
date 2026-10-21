@@ -1,9 +1,9 @@
 // User-facing filename templates. Users type `{uploader}/{title} [{id}]`; we
-// split that into directory segments and a filename segment. Arroxy renders the
+// split that into directory segments and a filename segment. Grabbit renders the
 // directories itself; the filename segment becomes a yt-dlp output template
 // handed to `-o`, where yt-dlp does the field lookup, truncation, and writing.
 //
-// Why the split: Arroxy must know the final directory *before* the download to
+// Why the split: Grabbit must know the final directory *before* the download to
 // drive playlist dedupe, folder scanning, and M3U writing. It cannot learn that
 // from a template it never expands. Rendering directories here also means the
 // compiled `-o` addresses exactly one path component and can never contain a
@@ -27,7 +27,7 @@ export const DEFAULT_FILENAME_TEMPLATE = '{title} [{id}]'
 // `{playlist_index}` writes "NA".
 //
 // `{uploader}` resolves through a fallback chain because `uploader` is absent
-// on several extractors Arroxy supports; the chain degrades to a real value
+// on several extractors Grabbit supports; the chain degrades to a real value
 // instead of printing "NA".
 //
 // These mappings are only reached on the *unbound* path — a template that was
@@ -55,7 +55,7 @@ const TOKEN_FIELDS: Record<Exclude<FilenameToken, 'title'>, string> = {
 const FALLBACK_TITLE_BYTES = 120
 
 /**
- * Metadata Arroxy renders directory segments from. Every field is optional
+ * Metadata Grabbit renders directory segments from. Every field is optional
  * because extractors vary; an absent field renders empty, and a segment that
  * renders empty collapses instead of writing an "NA" folder.
  */
@@ -116,7 +116,7 @@ interface ParsedTemplate {
  * `typed` is what the user entered, and carries the constraints that exist to
  * keep the field usable: a character cap, and at least one distinguishing token.
  *
- * `bound` is Arroxy's own generated output, where both constraints are wrong.
+ * `bound` is Grabbit's own generated output, where both constraints are wrong.
  * A bound name contains literal text where `{title}` and `{id}` used to be, so
  * it has no tokens to require — and it is routinely *longer* than the typed cap,
  * because a 200-character cap on a template says nothing about the length of a
@@ -224,7 +224,7 @@ export function validateFilenameTemplate(template: string): FilenameTemplateVali
 
 /**
  * Compile the *filename* segment into a yt-dlp output template. Directory
- * segments are deliberately excluded — Arroxy renders those — which guarantees
+ * segments are deliberately excluded — Grabbit renders those — which guarantees
  * the result names exactly one path component.
  */
 export function compileFilenameTemplate(template: string): FilenameTemplateCompilation {
@@ -292,10 +292,10 @@ export function renderTemplateDirs(template: string, meta: TemplateMetadata): st
 	return dirs
 }
 
-// Tokens Arroxy is authoritative for. Arroxy queues each playlist entry as its
+// Tokens Grabbit is authoritative for. Grabbit queues each playlist entry as its
 // own single-video job (`watch?v=…`), so by the time yt-dlp runs there is no
 // playlist context at all and `%(playlist_index)s` and friends resolve empty.
-// These bind to whatever Arroxy holds — including nothing, which is the correct
+// These bind to whatever Grabbit holds — including nothing, which is the correct
 // answer for a single video and is why no "NA" reaches the disk.
 const ARROXY_OWNED_TOKENS: readonly FilenameToken[] = ['playlist_index', 'playlist_title', 'playlist_id']
 
@@ -360,7 +360,7 @@ export function bindFilenameTemplate(template: string, meta: TemplateMetadata, c
 	const pieces: BudgetPiece[] = parsed.file.map(segment => {
 		if (segment.kind === 'literal') return {kind: 'literal' as const, text: segment.text}
 		const value = sanitizeBoundLiteral(renderToken(segment.token, meta))
-		// Arroxy's metadata is not always richer than yt-dlp's. Where Arroxy has
+		// Grabbit's metadata is not always richer than yt-dlp's. Where Grabbit has
 		// no value and yt-dlp might — an extractor that omits `uploader`, a probe
 		// that never filled in the id — binding to empty would throw away a field
 		// yt-dlp could still resolve, turning `{title} [{id}]` into "Title []".

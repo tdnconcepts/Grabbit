@@ -44,7 +44,7 @@ function makeYtDlp(): YtDlp {
 	return new YtDlp(binaryManager as never, tokenService as never, settingsStore)
 }
 
-vi.mocked(probeElectronNodeRuntime).mockResolvedValue({ok: true, runtime: {kind: 'electron-node', executablePath: '/mock/Arroxy', version: '24.16.0'}, output: 'v24.16.0'})
+vi.mocked(probeElectronNodeRuntime).mockResolvedValue({ok: true, runtime: {kind: 'electron-node', executablePath: '/mock/Grabbit', version: '24.16.0'}, output: 'v24.16.0'})
 
 const VIDEO_JSON = JSON.stringify({_type: 'video', extractor: 'youtube', extractor_key: 'Youtube', webpage_url: 'https://www.youtube.com/watch?v=x', id: 'x', title: 't', formats: [{format_id: '18', ext: 'mp4', url: 'http://media/x.mp4', protocol: 'https'}]})
 

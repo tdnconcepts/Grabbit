@@ -81,229 +81,6 @@ body {
 		min-height: 100vh;
 	}
 
-	/* ── Backdrop: dark aurora over the void / cool ocean field in light.
-		   Fixed, behind all content, never blurred — it is the canvas the glass floats on. */
-	body::before {
-		content: '';
-		position: fixed;
-		inset: 0;
-		z-index: 0;
-		pointer-events: none;
-		background: var(--backdrop);
-	}
-
-	/* Backdrop accent: dark uses the aurora ribbon; light uses cloud/horizon haze. */
-	body::after {
-		content: '';
-		position: fixed;
-		inset: 1rem 1.5rem auto auto;
-		width: min(80rem, 88vw);
-		height: 15rem;
-		z-index: 0;
-		pointer-events: none;
-		background: var(--backdrop-accent);
-		filter: blur(10px) saturate(135%);
-		mask-image: radial-gradient(120% 150% at 56% 128%, transparent 0 38%, black 56% 84%, transparent 96%);
-		-webkit-mask-image: radial-gradient(120% 150% at 56% 128%, transparent 0 38%, black 56% 84%, transparent 96%);
-		mix-blend-mode: screen;
-		opacity: var(--backdrop-accent-opacity);
-		transform: rotate(5deg) skewX(-12deg);
-		transform-origin: 70% 30%;
-	}
-	body.backdrop-webgl-active::before,
-	body.backdrop-webgl-active::after {
-		content: none;
-		animation: none;
-	}
-	body.backdrop-static-fallback::before,
-	body.backdrop-static-fallback::after {
-		animation: none;
-	}
-	body.backdrop-light-ocean::after {
-		inset: 0;
-		width: 100vw;
-		height: 100vh;
-		filter: blur(8px) saturate(118%);
-		mask-image: none;
-		-webkit-mask-image: none;
-		opacity: var(--backdrop-accent-opacity);
-		transform: none;
-		transform-origin: center;
-	}
-	@media (prefers-reduced-motion: no-preference) {
-		body:not(.backdrop-static-fallback).backdrop-light-ocean::after {
-			animation-name: backdrop-ocean-drift;
-		}
-	}
-
-	body.backdrop-static-fallback.backdrop-dark-aurora::before {
-		/* edge vignette over the reference aurora photo, then the photo itself */
-		background:
-			radial-gradient(132% 110% at 50% 34%, transparent 50%, hsl(238 80% 4% / 0.5) 100%),
-			url('./assets/backdrop/dark-aurora.webp') center center / cover no-repeat hsl(236 74% 4%);
-		filter: saturate(110%);
-		transform: scale(1.05);
-		transform-origin: 52% 42%;
-	}
-	body.backdrop-static-fallback.backdrop-dark-aurora::after {
-		inset: 0;
-		width: 100vw;
-		height: 100vh;
-		/* gentle depth only: brighten the aurora core, darken edges so glass panels read. No moving streak. */
-		background: radial-gradient(58% 46% at 56% 32%, hsl(214 100% 70% / 0.08), transparent 70%), radial-gradient(130% 110% at 50% 36%, transparent 46%, hsl(238 78% 4% / 0.55) 100%);
-		mask-image: none;
-		-webkit-mask-image: none;
-		mix-blend-mode: normal;
-		opacity: 1;
-		transform: none;
-		transform-origin: center;
-	}
-
-	body.backdrop-static-fallback.backdrop-light-ocean::before {
-		/* soft foreground/edge easing over the reference ocean photo, then the photo */
-		background:
-			radial-gradient(130% 120% at 56% 38%, transparent 60%, hsl(206 70% 40% / 0.16) 100%),
-			url('./assets/backdrop/light-ocean.webp') center center / cover no-repeat hsl(202 90% 86%);
-		filter: saturate(104%);
-		transform: scale(1.04);
-		transform-origin: 56% 44%;
-	}
-	body.backdrop-static-fallback.backdrop-light-ocean::after {
-		inset: 0;
-		width: 100vw;
-		height: 100vh;
-		/* thin warm sun gloss that glides across the water (background-position animated) */
-		background: linear-gradient(106deg, transparent 48%, hsl(48 100% 96% / 0.3) 49.6%, hsl(0 0% 100% / 0.46) 50%, hsl(48 100% 96% / 0.3) 50.4%, transparent 52%);
-		background-size: 300% 100%;
-		background-repeat: no-repeat;
-		background-position: -50% 0;
-		mask-image: none;
-		-webkit-mask-image: none;
-		mix-blend-mode: screen;
-		opacity: 0.85;
-		transform: none;
-		transform-origin: center;
-	}
-
-	/* ── Living fallback: cheap compositor drift while WebGL is unavailable.
-		   Compositor-only transforms (+ a small hue shimmer on the bloom layer). Frozen
-		   under reduced-motion — the static look above is the default, motion enhances it. */
-	@media (prefers-reduced-motion: no-preference) {
-		body:not(.backdrop-static-fallback)::before {
-			will-change: transform, filter;
-			transform-origin: 68% 0%;
-			animation: backdrop-bloom 34s ease-in-out infinite;
-		}
-		body:not(.backdrop-static-fallback)::after {
-			will-change: transform, opacity;
-			animation: backdrop-accent-drift 23s ease-in-out infinite;
-		}
-		body.backdrop-static-fallback.backdrop-dark-aurora::before {
-			will-change: transform, filter;
-			animation: backdrop-css-aurora-field 54s ease-in-out infinite;
-		}
-		body.backdrop-static-fallback.backdrop-dark-aurora::after {
-			will-change: opacity, filter;
-			animation: backdrop-css-aurora-horizon 40s ease-in-out infinite;
-		}
-		body.backdrop-static-fallback.backdrop-light-ocean::before {
-			will-change: transform, filter;
-			animation: backdrop-css-ocean-field 52s ease-in-out infinite;
-		}
-		body.backdrop-static-fallback.backdrop-light-ocean::after {
-			will-change: background-position, opacity;
-			animation: backdrop-css-ocean-ripples 19s linear infinite;
-		}
-	}
-	@keyframes backdrop-bloom {
-		0%,
-		100% {
-			transform: scale(1) translate3d(0, 0, 0);
-			filter: hue-rotate(0deg);
-		}
-		33% {
-			transform: scale(1.07) translate3d(-1.6%, 0.8%, 0);
-			filter: hue-rotate(-10deg);
-		}
-		66% {
-			transform: scale(1.04) translate3d(1.4%, 1.4%, 0);
-			filter: hue-rotate(8deg);
-		}
-	}
-	@keyframes backdrop-accent-drift {
-		0%,
-		100% {
-			transform: rotate(5deg) skewX(-12deg) translate3d(0, 0, 0) scaleX(1);
-			opacity: var(--backdrop-accent-opacity);
-		}
-		50% {
-			transform: rotate(8.5deg) skewX(-17deg) translate3d(-5%, 1.5%, 0) scaleX(1.08);
-			opacity: calc(var(--backdrop-accent-opacity) * 0.66);
-		}
-	}
-	@keyframes backdrop-ocean-drift {
-		0%,
-		100% {
-			transform: translate3d(0, 0, 0);
-			opacity: var(--backdrop-accent-opacity);
-		}
-		50% {
-			transform: translate3d(-1.5%, 0.5%, 0) scale(1.015);
-			opacity: calc(var(--backdrop-accent-opacity) * 0.82);
-		}
-	}
-	/* Ken Burns: slow drift + breathe across the reference photo, relaxed and smooth. */
-	@keyframes backdrop-css-aurora-field {
-		0%,
-		100% {
-			transform: scale(1.05) translate3d(0, 0, 0);
-			filter: saturate(1.08) brightness(1);
-		}
-		50% {
-			transform: scale(1.12) translate3d(-1.8%, 0.9%, 0);
-			filter: saturate(1.2) brightness(1.07);
-		}
-	}
-	/* Aurora breathe: the whole curtain glow softly swells and settles. No moving band. */
-	@keyframes backdrop-css-aurora-horizon {
-		0%,
-		100% {
-			opacity: 1;
-			filter: saturate(1) brightness(1);
-		}
-		50% {
-			opacity: 0.92;
-			filter: saturate(1.08) brightness(1.06);
-		}
-	}
-	@keyframes backdrop-css-ocean-field {
-		0%,
-		100% {
-			transform: scale(1.04) translate3d(0, 0, 0);
-			filter: saturate(1.04);
-		}
-		50% {
-			transform: scale(1.11) translate3d(-1.4%, 0.7%, 0);
-			filter: saturate(1.12);
-		}
-	}
-	@keyframes backdrop-css-ocean-ripples {
-		0% {
-			background-position: -50% 0;
-			opacity: 0;
-		}
-		20% {
-			opacity: 0.9;
-		}
-		80% {
-			opacity: 0.9;
-		}
-		100% {
-			background-position: 150% 0;
-			opacity: 0;
-		}
-	}
-
 	::-webkit-scrollbar {
 		width: 4px;
 	}
@@ -517,11 +294,6 @@ body {
 
 .glass-muted-text {
 	color: var(--text-glass-muted);
-}
-
-.footer-action-button:hover {
-	background: var(--brand-dim);
-	color: var(--foreground);
 }
 
 .chrome-glass {
@@ -918,19 +690,6 @@ body {
 	gap: 4px;
 	text-align: center;
 }
-.splash-greeting {
-	font-size: var(--text-headline);
-	font-weight: var(--text-headline--font-weight);
-	line-height: var(--text-headline--line-height);
-	color: var(--foreground);
-	letter-spacing: 0;
-}
-.splash-brand {
-	font-size: var(--text-xl);
-	font-weight: 700;
-	line-height: var(--text-xl--line-height);
-	color: var(--foreground);
-}
 .splash-name {
 	font-size: var(--text-xs);
 	font-weight: 500;
@@ -959,14 +718,6 @@ body {
 	box-shadow: 0 0 12px var(--brand-glow);
 	transition: width 0.3s ease;
 }
-.splash-bytes {
-	font-size: var(--text-caption);
-	line-height: var(--text-caption--line-height);
-	color: var(--muted-foreground);
-	font-variant-numeric: tabular-nums;
-	margin-top: 2px;
-}
-
 /* ── Update banner ─────────────────────────────────────── */
 @keyframes banner-slide-in {
 	from {
@@ -996,37 +747,9 @@ body {
 		transform: scale(1) translateY(0);
 	}
 }
-@keyframes nudge-out {
-	from {
-		opacity: 1;
-		transform: scale(1) translateY(0);
-	}
-	to {
-		opacity: 0;
-		transform: scale(0.8) translateY(6px);
-	}
-}
 .nudge-in {
 	animation: nudge-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
-.nudge-out {
-	animation: nudge-out 0.22s ease forwards;
-}
-
-/* ── Feedback button pulse while nudge is visible ─────── */
-@keyframes feedback-btn-pulse {
-	0%,
-	100% {
-		color: var(--muted-foreground);
-	}
-	50% {
-		color: var(--brand);
-	}
-}
-.feedback-btn-nudging {
-	animation: feedback-btn-pulse 1.4s ease-in-out infinite;
-}
-
 @theme inline {
 	--font-heading: var(--font-sans);
 	--color-border-strong: var(--border-strong);
@@ -1384,6 +1107,323 @@ body:not(.backdrop-webgl-active) {
 }
 .dark body:not(.backdrop-webgl-active) {
 	--glass-panel: hsl(228 68% 4% / 0.84);
+}
+
+/* Restrained desktop utility theme. The previous photo/WebGL sky and neon
+   glass materials are intentionally neutralized on every theme path. */
+:root,
+.dark {
+	color-scheme: dark;
+	--background: #090b10;
+	--foreground: #f4f7fb;
+	--card: #11151d;
+	--card-foreground: #f4f7fb;
+	--popover: #171c26;
+	--popover-foreground: #f4f7fb;
+	--primary: #5b8cff;
+	--primary-foreground: #ffffff;
+	--secondary: #171c26;
+	--secondary-foreground: #f4f7fb;
+	--muted: #171c26;
+	--muted-foreground: #98a2b3;
+	--accent: #202737;
+	--accent-foreground: #f4f7fb;
+	--destructive: #ff5d6c;
+	--success: #3ccb7f;
+	--warning: #f5b942;
+	--info: #5b8cff;
+	--border: #293140;
+	--border-strong: #3a4558;
+	--input: #293140;
+	--ring: #5b8cff;
+	--text-subtle: #98a2b3;
+	--selected-foreground: #b9ccff;
+	--glass: #11151d;
+	--glass-panel: #11151d;
+	--glass-tile: #171c26;
+	--glass-surface-veil: transparent;
+	--glass-control-veil: transparent;
+	--glass-cyan: transparent;
+	--glass-violet: transparent;
+	--glass-sheen: transparent;
+	--glow-border: #293140;
+	--glow-gradient: linear-gradient(#293140, #293140);
+	--glow-gradient-hot: linear-gradient(#3a4558, #3a4558);
+	--brand-glow: transparent;
+	--panel-glow: 0 10px 30px rgb(0 0 0 / 0.22);
+	--backdrop: #090b10;
+	--backdrop-accent: none;
+	--backdrop-accent-opacity: 0;
+	--wizard-summary-fill: #11151d;
+	--wizard-summary-edge: linear-gradient(#293140, #293140);
+	--wizard-summary-sheen: none;
+	--wizard-summary-shadow: none;
+	--wizard-choice-fill: linear-gradient(#171c26, #171c26);
+	--wizard-choice-edge: linear-gradient(#293140, #293140);
+	--wizard-choice-hover-fill: linear-gradient(#202737, #202737);
+	--wizard-choice-hover-edge: linear-gradient(#3a4558, #3a4558);
+	--wizard-choice-selected-fill: linear-gradient(rgb(91 140 255 / 0.16), rgb(91 140 255 / 0.16));
+	--wizard-choice-shadow: none;
+	--wizard-choice-hover-shadow: none;
+	--wizard-choice-selected-shadow: inset 0 0 0 1px #5b8cff;
+	--tabs-rail-bg: #11151d;
+	--tabs-rail-border: linear-gradient(#293140, #293140);
+	--tabs-rail-sheen: none;
+	--tabs-rail-shadow: none;
+	--tabs-active-bg: #202737;
+	--tabs-active-shadow: inset 0 0 0 1px #3a4558;
+	--tabs-active-text-shadow: none;
+	--radius: 0.5rem;
+}
+
+body::before,
+body::after {
+	content: none !important;
+	animation: none !important;
+}
+
+.app-matte-backdrop {
+	background: #090b10;
+}
+
+.glow-panel,
+.glass,
+.chrome-glass {
+	background: #11151d !important;
+	backdrop-filter: none !important;
+	-webkit-backdrop-filter: none !important;
+	box-shadow: none !important;
+}
+
+.download-home-tabs {
+	height: 3rem !important;
+	padding: 0.25rem !important;
+	border-radius: 0.5rem !important;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+}
+
+.download-home-tabs [data-slot='tabs-trigger'] {
+	height: 2.4rem !important;
+	border-radius: 0.35rem !important;
+}
+
+@utility utility-panel {
+	border: 1px solid var(--border);
+	background: var(--card);
+	box-shadow: 0 12px 30px rgb(0 0 0 / 0.18);
+}
+
+@utility utility-section {
+	border: 1px solid var(--border);
+	border-radius: 0.5rem;
+	background: var(--secondary);
+	padding: 0.875rem;
+}
+
+@utility utility-summary {
+	display: flex;
+	cursor: pointer;
+	list-style: none;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--foreground);
+}
+
+.utility-summary::-webkit-details-marker {
+	display: none;
+}
+
+.utility-summary svg {
+	width: 1rem;
+	height: 1rem;
+	transition: transform 160ms ease;
+}
+
+details[open] > .utility-summary svg {
+	transform: rotate(180deg);
+}
+
+.clip-editor {
+	overflow: hidden;
+	border: 1px solid var(--border);
+	border-radius: 0.625rem;
+	background: #0d1118;
+	box-shadow: 0 14px 34px rgb(0 0 0 / 0.2);
+}
+
+.clip-editor-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	border-bottom: 1px solid var(--border);
+	padding: 0.875rem 1rem;
+	background: #111620;
+}
+
+.clip-editor-icon {
+	display: grid;
+	width: 2rem;
+	height: 2rem;
+	flex: none;
+	place-items: center;
+	border: 1px solid rgb(91 140 255 / 0.36);
+	border-radius: 0.5rem;
+	background: rgb(91 140 255 / 0.12);
+	color: var(--primary);
+}
+
+.clip-editor-icon svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+.clip-editor-grid {
+	display: grid;
+	grid-template-columns: minmax(17rem, 0.85fr) minmax(20rem, 1.15fr);
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.clip-preview-card,
+.clip-editor-controls {
+	min-width: 0;
+}
+
+.clip-preview-card {
+	display: grid;
+	align-content: start;
+	gap: 0.5rem;
+}
+
+.clip-preview-shell {
+	position: relative;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	border: 1px solid #30394a;
+	border-radius: 0.5rem;
+	background: #030508;
+	box-shadow:
+		inset 0 0 0 1px rgb(255 255 255 / 0.025),
+		0 10px 24px rgb(0 0 0 / 0.24);
+}
+
+.clip-preview-fallback {
+	position: relative;
+	display: grid;
+	width: 100%;
+	height: 100%;
+	place-items: center;
+	overflow: hidden;
+}
+
+.clip-preview-badge {
+	position: absolute;
+	top: 0.625rem;
+	left: 0.625rem;
+	z-index: 20;
+	border: 1px solid rgb(255 255 255 / 0.14);
+	border-radius: 999px;
+	background: rgb(3 5 8 / 0.78);
+	padding: 0.2rem 0.5rem;
+	color: rgb(255 255 255 / 0.82);
+	font-size: 0.625rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	backdrop-filter: blur(8px);
+}
+
+.clip-editor-controls {
+	display: grid;
+	align-content: start;
+	gap: 0.875rem;
+	border: 1px solid var(--border);
+	border-radius: 0.5rem;
+	background: #141923;
+	padding: 0.875rem;
+}
+
+.clip-timeline-wrap {
+	display: grid;
+	gap: 0.25rem;
+}
+
+.clip-timeline {
+	position: relative;
+	height: 0.375rem;
+	overflow: visible;
+	border-radius: 999px;
+	background: #293140;
+}
+
+.clip-timeline-selection {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	border-radius: inherit;
+	background: var(--primary);
+	box-shadow: 0 0 12px rgb(91 140 255 / 0.3);
+}
+
+.clip-timeline-playhead {
+	position: absolute;
+	top: -0.25rem;
+	width: 2px;
+	height: 0.875rem;
+	border-radius: 999px;
+	background: #fff;
+	box-shadow: 0 0 0 2px rgb(9 11 16 / 0.72);
+	transform: translateX(-1px);
+}
+
+.clip-seek {
+	width: 100%;
+	height: 1rem;
+	margin: -0.68rem 0 0;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.clip-seek:focus-visible {
+	opacity: 1;
+	accent-color: var(--primary);
+}
+
+.clip-range-summary {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.35rem 0.75rem;
+	border: 1px solid rgb(60 203 127 / 0.2);
+	border-radius: 0.4rem;
+	background: rgb(60 203 127 / 0.07);
+	padding: 0.5rem 0.625rem;
+	color: var(--success);
+	font-size: 0.6875rem;
+}
+
+.clip-range-summary strong {
+	font-family: var(--font-mono);
+	font-weight: 500;
+}
+
+@media (max-width: 900px) {
+	.clip-editor-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 640px) {
+	.clip-editor-heading {
+		align-items: stretch;
+		flex-direction: column;
+	}
 }
 
 /* Inside the wizard stage the footer is the stage's bottom bar: the stage's

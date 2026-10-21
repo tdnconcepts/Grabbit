@@ -5,11 +5,11 @@
 		"logs": "Log",
 		"saveDiagnostics": "Simpan file diagnostik",
 		"saveDiagnosticsDescription": "Menggabungkan log dan detail aplikasi ke dalam satu file di folder Unduhan, siap dilampirkan ke issue GitHub. Nama folder pengguna dihapus; tautan dan judul video tetap ada.",
-		"feedbackNudge": "Menikmati Arroxy? Saya ingin mendengar pendapat Anda! 💬",
+		"feedbackNudge": "Menikmati Grabbit? Saya ingin mendengar pendapat Anda! 💬",
 		"zoomIn": "Perbesar",
 		"zoomOut": "Perkecil"
 	},
-	"about": {"button": "Tentang", "openTitle": "Tentang Arroxy", "tagline": "Pengunduh yang cepat dan ramah untuk YouTube dan 2000+ situs lainnya.", "websiteLink": "Situs web", "githubLink": "GitHub", "licenseLine": "Lisensi MIT · oleh Antonio Orionus", "thirdPartyNotices": "Lihat pemberitahuan pihak ketiga"},
+	"about": {"button": "Tentang", "openTitle": "Tentang Grabbit", "tagline": "Pengunduh yang cepat dan ramah untuk YouTube dan 2000+ situs lainnya.", "websiteLink": "Situs web", "githubLink": "GitHub", "licenseLine": "Lisensi MIT · oleh Antonio Orionus", "thirdPartyNotices": "Lihat pemberitahuan pihak ketiga"},
 	"titleBar": {"close": "Menutup", "minimize": "Memperkecil", "maximize": "Maksimalkan", "restore": "Memulihkan"},
 	"splash": {
 		"greeting": "Hei, selamat datang kembali!",
@@ -129,7 +129,7 @@
 		},
 		"bulk": {
 			"title": "URL massal",
-			"description": "Tempelkan URL video, daftar putar, saluran, penelusuran, atau audio. Arroxy akan membersihkan duplikat sebelum mengantri.",
+			"description": "Tempelkan URL video, daftar putar, saluran, penelusuran, atau audio. Grabbit akan membersihkan duplikat sebelum mengantri.",
 			"textareaLabel": "Daftar URL",
 			"textareaPlaceholder": "https://contoh.id/video-1\nhttps://contoh.id/video-2\nhttps://contoh.id/video-3",
 			"acceptedCount": "Siap",
@@ -149,63 +149,71 @@
 			"pickFromPlaylist": "Pilih dari daftar putar",
 			"quickWholePlaylist": "Unduh seluruh daftar putar",
 			"playlistLimit": "Batas pemeriksaan daftar putar: item {{count}}",
-			"quickLimitDescription": "Entri maksimum yang dipindai Arroxy sebelum mengantri daftar putar, saluran, atau hasil pencarian.",
+			"quickLimitDescription": "Entri maksimum yang dipindai Grabbit sebelum mengantri daftar putar, saluran, atau hasil pencarian.",
 			"singleTooltip": "Menggunakan mode video tunggal yt-dlp sehingga playlist yang dilampirkan ke URL ini diabaikan.",
 			"quickSingleTooltip": "Mengantri satu unduhan dan mengabaikan daftar putar yang terlampir pada URL ini.",
 			"playlistTooltip": "Menggunakan mode daftar putar yt-dlp dan mengambil hingga batas pemeriksaan daftar putar Anda sebelum menampilkan alat pilih.",
-			"quickPlaylistTooltip": "Mengantrekan setiap item daftar putar yang dimuat dengan profil Unduhan Cepat yang aktif. Jika pemindaian mencapai batas Anda, Arroxy bertanya sebelum mengantri."
+			"quickPlaylistTooltip": "Mengantrekan setiap item daftar putar yang dimuat dengan profil Unduhan Cepat yang aktif. Jika pemindaian mencapai batas Anda, Grabbit bertanya sebelum mengantri."
 		},
 		"url": {
 			"heading": "Unduh dari URL",
 			"placeholder": "https://...",
-			"tabs": {"profiles": "Profil", "settings": "Pengaturan"},
+			"workspace": {
+				"description": "Tempel tautan untuk menganalisisnya secara otomatis, lalu pilih semuanya di sini.",
+				"invalidUrl": "Masukkan URL HTTP atau HTTPS yang valid.",
+				"analyzing": "Menganalisis tautan…",
+				"options": "Opsi pengunduhan",
+				"advanced": "Opsi lanjutan",
+				"download": "Unduh",
+				"bestAudio": "Audio terbaik",
+				"destination": "Unduh tujuan",
+				"changeDestination": "Ubah tujuan",
+				"filenameTemplate": "Templat nama file keluaran",
+				"trim": {
+					"heading": "Unduh bagian tertentu",
+					"description": "Menerima SS, MM:SS, atau HH:MM:SS.",
+					"previewHeading": "Pratinjau klip",
+					"previewDescription": "Putar atau geser video untuk memilih titik potong yang tepat.",
+					"previewUnavailable": "Pratinjau tidak tersedia untuk sumber ini. Anda masih dapat menggunakan linimasa dan kolom waktu.",
+					"setStart": "Atur awal",
+					"setEnd": "Atur akhir",
+					"selectedRange": "Rentang terpilih",
+					"zoom": "Zoom linimasa",
+					"position": "Posisi linimasa",
+					"previousFrame": "Bingkai sebelumnya",
+					"nextFrame": "Bingkai berikutnya",
+					"stepBack": "Mundur selangkah",
+					"stepForward": "Maju selangkah",
+					"loop": "Ulangi klip",
+					"full": "Video lengkap",
+					"custom": "Rentang khusus",
+					"start": "Waktu mulai",
+					"end": "Waktu berakhir",
+					"useEnd": "Gunakan akhir video",
+					"reset": "Atur ulang rentang",
+					"summary": "Mulai {{start}} — Akhir {{end}} — Panjang klip {{length}}",
+					"error": {"start": "Masukkan waktu mulai yang valid pada nol atau lebih baru.", "end": "Masukkan waktu berakhir yang valid.", "order": "Waktu berakhir harus lebih lambat dari waktu mulai.", "duration": "Waktu mulai dan berakhir harus tetap dalam durasi video."}
+				}
+			},
+			"tabs": {"settings": "Pengaturan"},
 			"interactiveDownload": "Unduhan Interaktif",
-			"fetchFormatsTooltip": "Panduan langkah demi langkah. Pilih format, kualitas, dan lainnya.",
 			"quickDownload": "Unduh Cepat",
 			"quickDownloadTooltip": "Akan diunduh menggunakan: {{profileName}}",
 			"quickPreparing": "Mempersiapkan",
-			"quickQueued": "Ditambahkan ke antrean",
-			"quickSingleOnly": "Tempelkan video, daftar putar, saluran, atau URL pencarian untuk memulai.",
 			"quickProbeFailed": "Penyelidikan gagal",
 			"quickPrepareFailed": "Item antrean tidak dapat disiapkan",
 			"quickBulkAllFailed": "Tak satu pun dari URL tersebut dapat disiapkan",
 			"quickFailed": "Tidak dapat menambahkan yang ini: {{error}}",
 			"quickPartialFailed_one": "Mengantri apa yang berhasil. URL {{count}} tidak dapat disiapkan.",
 			"quickPartialFailed_other": "Mengantri apa yang berhasil. URL {{count}} tidak dapat disiapkan.",
-			"profile": {
-				"destinationFallback": "Tujuan",
-				"switchAria": "Ganti profil unduhan: {{profileName}}",
-				"switchTitle": "Ganti profil unduhan",
-				"activeLabel": "Profil aktif",
-				"editActive": "Edit profil aktif",
-				"changeGlobalDestination": "Ubah tujuan global",
-				"menuTitle": "Ganti profil",
-				"menuDescription": "Ubah profil aktif untuk Unduhan Cepat, URL Massal, dan daftar putar.",
-				"newProfile": "Profil baru",
-				"manageProfiles": "Kelola profil",
-				"panelTitle": "Unduh Profil",
-				"panelDescription": "Buat, pilih, edit, atau hapus pengaturan unduhan yang dapat digunakan kembali.",
-				"badgeCustom": "Kebiasaan",
-				"badgeModified": "Dimodifikasi",
-				"badgeBuiltIn": "Bawaan",
-				"badgeDisabled": "Disembunyikan",
-				"enableToggleAria": "Tampilkan profil di pemilih: {{profileName}}",
-				"enableHint": "Profil tersembunyi tetap di sini tetapi hilang dari semua pemilih.",
-				"lastEnabledHint": "Pertahankan setidaknya satu profil tersedia.",
-				"edit": "Sunting",
-				"remove": "Menghapus",
-				"reset": "Mengatur ulang"
-			},
+			"profile": {"changeGlobalDestination": "Ubah tujuan global", "reset": "Mengatur ulang"},
 			"bulkButton": "URL massal",
-			"bulkTooltip": "Tambahkan dan antri beberapa URL.",
 			"features": {
-				"heading": "Apa yang bisa ditarik Arroxy",
+				"heading": "Apa yang bisa ditarik Grabbit",
 				"youtube": {"heading": "YouTube", "video": "Video", "channel": "Saluran", "playlist": "Daftar Putar", "short": "Shorts", "music": "Musik", "podcast": "Podcast"},
 				"anySite": {"heading": "2000+ situs", "video": "Video", "videoPlaylist": "Daftar putar video", "musicPlaylist": "Daftar putar musik"},
 				"always": {"audioOnly": "Hanya audio", "subtitles": "Subtitle"}
 			},
-			"mascotIdle": "Letakkan tautan dan biarkan Arroxy menariknya ✨",
-			"mascotBusy": "Mengunduh di latar belakang… Saya bisa melakukan banyak tugas 😎",
 			"advanced": "Canggih",
 			"settings": {"inputHeading": "Masukan", "behaviorHeading": "Perilaku unduhan", "behaviorDescription": "Perilaku global yang juga memengaruhi unduhan yang digerakkan oleh profil."},
 			"clearAria": "Hapus URL",
@@ -221,16 +229,13 @@
 			},
 			"hotkey": {
 				"sectionTitle": "Pintasan global",
-				"sectionDescription": "Unduh tautan apa pun yang Anda salin, dari aplikasi mana pun, tanpa membuka Arroxy.",
+				"sectionDescription": "Unduh tautan apa pun yang Anda salin, dari aplikasi mana pun, tanpa membuka Grabbit.",
 				"toggle": "Aktifkan pintasan global",
 				"toggleDescription": "Tekan pintasan dengan tautan video di papan klip.",
 				"changeShortcut": "Ubah pintasan",
 				"recording": "Tekan tombol…",
 				"test": "Uji",
 				"conflict": "Pintasan ini dipakai aplikasi lain — pilih yang lain.",
-				"hintLabel": "Atau tekan",
-				"hintTooltip": "Salin tautan video di mana saja, tekan pintasan ini, dan Arroxy akan memasukkannya ke antrean dengan profil aktif Anda — tidak perlu berpindah jendela.",
-				"hintTooltipSettings": "Ubah atau nonaktifkan di Pengaturan.",
 				"reset": "Atur ulang ke default"
 			},
 			"cookies": {
@@ -257,14 +262,14 @@
 			"proxy": {"label": "URL proksi", "description": "Rutekan lalu lintas melalui proxy — berguna untuk konten yang dibatasi secara geografis.", "placeholder": "http://host:port", "clear": "Jernih"},
 			"backdrop": {
 				"panelTitle": "Penampilan dan kinerja",
-				"panelDescription": "Pilih seberapa banyak gerakan yang digunakan Arroxy untuk latar belakang animasi.",
+				"panelDescription": "Pilih seberapa banyak gerakan yang digunakan Grabbit untuk latar belakang animasi.",
 				"modeLabel": "Kualitas latar belakang",
 				"modeDescription": "Beralih dari tampilan paling beranimasi ke performa terbaik.",
 				"cssOnlyLabel": "Performa terbaik",
 				"cssOnlyDescription": "Hanya CSS, tidak ada rendering kanvas.",
 				"gpuLabel": "Paling indah",
 				"gpuDescription": "Latar belakang WebGL animasi bila didukung.",
-				"runtimeFallbackNotice": "WebGL perangkat keras tidak tersedia di perangkat ini, jadi Arroxy menggunakan latar belakang kinerja."
+				"runtimeFallbackNotice": "WebGL perangkat keras tidak tersedia di perangkat ini, jadi Grabbit menggunakan latar belakang kinerja."
 			},
 			"limitRate": {
 				"label": "Batas kecepatan unduh",
@@ -277,7 +282,7 @@
 			},
 			"playlistProbeLimit": {
 				"label": "Item daftar putar untuk dipindai",
-				"description": "Entri maksimum Arroxy dimuat saat daftar putar, saluran, atau hasil pencarian dibuka.",
+				"description": "Entri maksimum Grabbit dimuat saat daftar putar, saluran, atau hasil pencarian dibuka.",
 				"option": "item {{count}}",
 				"current": "Batas saat ini: item {{count}}",
 				"customValue": "Kustom: item {{count}}",
@@ -287,7 +292,7 @@
 				"customDialogCancel": "Membatalkan",
 				"customDialogSave": "Simpan batas",
 				"invalid": "Gunakan bilangan bulat dari 1 hingga 5000",
-				"tooltip": "Memetakan ke yt-dlp --playlist-end: Arroxy hanya meminta entri daftar putar, saluran, atau pencarian sebanyak ini saat membuat alat pilih."
+				"tooltip": "Memetakan ke yt-dlp --playlist-end: Grabbit hanya meminta entri daftar putar, saluran, atau pencarian sebanyak ini saat membuat alat pilih."
 			},
 			"nativeAudioPreference": {"label": "Preferensi audio asli", "description": "Mengontrol apa yang dipilih oleh penduduk asli Terbaik. Baris audio manual dan M4A/AAC tetap eksplisit.", "compatible": "Stereo yang kompatibel", "surround": "Lebih suka surround / Dolby"},
 			"autoRetry": {"label": "Coba lagi unduhan yang gagal", "description": "Otomatis mencoba lagi setelah gangguan jaringan atau server, menunggu lebih lama sebelum tiap percobaan. Unduhan yang diblokir situs tidak pernah dicoba ulang otomatis.", "unit": "kali"},
@@ -295,13 +300,13 @@
 			"downloadConnections": {"label": "Koneksi unduhan", "description": "Mempercepat unduhan besar dengan mengambil beberapa bagian video sekaligus. Nilai lebih tinggi meningkatkan kemungkinan situs membatasi Anda.", "unit": "koneksi"},
 			"networkPacing": {
 				"heading": "Unduhan yang lembut",
-				"description": "Tambahkan sedikit waktu tunggu setiap kali mengunduh sehingga Arroxy tidak masuk ke situs terlalu agresif. Nilai dalam detik.",
-				"presetLabel": "Seberapa hati-hati Arroxy?",
+				"description": "Tambahkan sedikit waktu tunggu setiap kali mengunduh sehingga Grabbit tidak masuk ke situs terlalu agresif. Nilai dalam detik.",
+				"presetLabel": "Seberapa hati-hati Grabbit?",
 				"tooltip": "Waktu tunggu ini terjadi di dalam setiap unduhan. Berapa banyak unduhan yang berjalan bersamaan diatur terpisah, di «Unduhan sekaligus».",
 				"summary": "Menunggu: {{requests}} di antara pemeriksaan, {{downloads}} sebelum media dimulai, {{subtitles}} sebelum file subtitle.",
 				"presets": {"off": "Mati", "balanced": "Seimbang", "careful": "Hati-hati", "custom": "Kebiasaan"},
 				"tooltips": {
-					"off": "Hanya menggunakan jeda dasar kecil yang disimpan Arroxy untuk media dan subtitle.",
+					"off": "Hanya menggunakan jeda dasar kecil yang disimpan Grabbit untuk media dan subtitle.",
 					"balanced": "Bawaan. Menambahkan jeda singkat antar permintaan dan sebelum media dimulai.",
 					"careful": "Menambahkan jeda lebih lama untuk daftar putar besar atau jaringan yang sering mencapai batas.",
 					"custom": "Sesuaikan sendiri kontrol per-unduhan tingkat lanjut."
@@ -314,9 +319,9 @@
 		},
 		"quickProgress": {
 			"title": "Mempersiapkan Unduhan Cepat",
-			"description": "Arroxy sedang membaca tautan dan menerapkan {{profileName}}.",
+			"description": "Grabbit sedang membaca tautan dan menerapkan {{profileName}}.",
 			"currentFallback": "Tautan saat ini",
-			"waitHint": "Biarkan ini tetap terbuka sementara Arroxy menyiapkan antrian.",
+			"waitHint": "Biarkan ini tetap terbuka sementara Grabbit menyiapkan antrian.",
 			"failedCount_one": "{{count}} gagal",
 			"failedCount_other": "{{count}} gagal",
 			"cancel": "Batalkan persiapan",
@@ -560,6 +565,7 @@
 			"hideArtifactsFor": "Sembunyikan artefak untuk {{title}}"
 		},
 		"artifact": {"media": "Media", "subtitle": "Subjudul", "thumbnail": "gambar kecil", "description": "Keterangan", "companion": "Pendamping", "unknown": "Artefak", "missing": "Hilang"},
+		"progress": {"downloading": "Mengunduh", "merging": "Menggabungkan", "finishing": "Menyelesaikan", "speed": "Kecepatan", "remaining": "Sisa waktu"},
 		"item": {
 			"defaultError": "Pengunduhan gagal",
 			"retryingSoon": "mencoba lagi otomatis (percobaan {{attempt}})",
@@ -586,7 +592,7 @@
 		}
 	},
 	"update": {
-		"message": {"generic": "Arroxy {{version}} tersedia — Anda memiliki {{currentVersion}}.", "homebrew": "Arroxy {{version}} tersedia — perbarui dengan Homebrew.", "macosDirect": "Arroxy {{version}} tersedia — unduh DMG baru.", "portable": "Arroxy {{version}} tersedia — unduh build baru."},
+		"message": {"generic": "Grabbit {{version}} tersedia — Anda memiliki {{currentVersion}}.", "homebrew": "Grabbit {{version}} tersedia — perbarui dengan Homebrew.", "macosDirect": "Grabbit {{version}} tersedia — unduh DMG baru.", "portable": "Grabbit {{version}} tersedia — unduh build baru."},
 		"install": "Instal & Mulai Ulang",
 		"downloading": "Mengunduh…",
 		"download": "Unduh ↗",
@@ -597,7 +603,7 @@
 		"installFailed": "Pembaruan gagal",
 		"retry": "Mencoba kembali"
 	},
-	"releaseNotes": {"title": "Apa yang baru di Arroxy {{version}}", "description": "Anda menjalankan pembaruan baru. Berikut adalah hal-hal penting.", "fullNotes": "Catatan rilis lengkap ↗", "continue": "Melanjutkan"},
+	"releaseNotes": {"title": "Apa yang baru di Grabbit {{version}}", "description": "Anda menjalankan pembaruan baru. Berikut adalah hal-hal penting.", "fullNotes": "Catatan rilis lengkap ↗", "continue": "Melanjutkan"},
 	"status": {
 		"preparingBinaries": "Mempersiapkan biner…",
 		"mintingToken": "Mencetak token YouTube…",
@@ -622,7 +628,7 @@
 		"downloadingBinary": "Mengunduh biner {{name}}…",
 		"unknownStartupFailure": "Kegagalan startup pengunduhan yang tidak diketahui",
 		"diskSpaceInsufficient": "Ruang disk tidak cukup — memerlukan {{required}}, hanya tersedia {{free}}",
-		"outputNotWritable": "Tidak dapat menyimpan ke {{dir}} — Arroxy tidak diizinkan menulis di sana",
+		"outputNotWritable": "Tidak dapat menyimpan ke {{dir}} — Grabbit tidak diizinkan menulis di sana",
 		"fetchingSponsorBlock": "Menghubungi SponsorBlock…",
 		"retryingSponsorBlock": "SponsorBlock tidak tersedia, coba lagi ({{attempt}}/{{total}})…",
 		"retryingTransfer": "Koneksi macet, mencoba lagi ({{attempt}}/{{total}})…"
@@ -639,28 +645,28 @@
 			"queued": "Unduhan ditambahkan dari papan klip",
 			"alreadyQueued": "Sudah ada di antrean — tidak ada salinan ditambahkan",
 			"invalidClipboard": "Tidak ada tautan di papan klip — salin satu dulu",
-			"multipleUrls": "Beberapa tautan disalin — gunakan “URL massal” di Arroxy",
-			"needsReview": "Tautan ini perlu pemeriksaan singkat — buka Arroxy dan tempel lagi",
+			"multipleUrls": "Beberapa tautan disalin — gunakan “URL massal” di Grabbit",
+			"needsReview": "Tautan ini perlu pemeriksaan singkat — buka Grabbit dan tempel lagi",
 			"busy": "Masih memproses tautan sebelumnya",
-			"submissionFailed": "Tautan itu tidak bisa ditambahkan — coba lagi di Arroxy"
+			"submissionFailed": "Tautan itu tidak bisa ditambahkan — coba lagi di Grabbit"
 		},
 		"queue": {"skippedAlreadyQueued_one": "{{count}} video sudah ada di antrean — dilewati", "skippedAlreadyQueued_other": "{{count}} video sudah ada di antrean — dilewati"}
 	},
 	"errors": {
 		"ytdlp": {
-			"botBlock": "Perlindungan bot dipicu. IP yang Anda gunakan kemungkinan besar ditandai (rentang pusat data atau pintu keluar VPN yang sibuk). Ubah IP Anda atau pilih titik akhir VPN lain dan coba lagi. Jika terus gagal, ini mungkin merupakan perubahan sementara di sisi situs — Arroxy memperbarui yt-dlp secara otomatis saat peluncuran, sehingga perbaikan dilakukan secara otomatis setelah upstream mengirimkannya.",
+			"botBlock": "Perlindungan bot dipicu. IP yang Anda gunakan kemungkinan besar ditandai (rentang pusat data atau pintu keluar VPN yang sibuk). Ubah IP Anda atau pilih titik akhir VPN lain dan coba lagi. Jika terus gagal, ini mungkin merupakan perubahan sementara di sisi situs — Grabbit memperbarui yt-dlp secara otomatis saat peluncuran, sehingga perbaikan dilakukan secara otomatis setelah upstream mengirimkannya.",
 			"ipBlock": "Alamat IP Anda tampaknya diblokir. Coba lagi nanti atau gunakan VPN.",
 			"rateLimit": "Situs membatasi permintaan. Tunggu sebentar, lalu coba lagi.",
 			"ageRestricted": "Video ini dikenai pembatasan usia dan tidak dapat diunduh tanpa akun yang masuk.",
 			"unavailable": "Video ini tidak tersedia — mungkin bersifat pribadi, dihapus, atau dikunci wilayahnya.",
 			"geoBlocked": "Video ini tidak tersedia di wilayah Anda.",
 			"outOfDiskSpace": "Ruang disk tidak cukup. Kosongkan ruang dan coba lagi.",
-			"outputNotWritable": "Arroxy tidak dapat menulis ke folder unduhan. Folder itu mungkin hanya-baca, berada di drive yang terkunci, atau diblokir oleh pengaturan privasi sistem Anda. Pilih folder lain atau izinkan akses, lalu coba lagi.",
+			"outputNotWritable": "Grabbit tidak dapat menulis ke folder unduhan. Folder itu mungkin hanya-baca, berada di drive yang terkunci, atau diblokir oleh pengaturan privasi sistem Anda. Pilih folder lain atau izinkan akses, lalu coba lagi.",
 			"unsupportedUrl": "URL tersebut tidak didukung oleh yt-dlp. Coba tautan lain dari situs mana pun yang didukung yt-dlp.",
 			"chunkTransferFailure": "Server terus memotong unduhan di tengah-tengah streaming dan yt-dlp menyerah setelah mencoba lagi. Ini biasanya mengenai format video terbesar (4K HDR / VP9 dengan kecepatan bit tinggi). Coba lagi, ganti jaringan/VPN, atau pilih format resolusi lebih rendah.",
 			"missingDependency": "yt-dlp tidak dapat menemukan ffmpeg atau ffprobe. Perbaiki biner yang dibundel atau atur lokasi FFmpeg, lalu coba lagi.",
 			"postprocessFailure": "yt-dlp selesai diunduh tetapi pasca pemrosesan (penggabungan/mux/konversi) gagal. Seringkali ini merupakan masalah ffmpeg yang bersifat sementara — coba lagi, dan jika masalah terus berlanjut, coba kombinasi format lain.",
-			"parse": "Tidak dapat menguraikan respons dari situs. Ekstraktor yt-dlp mungkin melayang. Arroxy memperbarui secara otomatis yt-dlp saat peluncuran — coba lagi dalam beberapa menit setelah perbaikan dikirimkan.",
+			"parse": "Tidak dapat menguraikan respons dari situs. Ekstraktor yt-dlp mungkin melayang. Grabbit memperbarui secara otomatis yt-dlp saat peluncuran — coba lagi dalam beberapa menit setelah perbaikan dikirimkan.",
 			"network": "Kesalahan jaringan. Periksa koneksi Anda dan coba lagi.",
 			"drmProtected": "Video ini dilindungi DRM. yt-dlp tidak dapat menghapus DRM, sehingga file tidak dapat diunduh.",
 			"loginRequired": "Video ini memerlukan akun masuk. Siapkan cookies.txt (Pengaturan → Cookies) dan coba lagi.",
@@ -697,7 +703,7 @@
 		"mp4Cap": "H.264 di atas 1080p tidak tersedia di YouTube — dibatasi hingga 1080p secara otomatis"
 	},
 	"formatLabel": {"audioFallback": "Audio", "audioOnlyDot": "Audio saja · {{audio}}", "videoDot": "{{resolution}} · {{audio}}"},
-	"tray": {"tooltip": "Arroxy", "menu": {"statusIdle": "Menganggur", "statusActive_one": "1 pengunduhan · {{percent}}%", "statusActive_other": "Pengunduhan {{count}} · {{percent}}%", "downloadFromClipboard": "Unduh dari papan klip", "open": "Buka Arroxy", "quit": "Keluar dari Arroxy"}},
+	"tray": {"tooltip": "Grabbit", "menu": {"statusIdle": "Menganggur", "statusActive_one": "1 pengunduhan · {{percent}}%", "statusActive_other": "Pengunduhan {{count}} · {{percent}}%", "downloadFromClipboard": "Unduh dari papan klip", "open": "Buka Grabbit", "quit": "Keluar dari Grabbit"}},
 	"dialogs": {
 		"quitWithActiveDownloads": {
 			"message_one": "Pengunduhan {{count}} sedang berlangsung",
@@ -707,25 +713,25 @@
 			"pause": "Jeda Unduhan & Keluar",
 			"keep": "Terus Mengunduh"
 		},
-		"closeToTray": {"message": "Sembunyikan Arroxy ke baki sistem saat menutup?", "detail": "Arroxy terus berjalan dan menyelesaikan pengunduhan aktif. Ubah ini nanti di Pengaturan lanjutan.", "hide": "Sembunyikan ke baki", "quit": "Berhenti", "remember": "Jangan bertanya lagi"},
-		"rendererCrashed": {"message": "Arroxy mengalami masalah", "detail": "Proses penyaji macet ({{reason}}). Muat ulang untuk mencoba lagi.", "reload": "Muat ulang", "quit": "Berhenti"}
+		"closeToTray": {"message": "Sembunyikan Grabbit ke baki sistem saat menutup?", "detail": "Grabbit terus berjalan dan menyelesaikan pengunduhan aktif. Ubah ini nanti di Pengaturan lanjutan.", "hide": "Sembunyikan ke baki", "quit": "Berhenti", "remember": "Jangan bertanya lagi"},
+		"rendererCrashed": {"message": "Grabbit mengalami masalah", "detail": "Proses penyaji macet ({{reason}}). Muat ulang untuk mencoba lagi.", "reload": "Muat ulang", "quit": "Berhenti"}
 	},
 	"share": {
-		"title": "Bagikan Arroxy",
-		"description": "Arroxy gratis dan bersumber terbuka. Berbagi membantu lebih banyak orang menemukannya.",
+		"title": "Bagikan Grabbit",
+		"description": "Grabbit gratis dan bersumber terbuka. Berbagi membantu lebih banyak orang menemukannya.",
 		"copyLink": "Salin tautan",
 		"copied": "Disalin!",
-		"defaultMessage": "Arroxy — pengunduh video sumber terbuka gratis untuk Windows, macOS & Linux. Bekerja dengan situs YouTube, Vimeo, Twitch, dan 2000+.\n4K · HDR · MP3 · Shorts · Terjemahan · SponsorBlock",
-		"footerTooltip": "Bagikan Arroxy",
+		"defaultMessage": "Grabbit — pengunduh video sumber terbuka gratis untuk Windows, macOS & Linux. Bekerja dengan situs YouTube, Vimeo, Twitch, dan 2000+.\n4K · HDR · MP3 · Shorts · Terjemahan · SponsorBlock",
+		"footerTooltip": "Bagikan Grabbit",
 		"footerLabel": "Membagikan",
-		"shareAction": "Bagikan Arroxy"
+		"shareAction": "Bagikan Grabbit"
 	},
 	"filenameTemplate": {
 		"label": "Templat nama berkas",
 		"description": "Pilih cara penamaan berkas yang diunduh. Klik token untuk menyisipkannya. Gunakan / untuk memilah unduhan ke dalam folder.",
 		"profileOverrideLabel": "Templat nama berkas",
 		"profileOverrideDescription": "Biarkan kosong untuk mengikuti templat global.",
-		"idWarning": "Tanpa {id}, Arroxy tidak dapat mendeteksi item playlist yang sudah diunduh atau membuat playlist .m3u.",
+		"idWarning": "Tanpa {id}, Grabbit tidak dapat mendeteksi item playlist yang sudah diunduh atau membuat playlist .m3u.",
 		"m3uDisabled": "Tidak tersedia karena templat nama berkasmu tidak menyertakan {id} atau memilah unduhan ke dalam folder.",
 		"previewSingle": "Video tunggal",
 		"previewPlaylist": "Dalam playlist",

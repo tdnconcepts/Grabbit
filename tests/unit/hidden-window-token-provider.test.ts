@@ -85,10 +85,10 @@ function makeWindow(): MockWindow {
 }
 
 // Electron's default UA as a packaged macOS build reports it.
-const ELECTRON_DEFAULT_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Arroxy/0.4.25 Chrome/150.0.7871.250 Electron/43.7.7 Safari/537.36'
+const ELECTRON_DEFAULT_UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Grabbit/0.4.25 Chrome/150.0.7871.250 Electron/43.7.7 Safari/537.36'
 
 vi.mock('electron', () => ({
-	app: {userAgentFallback: ELECTRON_DEFAULT_UA, getName: () => 'Arroxy'},
+	app: {userAgentFallback: ELECTRON_DEFAULT_UA, getName: () => 'Grabbit'},
 	session: {fromPartition: () => partitionSession},
 	// A plain function, not an arrow: BrowserWindow is invoked with `new`, and an
 	// arrow function cannot be a constructor. Returning an object from a

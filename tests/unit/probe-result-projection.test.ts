@@ -24,6 +24,7 @@ const VIDEO_PROBE: Extract<ProbeResult, {kind: 'video'}> = {
 	extractor: 'youtube',
 	extractorKey: 'Youtube',
 	webpageUrl: 'https://www.youtube.com/watch?v=abc',
+	previewUrl: 'https://cdn.example/preview.mp4',
 	isAudioOnlySource: false,
 	formats: VIDEO_FORMATS,
 	title: 'Video',
@@ -71,7 +72,7 @@ describe('ProbeResultProjection', () => {
 		settings.single = {...settings.single, lastVideoResolution: '1080p', lastSubtitleLanguages: ['en']}
 		const patch = projectVideoProbeResult(VIDEO_PROBE, appState({settings}), true)
 
-		expect(patch).toMatchObject({wizardStep: 'formats', wizardMode: 'single', wizardTitle: 'Video', wizardExtractor: 'youtube', selectedVideoFormatId: '137', wizardSubtitleLanguages: ['en'], formatsLoading: false})
+		expect(patch).toMatchObject({wizardStep: 'formats', wizardMode: 'single', wizardTitle: 'Video', wizardExtractor: 'youtube', wizardPreviewUrl: 'https://cdn.example/preview.mp4', selectedVideoFormatId: '137', wizardSubtitleLanguages: ['en'], formatsLoading: false})
 		expect(patch.wizardProbeInfoJsonRef).toEqual(VIDEO_PROBE.probeInfoJsonRef)
 	})
 

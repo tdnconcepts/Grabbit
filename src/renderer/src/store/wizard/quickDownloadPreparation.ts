@@ -8,7 +8,7 @@ import {WizardCommands} from './commands.js'
 import {configuredCookiesRetryMode, selectProbeErrorForGuidance} from './probeErrorExperience.js'
 import {rewriteYouTubeChannelRoot} from './urlIntake.js'
 import {projectPlaylistProbeResult} from './probeResultProjection.js'
-import {prepareActiveProfileQueueSubmission} from './queueSubmission.js'
+import {prepareBestQualityQueueSubmission} from './queueSubmission.js'
 import {submitPreparedQueueSubmission} from './queueSubmissionAdapter.js'
 import {failedQuickDownloadFeedback, preparingQuickDownloadFeedback, queuedQuickDownloadFeedback, quickDownloadProgressPatch, resetQuickDownloadFeedback, type QuickDownloadRetryPlaylistMode} from './quickDownloadFeedback.js'
 import {mixedUrlPromptPatch} from './mixedUrlPrompt.js'
@@ -81,7 +81,7 @@ async function enqueueActiveProfileProbeResult(probe: ProbeResult, set: SetState
 		probeForQueue = {...probe, entries: get().playlistItems}
 	}
 
-	const prepared = prepareActiveProfileQueueSubmission(probeForQueue, get(), 'normal')
+	const prepared = prepareBestQualityQueueSubmission(probeForQueue, get(), 'normal')
 	if (!prepared) {
 		set(failedQuickDownloadFeedback({kind: 'prepare', messageKey: 'wizard.url.quickPrepareFailed', ...retryContext}))
 		return null
@@ -296,7 +296,7 @@ export async function queueLoadedPlaylistWithActiveProfile(set: SetState, get: G
 			isMultiVideo: state.playlistIsMultiVideo,
 			entries: state.playlistItems
 		}
-		const prepared = prepareActiveProfileQueueSubmission(probe, get(), lane)
+		const prepared = prepareBestQualityQueueSubmission(probe, get(), lane)
 		if (!prepared) {
 			set({...failedQuickDownloadFeedback({kind: 'prepare', messageKey: 'wizard.url.quickPrepareFailed'}), quickPlaylistCapDialogOpen: false})
 			return

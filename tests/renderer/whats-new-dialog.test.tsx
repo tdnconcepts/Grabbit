@@ -22,7 +22,7 @@ describe('WhatsNewDialog', () => {
 		render(<WhatsNewDialog open digest={SINGLE} onClose={vi.fn()} onOpenFullNotes={vi.fn()} />)
 
 		expect(screen.getByTestId('whats-new-dialog')).toBeInTheDocument()
-		expect(screen.getByRole('heading', {name: "What's new in Arroxy 1.2.0"})).toBeInTheDocument()
+		expect(screen.getByRole('heading', {name: "What's new in Grabbit 1.2.0"})).toBeInTheDocument()
 		expect(screen.getByText('This release makes updates easier to understand.')).toBeInTheDocument()
 		expect(screen.getByRole('heading', {name: 'Update Notes'})).toBeInTheDocument()
 		expect(screen.getByText("Shows a What's New popup after updating.")).toBeInTheDocument()

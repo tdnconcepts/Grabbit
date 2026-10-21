@@ -1,6 +1,7 @@
 import {render, screen, fireEvent, waitFor} from '@testing-library/react'
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vite-plus/test'
 import {App} from '@renderer/App.js'
+import {FeedbackDialog} from '@renderer/components/system/FeedbackDialog.js'
 import {useAppStore} from '@renderer/store/useAppStore.js'
 
 function ok<T>(data: T) {
@@ -75,6 +76,7 @@ const mockAppApi = {
 function resetStore() {
 	useAppStore.setState({
 		initialized: false,
+		aboutDialogOpen: false,
 		settings: null,
 		wizardStep: 'url',
 		formatsLoading: false,
@@ -93,7 +95,7 @@ function resetStore() {
 	})
 }
 
-describe('Footer feedback controls', () => {
+describe('App utilities', () => {
 	beforeEach(() => {
 		resetStore()
 		window.appApi = mockAppApi
@@ -108,45 +110,9 @@ describe('Footer feedback controls', () => {
 		delete (window as unknown as {Tally?: unknown}).Tally
 	})
 
-	it('renders footer utility buttons', async () => {
-		render(<App />)
-		await screen.findByTestId('app-footer')
-		expect(screen.queryByTestId('btn-debug')).not.toBeInTheDocument()
-		expect(screen.queryByTestId('btn-about-version')).not.toBeInTheDocument()
-		expect(screen.getByTestId('btn-discord')).toBeInTheDocument()
-		expect(screen.getByTestId('btn-feedback')).toBeInTheDocument()
-		expect(screen.queryByTestId('btn-logs')).not.toBeInTheDocument()
-	})
-
-	it('uses compact footer classes so mobile widths do not clip utility actions', async () => {
-		render(<App />)
-
-		const footer = await screen.findByTestId('app-footer')
-		expect(footer.className).toContain('min-w-0')
-		expect(footer.className).toContain('max-sm:px-2')
-
-		expect(screen.getByTestId('footer-left-controls').className).toContain('min-w-0')
-		expect(screen.getByTestId('footer-language-picker').className).toContain('[&_[data-slot=select-trigger]]:max-w-[6rem]')
-		expect(screen.getByTestId('footer-actions').className).toContain('shrink-0')
-		expect(screen.getByTestId('btn-about').className).toContain('max-sm:hidden')
-		expect(screen.getByTestId('btn-share-label').className).toContain('max-sm:sr-only')
-		expect(screen.getByTestId('btn-discord-label').className).toContain('max-sm:sr-only')
-		expect(screen.getByTestId('btn-feedback-label').className).toContain('max-sm:sr-only')
-		expect(screen.getByTestId('btn-feedback').querySelector('[data-icon="inline-start"]')).toBeInTheDocument()
-	})
-
-	it('Discord footer button opens the community invite', async () => {
-		render(<App />)
-		fireEvent.click(await screen.findByTestId('btn-discord'))
-
-		await waitFor(() => {
-			expect(mockOpenExternal).toHaveBeenCalledWith('https://discord.gg/ueGvXwQH8y')
-		})
-	})
-
 	it('About dialog links to the Discord community', async () => {
+		useAppStore.setState({aboutDialogOpen: true})
 		render(<App />)
-		fireEvent.click(await screen.findByTestId('btn-about'))
 		fireEvent.click(await screen.findByTestId('about-link-discord'))
 
 		await waitFor(() => {
@@ -154,9 +120,8 @@ describe('Footer feedback controls', () => {
 		})
 	})
 
-	it('Feedback button opens Tally immediately with context and no GitHub navigation', async () => {
-		render(<App />)
-		fireEvent.click(await screen.findByTestId('btn-feedback'))
+	it('Feedback dialog opens Tally immediately with context and no GitHub navigation', async () => {
+		render(<FeedbackDialog open onOpenChange={vi.fn()} />)
 
 		await waitFor(() => {
 			expect(mockTallyOpenPopup).toHaveBeenCalledOnce()
@@ -188,8 +153,7 @@ describe('Footer feedback controls', () => {
 	})
 
 	it('uploads the diagnostic log after Tally submission using the same report id', async () => {
-		render(<App />)
-		fireEvent.click(await screen.findByTestId('btn-feedback'))
+		render(<FeedbackDialog open onOpenChange={vi.fn()} />)
 
 		await waitFor(() => {
 			expect(mockTallyOpenPopup).toHaveBeenCalledOnce()

@@ -12,12 +12,12 @@ import {ToggleGroup, ToggleGroupItem} from '../ui/toggle-group.js'
 import {Tooltip, TooltipTrigger, TooltipContent} from '../ui/tooltip.js'
 import {MascotBubble} from '../shared/MascotBubble.js'
 import {buildSubtitleList, SUBTITLE_MODE_I18N_KEYS} from '../../lib/subtitleLabel.js'
-import loveImg from '../../assets/Love.png'
+import appIcon from '../../assets/App-icon-HQ.png'
 import {SUBTITLE_FORMATS, SUBTITLE_MODES} from '@shared/schemas.js'
 import {SectionLabel} from '../shared/SectionLabel.js'
 import {CheckRow} from '../shared/CheckRow.js'
 
-export function StepSubtitles(): ReactNode {
+export function StepSubtitles({embedded = false}: {embedded?: boolean} = {}): ReactNode {
 	const {t, i18n} = useTranslation()
 	const {wizardSubtitles, wizardAutomaticCaptions, wizardSubtitleLanguages, wizardSubtitleMode, wizardSubtitleFormat, toggleSubtitleLanguage, setSubtitleMode, setSubtitleFormat, advance, back, skipSubtitles} = useAppStore()
 
@@ -31,7 +31,7 @@ export function StepSubtitles(): ReactNode {
 		() =>
 			hasLangs ? (
 				<div className="flex pt-2">
-					<MascotBubble image={loveImg} message={t('wizard.subtitles.mascot')} side="left" />
+					<MascotBubble image={appIcon} message={t('wizard.subtitles.mascot')} side="left" />
 				</div>
 			) : undefined,
 		[hasLangs, t]
@@ -206,32 +206,34 @@ export function StepSubtitles(): ReactNode {
 				</>
 			)}
 
-			<WizardFooter extraAbove={footerExtra}>
-				<Button variant="outline" type="button" onClick={back}>
-					{t('common.back')}
-				</Button>
-				{selectedCount > 0 ? (
-					<>
-						<Button variant="outline" type="button" onClick={skipSubtitles}>
-							{t('wizard.subtitles.skipSubs')}
-						</Button>
-						<Tooltip>
-							<TooltipTrigger
-								render={props => (
-									<Button variant="glow" {...props} type="button" onClick={advance}>
-										{t('common.continue')}
-									</Button>
-								)}
-							/>
-							<TooltipContent data-testid="subtitle-selected-tooltip">{t('wizard.subtitles.selectedNote', {count: selectedCount})}</TooltipContent>
-						</Tooltip>
-					</>
-				) : (
-					<Button variant="glow" type="button" onClick={skipSubtitles}>
-						{hasLangs ? t('wizard.subtitles.skipSubs') : t('wizard.subtitles.skip')}
+			{!embedded ? (
+				<WizardFooter extraAbove={footerExtra}>
+					<Button variant="outline" type="button" onClick={back}>
+						{t('common.back')}
 					</Button>
-				)}
-			</WizardFooter>
+					{selectedCount > 0 ? (
+						<>
+							<Button variant="outline" type="button" onClick={skipSubtitles}>
+								{t('wizard.subtitles.skipSubs')}
+							</Button>
+							<Tooltip>
+								<TooltipTrigger
+									render={props => (
+										<Button variant="glow" {...props} type="button" onClick={advance}>
+											{t('common.continue')}
+										</Button>
+									)}
+								/>
+								<TooltipContent data-testid="subtitle-selected-tooltip">{t('wizard.subtitles.selectedNote', {count: selectedCount})}</TooltipContent>
+							</Tooltip>
+						</>
+					) : (
+						<Button variant="glow" type="button" onClick={skipSubtitles}>
+							{hasLangs ? t('wizard.subtitles.skipSubs') : t('wizard.subtitles.skip')}
+						</Button>
+					)}
+				</WizardFooter>
+			) : null}
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import {fireEvent, render, screen, waitFor, within} from '@testing-library/react'
+import {act, fireEvent, render, screen, waitFor, within} from '@testing-library/react'
 import {beforeEach, describe, expect, it, vi} from 'vite-plus/test'
 import {StepUrlInput} from '@renderer/components/wizard/StepUrlInput.js'
 import {MixedUrlPromptDialog} from '@renderer/components/wizard/MixedUrlPromptDialog.js'
@@ -103,9 +103,9 @@ function openSettingsTab(): void {
 	fireEvent.click(screen.getByRole('tab', {name: 'Settings'}))
 }
 
-function enterUrlAndStartInteractiveDownload(): void {
+async function enterUrlAndStartInteractiveDownload(): Promise<void> {
 	fireEvent.change(screen.getByTestId('profiles-main-input'), {target: {value: SINGLE_URL}})
-	fireEvent.click(screen.getByTestId('profiles-interactive-download'))
+	await act(async () => useAppStore.getState().submitUrl())
 }
 
 describe('advanced network settings', () => {
@@ -244,7 +244,7 @@ describe('advanced network settings', () => {
 		render(<StepUrlInput />)
 		openSettingsTab()
 
-		expect(screen.getByTestId('profiles-settings-backdrop-mode-fallback')).toHaveTextContent('Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop.')
+		expect(screen.getByTestId('profiles-settings-backdrop-mode-fallback')).toHaveTextContent('Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop.')
 	})
 
 	it('does not show a runtime fallback notice when the user selected CSS-only', async () => {
@@ -424,7 +424,7 @@ describe('incomplete cookies config guard', () => {
 		resetStore(buildSettings({cookiesMode: 'file', cookiesPath: '   '}))
 		render(<StepUrlInput />)
 
-		enterUrlAndStartInteractiveDownload()
+		await enterUrlAndStartInteractiveDownload()
 
 		expect(await screen.findByTestId('cookies-config-dialog')).toBeInTheDocument()
 		expect(mockApi.downloads.probe).not.toHaveBeenCalled()
@@ -436,7 +436,7 @@ describe('incomplete cookies config guard', () => {
 		resetStore(buildSettings({cookiesMode: 'browser'}))
 		render(<StepUrlInput />)
 
-		enterUrlAndStartInteractiveDownload()
+		await enterUrlAndStartInteractiveDownload()
 
 		expect(await screen.findByTestId('cookies-config-dialog')).toBeInTheDocument()
 		expect(mockApi.downloads.probe).not.toHaveBeenCalled()
@@ -447,7 +447,7 @@ describe('incomplete cookies config guard', () => {
 		resetStore(buildSettings({cookiesMode: 'file', cookiesPath: ''}))
 		render(<StepUrlInput />)
 
-		enterUrlAndStartInteractiveDownload()
+		await enterUrlAndStartInteractiveDownload()
 		expect(screen.queryByTestId('profiles-settings-tab')).not.toBeInTheDocument()
 
 		fireEvent.click(await screen.findByTestId('cookies-config-dialog-open-settings'))
@@ -463,7 +463,7 @@ describe('incomplete cookies config guard', () => {
 		resetStore(buildSettings({cookiesMode: 'file', cookiesPath: ''}))
 		render(<StepUrlInput />)
 
-		enterUrlAndStartInteractiveDownload()
+		await enterUrlAndStartInteractiveDownload()
 
 		expect(await screen.findByTestId('cookies-config-dialog')).toBeInTheDocument()
 
@@ -475,7 +475,7 @@ describe('incomplete cookies config guard', () => {
 		expect(useAppStore.getState().cookiesConfigDialogIssue).toBeNull()
 		expect(mockApi.downloads.probe).not.toHaveBeenCalled()
 
-		fireEvent.click(screen.getByTestId('profiles-interactive-download'))
+		await act(async () => useAppStore.getState().submitUrl())
 
 		expect(await screen.findByTestId('cookies-config-dialog')).toBeInTheDocument()
 		expect(useAppStore.getState().cookiesConfigDialogIssue).toBe('file-missing-path')
@@ -487,7 +487,7 @@ describe('incomplete cookies config guard', () => {
 		resetStore(buildSettings({cookiesMode: 'browser'}))
 		render(<StepUrlInput />)
 
-		enterUrlAndStartInteractiveDownload()
+		await enterUrlAndStartInteractiveDownload()
 
 		const dialog = await screen.findByTestId('cookies-config-dialog')
 		fireEvent.keyDown(dialog, {key: 'Escape', code: 'Escape'})

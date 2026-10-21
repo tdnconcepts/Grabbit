@@ -29,7 +29,7 @@ jobs:
       - uses: vedantmgoyal9/winget-releaser@b7370d4d152efdce803a26cc6ca9eee58cb2ad54
         with:
           identifier: AntonioOrionus.Arroxy
-          installers-regex: '^Arroxy-win-x64-Setup\.exe$'
+          installers-regex: '^Grabbit-win-x64-Setup\.exe$'
           token: ${{ secrets.WINGET_TOKEN }}
           release-tag: ${{ steps.get_latest.outputs.tag }}
           extra-installer-fields: |

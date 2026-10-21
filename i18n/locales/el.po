@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "Άδεια MIT · από Antonio Orionus"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "Σχετικά με το Arroxy"
+msgid "About Grabbit"
+msgstr "Σχετικά με το Grabbit"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "Σχόλια"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "Σου αρέσει το Arroxy; Θα χαρώ να ακούσω τη γνώμη σου! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "Σου αρέσει το Grabbit; Θα χαρώ να ακούσω τη γνώμη σου! 💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "Επανεκκίνηση"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Το Arroxy συνεχίζει να εκτελείται και ολοκληρώνει τις ενεργές λήψεις. Άλλαξέ το αργότερα στις Ρυθμίσεις για προχωρημένους."
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Το Grabbit συνεχίζει να εκτελείται και ολοκληρώνει τις ενεργές λήψεις. Άλλαξέ το αργότερα στις Ρυθμίσεις για προχωρημένους."
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "Απόκρυψη στο δίσκο"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "Απόκρυψη Arroxy στο δίσκο συστήματος κατά το κλείσιμο;"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "Απόκρυψη Grabbit στο δίσκο συστήματος κατά το κλείσιμο;"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "Η διαδικασία απόδοσης κατέρρευσε ({{reason}}). Ανανέωσε για να δοκιμάσεις ξανά."
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Το Arroxy αντιμετώπισε πρόβλημα"
+msgid "Grabbit encountered a problem"
+msgstr "Το Grabbit αντιμετώπισε πρόβλημα"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "Αυτό το βίντεο έχει περιορισμό ηλικίας και δεν μπορεί να ληφθεί χωρίς συνδεδεμένο λογαριασμό."
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "Η προστασία bot ενεργοποιήθηκε. Η IP που χρησιμοποιείς είναι πιθανότατα επισημασμένη (εύρος datacenter ή πολυσύχναστη έξοδος VPN). Άλλαξε IP ή επέλεξε διαφορετικό endpoint VPN και δοκίμασε ξανά. Αν συνεχίζει να αποτυγχάνει, μπορεί να πρόκειται για προσωρινή αλλαγή από πλευράς YouTube — το Arroxy ενημερώνει αυτόματα το yt-dlp κατά την εκκίνηση, οπότε η επιδιόρθωση εφαρμόζεται αυτόματα μόλις την κυκλοφορήσει το upstream."
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "Η προστασία bot ενεργοποιήθηκε. Η IP που χρησιμοποιείς είναι πιθανότατα επισημασμένη (εύρος datacenter ή πολυσύχναστη έξοδος VPN). Άλλαξε IP ή επέλεξε διαφορετικό endpoint VPN και δοκίμασε ξανά. Αν συνεχίζει να αποτυγχάνει, μπορεί να πρόκειται για προσωρινή αλλαγή από πλευράς YouTube — το Grabbit ενημερώνει αυτόματα το yt-dlp κατά την εκκίνηση, οπότε η επιδιόρθωση εφαρμόζεται αυτόματα μόλις την κυκλοφορήσει το upstream."
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "Δεν υπάρχει αρκετός χώρος στο δίσκο. Ελευθέρωσε χώρο και δοκίμασε ξανά."
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Το Arroxy δεν μπορεί να γράψει στον φάκελο λήψεων. Μπορεί να είναι μόνο για ανάγνωση, σε κλειδωμένη μονάδα δίσκου ή να μπλοκάρεται από τις ρυθμίσεις απορρήτου του συστήματός σου. Διάλεξε άλλον φάκελο ή επίτρεψε την πρόσβαση και δοκίμασε ξανά."
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Το Grabbit δεν μπορεί να γράψει στον φάκελο λήψεων. Μπορεί να είναι μόνο για ανάγνωση, σε κλειδωμένη μονάδα δίσκου ή να μπλοκάρεται από τις ρυθμίσεις απορρήτου του συστήματός σου. Διάλεξε άλλον φάκελο ή επίτρεψε την πρόσβαση και δοκίμασε ξανά."
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "Δεν ήταν δυνατή η ανάλυση της απάντησης από τον ιστότοπο. Ο extractor του yt-dlp μπορεί να έχει μείνει πίσω. Το Arroxy ενημερώνει αυτόματα το yt-dlp κατά την εκκίνηση — δοκίμασε ξανά σε λίγα λεπτά μόλις κυκλοφορήσει η διόρθωση."
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "Δεν ήταν δυνατή η ανάλυση της απάντησης από τον ιστότοπο. Ο extractor του yt-dlp μπορεί να έχει μείνει πίσω. Το Grabbit ενημερώνει αυτόματα το yt-dlp κατά την εκκίνηση — δοκίμασε ξανά σε λίγα λεπτά μόλις κυκλοφορήσει η διόρθωση."
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "Άγνωστο στοιχείο {{token}}."
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "Χωρίς το {id}, το Arroxy δεν μπορεί να εντοπίσει ήδη ληφθέντα στοιχεία λίστας ούτε να δημιουργήσει λίστες .m3u."
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "Χωρίς το {id}, το Grabbit δεν μπορεί να εντοπίσει ήδη ληφθέντα στοιχεία λίστας ούτε να δημιουργήσει λίστες .m3u."
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "Δεν υπάρχει σύνδεσμος στο πρόχειρο — αντιγράψτε έναν πρώτα"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "Αντιγράφηκαν πολλαπλοί σύνδεσμοι — χρησιμοποιήστε τα «Μαζικά URL» στο Arroxy"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "Αντιγράφηκαν πολλαπλοί σύνδεσμοι — χρησιμοποιήστε τα «Μαζικά URL» στο Grabbit"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "Αυτός ο σύνδεσμος χρειάζεται έναν γρήγορο έλεγχο — ανοίξτε το Arroxy και επικολλήστε τον ξανά"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "Αυτός ο σύνδεσμος χρειάζεται έναν γρήγορο έλεγχο — ανοίξτε το Grabbit και επικολλήστε τον ξανά"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "Η λήψη προστέθηκε από το πρόχειρο"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "Δεν ήταν δυνατή η προσθήκη αυτού του συνδέσμου — δοκιμάστε ξανά στο Arroxy"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "Δεν ήταν δυνατή η προσθήκη αυτού του συνδέσμου — δοκιμάστε ξανά στο Grabbit"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "Η ουρά είναι σε παύση — οι εκκρεμείς λήψεις δεν θα ξεκινήσουν μέχρι να τη συνεχίσεις"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "Λήψη"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "Ολοκλήρωση"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "Συγχώνευση"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "Χρόνος που απομένει"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "Ταχύτητα"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "Συνέχισε τις λήψεις σε παύση και άφησε την ουρά να προχωρήσει"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "Πλήρεις σημειώσεις έκδοσης ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "Τι νέο υπάρχει στο Arroxy {{version}}"
+msgid "What's new in Grabbit {{version}}"
+msgstr "Τι νέο υπάρχει στο Grabbit {{version}}"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "Αντιγραφή συνδέσμου"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy — Δωρεάν πρόγραμμα λήψης βίντεο ανοιχτού κώδικα για Windows, macOS & Linux. Λειτουργεί με YouTube, Vimeo, Twitch και 2000+ ιστοτόπους.\n"
+"Grabbit — Δωρεάν πρόγραμμα λήψης βίντεο ανοιχτού κώδικα για Windows, macOS & Linux. Λειτουργεί με YouTube, Vimeo, Twitch και 2000+ ιστοτόπους.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Το Arroxy είναι δωρεάν και ανοιχτού κώδικα. Η κοινοποίηση βοηθά περισσότερους να το ανακαλύψουν."
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Το Grabbit είναι δωρεάν και ανοιχτού κώδικα. Η κοινοποίηση βοηθά περισσότερους να το ανακαλύψουν."
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "Κοινή χρήση"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "Κοινή χρήση Arroxy"
+msgid "Share Grabbit"
+msgstr "Κοινή χρήση Grabbit"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "Κοινή χρήση Arroxy"
+msgid "Share Grabbit"
+msgstr "Κοινή χρήση Grabbit"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "Μοιράσου το Arroxy"
+msgid "Share Grabbit"
+msgstr "Μοιράσου το Grabbit"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "Μετακίνηση αρχείων…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "Δεν είναι δυνατή η αποθήκευση στο {{dir}} — το Arroxy δεν έχει άδεια εγγραφής εκεί"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "Δεν είναι δυνατή η αποθήκευση στο {{dir}} — το Grabbit δεν έχει άδεια εγγραφής εκεί"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "Λήψη από το πρόχειρο"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "Άνοιγμα Arroxy"
+msgid "Open Grabbit"
+msgstr "Άνοιγμα Grabbit"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "Έξοδος από Arroxy"
+msgid "Quit Grabbit"
+msgstr "Έξοδος από Grabbit"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "Αδρανές"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "Η ενημέρωση απέτυχε"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Το Arroxy {{version}} είναι διαθέσιμο — έχεις την {{currentVersion}}."
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Το Grabbit {{version}} είναι διαθέσιμο — έχεις την {{currentVersion}}."
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Το Arroxy {{version}} είναι διαθέσιμο — ενημέρωσε μέσω Homebrew."
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Το Grabbit {{version}} είναι διαθέσιμο — ενημέρωσε μέσω Homebrew."
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Το Arroxy {{version}} είναι διαθέσιμο — κατέβασε το νέο DMG."
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Το Grabbit {{version}} είναι διαθέσιμο — κατέβασε το νέο DMG."
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Το Arroxy {{version}} είναι διαθέσιμο — κατέβασε τη νέα έκδοση."
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Το Grabbit {{version}} είναι διαθέσιμο — κατέβασε τη νέα έκδοση."
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "Έτοιμα"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "Επικόλλησε URL βίντεο, playlist, καναλιού, αναζήτησης ή ήχου. Το Arroxy θα καθαρίσει τα διπλότυπα πριν τα βάλει στην ουρά."
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "Επικόλλησε URL βίντεο, playlist, καναλιού, αναζήτησης ή ήχου. Το Grabbit θα καθαρίσει τα διπλότυπα πριν τα βάλει στην ουρά."
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "Κατέβασε μόνο αυτό το βίντεο ή βάλε ολόκληρη τη λίστα αναπαραγωγής στην ουρά με το ενεργό προφίλ Γρήγορης λήψης."
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "Ο μέγιστος αριθμός στοιχείων που σαρώνει το Arroxy πριν βάλει στην ουρά μια λίστα αναπαραγωγής, ένα κανάλι ή ένα αποτέλεσμα αναζήτησης."
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "Ο μέγιστος αριθμός στοιχείων που σαρώνει το Grabbit πριν βάλει στην ουρά μια λίστα αναπαραγωγής, ένα κανάλι ή ένα αποτέλεσμα αναζήτησης."
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "Βάζει κάθε φορτωμένο στοιχείο της λίστας στην ουρά με το ενεργό προφίλ Γρήγορης λήψης. Αν η σάρωση φτάσει το όριό σου, το Arroxy θα ρωτήσει πριν βάλει στοιχεία στην ουρά."
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "Βάζει κάθε φορτωμένο στοιχείο της λίστας στην ουρά με το ενεργό προφίλ Γρήγορης λήψης. Αν η σάρωση φτάσει το όριό σου, το Grabbit θα ρωτήσει πριν βάλει στοιχεία στην ουρά."
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -1831,7 +1855,7 @@ msgstr "Επέλεξε τουλάχιστον ένα βίντεο για να σ
 
 msgctxt "wizard.playlist.probeLimitAlertDesc"
 msgid "Showing first {{count}} items. Increase the load limit to see more."
-msgstr "Το Arroxy βρήκε περισσότερα από {{count}} στοιχεία, οπότε το τρέχον όριο σάρωσης αποκρύπτει τα υπόλοιπα."
+msgstr "Το Grabbit βρήκε περισσότερα από {{count}} στοιχεία, οπότε το τρέχον όριο σάρωσης αποκρύπτει τα υπόλοιπα."
 
 msgctxt "wizard.playlist.probeLimitAlertTitle"
 msgid "Playlist scan is capped"
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "Τρέχων σύνδεσμος"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Το Arroxy διαβάζει τον σύνδεσμο και εφαρμόζει το {{profileName}}."
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Το Grabbit διαβάζει τον σύνδεσμο και εφαρμόζει το {{profileName}}."
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "Προετοιμασία γρήγορης λήψης"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "Κράτησέ το ανοιχτό όσο το Arroxy προετοιμάζει την ουρά."
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "Κράτησέ το ανοιχτό όσο το Grabbit προετοιμάζει την ουρά."
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "Ποιότητα φόντου"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "Επίλεξε πόση κίνηση χρησιμοποιεί το Arroxy για το κινούμενο φόντο."
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "Επίλεξε πόση κίνηση χρησιμοποιεί το Grabbit για το κινούμενο φόντο."
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "Εμφάνιση και απόδοση"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "Το WebGL μέσω υλικού δεν είναι διαθέσιμο σε αυτήν τη συσκευή, οπότε το Arroxy χρησιμοποιεί το φόντο επιδόσεων."
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "Το WebGL μέσω υλικού δεν είναι διαθέσιμο σε αυτήν τη συσκευή, οπότε το Grabbit χρησιμοποιεί το φόντο επιδόσεων."
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "Μαζικά URL"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "Πρόσθεσε και βάλε στην ουρά πολλά URL."
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "Playlist βίντεο"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "Τι μπορεί να κατεβάσει το Arroxy"
+msgid "What Grabbit can pull"
+msgstr "Τι μπορεί να κατεβάσει το Grabbit"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "Βίντεο"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "Οδηγός βήμα προς βήμα. Επίλεξε μορφή, ποιότητα και περισσότερα."
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "Λήψη από URL"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "Αυτή η συντόμευση χρησιμοποιείται από άλλη εφαρμογή — επιλέξτε άλλη."
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "Ή πάτησε"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "Αντέγραψε έναν σύνδεσμο βίντεο οπουδήποτε, πάτησε αυτή τη συντόμευση και το Arroxy θα τον βάλει στην ουρά με το ενεργό προφίλ σου — δεν χρειάζεται να αλλάξεις παράθυρο."
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "Άλλαξέ το ή απενεργοποίησέ το στις Ρυθμίσεις."
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "Πατήστε πλήκτρα…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "Επαναφορά στις προεπιλογές"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "Κατεβάστε οποιονδήποτε σύνδεσμο αντιγράψατε, από οποιαδήποτε εφαρμογή, χωρίς να ανοίξετε το Arroxy."
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "Κατεβάστε οποιονδήποτε σύνδεσμο αντιγράψατε, από οποιαδήποτε εφαρμογή, χωρίς να ανοίξετε το Grabbit."
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "Ανενεργό"
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "Λήψη στο παρασκήνιο… Ξέρω να κάνω πολλά μαζί 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "Ρίξε έναν σύνδεσμο και άσε το Arroxy να το κατεβάσει ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "Συμβατό στερεοφωνικό"
@@ -2962,8 +2958,8 @@ msgid "Prefer surround / Dolby"
 msgstr "Προτίμηση surround / Dolby"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
-msgstr "Προσθέτει μικρές παύσεις κατά τη διάρκεια κάθε λήψης ώστε το Arroxy να μην πιέζει υπερβολικά τον ιστότοπο. Οι τιμές είναι σε δευτερόλεπτα."
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
+msgstr "Προσθέτει μικρές παύσεις κατά τη διάρκεια κάθε λήψης ώστε το Grabbit να μην πιέζει υπερβολικά τον ιστότοπο. Οι τιμές είναι σε δευτερόλεπτα."
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
 msgid "Pause before media starts: max"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "Ήπιες λήψεις"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "Πόσο προσεκτικό πρέπει να είναι το Arroxy;"
+msgid "How cautious should Grabbit be?"
+msgstr "Πόσο προσεκτικό πρέπει να είναι το Grabbit;"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "Ρύθμισε μόνος σου τους σύνθετους ελέγχους ανά λήψη."
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "Χρησιμοποιεί μόνο τις μικρές βασικές παύσεις που κρατά το Arroxy για μέσα και υποτίτλους."
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "Χρησιμοποιεί μόνο τις μικρές βασικές παύσεις που κρατά το Grabbit για μέσα και υποτίτλους."
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "Προσαρμοσμένο: {{count}} στοιχεία"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "Μέγιστος αριθμός εγγραφών που φορτώνει το Arroxy όταν ανοίγει playlist, κανάλι ή αποτέλεσμα αναζήτησης."
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "Μέγιστος αριθμός εγγραφών που φορτώνει το Grabbit όταν ανοίγει playlist, κανάλι ή αποτέλεσμα αναζήτησης."
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}} στοιχεία"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "Αντιστοιχεί στο yt-dlp --playlist-end: το Arroxy ζητά μόνο τόσες εγγραφές playlist, καναλιού ή αναζήτησης κατά τη δημιουργία του picker."
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "Ενεργό προφίλ"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "Ενσωματωμένο"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "Προσαρμοσμένο"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "Κρυφό"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "Τροποποιημένο"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "Αντιστοιχεί στο yt-dlp --playlist-end: το Grabbit ζητά μόνο τόσες εγγραφές playlist, καναλιού ή αναζήτησης κατά τη δημιουργία του picker."
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "Αλλαγή καθολικού προορισμού"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "Προορισμός"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "Επεξεργασία"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "Επεξεργασία ενεργού προφίλ"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "Τα κρυφά προφίλ παραμένουν εδώ, αλλά εξαφανίζονται από κάθε επιλογέα."
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "Εμφάνιση προφίλ στις επιλογές: {{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "Διατηρήστε τουλάχιστον ένα διαθέσιμο προφίλ."
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "Διαχείριση προφίλ"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "Άλλαξε το ενεργό προφίλ για Γρήγορη λήψη, μαζικά URL και playlist."
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "Αλλαγή προφίλ"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "Νέο προφίλ"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "Δημιουργήστε, επιλέξτε, επεξεργαστείτε ή αφαιρέστε επαναχρησιμοποιήσιμες ρυθμίσεις λήψης."
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "Προφίλ λήψης"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "Αφαίρεση"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "Επαναφορά"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "Αλλαγή προφίλ λήψης: {{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "Αλλαγή προφίλ λήψης"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "Ο έλεγχος απέτυχε"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "Προστέθηκε στην ουρά"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "Επικόλλησε URL βίντεο, playlist, καναλιού ή αναζήτησης για να ξεκινήσεις."
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "Γενική συμπεριφορά που επηρεάζει και τις λήψεις που ελέγχονται από προφίλ."
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "Είσοδος"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "Προφίλ"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "Προηγμένες επιλογές"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "Ανάλυση συνδέσμου…"
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "Καλύτερος ήχος"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "Αλλαγή προορισμού"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "Επικολλήστε έναν σύνδεσμο για να το αναλύσετε αυτόματα και, στη συνέχεια, επιλέξτε τα πάντα εδώ."
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "Λήψη προορισμού"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "Λήψη"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "Έξοδος πρότυπο ονόματος αρχείου"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "Εισαγάγετε μια έγκυρη διεύθυνση URL HTTP ή HTTPS."
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "Επιλογές λήψης"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "Προσαρμοσμένο εύρος"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "Δέχεται SS, MM:SS ή ΩΩ:MM:SS."
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "Ώρα λήξης"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "Οι ώρες έναρξης και λήξης πρέπει να παραμένουν εντός της διάρκειας του βίντεο."
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "Εισαγάγετε μια έγκυρη ώρα λήξης."
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "Η ώρα λήξης πρέπει να είναι μεταγενέστερη από την ώρα έναρξης."
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "Εισαγάγετε μια έγκυρη ώρα έναρξης στο μηδέν ή αργότερα."
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "Πλήρες βίντεο"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "Κατεβάστε ένα συγκεκριμένο μέρος"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "Επανάληψη αποσπάσματος"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "Επόμενο καρέ"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "Θέση στη χρονογραμμή"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "Αναπαράγετε ή μετακινήστε το βίντεο για να επιλέξετε ακριβή σημεία κοπής."
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "Προεπισκόπηση αποσπάσματος"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "Η προεπισκόπηση δεν είναι διαθέσιμη για αυτή την πηγή. Μπορείτε ακόμη να χρησιμοποιήσετε τη γραμμή χρόνου και τα πεδία χρόνου."
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "Προηγούμενο καρέ"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "Επαναφορά εύρους"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "Επιλεγμένο εύρος"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "Ορισμός τέλους"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "Ορισμός αρχής"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "Ώρα έναρξης"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "Βήμα πίσω"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "Βήμα μπροστά"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "Έναρξη {{start}} — Τέλος {{end}} — Μήκος κλιπ {{length}}"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "Χρήση τέλους βίντεο"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "Μεγέθυνση χρονογραμμής"

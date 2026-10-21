@@ -100,7 +100,7 @@ const videoFieldsSchema = z.object({
 	age_limit: optNum,
 	// Attribution fields. Typed rather than left to the loose passthrough
 	// because filename templates can name a *directory* after {uploader} /
-	// {date}, and Arroxy renders those itself. The four-field chain mirrors the
+	// {date}, and Grabbit renders those itself. The four-field chain mirrors the
 	// compiled `%(uploader,channel,creator,uploader_id)` output template.
 	uploader: optStr,
 	channel: optStr,

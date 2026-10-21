@@ -131,7 +131,7 @@ export function PlaylistScopeControl({onApplyScope, applyLabel, pendingLabel, di
 				<DialogContent className="sm:max-w-md" data-testid="playlist-scope-dialog">
 					<DialogHeader>
 						<DialogTitle>{copy(t, 'wizard.url.playlistScope.dialogTitle', 'Playlist scope')}</DialogTitle>
-						<DialogDescription>{copy(t, 'wizard.url.playlistScope.dialogDescription', 'Choose what Arroxy asks yt-dlp to load for this playlist.')}</DialogDescription>
+						<DialogDescription>{copy(t, 'wizard.url.playlistScope.dialogDescription', 'Choose what Grabbit asks yt-dlp to load for this playlist.')}</DialogDescription>
 					</DialogHeader>
 
 					<div className="flex flex-col gap-3">

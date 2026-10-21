@@ -4,7 +4,7 @@ import {i18next} from '@shared/i18n/index.js'
 import type {DownloadProfile, FormatOption, PlaylistEntry, PlaylistSelection, ProbeResult, QueueItem, QueueItemStatus} from '@shared/types.js'
 import type {PreparedJob} from '@shared/preparedJob.js'
 import type {AppState} from '@renderer/store/types.js'
-import {prepareActiveProfileQueueSubmission, prepareManualQueueSubmission, prepareMultiProfileQueueSubmission} from '@renderer/store/wizard/queueSubmission.js'
+import {prepareActiveProfileQueueSubmission, prepareBestQualityQueueSubmission, prepareManualQueueSubmission, prepareMultiProfileQueueSubmission} from '@renderer/store/wizard/queueSubmission.js'
 
 const FORMATS: FormatOption[] = [
 	{formatId: '137', label: '1080p', ext: 'mp4', resolution: '1080p', fps: 30, isVideoOnly: true, isAudioOnly: false, filesize: 1000},
@@ -221,6 +221,14 @@ describe('QueueSubmission', () => {
 		expect(prepared?.items).toHaveLength(1)
 		expect(prepared?.items[0]).toMatchObject({url: 'https://www.youtube.com/watch?v=abc', title: 'Video', outputDir: '/profile-downloads/Balanced 720p', formatLabel: 'Up to 720p · Native formats · Native audio', job: {kind: 'ranged-format'}})
 		expect(prepared?.items[0]?.probeInfoJsonRef).toEqual(VIDEO_PROBE.probeInfoJsonRef)
+	})
+
+	it('prepares Quick Download with built-in best quality regardless of the saved active profile', () => {
+		const settings = defaultAppSettings('/downloads')
+		settings.profiles.active = {kind: 'builtin', id: 'audio-only'}
+		const prepared = prepareBestQualityQueueSubmission(VIDEO_PROBE, state({settings, wizardOutputDir: '/downloads'}), 'normal')
+
+		expect(prepared?.items[0]).toMatchObject({outputDir: '/downloads/Best available', formatLabel: 'Best available · Native formats · Native audio', job: {kind: 'ranged-format'}})
 	})
 
 	it('threads surround preference into active-profile best-native selectors', () => {

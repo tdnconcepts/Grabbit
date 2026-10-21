@@ -180,8 +180,6 @@ export const uz = {
     "Sayt o'zgarsa, yt-dlp har hafta tuzatishlar chiqaradi va Arroxy ishga tushganda binarni avtomatik yangilaydi",
   shot1_cap:
     "<b>Tezkor yuklab olish bosh sahifasi</b><br/>URL joylang va faol profilingiz bilan darhol yuklab oling",
-  shot2_cap:
-    "<b>Qayta ishlatiladigan yuklash profillari</b><br/>Format, sifat va chiqishni shablon sifatida saqlang — har yuklashda qayta ishlating",
   shot3_cap:
     "<b>Ko'p tilli audio yo'llari</b><br/>Video taqdim etgan aniq audio tilini tanlang",
   shot4_cap:

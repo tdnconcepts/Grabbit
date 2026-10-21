@@ -7,7 +7,7 @@
 export const BLAND_UA_TOKEN = 'Desktop/1.0'
 
 // A whitespace-led `name/version` product token outside the parenthesised
-// comments, e.g. ` Electron/43.7.7` or ` Arroxy/0.4.25`.
+// comments, e.g. ` Electron/43.7.7` or ` Grabbit/0.4.25`.
 const PRODUCT_TOKEN = /\s([^\s/()]+)\/[^\s()]+/g
 
 export function blandUserAgent(defaultUserAgent: string, appName: string, token: string = BLAND_UA_TOKEN): string {

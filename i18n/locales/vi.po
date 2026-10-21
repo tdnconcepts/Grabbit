@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "Giấy phép MIT · bởi Antonio Orionus"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "Giới thiệu về Arroxy"
+msgid "About Grabbit"
+msgstr "Giới thiệu về Grabbit"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "Phản hồi"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "Bạn thích Arroxy không? Tôi rất muốn nghe ý kiến của bạn! 💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "Bạn thích Grabbit không? Tôi rất muốn nghe ý kiến của bạn! 💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "Bắt đầu lại"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Arroxy vẫn tiếp tục chạy và hoàn thành các tải xuống đang hoạt động. Thay đổi điều này sau trong cài đặt Nâng cao."
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Grabbit vẫn tiếp tục chạy và hoàn thành các tải xuống đang hoạt động. Thay đổi điều này sau trong cài đặt Nâng cao."
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "Ẩn xuống khay"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "Ẩn Arroxy xuống khay hệ thống khi đóng?"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "Ẩn Grabbit xuống khay hệ thống khi đóng?"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "Tiến trình renderer bị crash ({{reason}}). Tải lại để thử lại."
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Arroxy đã gặp sự cố"
+msgid "Grabbit encountered a problem"
+msgstr "Grabbit đã gặp sự cố"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "Video này bị giới hạn độ tuổi và không thể tải xuống nếu không có tài khoản đã đăng nhập."
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "Đã kích hoạt bảo vệ bot. Địa chỉ IP bạn đang dùng rất có thể đã bị gắn cờ (dải địa chỉ trung tâm dữ liệu hoặc điểm thoát VPN bận). Hãy đổi IP hoặc chọn điểm kết nối VPN khác rồi thử lại. Nếu vẫn thất bại, đây có thể là thay đổi tạm thời từ phía YouTube — Arroxy tự động cập nhật yt-dlp khi khởi động, vì vậy bản sửa lỗi sẽ tự động áp dụng khi upstream phát hành."
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "Đã kích hoạt bảo vệ bot. Địa chỉ IP bạn đang dùng rất có thể đã bị gắn cờ (dải địa chỉ trung tâm dữ liệu hoặc điểm thoát VPN bận). Hãy đổi IP hoặc chọn điểm kết nối VPN khác rồi thử lại. Nếu vẫn thất bại, đây có thể là thay đổi tạm thời từ phía YouTube — Grabbit tự động cập nhật yt-dlp khi khởi động, vì vậy bản sửa lỗi sẽ tự động áp dụng khi upstream phát hành."
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "Không đủ dung lượng đĩa. Hãy giải phóng dung lượng rồi thử lại."
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Arroxy không thể ghi vào thư mục tải xuống. Thư mục có thể chỉ cho phép đọc, nằm trên ổ đĩa bị khóa, hoặc bị chặn bởi cài đặt quyền riêng tư của hệ thống. Hãy chọn thư mục khác hoặc cho phép truy cập rồi thử lại."
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Grabbit không thể ghi vào thư mục tải xuống. Thư mục có thể chỉ cho phép đọc, nằm trên ổ đĩa bị khóa, hoặc bị chặn bởi cài đặt quyền riêng tư của hệ thống. Hãy chọn thư mục khác hoặc cho phép truy cập rồi thử lại."
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "Không thể phân tích phản hồi từ trang web. Bộ trích xuất của yt-dlp có thể đã lỗi thời. Arroxy tự động cập nhật yt-dlp khi khởi chạy — hãy thử lại sau vài phút khi bản sửa lỗi được phát hành."
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "Không thể phân tích phản hồi từ trang web. Bộ trích xuất của yt-dlp có thể đã lỗi thời. Grabbit tự động cập nhật yt-dlp khi khởi chạy — hãy thử lại sau vài phút khi bản sửa lỗi được phát hành."
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "Thẻ không xác định {{token}}."
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "Nếu không có {id}, Arroxy không thể phát hiện mục danh sách phát đã tải hoặc tạo danh sách phát .m3u."
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "Nếu không có {id}, Grabbit không thể phát hiện mục danh sách phát đã tải hoặc tạo danh sách phát .m3u."
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "Không có liên kết nào trong bảng nhớ tạm — hãy sao chép một liên kết trước"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "Đã sao chép nhiều liên kết — dùng “URL hàng loạt” trong Arroxy"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "Đã sao chép nhiều liên kết — dùng “URL hàng loạt” trong Grabbit"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "Liên kết này cần xem xét nhanh — mở Arroxy và dán lại"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "Liên kết này cần xem xét nhanh — mở Grabbit và dán lại"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "Đã thêm tải xuống từ bảng nhớ tạm"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "Không thể thêm liên kết đó — thử lại trong Arroxy"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "Không thể thêm liên kết đó — thử lại trong Grabbit"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "Hàng đợi đang tạm dừng — các mục đang chờ sẽ không bắt đầu cho đến khi bạn tiếp tục"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "Đang tải xuống"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "Đang hoàn tất"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "Đang ghép"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "Thời gian còn lại"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "Tốc độ"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "Tiếp tục các tải xuống đã tạm dừng và cho hàng đợi chạy tiếp"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "Ghi chú phát hành đầy đủ ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "Có gì mới trong Arroxy {{version}}"
+msgid "What's new in Grabbit {{version}}"
+msgstr "Có gì mới trong Grabbit {{version}}"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "Sao chép liên kết"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy — trình tải video miễn phí, mã nguồn mở cho Windows, macOS và Linux. Hoạt động với YouTube, Vimeo, Twitch và hơn 2000 trang web.\n"
+"Grabbit — trình tải video miễn phí, mã nguồn mở cho Windows, macOS và Linux. Hoạt động với YouTube, Vimeo, Twitch và hơn 2000 trang web.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Arroxy miễn phí và mã nguồn mở. Chia sẻ giúp nhiều người hơn khám phá ra nó."
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Grabbit miễn phí và mã nguồn mở. Chia sẻ giúp nhiều người hơn khám phá ra nó."
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "Chia sẻ"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "Chia sẻ Arroxy"
+msgid "Share Grabbit"
+msgstr "Chia sẻ Grabbit"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "Chia sẻ Arroxy"
+msgid "Share Grabbit"
+msgstr "Chia sẻ Grabbit"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "Chia sẻ Arroxy"
+msgid "Share Grabbit"
+msgstr "Chia sẻ Grabbit"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "Đang di chuyển tệp…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "Không thể lưu vào {{dir}} — Arroxy không được phép ghi vào đó"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "Không thể lưu vào {{dir}} — Grabbit không được phép ghi vào đó"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "Tải từ bảng nhớ tạm"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "Mở Arroxy"
+msgid "Open Grabbit"
+msgstr "Mở Grabbit"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "Thoát Arroxy"
+msgid "Quit Grabbit"
+msgstr "Thoát Grabbit"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "Đang chờ"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "Cập nhật thất bại"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Arroxy {{version}} đã có — bạn đang dùng {{currentVersion}}."
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Grabbit {{version}} đã có — bạn đang dùng {{currentVersion}}."
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Arroxy {{version}} đã có — cập nhật bằng Homebrew."
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Grabbit {{version}} đã có — cập nhật bằng Homebrew."
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Arroxy {{version}} đã có — tải DMG mới."
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Grabbit {{version}} đã có — tải DMG mới."
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Arroxy {{version}} đã có — tải bản dựng mới."
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Grabbit {{version}} đã có — tải bản dựng mới."
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "Sẵn sàng"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "Dán URL video, danh sách phát, kênh, tìm kiếm hoặc âm thanh. Arroxy sẽ loại bỏ trùng lặp trước khi đưa vào hàng đợi."
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "Dán URL video, danh sách phát, kênh, tìm kiếm hoặc âm thanh. Grabbit sẽ loại bỏ trùng lặp trước khi đưa vào hàng đợi."
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "Chỉ tải video này, hoặc đưa toàn bộ playlist vào hàng đợi bằng hồ sơ Tải nhanh đang hoạt động."
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "Số mục tối đa Arroxy quét trước khi đưa playlist, kênh hoặc kết quả tìm kiếm vào hàng đợi."
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "Số mục tối đa Grabbit quét trước khi đưa playlist, kênh hoặc kết quả tìm kiếm vào hàng đợi."
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "Đưa mọi mục playlist đã tải vào hàng đợi bằng hồ sơ Tải nhanh đang hoạt động. Nếu lần quét chạm giới hạn của bạn, Arroxy sẽ hỏi trước khi đưa vào hàng đợi."
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "Đưa mọi mục playlist đã tải vào hàng đợi bằng hồ sơ Tải nhanh đang hoạt động. Nếu lần quét chạm giới hạn của bạn, Grabbit sẽ hỏi trước khi đưa vào hàng đợi."
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -1831,7 +1855,7 @@ msgstr "Chọn ít nhất một video để tiếp tục"
 
 msgctxt "wizard.playlist.probeLimitAlertDesc"
 msgid "Showing first {{count}} items. Increase the load limit to see more."
-msgstr "Arroxy tìm thấy nhiều hơn {{count}} mục, vì vậy giới hạn quét hiện tại đang ẩn phần còn lại."
+msgstr "Grabbit tìm thấy nhiều hơn {{count}} mục, vì vậy giới hạn quét hiện tại đang ẩn phần còn lại."
 
 msgctxt "wizard.playlist.probeLimitAlertTitle"
 msgid "Playlist scan is capped"
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "Liên kết hiện tại"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Arroxy đang đọc liên kết và áp dụng {{profileName}}."
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Grabbit đang đọc liên kết và áp dụng {{profileName}}."
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "Đang chuẩn bị Tải nhanh"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "Giữ cửa sổ này mở trong khi Arroxy chuẩn bị hàng đợi."
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "Giữ cửa sổ này mở trong khi Grabbit chuẩn bị hàng đợi."
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "Chất lượng nền"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "Chọn mức chuyển động Arroxy dùng cho nền động."
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "Chọn mức chuyển động Grabbit dùng cho nền động."
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "Giao diện và hiệu năng"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "WebGL phần cứng không khả dụng trên thiết bị này, nên Arroxy đang dùng phông nền hiệu năng."
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "WebGL phần cứng không khả dụng trên thiết bị này, nên Grabbit đang dùng phông nền hiệu năng."
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "URL hàng loạt"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "Thêm và xếp hàng nhiều URL."
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "Danh sách phát video"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "Arroxy có thể tải gì"
+msgid "What Grabbit can pull"
+msgstr "Grabbit có thể tải gì"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "Video"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "Trình hướng dẫn từng bước. Chọn định dạng, chất lượng và hơn nữa."
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "Tải xuống từ URL"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "Tổ hợp phím này đã bị ứng dụng khác dùng — hãy chọn tổ hợp khác."
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "Hoặc nhấn"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "Sao chép liên kết video ở bất cứ đâu, nhấn phím tắt này và Arroxy sẽ xếp liên kết vào hàng đợi bằng hồ sơ đang hoạt động — không cần chuyển cửa sổ."
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "Thay đổi hoặc tắt tính năng này trong Cài đặt."
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "Nhấn phím…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "Đặt lại về mặc định"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "Tải xuống bất kỳ liên kết bạn sao chép, từ bất kỳ ứng dụng nào, không cần mở Arroxy."
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "Tải xuống bất kỳ liên kết bạn sao chép, từ bất kỳ ứng dụng nào, không cần mở Grabbit."
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "Tắt"
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "Đang tải xuống trong nền… Tôi có thể làm nhiều việc cùng lúc 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "Thả một liên kết và để Arroxy kéo về ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "Stereo tương thích"
@@ -2962,8 +2958,8 @@ msgid "Prefer surround / Dolby"
 msgstr "Ưu tiên surround / Dolby"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
-msgstr "Thêm khoảng dừng nhỏ trong mỗi lần tải xuống để Arroxy không truy cập trang web quá mức. Giá trị tính bằng giây."
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
+msgstr "Thêm khoảng dừng nhỏ trong mỗi lần tải xuống để Grabbit không truy cập trang web quá mức. Giá trị tính bằng giây."
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
 msgid "Pause before media starts: max"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "Tải xuống nhẹ nhàng"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "Arroxy nên thận trọng mức nào?"
+msgid "How cautious should Grabbit be?"
+msgstr "Grabbit nên thận trọng mức nào?"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "Tự điều chỉnh các điều khiển tải xuống nâng cao."
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "Chỉ sử dụng các khoảng dừng cơ bản nhỏ mà Arroxy duy trì cho media và phụ đề."
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "Chỉ sử dụng các khoảng dừng cơ bản nhỏ mà Grabbit duy trì cho media và phụ đề."
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "Tùy chỉnh: {{count}} mục"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "Số mục tối đa Arroxy tải khi mở một playlist, kênh hoặc kết quả tìm kiếm."
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "Số mục tối đa Grabbit tải khi mở một playlist, kênh hoặc kết quả tìm kiếm."
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}} mục"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "Tương ứng với yt-dlp --playlist-end: Arroxy chỉ yêu cầu số mục này từ playlist, kênh hoặc kết quả tìm kiếm khi tạo bộ chọn."
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "Hồ sơ đang dùng"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "Tích hợp"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "Tùy chỉnh"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "Đã ẩn"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "Đã sửa"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "Tương ứng với yt-dlp --playlist-end: Grabbit chỉ yêu cầu số mục này từ playlist, kênh hoặc kết quả tìm kiếm khi tạo bộ chọn."
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "Đổi thư mục lưu chung"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "Đích lưu"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "Sửa"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "Sửa hồ sơ đang dùng"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "Hồ sơ ẩn vẫn ở đây nhưng biến mất khỏi mọi bộ chọn."
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "Hiện hồ sơ trong bộ chọn: {{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "Giữ ít nhất một hồ sơ khả dụng."
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "Quản lý hồ sơ"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "Đổi hồ sơ đang dùng cho Tải nhanh, URL hàng loạt và playlist."
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "Đổi hồ sơ"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "Hồ sơ mới"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "Tạo, chọn, chỉnh sửa hoặc xóa các thiết lập tải xuống có thể dùng lại."
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "Hồ sơ tải xuống"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "Xóa"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "Đặt lại"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "Đổi hồ sơ tải xuống: {{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "Đổi hồ sơ tải xuống"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "Thăm dò thất bại"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "Đã thêm vào hàng đợi"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "Dán URL video, danh sách phát, kênh hoặc tìm kiếm để bắt đầu."
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "Hành vi toàn cục cũng ảnh hưởng đến các tải xuống do hồ sơ điều khiển."
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "Đầu vào"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "Hồ sơ"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "Cài đặt"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "Tùy chọn nâng cao"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "Đang phân tích liên kết…"
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "Best audio"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "Thay đổi điểm đến"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "Dán liên kết để phân tích tự động, sau đó chọn mọi thứ ở đây."
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "Download destination"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "Tải xuống"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "Mẫu tên tệp đầu ra"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "Nhập URL HTTP hoặc HTTPS hợp lệ."
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "Download options"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "Phạm vi tùy chỉnh"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "Chấp nhận SS, MM:SS hoặc HH:MM:SS."
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "End time"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "Thời gian bắt đầu và kết thúc phải nằm trong thời lượng video."
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "Nhập thời gian kết thúc hợp lệ."
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "Thời gian kết thúc phải muộn hơn thời gian bắt đầu."
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "Nhập thời gian bắt đầu hợp lệ bằng 0 hoặc muộn hơn."
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "Video đầy đủ"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "Tải xuống một phần cụ thể"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "Lặp đoạn cắt"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "Khung hình tiếp theo"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "Vị trí trên dòng thời gian"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "Phát hoặc tua video để chọn chính xác các điểm cắt."
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "Xem trước đoạn cắt"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "Không thể xem trước nguồn này. Bạn vẫn có thể dùng dòng thời gian và các trường thời gian."
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "Khung hình trước"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "Reset range"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "Khoảng đã chọn"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "Đặt điểm kết thúc"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "Đặt điểm bắt đầu"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "Start time"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "Lùi một bước"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "Tiến một bước"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "Bắt đầu {{start}} — Kết thúc {{end}} — Độ dài clip {{length}}"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "Sử dụng kết thúc video"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "Thu phóng dòng thời gian"

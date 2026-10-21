@@ -93,7 +93,7 @@ describe('sweepStaleTempDirs', () => {
 		expect(await entries(join(root, TEMP_DIR_NAME))).toEqual(['ac895e57'])
 	})
 
-	// The age gate is the whole safety story for a second Arroxy instance
+	// The age gate is the whole safety story for a second Grabbit instance
 	// downloading into the same folder from another checkout: its temp dir is
 	// minutes old, so it can never fall inside the window.
 	it('spares a temp dir younger than the age gate', async () => {
@@ -134,7 +134,7 @@ describe('sweepStaleTempDirs', () => {
 	})
 
 	// Only the `jobId.slice(0, 8)` shape is ours. Anything else under
-	// `.arroxy-temp` was put there by something that is not Arroxy, and deleting
+	// `.arroxy-temp` was put there by something that is not Grabbit, and deleting
 	// a user's files is not a cleanup this feature is allowed to perform.
 	it('never touches an entry that is not a job temp dir', async () => {
 		const parent = join(root, TEMP_DIR_NAME)

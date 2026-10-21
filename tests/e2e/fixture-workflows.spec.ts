@@ -13,15 +13,15 @@ import {clickContinue, openQueueTab, preparePlaylistConfirm, prepareSingleConfir
 
 const FIXTURE_M3U_VIDEO_ID_PATTERN = /\[(ARX[0-9A-Z]{8})\]\.mp4/g
 
-function configureSmallFileQuickProfile(settings: AppSettings): void {
+function configureSmallFileSavedPreference(settings: AppSettings): void {
 	const smallFileProfile = BUILTIN_DOWNLOAD_PROFILES.find(profile => profile.id === 'small-file')
 	if (!smallFileProfile) throw new Error('small-file built-in profile missing')
 	settings.profiles.active = {kind: 'builtin', id: 'small-file'}
 	settings.profiles.overrides = [{...smallFileProfile, embed: {chapters: false, metadata: false, thumbnail: false, description: false, thumbnailSidecar: false}, sponsorBlock: {mode: 'off', categories: []}}]
 }
 
-function smallFileProfileDir(outputDir: string): string {
-	return path.join(outputDir, 'Small file 480p')
+function bestQualityQuickDownloadDir(outputDir: string): string {
+	return path.join(outputDir, 'Best available')
 }
 
 async function expectOrderedM3u(dir: string, playlistTitle: string, expectedIds: readonly string[]): Promise<void> {
@@ -33,7 +33,7 @@ async function expectOrderedM3u(dir: string, playlistTitle: string, expectedIds:
 	expect(orderedIds).toEqual([...expectedIds])
 }
 
-test('Electron quick download applies the active Download Profile to a fixture video', async () => {
+test('Electron Quick Download uses best quality even when the saved preference is low quality', async () => {
 	test.setTimeout(140_000)
 	const videoId = FIXTURE_VIDEO_IDS[7]
 
@@ -42,11 +42,10 @@ test('Electron quick download applies the active Download Profile to a fixture v
 			userDataPrefix: 'arroxy-fixture-profile-quick-user-',
 			outputPrefix: 'arroxy-fixture-profile-quick-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
+				configureSmallFileSavedPreference(settings)
 			}
 		},
 		async ({page, outputDir, fixtureServer, urls, queue, files}) => {
-			await expect(page.locator('[data-testid="profiles-active-profile-card"]')).toContainText('Small file 480p')
 			await page.locator('[data-testid="profiles-main-input"]').fill(urls.video(videoId))
 			await page.locator('[data-testid="profiles-quick-download"]').click()
 			// No intermediate mascot-copy assertion: the queued-state body reads
@@ -55,10 +54,10 @@ test('Electron quick download applies the active Download Profile to a fixture v
 			// status below is the real oracle.
 			await queue.expectStatus('Fixture Video 8', 'done', 120_000)
 
-			const profileOutputDir = smallFileProfileDir(outputDir)
-			files.expectMp4Count(1, profileOutputDir)
+			const bestOutputDir = bestQualityQuickDownloadDir(outputDir)
+			files.expectMp4Count(1, bestOutputDir)
 			const mediaRequest = fixtureServer.telemetry().requests.find(request => request.kind === 'media' && request.videoId === videoId && request.status === 200)
-			expect(mediaRequest).toMatchObject({kind: 'media', videoId, formatId: '18', status: 200})
+			expect(mediaRequest).toMatchObject({kind: 'media', videoId, formatId: '22', status: 200})
 		}
 	)
 })
@@ -66,7 +65,7 @@ test('Electron quick download applies the active Download Profile to a fixture v
 test('Electron Quick Download playlist queues entries and writes an ordered M3U', async () => {
 	test.setTimeout(220_000)
 
-	await withFixtureProductApp({userDataPrefix: 'arroxy-fixture-quick-playlist-user-', outputPrefix: 'arroxy-fixture-quick-playlist-out-', settings: configureSmallFileQuickProfile}, async ({page, outputDir, urls, files}) => {
+	await withFixtureProductApp({userDataPrefix: 'arroxy-fixture-quick-playlist-user-', outputPrefix: 'arroxy-fixture-quick-playlist-out-', settings: configureSmallFileSavedPreference}, async ({page, outputDir, urls, files}) => {
 		await page.locator('[data-testid="profiles-main-input"]').fill(urls.playlist())
 		await page.locator('[data-testid="profiles-quick-download"]').click()
 
@@ -74,7 +73,7 @@ test('Electron Quick Download playlist queues entries and writes an ordered M3U'
 		await expect(page.locator('[data-testid^="queue-manager-row-"]')).toHaveCount(FIXTURE_PLAYLIST_VIDEO_IDS.length, {timeout: 60_000})
 		await expect(page.locator('[data-testid^="queue-manager-row-"][data-status="done"]')).toHaveCount(FIXTURE_PLAYLIST_VIDEO_IDS.length, {timeout: 160_000})
 
-		const profileDir = smallFileProfileDir(outputDir)
+		const profileDir = bestQualityQuickDownloadDir(outputDir)
 		files.expectMp4Count(FIXTURE_PLAYLIST_VIDEO_IDS.length, profileDir)
 		await expectOrderedM3u(profileDir, 'Fixture Playlist', FIXTURE_PLAYLIST_VIDEO_IDS)
 	})
@@ -86,7 +85,7 @@ test('Electron Quick Download playlist queues entries and writes an ordered M3U'
 test('Electron Quick Download playlist that repeats a video queues it once', async () => {
 	test.setTimeout(220_000)
 
-	await withFixtureProductApp({userDataPrefix: 'arroxy-fixture-quick-repeat-user-', outputPrefix: 'arroxy-fixture-quick-repeat-out-', settings: configureSmallFileQuickProfile}, async ({page, outputDir, urls, files}) => {
+	await withFixtureProductApp({userDataPrefix: 'arroxy-fixture-quick-repeat-user-', outputPrefix: 'arroxy-fixture-quick-repeat-out-', settings: configureSmallFileSavedPreference}, async ({page, outputDir, urls, files}) => {
 		expect(FIXTURE_REPEATED_PLAYLIST_VIDEO_IDS.length).toBeGreaterThan(FIXTURE_REPEATED_PLAYLIST_UNIQUE_VIDEO_IDS.length)
 		await page.locator('[data-testid="profiles-main-input"]').fill(urls.repeatedPlaylist())
 		await page.locator('[data-testid="profiles-quick-download"]').click()
@@ -97,7 +96,7 @@ test('Electron Quick Download playlist that repeats a video queues it once', asy
 		await expect(page.locator('[data-testid^="queue-manager-row-"]')).toHaveCount(uniqueCount)
 		await expect(page.getByText(/already active|Couldn.t add this one/)).toHaveCount(0)
 
-		const profileDir = smallFileProfileDir(outputDir)
+		const profileDir = bestQualityQuickDownloadDir(outputDir)
 		files.expectMp4Count(uniqueCount, profileDir)
 		await expectOrderedM3u(profileDir, FIXTURE_REPEATED_PLAYLIST_TITLE, FIXTURE_REPEATED_PLAYLIST_UNIQUE_VIDEO_IDS)
 	})
@@ -115,7 +114,7 @@ test('Electron Quick Download of a playlist that overlaps the queue adds only th
 	expect(skippedCount).toBe(2)
 	expect(newVideoIds).toHaveLength(1)
 
-	await withFixtureProductApp({userDataPrefix: 'arroxy-fixture-quick-overlap-user-', outputPrefix: 'arroxy-fixture-quick-overlap-out-', settings: configureSmallFileQuickProfile}, async ({page, outputDir, urls, files}) => {
+	await withFixtureProductApp({userDataPrefix: 'arroxy-fixture-quick-overlap-user-', outputPrefix: 'arroxy-fixture-quick-overlap-out-', settings: configureSmallFileSavedPreference}, async ({page, outputDir, urls, files}) => {
 		const rows = page.locator('[data-testid^="queue-manager-row-"]')
 		await page.locator('[data-testid="profiles-main-input"]').fill(urls.playlist())
 		await page.locator('[data-testid="profiles-quick-download"]').click()
@@ -139,7 +138,7 @@ test('Electron Quick Download of a playlist that overlaps the queue adds only th
 		// Nothing was downloaded yet; resume and the queue drains to one file per video.
 		await page.getByTestId('queue-resume-from-banner').click()
 		await expect(page.locator('[data-testid^="queue-manager-row-"][data-status="done"]')).toHaveCount(queuedCount, {timeout: 200_000})
-		const profileDir = smallFileProfileDir(outputDir)
+		const profileDir = bestQualityQuickDownloadDir(outputDir)
 		files.expectMp4Count(queuedCount, profileDir)
 		// The .m3u is rebuilt from the whole playlist, so it lists the videos the
 		// first playlist already downloaded as well as the new one.
@@ -158,7 +157,7 @@ test('Electron Quick Download capped playlist can queue the globally loaded slic
 			userDataPrefix: 'arroxy-fixture-quick-playlist-cap-queue-user-',
 			outputPrefix: 'arroxy-fixture-quick-playlist-cap-queue-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
+				configureSmallFileSavedPreference(settings)
 				settings.common.playlistProbeLimit = 2
 			}
 		},
@@ -167,7 +166,7 @@ test('Electron Quick Download capped playlist can queue the globally loaded slic
 			await page.locator('[data-testid="profiles-quick-download"]').click()
 
 			await expect(page.locator('[data-testid="quick-playlist-cap-dialog"]')).toBeVisible({timeout: 60_000})
-			await expect(page.locator('[data-testid="quick-playlist-cap-dialog"]')).toContainText('Arroxy loaded 2 items using the current limit of 2')
+			await expect(page.locator('[data-testid="quick-playlist-cap-dialog"]')).toContainText('Grabbit loaded 2 items using the current limit of 2')
 			await page.locator('[data-testid="quick-playlist-cap-queue-loaded"]').click()
 
 			await expect(page.locator('[data-testid="quick-playlist-cap-dialog"]')).toBeHidden({timeout: 20_000})
@@ -175,7 +174,7 @@ test('Electron Quick Download capped playlist can queue the globally loaded slic
 			await expect(page.locator('[data-testid^="queue-manager-row-"]')).toHaveCount(expectedIds.length, {timeout: 20_000})
 			await expect(page.locator('[data-testid^="queue-manager-row-"][data-status="done"]')).toHaveCount(expectedIds.length, {timeout: 140_000})
 
-			const profileDir = smallFileProfileDir(outputDir)
+			const profileDir = bestQualityQuickDownloadDir(outputDir)
 			files.expectMp4Count(expectedIds.length, profileDir)
 			files.expectNoMp4For(skippedId, profileDir)
 			await expectOrderedM3u(profileDir, 'Fixture Playlist', expectedIds)
@@ -191,7 +190,7 @@ test('Electron Quick Download capped playlist can increase the global cap and re
 			userDataPrefix: 'arroxy-fixture-quick-playlist-cap-retry-user-',
 			outputPrefix: 'arroxy-fixture-quick-playlist-cap-retry-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
+				configureSmallFileSavedPreference(settings)
 				settings.common.playlistProbeLimit = 2
 			}
 		},
@@ -208,7 +207,7 @@ test('Electron Quick Download capped playlist can increase the global cap and re
 			await expect(page.locator('[data-testid^="queue-manager-row-"]')).toHaveCount(FIXTURE_PLAYLIST_VIDEO_IDS.length, {timeout: 60_000})
 			await expect(page.locator('[data-testid^="queue-manager-row-"][data-status="done"]')).toHaveCount(FIXTURE_PLAYLIST_VIDEO_IDS.length, {timeout: 160_000})
 
-			const profileDir = smallFileProfileDir(outputDir)
+			const profileDir = bestQualityQuickDownloadDir(outputDir)
 			files.expectMp4Count(FIXTURE_PLAYLIST_VIDEO_IDS.length, profileDir)
 			await expectOrderedM3u(profileDir, 'Fixture Playlist', FIXTURE_PLAYLIST_VIDEO_IDS)
 		}
@@ -445,18 +444,17 @@ test('Electron bulk Quick Download shows preparation progress and queues fixture
 			userDataPrefix: 'arroxy-fixture-bulk-quick-user-',
 			outputPrefix: 'arroxy-fixture-bulk-quick-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
+				configureSmallFileSavedPreference(settings)
 			}
 		},
 		async ({app, page, outputDir, urls, files}) => {
 			const rawBulkText = urls.videos([FIXTURE_VIDEO_IDS[0], FIXTURE_VIDEO_IDS[1]]).join('\n')
 			await startBulkFromClipboard(page, app, rawBulkText)
 			await expect(page.locator('[data-testid="bulk-url-valid-count"]')).toContainText('2')
-			await expect(page.locator('[data-testid="bulk-active-profile-card"]')).toContainText('Small file 480p')
 			await page.locator('[data-testid="bulk-quick-download"]').click()
 
 			await expect(page.locator('[data-testid="quick-download-progress-dialog"]')).toBeVisible({timeout: 10_000})
-			await expect(page.locator('[data-testid="quick-download-progress-dialog"]')).toContainText('Small file 480p')
+			await expect(page.locator('[data-testid="quick-download-progress-dialog"]')).toContainText('Best quality')
 			await expect(page.locator('[data-testid="quick-download-progress-count"]')).toContainText('/ 2')
 			await expect(page.locator('[data-testid="quick-download-progress-dialog"]')).toBeHidden({timeout: 60_000})
 
@@ -465,7 +463,7 @@ test('Electron bulk Quick Download shows preparation progress and queues fixture
 			await expect
 				.poll(async () => page.locator('[data-testid^="queue-manager-row-"]').evaluateAll(cards => cards.map(card => ({status: card.getAttribute('data-status'), text: card.textContent?.replace(/\s+/g, ' ').trim()}))), {timeout: 140_000})
 				.toEqual([expect.objectContaining({status: 'done'}), expect.objectContaining({status: 'done'})])
-			const profileDir = smallFileProfileDir(outputDir)
+			const profileDir = bestQualityQuickDownloadDir(outputDir)
 			await expect.poll(() => files.mediaFiles('.mp4', profileDir).length, {timeout: 20_000}).toBe(2)
 			files.expectMp4Count(2, profileDir)
 		}
@@ -484,7 +482,7 @@ test('Electron custom filename template names the downloaded file and never writ
 			userDataPrefix: 'arroxy-fixture-filename-template-user-',
 			outputPrefix: 'arroxy-fixture-filename-template-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
+				configureSmallFileSavedPreference(settings)
 				// {date} is deliberately included: the fixture extractor supplies no
 				// upload_date, so this asserts the compiled `|` empty-default rather
 				// than yt-dlp writing the literal string "NA" into the filename.
@@ -496,9 +494,9 @@ test('Electron custom filename template names the downloaded file and never writ
 			await page.locator('[data-testid="profiles-quick-download"]').click()
 			await queue.expectStatus('Fixture Video 8', 'done', 120_000)
 
-			const profileOutputDir = smallFileProfileDir(outputDir)
+			const profileOutputDir = bestQualityQuickDownloadDir(outputDir)
 			const produced = files.mediaFiles('mp4', profileOutputDir).map(file => path.basename(file))
-			expect(produced).toEqual(['Arroxy Fixtures - Fixture Video 8.mp4'])
+			expect(produced).toEqual(['Grabbit Fixtures - Fixture Video 8.mp4'])
 		}
 	)
 })
@@ -520,7 +518,7 @@ test('Electron writes a filesystem-legal name for a title the filesystem cannot 
 			userDataPrefix: 'arroxy-fixture-awkward-title-user-',
 			outputPrefix: 'arroxy-fixture-awkward-title-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
+				configureSmallFileSavedPreference(settings)
 				settings.common.filenameTemplate = '{title} [{id}]'
 			}
 		},
@@ -531,7 +529,7 @@ test('Electron writes a filesystem-legal name for a title the filesystem cannot 
 			await openQueueTab(page)
 			await expect(page.locator('[data-testid^="queue-manager-row-"][data-status="done"]')).toHaveCount(1, {timeout: 120_000})
 
-			const produced = files.mediaFiles('mp4', smallFileProfileDir(outputDir)).map(file => path.basename(file))
+			const produced = files.mediaFiles('mp4', bestQualityQuickDownloadDir(outputDir)).map(file => path.basename(file))
 			expect(produced).toHaveLength(1)
 			const name = produced[0] ?? ''
 
@@ -551,7 +549,7 @@ test('Electron writes a filesystem-legal name for a title the filesystem cannot 
 			// silently — the shrink ladder must spend the title, never the id.
 			expect(name).toContain(`[${AWKWARD_TITLE_VIDEO_ID}]`)
 
-			// Arroxy sanitized these before yt-dlp ever saw them, so the growing
+			// Grabbit sanitized these before yt-dlp ever saw them, so the growing
 			// substitutions never ran. Neither the raw characters nor the
 			// full-width forms yt-dlp would have produced appear on disk.
 			expect(name).not.toMatch(/[:|]/)
@@ -602,7 +600,7 @@ test('Electron nesting filename template sorts a playlist into folders without d
 			userDataPrefix: 'arroxy-fixture-nested-template-user-',
 			outputPrefix: 'arroxy-fixture-nested-template-out-',
 			settings: settings => {
-				// The exact shape the feature request asked for, in Arroxy token syntax.
+				// The exact shape the feature request asked for, in Grabbit token syntax.
 				settings.common.filenameTemplate = '{playlist_title}/{playlist_index} - {title} [{id}]'
 			}
 		},
@@ -644,8 +642,8 @@ test('Electron filename template names a folder after the uploader for a single 
 			userDataPrefix: 'arroxy-fixture-uploader-dir-user-',
 			outputPrefix: 'arroxy-fixture-uploader-dir-out-',
 			settings: settings => {
-				configureSmallFileQuickProfile(settings)
-				// {uploader} is resolved by Arroxy here, not yt-dlp, because it names a
+				configureSmallFileSavedPreference(settings)
+				// {uploader} is resolved by Grabbit here, not yt-dlp, because it names a
 				// directory the app must know before the download starts.
 				settings.common.filenameTemplate = '{uploader}/{title}'
 			}
@@ -655,7 +653,7 @@ test('Electron filename template names a folder after the uploader for a single 
 			await page.locator('[data-testid="profiles-quick-download"]').click()
 			await queue.expectStatus('Fixture Video 8', 'done', 120_000)
 
-			const uploaderDir = path.join(smallFileProfileDir(outputDir), 'Arroxy Fixtures')
+			const uploaderDir = path.join(bestQualityQuickDownloadDir(outputDir), 'Grabbit Fixtures')
 			const produced = files.mediaFiles('mp4', uploaderDir).map(file => path.basename(file))
 			expect(produced).toEqual(['Fixture Video 8.mp4'])
 		}
@@ -683,7 +681,7 @@ test('Electron nesting template collapses the folder when the flat playlist prob
 			await expect(page.locator('[data-testid^="queue-manager-row-"][data-status="done"]')).toHaveCount(FIXTURE_PLAYLIST_VIDEO_IDS.length, {timeout: 160_000})
 
 			files.expectMp4Count(FIXTURE_PLAYLIST_VIDEO_IDS.length, outputDir)
-			for (const stray of ['NA', 'Arroxy Fixtures', 'Playlist']) {
+			for (const stray of ['NA', 'Grabbit Fixtures', 'Playlist']) {
 				expect(fs.existsSync(path.join(outputDir, stray))).toBe(false)
 			}
 		}

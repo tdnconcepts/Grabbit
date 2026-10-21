@@ -28,7 +28,7 @@ export function buildYtDlpSignal(ctx: PhaseContext, active: ActiveJob, extra: Om
 }
 
 /**
- * Compile a job's Arroxy filename template into the yt-dlp output template that
+ * Compile a job's Grabbit filename template into the yt-dlp output template that
  * reaches `-o`. Owned by main, not the renderer: `-o` accepts absolute paths and
  * `../`, so compiling here means the only strings that can ever reach it are
  * built from the allowlisted token grammar.

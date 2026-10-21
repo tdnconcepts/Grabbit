@@ -32,7 +32,7 @@ export function QuickPlaylistCapDialog(): ReactNode {
 						Playlist scan is capped
 					</DialogTitle>
 					<DialogDescription>
-						{playlistTitle ? `${playlistTitle}: ` : ''}Arroxy loaded {itemCount} item{itemCount === 1 ? '' : 's'} using the current limit of {playlistLimit}. Queue the loaded items now, or increase the limit and scan again.
+						{playlistTitle ? `${playlistTitle}: ` : ''}Grabbit loaded {itemCount} item{itemCount === 1 ? '' : 's'} using the current limit of {playlistLimit}. Queue the loaded items now, or increase the limit and scan again.
 					</DialogDescription>
 				</DialogHeader>
 

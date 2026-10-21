@@ -110,7 +110,7 @@ test('Electron download into a read-only folder fails before transfer and retrie
 		try {
 			await page.locator('[data-testid="btn-download-now"]').click()
 			await queue.expectStatus('Fixture Video 7', 'error', 90_000)
-			await expect(queue.cardByTitle('Fixture Video 7').getByTestId('queue-error-msg')).toContainText("Arroxy can't write to the download folder")
+			await expect(queue.cardByTitle('Fixture Video 7').getByTestId('queue-error-msg')).toContainText("Grabbit can't write to the download folder")
 			expect(fixtureServer.telemetry().requests.some(request => isMediaRequestFor(videoId, request))).toBe(false)
 			expect(files.listRecursive()).toEqual([])
 		} finally {

@@ -35,7 +35,7 @@ function resolveUpdateChannel(version: string): {channel: string; allowPrereleas
 export function registerUpdaterHandlers(mainWindow: BrowserWindow): void {
 	const installChannel = detectInstallChannel(app.getName())
 
-	// Flatpak installs update from Arroxy's own Flatpak repo (`flatpak update`,
+	// Flatpak installs update from Grabbit's own Flatpak repo (`flatpak update`,
 	// GNOME Software). The banner still matters: many users never open a software
 	// centre, and a terminal-only user would otherwise never hear of an update.
 	// On Linux electron-updater only checks inside an AppImage ($APPIMAGE set);

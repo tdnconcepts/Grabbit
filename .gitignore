@@ -83,6 +83,7 @@ opencode.jsonc
 .github/skills/
 .impeccable/
 /output/
+/artifacts/
 /*.png
 # Flatpak build artifacts (relative to flatpak/ subdir, or repo root if built from there)
 flatpak/.flatpak-builder/

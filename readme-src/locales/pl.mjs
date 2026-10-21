@@ -151,7 +151,6 @@ export const pl = {
   feat_sites_3: "**Sam dźwięk i napisy** działają we wszystkich obsługiwanych serwisach, nie tylko w YouTube",
   feat_sites_4: "Gdy serwis się zmieni, yt-dlp co tydzień dostarcza poprawki, a Arroxy automatycznie aktualizuje plik wykonywalny przy starcie",
   shot1_cap: "<b>Ekran Szybkiego pobierania</b><br/>Wklej URL i od razu pobierz go aktywnym profilem",
-  shot2_cap: "<b>Profile pobierania wielokrotnego użytku</b><br/>Zapisz format, jakość i folder docelowy, a potem używaj ich ponownie",
   shot3_cap: "<b>Wielojęzyczne ścieżki dźwiękowe</b><br/>Wybierz dokładny język dźwięku dostępny w filmie",
   shot4_cap: "<b>Dźwięk surround / Dolby</b><br/>Ścieżki 5.1 i Dolby są wykrywane i zachowywane",
   shot5_cap: "<b>Tryb zbiorczych URL-i</b><br/>Wklej listę, automatycznie usuń duplikaty i dodaj wszystko do kolejki",

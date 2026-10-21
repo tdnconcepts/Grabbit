@@ -3,7 +3,7 @@ import {createStreamTextReader, splitStderrLines} from '@main/utils/process.js'
 
 // The reporter's own title — a playlist of Persian videos on Windows. Every
 // vector below was reproduced against it.
-const PERSIAN_LINE = '[download] Destination: G:\\Arroxy\\1\\NzGuL - ین بازی‌ها رابطه‌مونو 😂.en.srt\n'
+const PERSIAN_LINE = '[download] Destination: G:\\Grabbit\\1\\NzGuL - ین بازی‌ها رابطه‌مونو 😂.en.srt\n'
 
 function pushAll(chunks: Buffer[]): {text: string; lines: string} {
 	const reader = createStreamTextReader()

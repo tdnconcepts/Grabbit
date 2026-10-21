@@ -7,7 +7,6 @@ declare global {
 	interface Window {
 		__arroxyBrowserMockShowStartupSplash?: boolean
 		__arroxyMockEmitClipboardUrl?: (url: string) => void
-		__NUDGE_DELAY_MS?: number
 		Tally?: Partial<TallyWidget>
 	}
 }

@@ -30,12 +30,12 @@ describe('electron.vite.config', () => {
 	// `C:/...`. Treating those as external left raw `require('D:\\a\\...')`
 	// calls in the bundled preload, breaking every downstream machine
 	// (CI-built v0.3.2-beta.6 portable failed with `module not found:
-	// D:\\a\\Arroxy\\Arroxy\\src\\shared/ipc.js`).
+	// D:\\a\\Grabbit\\Grabbit\\src\\shared/ipc.js`).
 	it('treats Windows absolute paths as internal', () => {
-		expect(isExternalPreloadBuildImport('D:\\a\\Arroxy\\Arroxy\\src\\shared\\ipc.js')).toBe(false)
-		expect(isExternalPreloadBuildImport('D:/a/Arroxy/Arroxy/src/shared/ipc.js')).toBe(false)
+		expect(isExternalPreloadBuildImport('D:\\a\\Grabbit\\Grabbit\\src\\shared\\ipc.js')).toBe(false)
+		expect(isExternalPreloadBuildImport('D:/a/Grabbit/Grabbit/src/shared/ipc.js')).toBe(false)
 		expect(isExternalPreloadBuildImport('C:\\work\\arroxy\\src\\preload\\createPreloadApi.ts')).toBe(false)
-		expect(isExternalMainBuildImport('D:\\a\\Arroxy\\Arroxy\\src\\shared\\types.ts')).toBe(false)
+		expect(isExternalMainBuildImport('D:\\a\\Grabbit\\Grabbit\\src\\shared\\types.ts')).toBe(false)
 		expect(isExternalMainBuildImport('C:/work/arroxy/src/main/index.ts')).toBe(false)
 	})
 

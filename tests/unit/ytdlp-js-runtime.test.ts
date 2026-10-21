@@ -4,7 +4,7 @@ import path from 'node:path'
 import {describe, expect, it} from 'vite-plus/test'
 import {applyJsRuntimeEnv, buildYtDlpJsRuntimeArgs, probeElectronNodeRuntime, summarizeYtDlpJsRuntimeForLog, type YtDlpJsRuntime} from '@main/services/ytDlpJsRuntime.js'
 
-const electronRuntime: YtDlpJsRuntime = {kind: 'electron-node', executablePath: '/Applications/Arroxy.app/Contents/MacOS/Arroxy', version: '24.16.0'}
+const electronRuntime: YtDlpJsRuntime = {kind: 'electron-node', executablePath: '/Applications/Grabbit.app/Contents/MacOS/Grabbit', version: '24.16.0'}
 
 describe('yt-dlp JS runtime selection', () => {
 	it('builds Electron Node args with --no-js-runtimes before --js-runtimes', () => {
@@ -36,9 +36,9 @@ describe('yt-dlp JS runtime selection', () => {
 
 	it('accepts Electron Node v22+ version output', async () => {
 		const result = await probeElectronNodeRuntime({
-			executablePath: '/mock/Arroxy',
+			executablePath: '/mock/Grabbit',
 			runVersionProbe: async ({executablePath, args, env, shell, windowsHide}) => {
-				expect(executablePath).toBe('/mock/Arroxy')
+				expect(executablePath).toBe('/mock/Grabbit')
 				expect(args).toEqual(['--version'])
 				expect(env.ELECTRON_RUN_AS_NODE).toBe('1')
 				expect(shell).toBe(false)
@@ -47,7 +47,7 @@ describe('yt-dlp JS runtime selection', () => {
 			}
 		})
 
-		expect(result).toEqual({ok: true, runtime: {kind: 'electron-node', executablePath: '/mock/Arroxy', version: '24.16.0'}, output: 'v24.16.0'})
+		expect(result).toEqual({ok: true, runtime: {kind: 'electron-node', executablePath: '/mock/Grabbit', version: '24.16.0'}, output: 'v24.16.0'})
 	})
 
 	it('rejects old, empty, and failed Electron Node probes', async () => {

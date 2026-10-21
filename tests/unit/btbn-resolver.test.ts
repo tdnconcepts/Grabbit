@@ -82,12 +82,12 @@ describe('BtbN release resolver', () => {
 
 	it('recognizes Bun CLI execution and Windows argv paths', () => {
 		expect(isCliEntrypoint({url: 'file:///not-this-script.ts', main: true}, undefined)).toBe(true)
-		expect(isCliEntrypoint({url: 'file:///D:/a/Arroxy/Arroxy/scripts/build/btbnResolver.ts'}, 'D:\\a\\Arroxy\\Arroxy\\scripts\\build\\btbnResolver.ts')).toBe(true)
-		expect(isCliEntrypoint({url: 'file:///D:/a/Arroxy/Arroxy/scripts/build/btbnResolver.ts'}, 'D:\\a\\Arroxy\\Arroxy\\scripts\\build\\other.ts')).toBe(false)
+		expect(isCliEntrypoint({url: 'file:///D:/a/Grabbit/Grabbit/scripts/build/btbnResolver.ts'}, 'D:\\a\\Grabbit\\Grabbit\\scripts\\build\\btbnResolver.ts')).toBe(true)
+		expect(isCliEntrypoint({url: 'file:///D:/a/Grabbit/Grabbit/scripts/build/btbnResolver.ts'}, 'D:\\a\\Grabbit\\Grabbit\\scripts\\build\\other.ts')).toBe(false)
 	})
 
 	it('validates Windows paths before converting them to file URLs', () => {
-		expect(windowsPathToFileUrl('d:\\a\\Arroxy\\some file.ts')).toBe('file:///D:/a/Arroxy/some%20file.ts')
+		expect(windowsPathToFileUrl('d:\\a\\Grabbit\\some file.ts')).toBe('file:///D:/a/Grabbit/some%20file.ts')
 		expect(() => windowsPathToFileUrl('D:')).toThrow('Invalid Windows path')
 		expect(() => windowsPathToFileUrl('relative\\path.ts')).toThrow('Invalid Windows path')
 	})

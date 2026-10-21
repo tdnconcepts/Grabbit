@@ -1,5 +1,5 @@
 import {DEFAULTS} from '@shared/constants.js'
-import {allDownloadProfiles, downloadProfileLabel, downloadProfileRefFor, resolveActiveDownloadProfile, resolveDownloadProfile, resolveDownloadProfileBaseDir, resolveDownloadProfileOutputDir, type ResolvedDownloadProfile} from '@shared/downloadProfiles.js'
+import {allDownloadProfiles, BUILTIN_DOWNLOAD_PROFILES, downloadProfileLabel, downloadProfileRefFor, resolveActiveDownloadProfile, resolveDownloadProfile, resolveDownloadProfileBaseDir, resolveDownloadProfileOutputDir, type ResolvedDownloadProfile} from '@shared/downloadProfiles.js'
 import type {DownloadProfile, DownloadProfileRef, NativeAudioPreference, PlaylistEntry, PlaylistSelection, ProbeResult, QueueItem, QueueLane} from '@shared/types.js'
 import type {PreparedJob} from '@shared/preparedJob.js'
 import type {EmbedOptions, SubtitleOptions} from '@shared/preparedJob.js'
@@ -20,6 +20,7 @@ import {bindJobFilenameTemplate, canWriteM3u, playlistEntryTemplateMeta, resolve
 import {sortPlaylistEntries} from './playlistSort.js'
 import {playlistTitleFallback} from './playlistTitle.js'
 import {resolveAssignedProfile} from './playlistProfileAssignments.js'
+import {validateClipRange} from '@shared/clipRange.js'
 
 export interface PlaylistManifestPayload {
 	playlistGroupId: string
@@ -71,6 +72,9 @@ function buildSingleQueueItemFromState(state: AppState, lane: QueueLane): QueueI
 	const {overrides} = sanitizeJobOptions({isSubtitleOnly: activePreset === 'subtitle-only', hasVideoTrack: selectedVideoFormatId !== '', resolvedOutputContainer: resolvedContainer, subtitleMode: state.wizardSubtitleMode, subtitleLanguages, embed, sponsorBlockMode: state.wizardSponsorBlockMode})
 
 	const subtitles: SubtitleOptions | undefined = subtitleLanguages.length > 0 ? {languages: subtitleLanguages, mode: overrides.subtitleMode, format: state.wizardSubtitleFormat, writeAuto: writeAutoSubs} : undefined
+	const clipValidation = state.wizardClipMode === 'range' ? validateClipRange({start: state.wizardClipStart, end: state.wizardClipEnd, durationSeconds: state.wizardDuration}) : null
+	if (clipValidation && !clipValidation.ok) throw new Error(`invalid clip range: ${clipValidation.reason}`)
+	const clipRange = clipValidation?.ok ? clipValidation.range : undefined
 
 	const job = prepareJob({
 		mode: 'single',
@@ -84,7 +88,8 @@ function buildSingleQueueItemFromState(state: AppState, lane: QueueLane): QueueI
 		subtitles,
 		sponsorBlockMode: overrides.sponsorBlockMode,
 		sponsorBlockCategories: state.wizardSponsorBlockCategories,
-		embed: overrides.embed
+		embed: overrides.embed,
+		...(clipRange ? {clipRange} : {})
 	})
 
 	return {
@@ -365,6 +370,16 @@ function buildProfileEntryQueueItem(params: {
 
 export function prepareActiveProfileQueueSubmission(probe: ProbeResult, state: AppState, lane: QueueLane): PreparedQueueSubmission | null {
 	const {profile, ref} = resolveActiveDownloadProfile(state.settings?.profiles)
+	return prepareProfileQueueSubmission(probe, state, lane, profile, ref)
+}
+
+export function prepareBestQualityQueueSubmission(probe: ProbeResult, state: AppState, lane: QueueLane): PreparedQueueSubmission | null {
+	const profile = BUILTIN_DOWNLOAD_PROFILES.find(candidate => candidate.id === 'best-quality')
+	if (!profile) throw new Error('built-in best-quality profile missing')
+	return prepareProfileQueueSubmission(probe, state, lane, profile, {kind: 'builtin', id: profile.id})
+}
+
+function prepareProfileQueueSubmission(probe: ProbeResult, state: AppState, lane: QueueLane, profile: DownloadProfile, ref: DownloadProfileRef): PreparedQueueSubmission | null {
 	const nativeAudioPreference = state.settings?.common?.nativeAudioPreference ?? DEFAULTS.nativeAudioPreference
 	const resolved = resolveDownloadProfile(profile, ref, nativeAudioPreference)
 	const outputContext = {currentOutputDir: state.wizardOutputDir, defaultOutputDir: state.settings?.common?.defaultOutputDir ?? ''}

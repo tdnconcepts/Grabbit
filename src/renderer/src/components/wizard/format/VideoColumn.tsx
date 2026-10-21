@@ -21,7 +21,7 @@ export function VideoColumn({view, selectedVideoFormatId, videoExtFilter, dynami
 	const {t} = useTranslation()
 
 	return (
-		<div className="flex flex-col gap-0 h-full">
+		<div className="grabbit-format-column flex flex-col gap-0 h-full">
 			<div className="mb-1.5 flex items-center justify-between">
 				<SectionLabel>{t('wizard.formats.video')}</SectionLabel>
 				<div className="flex items-center gap-1.5">
@@ -50,7 +50,7 @@ export function VideoColumn({view, selectedVideoFormatId, videoExtFilter, dynami
 				{/* A disabled column shows nothing as chosen, even though the store keeps a selection. */}
 				<RadioGroup value={view.disabled ? null : selectedVideoFormatId} onValueChange={value => onSelect(String(value))} disabled={view.disabled} aria-label={t('wizard.formats.video')} className="gap-1">
 					{view.rows.map(row => (
-						<ChoiceRow key={row.formatId || 'audio-only'} id={`video-format-${row.formatId || 'audio-only'}`} value={row.formatId} label={row.resolution} meta={row.meta} disabled={view.disabled} />
+						<ChoiceRow key={row.formatId || 'audio-only'} id={`video-format-${row.formatId || 'audio-only'}`} value={row.formatId} label={row.formatId ? row.resolution : t('wizard.formats.audioOnly')} meta={row.meta} disabled={view.disabled} />
 					))}
 				</RadioGroup>
 			</ScrollArea>

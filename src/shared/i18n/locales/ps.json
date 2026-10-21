@@ -5,11 +5,11 @@
 		"logs": "لاګونه",
 		"saveDiagnostics": "د تشخیص فایل خوندي کړئ",
 		"saveDiagnosticsDescription": "ستاسو لاګونه او د اپ جزئیات د Downloads په فولډر کې په یوه فایل کې راټولوي، چې GitHub issue ته د ضمیمه کولو لپاره چمتو وي. ستاسو د کارن فولډر نوم لرې کیږي؛ د ویډیو لینکونه او سرلیکونه پاتې کیږي.",
-		"feedbackNudge": "ایا Arroxy خوند درکوي؟ ستاسو د اورولو شوق لرم! 💬",
+		"feedbackNudge": "ایا Grabbit خوند درکوي؟ ستاسو د اورولو شوق لرم! 💬",
 		"zoomIn": "لویول",
 		"zoomOut": "کوچنیول"
 	},
-	"about": {"button": "د اړوند", "openTitle": "د Arroxy اړوند", "tagline": "د YouTube او 2000+ نورو سایټونو لپاره چټک او اسانه ډاونلوډر.", "websiteLink": "ویب پاڼه", "githubLink": "GitHub", "licenseLine": "MIT جواز · د Antonio Orionus لخوا", "thirdPartyNotices": "د دریم ډلې خبرتیاوې وګورئ"},
+	"about": {"button": "د اړوند", "openTitle": "د Grabbit اړوند", "tagline": "د YouTube او 2000+ نورو سایټونو لپاره چټک او اسانه ډاونلوډر.", "websiteLink": "ویب پاڼه", "githubLink": "GitHub", "licenseLine": "MIT جواز · د Antonio Orionus لخوا", "thirdPartyNotices": "د دریم ډلې خبرتیاوې وګورئ"},
 	"titleBar": {"close": "تړل", "minimize": "کوچنی کول", "maximize": "لوی کول", "restore": "بیرته راوستل"},
 	"splash": {
 		"greeting": "سلام، ښه راغلاست!",
@@ -116,7 +116,7 @@
 			"nestedPlaylistHint_other": "له دې څخه {{count}} د غږولو لړليکونه دي، ویډیوګانې نه — د ښکته کولو لپاره یې لینکونه یو په یو پیسټ کړئ.",
 			"probeLimitAlertTitle": "د Playlist سکین محدود دی",
 			"probeLimitAlertTitleGeneric": "سکن محدود دی",
-			"probeLimitAlertDesc": "Arroxy له {{count}} څخه زیات توکي وموندل، نو اوسنی سکین حد پاتې توکي پټوي.",
+			"probeLimitAlertDesc": "Grabbit له {{count}} څخه زیات توکي وموندل، نو اوسنی سکین حد پاتې توکي پټوي.",
 			"multiProfileEntry": "د هرې توکي لپاره پروفایلونه وټاکئ",
 			"multiProfileEntryTooltip": "کیفیت, SponsorBlock, محصول، او خوندي کول پریږدي — پرځای یې د هرې توکي لپاره د ډاونلوډ پروفایل وټاکئ",
 			"removeFromListCount_one": "{{count}} له لیستې لیرې کړئ",
@@ -129,7 +129,7 @@
 		},
 		"bulk": {
 			"title": "ډېر URLونه",
-			"description": "د ویډیو، playlist، channel، لټون، یا غږ URLونه پیسټ کړئ. Arroxy به تر قطار ته کولو مخکې تکراري لینکونه پاک کړي.",
+			"description": "د ویډیو، playlist، channel، لټون، یا غږ URLونه پیسټ کړئ. Grabbit به تر قطار ته کولو مخکې تکراري لینکونه پاک کړي.",
 			"textareaLabel": "د URL لست",
 			"textareaPlaceholder": "https://video.example/one\nhttps://video.example/two\nhttps://video.example/three",
 			"acceptedCount": "چمتو",
@@ -149,63 +149,71 @@
 			"pickFromPlaylist": "له Playlist نه غوره کړئ",
 			"quickWholePlaylist": "ټول پلیلېسټ ډاونلوډ کړه",
 			"playlistLimit": "د پلی‌لېسټ کتنې حد: {{count}} توکي",
-			"quickLimitDescription": "تر ټولو زیات توکي چې Arroxy یې د پلیلېسټ، چینل یا لټون پایله قطار ته تر اضافه کولو مخکې سکین کوي.",
+			"quickLimitDescription": "تر ټولو زیات توکي چې Grabbit یې د پلیلېسټ، چینل یا لټون پایله قطار ته تر اضافه کولو مخکې سکین کوي.",
 			"singleTooltip": "د yt-dlp د یوه ویډیو حالت کاروي، نو له دې URL سره تړلی پلی‌لېسټ له پامه غورځول کېږي.",
 			"quickSingleTooltip": "یو ډاونلوډ قطار ته اضافه کوي او له دې URL سره تړلی پلیلېسټ له پامه غورځوي.",
 			"playlistTooltip": "د yt-dlp د پلی‌لېسټ حالت کاروي او د انتخابګر تر ښودلو مخکې ستاسې تر ټاکلي حد پورې توکي راولي.",
-			"quickPlaylistTooltip": "هر بار شوی پلیلېسټ توکی د فعال چټک ډاونلوډ پروفایل سره قطار ته اضافه کوي. که سکین ستا حد ته ورسېږي، Arroxy به د قطار ته اضافه کولو مخکې پوښتنه وکړي."
+			"quickPlaylistTooltip": "هر بار شوی پلیلېسټ توکی د فعال چټک ډاونلوډ پروفایل سره قطار ته اضافه کوي. که سکین ستا حد ته ورسېږي، Grabbit به د قطار ته اضافه کولو مخکې پوښتنه وکړي."
 		},
 		"url": {
 			"heading": "له URL څخه ډاونلوډ",
 			"placeholder": "https://www.youtube.com/watch?v=...",
-			"tabs": {"profiles": "پروفایلونه", "settings": "امستنې"},
+			"workspace": {
+				"description": "یو لینک پیسټ کړئ ترڅو دا په اتوماتيک ډول تحلیل کړي، بیا دلته هرڅه غوره کړئ.",
+				"invalidUrl": "یو معتبر HTTP یا HTTPS URL داخل کړئ.",
+				"analyzing": "لینک تحلیل کول…",
+				"options": "اختیارونه ډاونلوډ کړئ",
+				"advanced": "پرمختللي انتخابونه",
+				"download": "ډاونلوډ کړئ",
+				"bestAudio": "غوره غږ",
+				"destination": "منزل ډاونلوډ کړئ",
+				"changeDestination": "منزل بدل کړئ",
+				"filenameTemplate": "د فایل نوم ټیمپلیټ تولید کړئ",
+				"trim": {
+					"heading": "یوه ځانګړې برخه ډاونلوډ کړئ",
+					"description": "SS، MM:SS، یا HH:MM:SS مني.",
+					"previewHeading": "د کلیپ مخکتنه",
+					"previewDescription": "د کره پرېکولو ځایونو د ټاکلو لپاره ویډیو وچلوئ یا یې وړاندې او شاته کړئ.",
+					"previewUnavailable": "د دې سرچینې لپاره مخکتنه نشته. تاسو لا هم د وخت کرښه او د وخت برخې کارولی شئ.",
+					"setStart": "پیل وټاکئ",
+					"setEnd": "پای وټاکئ",
+					"selectedRange": "ټاکل شوې موده",
+					"zoom": "د مهال‌کرښې لویوالی",
+					"position": "د مهال‌کرښې موقعیت",
+					"previousFrame": "مخکینی چوکاټ",
+					"nextFrame": "راتلونکی چوکاټ",
+					"stepBack": "یو ګام شاته",
+					"stepForward": "یو ګام مخکې",
+					"loop": "کلیپ تکرار کړئ",
+					"full": "پوره ویډیو",
+					"custom": "د ګمرک حد",
+					"start": "د پیل وخت",
+					"end": "د پای وخت",
+					"useEnd": "د ویډیو پای وکاروئ",
+					"reset": "رینج بیا تنظیم کړئ",
+					"summary": "پیل {{start}} — پای {{end}} — د کلپ اوږدوالی {{length}}",
+					"error": {"start": "په صفر یا وروسته کې د اعتبار وړ پیل وخت دننه کړئ.", "end": "د اعتبار وړ پای وخت دننه کړئ.", "order": "د پای وخت باید د پیل وخت څخه وروسته وي.", "duration": "د پیل او پای وختونه باید د ویډیو په موده کې پاتې شي."}
+				}
+			},
+			"tabs": {"settings": "امستنې"},
 			"interactiveDownload": "بڼې ترلاسه کړه",
-			"fetchFormatsTooltip": "ګام په ګام لارښود. بڼه، کیفیت او نور وټاکئ.",
 			"quickDownload": "چټک ډاونلوډ",
 			"quickDownloadTooltip": "د {{profileName}} په کارولو سره به ډاونلوډ شي",
 			"quickPreparing": "چمتو کېږي",
-			"quickQueued": "قطار ته زیات شو",
-			"quickSingleOnly": "د پیل لپاره د ویډیو، پلې‌لېست، چینل یا لټون URL ونښلوئ.",
 			"quickProbeFailed": "کتنه ناکامه شوه",
 			"quickPrepareFailed": "د قطار توکی چمتو نه شو",
 			"quickBulkAllFailed": "له دې URLونو څخه هېڅ یو چمتو نه شو",
 			"quickFailed": "دا ونه زیاتېدل: {{error}}",
 			"quickPartialFailed_one": "هغه څه چې کار یې وکړ قطار ته زیات شول. {{count}} URL چمتو نه شو.",
 			"quickPartialFailed_other": "هغه څه چې کار یې وکړ قطار ته زیات شول. {{count}} URLونه چمتو نه شول.",
-			"profile": {
-				"destinationFallback": "موخه",
-				"switchAria": "د ډاونلوډ پروفایل بدل کړئ: {{profileName}}",
-				"switchTitle": "د ډاونلوډ پروفایل بدل کړئ",
-				"activeLabel": "فعال پروفایل",
-				"editActive": "فعال پروفایل سمول",
-				"changeGlobalDestination": "عمومي موخه بدله کړئ",
-				"menuTitle": "پروفایل بدل کړئ",
-				"menuDescription": "د چټک ډاونلوډ، ګڼو URLونو او پلی‌لیستونو لپاره فعال پروفایل بدل کړئ.",
-				"newProfile": "نوی پروفایل",
-				"manageProfiles": "پروفایلونه اداره کړئ",
-				"panelTitle": "د ډاونلوډ پروفایلونه",
-				"panelDescription": "د بیا کارولو وړ د ډاونلوډ امستنې جوړې، غوره، سمې یا لرې کړئ.",
-				"badgeCustom": "دودیز",
-				"badgeModified": "بدل شوی",
-				"badgeBuiltIn": "دننه جوړ",
-				"badgeDisabled": "پټ",
-				"enableToggleAria": "پروفایل په غوره کوونکو کې وښایاست: {{profileName}}",
-				"enableHint": "پټ پروفایلونه دلته پاتې کېږي خو له هر غوره کوونکي څخه ورکېږي.",
-				"lastEnabledHint": "لږ تر لږه یو پروفایل شتون ولرئ.",
-				"edit": "سمول",
-				"remove": "لرې کول",
-				"reset": "بیا تنظیمول"
-			},
+			"profile": {"changeGlobalDestination": "عمومي موخه بدله کړئ", "reset": "بیا تنظیمول"},
 			"bulkButton": "ډېر URLونه",
-			"bulkTooltip": "څو URLونه زیات او کتار ته یې واچوئ.",
 			"features": {
-				"heading": "Arroxy څه ډاونلوډ کولی شي",
+				"heading": "Grabbit څه ډاونلوډ کولی شي",
 				"youtube": {"heading": "YouTube", "video": "ویډیوګانې", "channel": "چینلونه", "playlist": "د غږولو لړليکونه", "short": "Shorts", "music": "موسیقي", "podcast": "Podcastونه"},
 				"anySite": {"heading": "2000+ سایټونه", "video": "ویډیوګانې", "videoPlaylist": "د ویډیو Playlistونه", "musicPlaylist": "د موسیقۍ Playlistونه"},
 				"always": {"audioOnly": "یوازې غږونه", "subtitles": "ژباړلیکونه"}
 			},
-			"mascotIdle": "لینک واچوئ او Arroxy پرېږدئ چې یې راکښته کړي ✨",
-			"mascotBusy": "شاتهپرده ډاونلوډ کیږي… زه کولی شم له ډیرو کارونو سره معامله وکړم 😎",
 			"advanced": "پرمختللي",
 			"settings": {"inputHeading": "ورودی", "behaviorHeading": "د ښوتنې (ډاونلوډ) چلند", "behaviorDescription": "عمومی سلوک چې د پروفایل له لارې رابېشتلي ډاونلوډ هم اغېزمن کوي."},
 			"clearAria": "URL پاکول",
@@ -221,16 +229,13 @@
 			},
 			"hotkey": {
 				"sectionTitle": "نړیوال هاټ کی",
-				"sectionDescription": "هر کاپي شوی لینک له هرې اپلیکیشن څخه ډاونلوډ کړئ، پرته له دې چې Arroxy پرانیزئ.",
+				"sectionDescription": "هر کاپي شوی لینک له هرې اپلیکیشن څخه ډاونلوډ کړئ، پرته له دې چې Grabbit پرانیزئ.",
 				"toggle": "نړیوال هاټ کي فعاله کړئ",
 				"toggleDescription": "کله چې په کاپي بورد کې د ویډیو لینک وي، شارټکټ کېکاږئ.",
 				"changeShortcut": "شارټکټ بدل کړئ",
 				"recording": "کیليونه کېکاږئ…",
 				"test": "ازمویل",
 				"conflict": "دا شارټکټ بلې اپلیکیشن نیولی — بل یې وټاکه.",
-				"hintLabel": "یا فشار ورکړئ",
-				"hintTooltip": "له هر ځایه د ویډیو لینک کاپي کړئ، دا شارټ‌کټ فشار ورکړئ، او Arroxy به یې ستاسو د فعال پروفایل په کارولو کتار ته واچوي — د کړکیو بدلولو ته اړتیا نشته.",
-				"hintTooltipSettings": "په ترتیباتو کې یې بدل یا بند کړئ.",
 				"reset": "ډیفالټ ته بیرته شئ"
 			},
 			"cookies": {
@@ -257,14 +262,14 @@
 			"proxy": {"label": "Proxy URL", "description": "د پراکسي له لارې ترافیک لیږدول — د جغرافیایي محدودیتونو لرونکي مینځپانګې لپاره ګټور.", "placeholder": "http://host:port", "clear": "پاکول"},
 			"backdrop": {
 				"panelTitle": "بڼه او کړنه",
-				"panelDescription": "وټاکئ چې Arroxy د خوځنده شالید لپاره څومره حرکت وکاروي.",
+				"panelDescription": "وټاکئ چې Grabbit د خوځنده شالید لپاره څومره حرکت وکاروي.",
 				"modeLabel": "د شالید کیفیت",
 				"modeDescription": "له تر ټولو خوځنده بڼې څخه غوره کړنې ته ولاړ شئ.",
 				"cssOnlyLabel": "غوره کړنه",
 				"cssOnlyDescription": "یوازې CSS، د canvas وړاندې کول نشته.",
 				"gpuLabel": "تر ټولو ښکلی",
 				"gpuDescription": "که ملاتړ ولري، خوځنده WebGL شالید.",
-				"runtimeFallbackNotice": "په دې وسیله کې د هارډویر WebGL شتون نه لري، نو Arroxy د غوره کړنې شالید کاروي."
+				"runtimeFallbackNotice": "په دې وسیله کې د هارډویر WebGL شتون نه لري، نو Grabbit د غوره کړنې شالید کاروي."
 			},
 			"limitRate": {
 				"label": "د ډاونلوډ سرعت حد",
@@ -277,7 +282,7 @@
 			},
 			"playlistProbeLimit": {
 				"label": "د سکین لپاره د Playlist توکي",
-				"description": "هغه اعظمي ننوتونه چې Arroxy د یوه playlist، چینل، یا د لټون پایله خلاصیدو پرمهال بارومه.",
+				"description": "هغه اعظمي ننوتونه چې Grabbit د یوه playlist، چینل، یا د لټون پایله خلاصیدو پرمهال بارومه.",
 				"option": "{{count}} توکي",
 				"current": "اوسنی حد: {{count}} توکي",
 				"customValue": "دودیز: {{count}} توکي",
@@ -287,7 +292,7 @@
 				"customDialogCancel": "لغوه کړئ",
 				"customDialogSave": "حد خوندي کړئ",
 				"invalid": "د 1 نه تر 5000 پورې بشپړ عدد وکاروئ",
-				"tooltip": "yt-dlp --playlist-end ته د لارښوونې لپاره: Arroxy د انتخاب جوړولو پرمهال یوازې د playlist، چینل، یا لټون له ننوتونو دومره غواړي."
+				"tooltip": "yt-dlp --playlist-end ته د لارښوونې لپاره: Grabbit د انتخاب جوړولو پرمهال یوازې د playlist، چینل، یا لټون له ننوتونو دومره غواړي."
 			},
 			"nativeAudioPreference": {"label": "د اصلي آډیو غوره توب", "description": "دا کنټرولوي چې “Best native” څه ټاکي. لاسي آډیو کرښې او M4A/AAC ښکاره انتخابونه پاتې کېږي.", "compatible": "سازګار سټېریو", "surround": "surround / Dolby ته لومړیتوب ورکړئ"},
 			"autoRetry": {"label": "ناکام ډاونلوډونه بیا هڅه کړئ", "description": "د شبکې یا سرور ستونزې وروسته په اتوماتيک ډول بیا هڅه کوي، د هرې هڅې تر منځ اوږد انتظار کوي. هغه ډاونلوډونه چې سایټ یې بندوي هیڅکله په اتوماتيک ډول بیا نه هڅول کیږي.", "unit": "ځله"},
@@ -295,13 +300,13 @@
 			"downloadConnections": {"label": "د ډاونلوډ اتصالونه", "description": "د ویډیو څو برخې په یو وخت کې راښکته کوي او لوی ډاونلوډونه ګړندي کوي. لوړ ارزښتونه دا چانس زیاتوي چې سایټ مو محدود کړي.", "unit": "اتصالونه"},
 			"networkPacing": {
 				"heading": "آرامه ډاونلوډونه",
-				"description": "د هر ډاونلوډ پرمهال کوچني انتظارونه اضافه کړئ ترڅو Arroxy سایټ ته ډیره زیاته فشار ونه وري. ارزښتونه په ثانیو کې دي.",
-				"presetLabel": "Arroxy باید څومره احتیاطي وي؟",
+				"description": "د هر ډاونلوډ پرمهال کوچني انتظارونه اضافه کړئ ترڅو Grabbit سایټ ته ډیره زیاته فشار ونه وري. ارزښتونه په ثانیو کې دي.",
+				"presetLabel": "Grabbit باید څومره احتیاطي وي؟",
 				"tooltip": "دا انتظارونه د هر ډاونلوډ دننه پیښیږي. دا چې څو ډاونلوډونه په یو وخت کې روان وي، په «یو ځای ډاونلوډونه» کې جلا ټاکل کیږي.",
 				"summary": "انتظارونه: {{requests}} د چکونو تر مینځ، {{downloads}} د میډیا د پیلیدو دمخه، {{subtitles}} د ژباړلیک فایلونو دمخه.",
 				"presets": {"off": "بند", "balanced": "متوازن", "careful": "احتیاطي", "custom": "دودیز"},
 				"tooltips": {
-					"off": "یوازې هغه کوچني اساسي وقفې کاروي چې Arroxy د میډیا او ژباړلیکونو لپاره ساتي.",
+					"off": "یوازې هغه کوچني اساسي وقفې کاروي چې Grabbit د میډیا او ژباړلیکونو لپاره ساتي.",
 					"balanced": "ډیفالټ. د غوښتنو ترمنځ او د میډیا له پیل دمخه لنډې وقفې اضافه کوي.",
 					"careful": "د لویو Playlistونو یا هغو شبکو لپاره اوږده وقفې اضافه کوي چې ډیری وار محدودیتونو سره مخ کیږي.",
 					"custom": "د ډاونلوډ د پرمختللو کنټرولونو ترتیب پخپله وکړئ."
@@ -314,9 +319,9 @@
 		},
 		"quickProgress": {
 			"title": "چټک ډاونلوډ چمتو کېږي",
-			"description": "Arroxy لینک لولي او {{profileName}} پلي کوي.",
+			"description": "Grabbit لینک لولي او {{profileName}} پلي کوي.",
 			"currentFallback": "اوسنی لینک",
-			"waitHint": "دا پرانیستی وساتئ تر څو Arroxy قطار چمتو کړي.",
+			"waitHint": "دا پرانیستی وساتئ تر څو Grabbit قطار چمتو کړي.",
 			"failedCount_one": "{{count}} ناکام شو",
 			"failedCount_other": "{{count}} ناکام شول",
 			"cancel": "چمتووالی لغوه کړئ",
@@ -560,6 +565,7 @@
 			"hideArtifactsFor": "د {{title}} فایلونه پټ کړه"
 		},
 		"artifact": {"media": "رسنۍ", "subtitle": "ژباړلیک", "thumbnail": "وړه انځور", "description": "تفصیل", "companion": "ملګری فایل", "unknown": "فایل", "missing": "ورک"},
+		"progress": {"downloading": "راښکته کېږي", "merging": "یوځای کېږي", "finishing": "بشپړېږي", "speed": "چټکتیا", "remaining": "پاتې وخت"},
 		"item": {
 			"defaultError": "ډاونلوډ ناکام شو",
 			"retryingSoon": "په اتوماتيک ډول بیا هڅه کیږي (هڅه {{attempt}})",
@@ -586,7 +592,7 @@
 		}
 	},
 	"update": {
-		"message": {"generic": "Arroxy {{version}} شته — تاسو {{currentVersion}} لرئ.", "homebrew": "Arroxy {{version}} شته — د Homebrew له لارې يې تازه کړئ.", "macosDirect": "Arroxy {{version}} شته — نوی DMG ډاونلوډ کړئ.", "portable": "Arroxy {{version}} شته — نوې build ډاونلوډ کړئ."},
+		"message": {"generic": "Grabbit {{version}} شته — تاسو {{currentVersion}} لرئ.", "homebrew": "Grabbit {{version}} شته — د Homebrew له لارې يې تازه کړئ.", "macosDirect": "Grabbit {{version}} شته — نوی DMG ډاونلوډ کړئ.", "portable": "Grabbit {{version}} شته — نوې build ډاونلوډ کړئ."},
 		"install": "نصب کړه او بیا پیل کړه",
 		"downloading": "ډاونلوډیږي…",
 		"download": "Download ↗",
@@ -597,7 +603,7 @@
 		"installFailed": "تازه کول ناکام شو",
 		"retry": "بیا هڅه وکړئ"
 	},
-	"releaseNotes": {"title": "په Arroxy {{version}} کې څه نوي دي", "description": "تاسو تازه اوسمهال کاروئ. دلته مهم ټکي دي.", "fullNotes": "بشپړ د خپرونې یادښتونه ↗", "continue": "دوام ورکړه"},
+	"releaseNotes": {"title": "په Grabbit {{version}} کې څه نوي دي", "description": "تاسو تازه اوسمهال کاروئ. دلته مهم ټکي دي.", "fullNotes": "بشپړ د خپرونې یادښتونه ↗", "continue": "دوام ورکړه"},
 	"status": {
 		"preparingBinaries": "بائنري فایلونه چمتو کیږي…",
 		"mintingToken": "YouTube ټوکن جوړیږي…",
@@ -622,7 +628,7 @@
 		"downloadingBinary": "{{name}} بائنري ډاونلوډیږي…",
 		"unknownStartupFailure": "نامعلومه د پیل ناکامي",
 		"diskSpaceInsufficient": "د ډیسک ځای کافي نه دی — {{required}} ته اړتیا ده، یوازې {{free}} شتون لري",
-		"outputNotWritable": "په {{dir}} کې خوندي کول ممکن نه دي — Arroxy ته هلته د لیکلو اجازه نشته",
+		"outputNotWritable": "په {{dir}} کې خوندي کول ممکن نه دي — Grabbit ته هلته د لیکلو اجازه نشته",
 		"fetchingSponsorBlock": "SponsorBlock سره اړیکه نیول کیږي…",
 		"retryingSponsorBlock": "SponsorBlock شتون نلري، بیا هڅه کیږي ({{attempt}}/{{total}})…",
 		"retryingTransfer": "اړیکه بنده شوه، بیا هڅه کیږي ({{attempt}}/{{total}})…"
@@ -639,28 +645,28 @@
 			"queued": "له کاپي بورد څخه ډاونلوډ اضافه شو",
 			"alreadyQueued": "لا دمخې کې شته — کاپي نه ده اضافه شوې",
 			"invalidClipboard": "په کاپي بورد کې لینک نشته — لومړی یو کاپي کړئ",
-			"multipleUrls": "ډېر لینکونه کاپي شوي دي — په Arroxy کې «ډېر URLونه» وکاروئ",
-			"needsReview": "دا لینک چټکې بیاکتنې ته اړتیا لري — Arroxy خلاص کړئ او بیا یې پیسټ کړئ",
+			"multipleUrls": "ډېر لینکونه کاپي شوي دي — په Grabbit کې «ډېر URLونه» وکاروئ",
+			"needsReview": "دا لینک چټکې بیاکتنې ته اړتیا لري — Grabbit خلاص کړئ او بیا یې پیسټ کړئ",
 			"busy": "پخوانی لینک لا تراوسه پروسس کیږي",
-			"submissionFailed": "دا لینک اضافه نشو کیدی — په Arroxy کې بیا هڅه وکړئ"
+			"submissionFailed": "دا لینک اضافه نشو کیدی — په Grabbit کې بیا هڅه وکړئ"
 		},
 		"queue": {"skippedAlreadyQueued_one": "{{count}} ویډیو لا دمخې په قطار کې دی — پرېښودل شو", "skippedAlreadyQueued_other": "{{count}} ویډیوګانې لا دمخې په قطار کې دي — پرېښودل شوې"}
 	},
 	"errors": {
 		"ytdlp": {
-			"botBlock": "د بوټ محافظت فعال شو. ستاسو IP پته ډیره احتمال نښه شوې (د ډیټاسینټر رینج یا ګڼ کارونکي VPN وتلو ټکی). خپل IP بدل کړئ یا بل VPN پای ټکی غوره کړئ او بیا هڅه وکړئ. که چیرې لا هم ناکامه وي، دا ممکن د YouTube خوا لنډمهاله بدلون وي — Arroxy د پیل پر وخت yt-dlp اتوماتیک تازه کوي، نو سمون به چمتو شي کله چې د پروژې خوا لیږل شي.",
+			"botBlock": "د بوټ محافظت فعال شو. ستاسو IP پته ډیره احتمال نښه شوې (د ډیټاسینټر رینج یا ګڼ کارونکي VPN وتلو ټکی). خپل IP بدل کړئ یا بل VPN پای ټکی غوره کړئ او بیا هڅه وکړئ. که چیرې لا هم ناکامه وي، دا ممکن د YouTube خوا لنډمهاله بدلون وي — Grabbit د پیل پر وخت yt-dlp اتوماتیک تازه کوي، نو سمون به چمتو شي کله چې د پروژې خوا لیږل شي.",
 			"ipBlock": "ستاسو IP پته ممکن د YouTube لخوا بنده شوې وي. وروسته بیا هڅه وکړئ یا VPN وکاروئ.",
 			"rateLimit": "YouTube غوښتنې محدودوي. یوه دقیقه انتظار کړئ بیا هڅه وکړئ.",
 			"ageRestricted": "دا ویډیو د عمر محدودیت لري او پرته د ننوتلي حساب نه شي ډاونلوډ کیدی.",
 			"unavailable": "دا ویډیو شتون نلري — ممکن شخصي، حذف شوې، یا سیمه بنده وي.",
 			"geoBlocked": "دا ویډیو ستاسو سیمه کې شتون نلري.",
 			"outOfDiskSpace": "د ډیسک کافي ځای نشته. ځای خالي کړئ او بیا هڅه وکړئ.",
-			"outputNotWritable": "Arroxy د ډاونلوډ فولډر ته نشي لیکلی. کېدای شي یوازې د لوستلو وړ وي، په تړل شوي ډرایو کې وي، یا ستاسو د سیسټم د محرمیت تنظیماتو بند کړی وي. بل فولډر وټاکئ یا لاسرسی ورکړئ، بیا هڅه وکړئ.",
+			"outputNotWritable": "Grabbit د ډاونلوډ فولډر ته نشي لیکلی. کېدای شي یوازې د لوستلو وړ وي، په تړل شوي ډرایو کې وي، یا ستاسو د سیسټم د محرمیت تنظیماتو بند کړی وي. بل فولډر وټاکئ یا لاسرسی ورکړئ، بیا هڅه وکړئ.",
 			"unsupportedUrl": "دا URL د yt-dlp له خوا نه ملاتړ کېږي. د yt-dlp له ملاتړ شوو سایټونو څخه بل لینک وازمویئ.",
 			"chunkTransferFailure": "سرور د ډاونلوډ پرمهال وصل کول پرې کاوه او yt-dlp د بیا هڅولو وروسته مو پریښود. دا معمولاً د ترټولو لوی ویډیو فارمیټونو (4K HDR / لوړ بیټ ریټ VP9) سره پیښیږي. بیا هڅه وکړئ، شبکه/VPN بدل کړئ، یا ټیټ ریزولوشن فارمیټ غوره کړئ.",
 			"missingDependency": "yt-dlp ffmpeg یا ffprobe ونه موندل. بنډل شوي باینري فایلونه ترمیم کړئ یا د FFmpeg ځای وټاکئ، بیا هڅه وکړئ.",
 			"postprocessFailure": "yt-dlp ډاونلوډ بشپړ کړ خو وروستی پروسس (یوځای کول / mux / بدلون) ناکام شو. ډیری وختونه دا د ffmpeg لنډمهاله ستونزه ده — بیا هڅه وکړئ، او که دوام ولري، بل فارمیټ ترکیب وازمویئ.",
-			"parse": "د سایټ ځواب پارس نه شو. د yt-dlp استخراج کوونکی ممکن لرې شوی وي. Arroxy په پیلیدو سره yt-dlp په اتومات ډول تازه کوي — څو دقیقې وروسته بیا هڅه وکړئ کله چې اصلاح راشي.",
+			"parse": "د سایټ ځواب پارس نه شو. د yt-dlp استخراج کوونکی ممکن لرې شوی وي. Grabbit په پیلیدو سره yt-dlp په اتومات ډول تازه کوي — څو دقیقې وروسته بیا هڅه وکړئ کله چې اصلاح راشي.",
 			"network": "د شبکې تېروتنه. خپله اړیکه وګورئ او بیا هڅه وکړئ.",
 			"drmProtected": "دا ویډیو د DRM لخوا خوندي دی. yt-dlp نشي کولی DRM لیرې کړي، نو فایل نشي ډاونلوډ کیدی.",
 			"loginRequired": "دا ویډیو د ننوتلي حساب ته اړتیا لري. یو cookies.txt تنظیم کړئ (تنظیمات → Cookies) او بیا هڅه وکړئ.",
@@ -697,7 +703,7 @@
 		"mp4Cap": "په YouTube کې له 1080p پورته H.264 نشته — په اتومات ډول 1080p ته محدودېږي"
 	},
 	"formatLabel": {"audioFallback": "غږ", "audioOnlyDot": "یوازې غږ · {{audio}}", "videoDot": "{{resolution}} · {{audio}}"},
-	"tray": {"tooltip": "Arroxy", "menu": {"statusIdle": "بیکار", "statusActive_one": "1 ډاونلوډیږي · {{percent}}%", "statusActive_other": "{{count}} ډاونلوډیږي · {{percent}}%", "downloadFromClipboard": "له کاپي بورد څخه ډاونلوډ", "open": "Arroxy پرانیستل", "quit": "Arroxy پریښودل"}},
+	"tray": {"tooltip": "Grabbit", "menu": {"statusIdle": "بیکار", "statusActive_one": "1 ډاونلوډیږي · {{percent}}%", "statusActive_other": "{{count}} ډاونلوډیږي · {{percent}}%", "downloadFromClipboard": "له کاپي بورد څخه ډاونلوډ", "open": "Grabbit پرانیستل", "quit": "Grabbit پریښودل"}},
 	"dialogs": {
 		"quitWithActiveDownloads": {
 			"message_one": "{{count}} ډاونلوډ روان دی",
@@ -707,25 +713,25 @@
 			"pause": "ډاونلوډونه ودرول او وتل",
 			"keep": "ډاونلوډ دوام کړه"
 		},
-		"closeToTray": {"message": "ایا د تړولو پر وخت Arroxy سیسټم ټرې ته پټ کړو؟", "detail": "Arroxy کار کوي او فعال ډاونلوډونه بشپړوي. دا وروسته د پرمختللو تنظیماتو کې بدل کړئ.", "hide": "ټرې ته پټول", "quit": "وتل", "remember": "بیا مه پوښتئ"},
-		"rendererCrashed": {"message": "Arroxy ستونزې سره مخ شو", "detail": "د رینډرر پروسه کریش شوه ({{reason}}). بیا هڅه کولو لپاره بیا بار کړئ.", "reload": "بیا بار کړئ", "quit": "وتل"}
+		"closeToTray": {"message": "ایا د تړولو پر وخت Grabbit سیسټم ټرې ته پټ کړو؟", "detail": "Grabbit کار کوي او فعال ډاونلوډونه بشپړوي. دا وروسته د پرمختللو تنظیماتو کې بدل کړئ.", "hide": "ټرې ته پټول", "quit": "وتل", "remember": "بیا مه پوښتئ"},
+		"rendererCrashed": {"message": "Grabbit ستونزې سره مخ شو", "detail": "د رینډرر پروسه کریش شوه ({{reason}}). بیا هڅه کولو لپاره بیا بار کړئ.", "reload": "بیا بار کړئ", "quit": "وتل"}
 	},
 	"share": {
-		"title": "Arroxy شریک کړئ",
-		"description": "Arroxy وړیا او خلاص سرچینه دی. شریکول نورو خلکو سره مرسته کوي چې ومومي.",
+		"title": "Grabbit شریک کړئ",
+		"description": "Grabbit وړیا او خلاص سرچینه دی. شریکول نورو خلکو سره مرسته کوي چې ومومي.",
 		"copyLink": "لینک کاپي کړئ",
 		"copied": "کاپي شو!",
-		"defaultMessage": "Arroxy — د Windows، macOS او Linux لپاره وړیا او خلاص-سرچینه ویډیو ډاونلوډر. له YouTube، Vimeo، Twitch او 2000+ سایټونو سره کار کوي.\n4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock",
-		"footerTooltip": "Arroxy شریک کړئ",
+		"defaultMessage": "Grabbit — د Windows، macOS او Linux لپاره وړیا او خلاص-سرچینه ویډیو ډاونلوډر. له YouTube، Vimeo، Twitch او 2000+ سایټونو سره کار کوي.\n4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock",
+		"footerTooltip": "Grabbit شریک کړئ",
 		"footerLabel": "شریک کړئ",
-		"shareAction": "Arroxy شریک کړئ"
+		"shareAction": "Grabbit شریک کړئ"
 	},
 	"filenameTemplate": {
 		"label": "د دوتنې نوم بېلګه",
 		"description": "وټاکئ چې ښکته شوې فایلونه څنګه نومول کیږي. د ننوتلو لپاره یوه ټوکن کلیک کړئ. د ډاونلوډونو د پوښیو په بڼه ترتیبولو لپاره / وکاروئ.",
 		"profileOverrideLabel": "د دوتنې نوم بېلګه",
 		"profileOverrideDescription": "خالي یې پرېږدئ چې ټولیزه بېلګه وکارول شي.",
-		"idWarning": "پرته له {id} څخه، Arroxy نشي کولی مخکې ښکته شوي د لړ توکي وپېژني یا د .m3u لړونه جوړ کړي.",
+		"idWarning": "پرته له {id} څخه، Grabbit نشي کولی مخکې ښکته شوي د لړ توکي وپېژني یا د .m3u لړونه جوړ کړي.",
 		"m3uDisabled": "شتون نلري ځکه ستاسو د فایل نوم کينډۍ یا {id} نلري یا ډاونلوډونه پوښیو ته ترتیبوي.",
 		"previewSingle": "یوازینی ویډیو",
 		"previewPlaylist": "په پلی لیست کې",

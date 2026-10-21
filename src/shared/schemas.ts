@@ -110,7 +110,7 @@ export const DEFAULT_PLAYLIST_SUBTITLE_SELECTION: PlaylistSubtitleSelection = {k
 // probe-order identity (mixes repeat videos, so ids are per-row), and sorting
 // never recomputes them. Upload-time modes need per-row `timestamp`; rows
 // without one sort last, stable in api order. No update-time option — no
-// extractor Arroxy supports provides a modified timestamp.
+// extractor Grabbit supports provides a modified timestamp.
 export const playlistSortModeSchema = z.enum(['api', 'upload-asc', 'upload-desc'])
 export type PlaylistSortMode = z.infer<typeof playlistSortModeSchema>
 export const PLAYLIST_SORT_MODES = playlistSortModeSchema.options
@@ -461,6 +461,7 @@ const sponsorBlockOptionsSchema = z.discriminatedUnion('mode', [z.object({mode: 
 const embedOptionsSchema = z.object({chapters: z.boolean(), metadata: z.boolean(), thumbnail: z.boolean(), description: z.boolean(), thumbnailSidecar: z.boolean()})
 
 const presetOrCustomSchema = z.union([presetSchema, z.literal('custom')])
+const clipRangeSchema = z.object({startSeconds: z.number().nonnegative(), endSeconds: z.number().positive()}).refine(value => value.endSeconds > value.startSeconds, {message: 'Clip end must be later than clip start', path: ['endSeconds']})
 
 // Each variant carries the yt-dlp `extractor` + `extractor_key` strings that
 // were observed at probe time. These plumb through to download jobs so the
@@ -474,12 +475,23 @@ export const preparedJobSchema = z.discriminatedUnion('kind', [
 		formatId: z.string().min(1),
 		preset: presetOrCustomSchema,
 		filenameTemplate: z.string().min(1).optional(),
+		clipRange: clipRangeSchema.optional(),
 		subtitles: subtitleOptionsSchema.optional(),
 		sponsorBlock: sponsorBlockOptionsSchema,
 		embed: embedOptionsSchema,
 		expectedBytes: z.number().positive().optional()
 	}),
-	z.object({kind: z.literal('audio-convert'), ...extractorIdentitySchema, audioConvert: audioConvertSchema, preset: presetOrCustomSchema, filenameTemplate: z.string().min(1).optional(), subtitles: subtitleOptionsSchema.optional(), sponsorBlock: sponsorBlockOptionsSchema, embed: embedOptionsSchema}),
+	z.object({
+		kind: z.literal('audio-convert'),
+		...extractorIdentitySchema,
+		audioConvert: audioConvertSchema,
+		preset: presetOrCustomSchema,
+		filenameTemplate: z.string().min(1).optional(),
+		clipRange: clipRangeSchema.optional(),
+		subtitles: subtitleOptionsSchema.optional(),
+		sponsorBlock: sponsorBlockOptionsSchema,
+		embed: embedOptionsSchema
+	}),
 	z.object({
 		kind: z.literal('ranged-format'),
 		...extractorIdentitySchema,
@@ -489,6 +501,7 @@ export const preparedJobSchema = z.discriminatedUnion('kind', [
 		mergeOutputFormat: z.string().min(1).optional(),
 		audioConvert: audioConvertSchema.optional(),
 		filenameTemplate: z.string().min(1),
+		clipRange: clipRangeSchema.optional(),
 		subtitles: subtitleOptionsSchema.optional(),
 		sponsorBlock: sponsorBlockOptionsSchema,
 		embed: embedOptionsSchema

@@ -117,13 +117,13 @@ describe('fitName — the Windows total-path ceiling', () => {
 	it('gives the filename less room inside a deep folder', () => {
 		const pieces: BudgetPiece[] = [tok('title', 'T'.repeat(200)), lit(' ['), tok('id', 'YE7VzlLtp-4'), lit(']')]
 		const shallow = fitName({pieces, outputDir: 'C:\\V', limits: limitsFor('win32')})
-		const deep = fitName({pieces, outputDir: `C:\\Users\\antonio\\Videos\\Arroxy\\${'sub\\'.repeat(20)}`, limits: limitsFor('win32')})
+		const deep = fitName({pieces, outputDir: `C:\\Users\\antonio\\Videos\\Grabbit\\${'sub\\'.repeat(20)}`, limits: limitsFor('win32')})
 		expect(nameOf(deep).length).toBeLessThan(nameOf(shallow).length)
 	})
 
 	it('keeps the whole path within MAX_PATH', () => {
 		const pieces: BudgetPiece[] = [tok('title', 'T'.repeat(300)), lit(' ['), tok('id', 'YE7VzlLtp-4'), lit(']')]
-		const outputDir = 'C:\\Users\\antonio\\Videos\\Arroxy\\Nature Docs'
+		const outputDir = 'C:\\Users\\antonio\\Videos\\Grabbit\\Nature Docs'
 		const result = fitName({pieces, outputDir, limits: limitsFor('win32')})
 		const fullPath = `${outputDir}\\${nameOf(result)}`
 		expect(measure(fullPath, 'utf16-units') + SUFFIX_RESERVE).toBeLessThanOrEqual(260)
@@ -168,7 +168,7 @@ describe('fitName — the invariant the whole design exists to hold', () => {
 	it('never returns a name that overruns the component limit, for any input', () => {
 		const titles = ['', 'Big Buck Bunny', 'T'.repeat(500), '日'.repeat(300), '🎬'.repeat(200), 'e\u0301'.repeat(300), 'Song | Official: Video']
 		const uploaders = ['', 'Blender Foundation', 'U'.repeat(200), '日'.repeat(100)]
-		const dirs = ['/v', '/home/antonio/Videos', 'C:\\Users\\antonio\\Videos\\Arroxy']
+		const dirs = ['/v', '/home/antonio/Videos', 'C:\\Users\\antonio\\Videos\\Grabbit']
 		// Counted so the invariant cannot pass vacuously: every case skipping on a
 		// failed fit would otherwise assert nothing at all.
 		let fitted = 0

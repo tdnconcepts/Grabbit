@@ -8,7 +8,7 @@
 // non-empty fields), the real page title — present in the parent page's
 // og:title — is discarded.
 //
-// Arroxy-side recovery: when a probe resolves through the VHX embed extractor
+// Grabbit-side recovery: when a probe resolves through the VHX embed extractor
 // with the sentinel title, fetch the parent page (the referer yt-dlp smuggles
 // into webpage_url) and read its curated preview title (og:title /
 // twitter:title). Deliberately NOT a plain <title> fallback: logged-out fetches

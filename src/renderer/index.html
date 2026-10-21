@@ -2,10 +2,10 @@
 <html lang="en" class="dark" data-app-mode="%MODE%">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://tally.so; frame-src https://tally.so; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' ws: http://localhost:*" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://tally.so; frame-src https://tally.so; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' ws: http://localhost:*" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Arroxy</title>
+    <title>Grabbit</title>
     <style>
       :root {
         --boot-splash-bg: #050813;
@@ -105,22 +105,6 @@
         text-align: center;
       }
 
-      .boot-splash__brand {
-        margin: 0;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.2;
-        letter-spacing: 0;
-      }
-
-      .boot-splash__status {
-        margin: 0;
-        color: var(--boot-splash-muted);
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 1.45;
-      }
-
       .boot-splash__bar {
         position: relative;
         width: 176px;
@@ -163,11 +147,9 @@
   </head>
   <body>
     <div id="root">
-      <div id="boot-splash" role="status" aria-live="polite" aria-label="Starting Arroxy">
+      <div id="boot-splash" role="status" aria-live="polite" aria-label="Starting Grabbit">
         <img src="/mascot-main.png" alt="" class="boot-splash__mascot" />
         <div class="boot-splash__text">
-          <p class="boot-splash__brand">Arroxy</p>
-          <p class="boot-splash__status">Starting Arroxy</p>
           <div class="boot-splash__bar" aria-hidden="true"></div>
         </div>
       </div>

@@ -34,10 +34,10 @@ describe('resolveAction', () => {
 		expect(resolveAction('portable', 'win32')).toEqual({kind: 'download'})
 	})
 
-	// Flatpak installs update from Arroxy's Flatpak repo; the app cannot replace
+	// Flatpak installs update from Grabbit's Flatpak repo; the app cannot replace
 	// its own sandboxed files, so the banner hands the user the command.
 	it('flatpak → copy-command for flatpak update', () => {
-		expect(resolveAction('flatpak', 'linux')).toEqual({kind: 'command', cmd: 'flatpak update io.github.antonio_orionus.Arroxy'})
+		expect(resolveAction('flatpak', 'linux')).toEqual({kind: 'command', cmd: 'flatpak update io.github.antonio_orionus.Grabbit'})
 	})
 })
 
@@ -54,7 +54,7 @@ describe('UpdateBanner', () => {
 
 	it('renders both version numbers', () => {
 		render(<UpdateBanner info={makeInfo()} installing={false} installError={null} onInstall={vi.fn()} onDownload={vi.fn()} onDismiss={vi.fn()} />)
-		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Arroxy 1.2.0 is available — you have 0.0.1.')
+		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Grabbit 1.2.0 is available — you have 0.0.1.')
 	})
 
 	it('shows Install & Restart for direct channel on linux', () => {
@@ -67,7 +67,7 @@ describe('UpdateBanner', () => {
 	it('shows manual DMG copy and Download DMG for direct channel on darwin', () => {
 		window.platform = 'darwin'
 		render(<UpdateBanner info={makeInfo({installChannel: 'direct'})} installing={false} installError={null} onInstall={vi.fn()} onDownload={vi.fn()} onDismiss={vi.fn()} />)
-		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Arroxy 1.2.0 is available — download the new DMG.')
+		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Grabbit 1.2.0 is available — download the new DMG.')
 		expect(screen.getByRole('button', {name: 'Download DMG ↗'})).toBeInTheDocument()
 		expect(screen.queryByRole('button', {name: 'Install & Restart'})).not.toBeInTheDocument()
 	})
@@ -75,7 +75,7 @@ describe('UpdateBanner', () => {
 	it('shows manual build copy for portable channel', () => {
 		window.platform = 'win32'
 		render(<UpdateBanner info={makeInfo({installChannel: 'portable'})} installing={false} installError={null} onInstall={vi.fn()} onDownload={vi.fn()} onDismiss={vi.fn()} />)
-		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Arroxy 1.2.0 is available — download the new build.')
+		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Grabbit 1.2.0 is available — download the new build.')
 		expect(screen.getByRole('button', {name: 'Download ↗'})).toBeInTheDocument()
 		expect(screen.queryByRole('button', {name: 'Install & Restart'})).not.toBeInTheDocument()
 	})
@@ -104,7 +104,7 @@ describe('UpdateBanner', () => {
 	it('renders homebrew command + copy button; clipboard receives the command', async () => {
 		window.platform = 'darwin'
 		render(<UpdateBanner info={makeInfo({installChannel: 'homebrew'})} installing={false} installError={null} onInstall={vi.fn()} onDownload={vi.fn()} onDismiss={vi.fn()} />)
-		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Arroxy 1.2.0 is available — update with Homebrew.')
+		expect(screen.getByTestId('update-banner-message')).toHaveTextContent('Grabbit 1.2.0 is available — update with Homebrew.')
 		expect(screen.getByTestId('update-command')).toHaveTextContent('brew upgrade --cask arroxy')
 
 		await act(async () => {

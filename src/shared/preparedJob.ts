@@ -3,6 +3,7 @@
 // `startDownloadSchema`) does not import a sibling that would re-import
 // it — keeps module init free of circular hazards.
 import type {AudioConvert, MediaIntent, Preset, SponsorBlockCategory, SubtitleFormat, SubtitleMode} from './schemas.js'
+import type {ClipRange} from './clipRange.js'
 
 export interface ExtractorIdentity {
 	// yt-dlp's IE_NAME for the extractor that produced this job — e.g. 'youtube',
@@ -41,14 +42,18 @@ export interface EmbedOptions {
 
 export type PresetOrCustom = Preset | 'custom'
 
+interface ClipRangeOption {
+	clipRange?: ClipRange
+}
+
 // Discriminated on `kind`. Adding a new mode = new arm + new switch arm in
 // every consumer (compiler-enforced exhaustiveness). `unresolved` is the
 // probe-stage placeholder: carried by a `probing` queue item until the probe
 // produces a real job — never startable (DownloadService refuses it).
 export type PreparedJob =
-	| (ExtractorIdentity & {kind: 'single-format'; formatId: string; preset: PresetOrCustom; filenameTemplate?: string; subtitles?: SubtitleOptions; sponsorBlock: SponsorBlockOptions; embed: EmbedOptions; expectedBytes?: number})
-	| (ExtractorIdentity & {kind: 'audio-convert'; audioConvert: AudioConvert; preset: PresetOrCustom; filenameTemplate?: string; subtitles?: SubtitleOptions; sponsorBlock: SponsorBlockOptions; embed: EmbedOptions})
-	| (ExtractorIdentity & {kind: 'ranged-format'; intent: MediaIntent; formatSelector?: string; formatSort?: string; mergeOutputFormat?: string; audioConvert?: AudioConvert; filenameTemplate: string; subtitles?: SubtitleOptions; sponsorBlock: SponsorBlockOptions; embed: EmbedOptions})
+	| (ExtractorIdentity & ClipRangeOption & {kind: 'single-format'; formatId: string; preset: PresetOrCustom; filenameTemplate?: string; subtitles?: SubtitleOptions; sponsorBlock: SponsorBlockOptions; embed: EmbedOptions; expectedBytes?: number})
+	| (ExtractorIdentity & ClipRangeOption & {kind: 'audio-convert'; audioConvert: AudioConvert; preset: PresetOrCustom; filenameTemplate?: string; subtitles?: SubtitleOptions; sponsorBlock: SponsorBlockOptions; embed: EmbedOptions})
+	| (ExtractorIdentity & ClipRangeOption & {kind: 'ranged-format'; intent: MediaIntent; formatSelector?: string; formatSort?: string; mergeOutputFormat?: string; audioConvert?: AudioConvert; filenameTemplate: string; subtitles?: SubtitleOptions; sponsorBlock: SponsorBlockOptions; embed: EmbedOptions})
 	| (ExtractorIdentity & {kind: 'subtitle-only'; filenameTemplate?: string; subtitles: SubtitleOptions})
 	| {kind: 'unresolved'; extractor: ''; extractorKey: ''}
 

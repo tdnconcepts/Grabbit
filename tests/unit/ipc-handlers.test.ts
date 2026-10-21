@@ -415,7 +415,7 @@ describe('registerIpcHandlers', () => {
 			}
 		})
 
-		it.each(['/Users/monterey/Library/Application Support/arroxy/logs/main.log', '/Users/monterey/Library/Application Support/Arroxy/logs/main.log'])('logs:openDir reveals the active macOS main.log path (%s)', async logPath => {
+		it.each(['/Users/monterey/Library/Application Support/arroxy/logs/main.log', '/Users/monterey/Library/Application Support/Grabbit/logs/main.log'])('logs:openDir reveals the active macOS main.log path (%s)', async logPath => {
 			const originalPlatform = Object.getOwnPropertyDescriptor(process, 'platform')!
 			Object.defineProperty(process, 'platform', {value: 'darwin', configurable: true})
 			vi.mocked(log.transports.file.getFile).mockReturnValue({path: logPath} as ReturnType<typeof log.transports.file.getFile>)

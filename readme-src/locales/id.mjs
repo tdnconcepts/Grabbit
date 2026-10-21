@@ -66,7 +66,6 @@ export const id = {
   "feat_sites_3": "**Khusus audio dan subtitel** berfungsi di semua situs yang didukung, tidak hanya YouTube",
   "feat_sites_4": "Jika situs berubah, yt-dlp mengirimkan perbaikan setiap minggu dan Arroxy memperbarui biner secara otomatis saat peluncuran",
   "shot1_cap": "<b>Beranda Unduhan Cepat</b><br/>Tempel URL dan unduh langsung dengan profil aktif Anda",
-  "shot2_cap": "<b>Profil unduhan yang dapat digunakan kembali</b><br/>Simpan preset format, kualitas, dan output — gunakan kembali untuk setiap unduhan",
   "shot3_cap": "<b>Trek audio multi-bahasa</b><br/>Pilih bahasa audio yang tepat yang dikirimkan video",
   "shot4_cap": "<b>Audio surround / Dolby</b><br/>5.1 dan trek Dolby terdeteksi dan disimpan",
   "shot5_cap": "<b>Mode URL massal</b><br/>Tempelkan daftar, hapus duplikat otomatis, masukkan semuanya ke dalam antrean sekaligus",

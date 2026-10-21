@@ -6,10 +6,10 @@ import {hostPlatform} from '@renderer/lib/platform.js'
 import type {AppState} from '../types.js'
 
 /**
- * Effective Arroxy filename template for a job: profile override > global >
+ * Effective Grabbit filename template for a job: profile override > global >
  * built-in default.
  *
- * This deliberately stays in Arroxy token syntax. Compiling to a yt-dlp output
+ * This deliberately stays in Grabbit token syntax. Compiling to a yt-dlp output
  * template happens in the main process, so a compromised renderer cannot hand
  * yt-dlp an arbitrary `-o` containing absolute paths or `../`.
  */

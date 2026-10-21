@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Arroxy\n"
+"Project-Id-Version: Grabbit\n"
 "Report-Msgid-Bugs-To: https://github.com/antonio-orionus/Arroxy/issues\n"
 "Language: zh-Hant\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,8 @@ msgid "MIT License · by Antonio Orionus"
 msgstr "MIT 授權條款 · 作者 Antonio Orionus"
 
 msgctxt "about.openTitle"
-msgid "About Arroxy"
-msgstr "關於 Arroxy"
+msgid "About Grabbit"
+msgstr "關於 Grabbit"
 
 msgctxt "about.tagline"
 msgid "Fast, friendly downloader for YouTube and 2000+ other sites."
@@ -40,8 +40,8 @@ msgid "Feedback"
 msgstr "意見回饋"
 
 msgctxt "app.feedbackNudge"
-msgid "Enjoying Arroxy? I'd love to hear from you! 💬"
-msgstr "喜歡 Arroxy 嗎？很期待聽聽你的想法！💬"
+msgid "Enjoying Grabbit? I'd love to hear from you! 💬"
+msgstr "喜歡 Grabbit 嗎？很期待聽聽你的想法！💬"
 
 msgctxt "app.logs"
 msgid "Logs"
@@ -88,16 +88,16 @@ msgid "Start over"
 msgstr "重新開始"
 
 msgctxt "dialogs.closeToTray.detail"
-msgid "Arroxy keeps running and finishes active downloads. Change this later in Advanced settings."
-msgstr "Arroxy 會繼續執行並完成進行中的下載。你可以稍後在進階設定中變更此選項。"
+msgid "Grabbit keeps running and finishes active downloads. Change this later in Advanced settings."
+msgstr "Grabbit 會繼續執行並完成進行中的下載。你可以稍後在進階設定中變更此選項。"
 
 msgctxt "dialogs.closeToTray.hide"
 msgid "Hide to tray"
 msgstr "隱藏到系統匣"
 
 msgctxt "dialogs.closeToTray.message"
-msgid "Hide Arroxy to the system tray when closing?"
-msgstr "關閉時要將 Arroxy 隱藏到系統匣嗎？"
+msgid "Hide Grabbit to the system tray when closing?"
+msgstr "關閉時要將 Grabbit 隱藏到系統匣嗎？"
 
 msgctxt "dialogs.closeToTray.quit"
 msgid "Quit"
@@ -136,8 +136,8 @@ msgid "The renderer process crashed ({{reason}}). Reload to try again."
 msgstr "轉譯器程序發生當機（{{reason}}）。請重新載入再試一次。"
 
 msgctxt "dialogs.rendererCrashed.message"
-msgid "Arroxy encountered a problem"
-msgstr "Arroxy 發生問題"
+msgid "Grabbit encountered a problem"
+msgstr "Grabbit 發生問題"
 
 msgctxt "dialogs.rendererCrashed.quit"
 msgid "Quit"
@@ -152,8 +152,8 @@ msgid "This video is age-restricted and cannot be downloaded without a signed-in
 msgstr "此影片有年齡限制，必須登入帳號才能下載。"
 
 msgctxt "errors.ytdlp.botBlock"
-msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Arroxy auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
-msgstr "已觸發機器人防護。你使用的 IP 很可能已被標記（資料中心網段或繁忙的 VPN 出口）。請更換 IP 或選擇其他 VPN 節點後重試。如果問題持續，可能是網站端的暫時變更——Arroxy 啟動時會自動更新 yt-dlp，因此上游發布修正後會自動套用。"
+msgid "Bot protection triggered. The IP you're using is most likely flagged (datacenter range or busy VPN exit). Change your IP or pick a different VPN endpoint and retry. If it keeps failing, this may be a temporary site-side change — Grabbit auto-updates yt-dlp on launch, so the fix lands automatically once upstream ships it."
+msgstr "已觸發機器人防護。你使用的 IP 很可能已被標記（資料中心網段或繁忙的 VPN 出口）。請更換 IP 或選擇其他 VPN 節點後重試。如果問題持續，可能是網站端的暫時變更——Grabbit 啟動時會自動更新 yt-dlp，因此上游發布修正後會自動套用。"
 
 msgctxt "errors.ytdlp.chunkTransferFailure"
 msgid "The server kept cutting the download mid-stream and yt-dlp gave up after retrying. This usually hits the largest video formats (4K HDR / high-bitrate VP9). Retry, switch network/VPN, or pick a lower-resolution format."
@@ -188,12 +188,12 @@ msgid "Not enough disk space. Free up space and retry."
 msgstr "磁碟空間不足。請釋放空間後重試。"
 
 msgctxt "errors.ytdlp.outputNotWritable"
-msgid "Arroxy can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
-msgstr "Arroxy 無法寫入下載資料夾。該資料夾可能是唯讀的、位於已鎖定的磁碟機上，或被系統的隱私權設定封鎖。請選擇其他資料夾或允許存取，然後重試。"
+msgid "Grabbit can't write to the download folder. It may be read-only, on a locked drive, or blocked by your system's privacy settings. Choose another folder or allow access, then retry."
+msgstr "Grabbit 無法寫入下載資料夾。該資料夾可能是唯讀的、位於已鎖定的磁碟機上，或被系統的隱私權設定封鎖。請選擇其他資料夾或允許存取，然後重試。"
 
 msgctxt "errors.ytdlp.parse"
-msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Arroxy auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
-msgstr "無法解析網站的回應。yt-dlp 的擷取器可能已跟不上網站變更。Arroxy 啟動時會自動更新 yt-dlp——請在修正發布幾分鐘後重試。"
+msgid "Couldn't parse the response from the site. yt-dlp's extractor may have drifted. Grabbit auto-updates yt-dlp on launch — retry in a few minutes once the fix ships."
+msgstr "無法解析網站的回應。yt-dlp 的擷取器可能已跟不上網站變更。Grabbit 啟動時會自動更新 yt-dlp——請在修正發布幾分鐘後重試。"
 
 msgctxt "errors.ytdlp.postprocessFailure"
 msgid "yt-dlp finished downloading but post-processing (merge / mux / convert) failed. Often this is a transient ffmpeg issue — retry, and if it persists try a different format combination."
@@ -256,8 +256,8 @@ msgid "Unknown token {{token}}."
 msgstr "未知的權杖 {{token}}。"
 
 msgctxt "filenameTemplate.idWarning"
-msgid "Without {id}, Arroxy can't detect already-downloaded playlist items or generate .m3u playlists."
-msgstr "若沒有 {id}，Arroxy 就無法偵測已下載的播放清單項目，也無法產生 .m3u 播放清單。"
+msgid "Without {id}, Grabbit can't detect already-downloaded playlist items or generate .m3u playlists."
+msgstr "若沒有 {id}，Grabbit 就無法偵測已下載的播放清單項目，也無法產生 .m3u 播放清單。"
 
 msgctxt "filenameTemplate.label"
 msgid "Filename template"
@@ -324,20 +324,20 @@ msgid "No link on your clipboard — copy one first"
 msgstr "剪貼簿中沒有連結——請先複製一個連結"
 
 msgctxt "notifications.hotkey.multipleUrls"
-msgid "Multiple links copied — use Bulk URLs in Arroxy"
-msgstr "已複製多個連結——請使用 Arroxy 的「批次 URL」"
+msgid "Multiple links copied — use Bulk URLs in Grabbit"
+msgstr "已複製多個連結——請使用 Grabbit 的「批次 URL」"
 
 msgctxt "notifications.hotkey.needsReview"
-msgid "That link needs a quick review — open Arroxy and paste it again"
-msgstr "此連結需要快速檢查——請開啟 Arroxy 並再次貼上"
+msgid "That link needs a quick review — open Grabbit and paste it again"
+msgstr "此連結需要快速檢查——請開啟 Grabbit 並再次貼上"
 
 msgctxt "notifications.hotkey.queued"
 msgid "Download queued from clipboard"
 msgstr "已從剪貼簿將下載加入佇列"
 
 msgctxt "notifications.hotkey.submissionFailed"
-msgid "Could not add that link — try again in Arroxy"
-msgstr "無法新增該連結——請在 Arroxy 中重試"
+msgid "Could not add that link — try again in Grabbit"
+msgstr "無法新增該連結——請在 Grabbit 中重試"
 
 msgctxt "notifications.playlistFolderRejected"
 msgid "That folder can't be used for this playlist."
@@ -719,6 +719,30 @@ msgctxt "queue.pausedBanner"
 msgid "The queue is paused — waiting items won't start until you resume it"
 msgstr "佇列已暫停——在你繼續佇列前，等待中的項目不會開始"
 
+#| msgctxt "queue.item.statusRunning"
+#| msgid "Downloading"
+msgctxt "queue.progress.downloading"
+msgid "Downloading"
+msgstr "正在下載"
+
+#| msgctxt "queue.table.finished"
+#| msgid "Finished"
+msgctxt "queue.progress.finishing"
+msgid "Finishing"
+msgstr "正在完成"
+
+msgctxt "queue.progress.merging"
+msgid "Merging"
+msgstr "正在合併"
+
+msgctxt "queue.progress.remaining"
+msgid "Time remaining"
+msgstr "剩餘時間"
+
+msgctxt "queue.progress.speed"
+msgid "Speed"
+msgstr "速度"
+
 msgctxt "queue.resumeAllTitle"
 msgid "Resume paused downloads and let the queue keep going"
 msgstr "繼續已暫停的下載，並讓佇列繼續處理"
@@ -808,8 +832,8 @@ msgid "Full release notes ↗"
 msgstr "完整版本資訊 ↗"
 
 msgctxt "releaseNotes.title"
-msgid "What's new in Arroxy {{version}}"
-msgstr "Arroxy {{version}} 的新功能"
+msgid "What's new in Grabbit {{version}}"
+msgstr "Grabbit {{version}} 的新功能"
 
 msgctxt "repair.actions.cancel"
 msgid "Cancel"
@@ -909,31 +933,31 @@ msgstr "複製連結"
 
 msgctxt "share.defaultMessage"
 msgid ""
-"Arroxy — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
+"Grabbit — free, open-source video downloader for Windows, macOS & Linux. Works with YouTube, Vimeo, Twitch, and 2000+ sites.\n"
 "4K · HDR · MP3 · Shorts · Subtitles · SponsorBlock"
 msgstr ""
-"Arroxy——適用於 Windows、macOS 與 Linux 的免費開放原始碼影片下載器。支援 YouTube、Vimeo、Twitch 與 2000 多個網站。\n"
+"Grabbit——適用於 Windows、macOS 與 Linux 的免費開放原始碼影片下載器。支援 YouTube、Vimeo、Twitch 與 2000 多個網站。\n"
 "4K · HDR · MP3 · Shorts · 字幕 · SponsorBlock"
 
 msgctxt "share.description"
-msgid "Arroxy is free and open-source. Sharing helps more people discover it."
-msgstr "Arroxy 免費且開放原始碼。分享它能讓更多人發現這款應用程式。"
+msgid "Grabbit is free and open-source. Sharing helps more people discover it."
+msgstr "Grabbit 免費且開放原始碼。分享它能讓更多人發現這款應用程式。"
 
 msgctxt "share.footerLabel"
 msgid "Share"
 msgstr "分享"
 
 msgctxt "share.footerTooltip"
-msgid "Share Arroxy"
-msgstr "分享 Arroxy"
+msgid "Share Grabbit"
+msgstr "分享 Grabbit"
 
 msgctxt "share.shareAction"
-msgid "Share Arroxy"
-msgstr "分享 Arroxy"
+msgid "Share Grabbit"
+msgstr "分享 Grabbit"
 
 msgctxt "share.title"
-msgid "Share Arroxy"
-msgstr "分享 Arroxy"
+msgid "Share Grabbit"
+msgstr "分享 Grabbit"
 
 msgctxt "splash.cancel"
 msgid "Having trouble? Set it up manually"
@@ -1016,8 +1040,8 @@ msgid "Moving files…"
 msgstr "正在移動檔案…"
 
 msgctxt "status.outputNotWritable"
-msgid "Can't save to {{dir}} — Arroxy isn't allowed to write there"
-msgstr "無法儲存到 {{dir}}——Arroxy 沒有在該處寫入的權限"
+msgid "Can't save to {{dir}} — Grabbit isn't allowed to write there"
+msgstr "無法儲存到 {{dir}}——Grabbit 沒有在該處寫入的權限"
 
 msgctxt "status.preparingBinaries"
 msgid "Preparing binaries…"
@@ -1104,12 +1128,12 @@ msgid "Download from clipboard"
 msgstr "從剪貼簿下載"
 
 msgctxt "tray.menu.open"
-msgid "Open Arroxy"
-msgstr "開啟 Arroxy"
+msgid "Open Grabbit"
+msgstr "開啟 Grabbit"
 
 msgctxt "tray.menu.quit"
-msgid "Quit Arroxy"
-msgstr "結束 Arroxy"
+msgid "Quit Grabbit"
+msgstr "結束 Grabbit"
 
 msgctxt "tray.menu.statusActive_one"
 msgid "1 downloading · {{percent}}%"
@@ -1124,8 +1148,8 @@ msgid "Idle"
 msgstr "閒置"
 
 msgctxt "tray.tooltip"
-msgid "Arroxy"
-msgstr "Arroxy"
+msgid "Grabbit"
+msgstr "Grabbit"
 
 msgctxt "update.copied"
 msgid "Copied command to clipboard"
@@ -1160,20 +1184,20 @@ msgid "Update failed"
 msgstr "更新失敗"
 
 msgctxt "update.message.generic"
-msgid "Arroxy {{version}} is available — you have {{currentVersion}}."
-msgstr "Arroxy {{version}} 已推出——你目前使用 {{currentVersion}}。"
+msgid "Grabbit {{version}} is available — you have {{currentVersion}}."
+msgstr "Grabbit {{version}} 已推出——你目前使用 {{currentVersion}}。"
 
 msgctxt "update.message.homebrew"
-msgid "Arroxy {{version}} is available — update with Homebrew."
-msgstr "Arroxy {{version}} 已推出——請使用 Homebrew 更新。"
+msgid "Grabbit {{version}} is available — update with Homebrew."
+msgstr "Grabbit {{version}} 已推出——請使用 Homebrew 更新。"
 
 msgctxt "update.message.macosDirect"
-msgid "Arroxy {{version}} is available — download the new DMG."
-msgstr "Arroxy {{version}} 已推出——請下載新的 DMG。"
+msgid "Grabbit {{version}} is available — download the new DMG."
+msgstr "Grabbit {{version}} 已推出——請下載新的 DMG。"
 
 msgctxt "update.message.portable"
-msgid "Arroxy {{version}} is available — download the new build."
-msgstr "Arroxy {{version}} 已推出——請下載新的組建版本。"
+msgid "Grabbit {{version}} is available — download the new build."
+msgstr "Grabbit {{version}} 已推出——請下載新的組建版本。"
 
 msgctxt "update.retry"
 msgid "Retry"
@@ -1188,8 +1212,8 @@ msgid "Ready"
 msgstr "就緒"
 
 msgctxt "wizard.bulk.description"
-msgid "Paste video, playlist, channel, search, or audio URLs. Arroxy will clean duplicates before queueing."
-msgstr "貼上影片、播放清單、頻道、搜尋或音訊 URL。Arroxy 會先清除重複項目，再加入佇列。"
+msgid "Paste video, playlist, channel, search, or audio URLs. Grabbit will clean duplicates before queueing."
+msgstr "貼上影片、播放清單、頻道、搜尋或音訊 URL。Grabbit 會先清除重複項目，再加入佇列。"
 
 msgctxt "wizard.bulk.emptyPreview"
 msgid "Paste one or more URLs to preview the batch."
@@ -1626,12 +1650,12 @@ msgid "Download only this video, or queue the whole playlist with your active Qu
 msgstr "只下載此影片，或使用目前的「快速下載」設定檔將整個播放清單加入佇列。"
 
 msgctxt "wizard.mixedPrompt.quickLimitDescription"
-msgid "Maximum entries Arroxy scans before queueing a playlist, channel, or search result."
-msgstr "Arroxy 將播放清單、頻道或搜尋結果加入佇列前最多掃描的項目數。"
+msgid "Maximum entries Grabbit scans before queueing a playlist, channel, or search result."
+msgstr "Grabbit 將播放清單、頻道或搜尋結果加入佇列前最多掃描的項目數。"
 
 msgctxt "wizard.mixedPrompt.quickPlaylistTooltip"
-msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Arroxy asks before queueing."
-msgstr "使用目前的「快速下載」設定檔，將所有已載入的播放清單項目加入佇列。若掃描達到上限，Arroxy 會先詢問再加入。"
+msgid "Queues every loaded playlist item with the active Quick Download profile. If the scan hits your limit, Grabbit asks before queueing."
+msgstr "使用目前的「快速下載」設定檔，將所有已載入的播放清單項目加入佇列。若掃描達到上限，Grabbit 會先詢問再加入。"
 
 msgctxt "wizard.mixedPrompt.quickSingleTooltip"
 msgid "Queues one download and ignores the playlist attached to this URL."
@@ -2362,8 +2386,8 @@ msgid "Current link"
 msgstr "目前連結"
 
 msgctxt "wizard.quickProgress.description"
-msgid "Arroxy is reading the link and applying {{profileName}}."
-msgstr "Arroxy 正在讀取連結並套用 {{profileName}}。"
+msgid "Grabbit is reading the link and applying {{profileName}}."
+msgstr "Grabbit 正在讀取連結並套用 {{profileName}}。"
 
 msgctxt "wizard.quickProgress.failedCount_one"
 msgid "{{count}} failed"
@@ -2386,8 +2410,8 @@ msgid "Preparing Quick Download"
 msgstr "正在準備快速下載"
 
 msgctxt "wizard.quickProgress.waitHint"
-msgid "Keep this open while Arroxy prepares the queue."
-msgstr "Arroxy 準備佇列時，請保持此視窗開啟。"
+msgid "Keep this open while Grabbit prepares the queue."
+msgstr "Grabbit 準備佇列時，請保持此視窗開啟。"
 
 msgctxt "wizard.sponsorblock.cat.filler"
 msgid "Filler"
@@ -2630,24 +2654,20 @@ msgid "Backdrop quality"
 msgstr "背景品質"
 
 msgctxt "wizard.url.backdrop.panelDescription"
-msgid "Choose how much motion Arroxy uses for the animated backdrop."
-msgstr "選擇 Arroxy 動態背景要使用多少動畫效果。"
+msgid "Choose how much motion Grabbit uses for the animated backdrop."
+msgstr "選擇 Grabbit 動態背景要使用多少動畫效果。"
 
 msgctxt "wizard.url.backdrop.panelTitle"
 msgid "Appearance and performance"
 msgstr "外觀與效能"
 
 msgctxt "wizard.url.backdrop.runtimeFallbackNotice"
-msgid "Hardware WebGL is unavailable on this device, so Arroxy is using the performance backdrop."
-msgstr "此裝置無法使用硬體 WebGL，因此 Arroxy 正使用效能優先的背景。"
+msgid "Hardware WebGL is unavailable on this device, so Grabbit is using the performance backdrop."
+msgstr "此裝置無法使用硬體 WebGL，因此 Grabbit 正使用效能優先的背景。"
 
 msgctxt "wizard.url.bulkButton"
 msgid "Bulk URLs"
 msgstr "批次 URL"
-
-msgctxt "wizard.url.bulkTooltip"
-msgid "Add and queue multiple URLs."
-msgstr "新增多個 URL 並排入佇列。"
 
 msgctxt "wizard.url.clearAria"
 msgid "Clear URL"
@@ -2818,8 +2838,8 @@ msgid "Video playlists"
 msgstr "影片播放清單"
 
 msgctxt "wizard.url.features.heading"
-msgid "What Arroxy can pull"
-msgstr "Arroxy 可以下載的內容"
+msgid "What Grabbit can pull"
+msgstr "Grabbit 可以下載的內容"
 
 msgctxt "wizard.url.features.youtube.channel"
 msgid "Channels"
@@ -2849,10 +2869,6 @@ msgctxt "wizard.url.features.youtube.video"
 msgid "Videos"
 msgstr "影片"
 
-msgctxt "wizard.url.fetchFormatsTooltip"
-msgid "Step-by-step wizard. Choose format, quality, and more."
-msgstr "逐步精靈。選擇格式、畫質與更多選項。"
-
 msgctxt "wizard.url.heading"
 msgid "Download from URL"
 msgstr "從 URL 下載"
@@ -2865,18 +2881,6 @@ msgctxt "wizard.url.hotkey.conflict"
 msgid "This shortcut is taken by another app — pick another one."
 msgstr "此快捷鍵已被其他應用程式使用——請選擇另一個。"
 
-msgctxt "wizard.url.hotkey.hintLabel"
-msgid "Or press"
-msgstr "或按下"
-
-msgctxt "wizard.url.hotkey.hintTooltip"
-msgid "Copy a video link anywhere, press this shortcut, and Arroxy queues it with your active profile — no need to switch windows."
-msgstr "在任何地方複製影片連結並按下此快捷鍵，Arroxy 就會使用目前的設定檔將它加入佇列，無需切換視窗。"
-
-msgctxt "wizard.url.hotkey.hintTooltipSettings"
-msgid "Change or turn it off in Settings."
-msgstr "可在「設定」中變更或關閉。"
-
 msgctxt "wizard.url.hotkey.recording"
 msgid "Press keys…"
 msgstr "按下按鍵…"
@@ -2886,8 +2890,8 @@ msgid "Reset to default"
 msgstr "重設為預設值"
 
 msgctxt "wizard.url.hotkey.sectionDescription"
-msgid "Download whatever link you copy, from any app, without opening Arroxy."
-msgstr "不用開啟 Arroxy，就能下載從任何應用程式複製的連結。"
+msgid "Download whatever link you copy, from any app, without opening Grabbit."
+msgstr "不用開啟 Grabbit，就能下載從任何應用程式複製的連結。"
 
 msgctxt "wizard.url.hotkey.sectionTitle"
 msgid "Global hotkey"
@@ -2937,14 +2941,6 @@ msgctxt "wizard.url.limitRate.off"
 msgid "Off"
 msgstr "關閉"
 
-msgctxt "wizard.url.mascotBusy"
-msgid "Downloading in the background… I can multitask 😎"
-msgstr "正在背景下載…我可以同時處理多項工作 😎"
-
-msgctxt "wizard.url.mascotIdle"
-msgid "Drop a link and let Arroxy pull it ✨"
-msgstr "貼上連結，讓 Arroxy 幫你下載 ✨"
-
 msgctxt "wizard.url.nativeAudioPreference.compatible"
 msgid "Compatible stereo"
 msgstr "相容立體聲"
@@ -2962,8 +2958,8 @@ msgid "Prefer surround / Dolby"
 msgstr "優先使用環繞音效／Dolby"
 
 msgctxt "wizard.url.networkPacing.description"
-msgid "Add small waits during each download so Arroxy does not hit the site too aggressively. Values are in seconds."
-msgstr "在每次下載期間加入短暫等待，避免 Arroxy 對網站提出過於頻繁的請求。數值以秒為單位。"
+msgid "Add small waits during each download so Grabbit does not hit the site too aggressively. Values are in seconds."
+msgstr "在每次下載期間加入短暫等待，避免 Grabbit 對網站提出過於頻繁的請求。數值以秒為單位。"
 
 msgctxt "wizard.url.networkPacing.fields.maxSleepInterval"
 msgid "Pause before media starts: max"
@@ -2986,8 +2982,8 @@ msgid "Gentle downloads"
 msgstr "溫和下載"
 
 msgctxt "wizard.url.networkPacing.presetLabel"
-msgid "How cautious should Arroxy be?"
-msgstr "Arroxy 應該多謹慎？"
+msgid "How cautious should Grabbit be?"
+msgstr "Grabbit 應該多謹慎？"
 
 msgctxt "wizard.url.networkPacing.presets.balanced"
 msgid "Balanced"
@@ -3026,8 +3022,8 @@ msgid "Tune the advanced per-download controls yourself."
 msgstr "自行調整各下載的進階控制項。"
 
 msgctxt "wizard.url.networkPacing.tooltips.off"
-msgid "Uses only the small baseline pauses Arroxy keeps for media and subtitles."
-msgstr "只使用 Arroxy 為媒體與字幕保留的少量基本等待。"
+msgid "Uses only the small baseline pauses Grabbit keeps for media and subtitles."
+msgstr "只使用 Grabbit 為媒體與字幕保留的少量基本等待。"
 
 msgctxt "wizard.url.networkPacing.units.seconds"
 msgid "sec"
@@ -3066,8 +3062,8 @@ msgid "Custom: {{count}} items"
 msgstr "自訂：{{count}} 個項目"
 
 msgctxt "wizard.url.playlistProbeLimit.description"
-msgid "Maximum entries Arroxy loads when a playlist, channel, or search result is opened."
-msgstr "Arroxy 開啟播放清單、頻道或搜尋結果時最多載入的項目數。"
+msgid "Maximum entries Grabbit loads when a playlist, channel, or search result is opened."
+msgstr "Grabbit 開啟播放清單、頻道或搜尋結果時最多載入的項目數。"
 
 msgctxt "wizard.url.playlistProbeLimit.invalid"
 msgid "Use a whole number from 1 to 5000"
@@ -3082,96 +3078,16 @@ msgid "{{count}} items"
 msgstr "{{count}} 個項目"
 
 msgctxt "wizard.url.playlistProbeLimit.tooltip"
-msgid "Maps to yt-dlp --playlist-end: Arroxy only asks for this many playlist, channel, or search entries while building the picker."
-msgstr "對應 yt-dlp 的 --playlist-end：Arroxy 建立選取器時只會要求這麼多播放清單、頻道或搜尋項目。"
-
-msgctxt "wizard.url.profile.activeLabel"
-msgid "Active profile"
-msgstr "目前設定檔"
-
-msgctxt "wizard.url.profile.badgeBuiltIn"
-msgid "Built-in"
-msgstr "內建"
-
-msgctxt "wizard.url.profile.badgeCustom"
-msgid "Custom"
-msgstr "自訂"
-
-msgctxt "wizard.url.profile.badgeDisabled"
-msgid "Hidden"
-msgstr "已隱藏"
-
-msgctxt "wizard.url.profile.badgeModified"
-msgid "Modified"
-msgstr "已修改"
+msgid "Maps to yt-dlp --playlist-end: Grabbit only asks for this many playlist, channel, or search entries while building the picker."
+msgstr "對應 yt-dlp 的 --playlist-end：Grabbit 建立選取器時只會要求這麼多播放清單、頻道或搜尋項目。"
 
 msgctxt "wizard.url.profile.changeGlobalDestination"
 msgid "Change global destination"
 msgstr "變更全域目的地"
 
-msgctxt "wizard.url.profile.destinationFallback"
-msgid "Destination"
-msgstr "目的地"
-
-msgctxt "wizard.url.profile.edit"
-msgid "Edit"
-msgstr "編輯"
-
-msgctxt "wizard.url.profile.editActive"
-msgid "Edit active profile"
-msgstr "編輯目前設定檔"
-
-msgctxt "wizard.url.profile.enableHint"
-msgid "Hidden profiles stay here but disappear from every profile picker."
-msgstr "隱藏的設定檔會保留在這裡，但不會出現在任何設定檔選取器中。"
-
-msgctxt "wizard.url.profile.enableToggleAria"
-msgid "Show profile in pickers: {{profileName}}"
-msgstr "在選取器中顯示設定檔：{{profileName}}"
-
-msgctxt "wizard.url.profile.lastEnabledHint"
-msgid "Keep at least one profile available."
-msgstr "至少保留一個可用的設定檔。"
-
-msgctxt "wizard.url.profile.manageProfiles"
-msgid "Manage profiles"
-msgstr "管理設定檔"
-
-msgctxt "wizard.url.profile.menuDescription"
-msgid "Change the active profile for Quick Download, Bulk URLs, and playlists."
-msgstr "變更快速下載、批次 URL 與播放清單使用的設定檔。"
-
-msgctxt "wizard.url.profile.menuTitle"
-msgid "Switch profile"
-msgstr "切換設定檔"
-
-msgctxt "wizard.url.profile.newProfile"
-msgid "New profile"
-msgstr "新增設定檔"
-
-msgctxt "wizard.url.profile.panelDescription"
-msgid "Create, select, edit, or remove reusable download setups."
-msgstr "建立、選取、編輯或移除可重複使用的下載設定。"
-
-msgctxt "wizard.url.profile.panelTitle"
-msgid "Download Profiles"
-msgstr "下載設定檔"
-
-msgctxt "wizard.url.profile.remove"
-msgid "Remove"
-msgstr "移除"
-
 msgctxt "wizard.url.profile.reset"
 msgid "Reset"
 msgstr "重設"
-
-msgctxt "wizard.url.profile.switchAria"
-msgid "Switch download profile: {{profileName}}"
-msgstr "切換下載設定檔：{{profileName}}"
-
-msgctxt "wizard.url.profile.switchTitle"
-msgid "Switch download profile"
-msgstr "切換下載設定檔"
 
 msgctxt "wizard.url.proxy.clear"
 msgid "Clear"
@@ -3225,14 +3141,6 @@ msgctxt "wizard.url.quickProbeFailed"
 msgid "Probe failed"
 msgstr "探查失敗"
 
-msgctxt "wizard.url.quickQueued"
-msgid "Added to queue"
-msgstr "已加入佇列"
-
-msgctxt "wizard.url.quickSingleOnly"
-msgid "Paste a video, playlist, channel, or search URL to get started."
-msgstr "貼上影片、播放清單、頻道或搜尋 URL 以開始。"
-
 msgctxt "wizard.url.settings.behaviorDescription"
 msgid "Global behavior that affects profile-driven downloads too."
 msgstr "也會影響設定檔下載的全域行為。"
@@ -3245,10 +3153,150 @@ msgctxt "wizard.url.settings.inputHeading"
 msgid "Input"
 msgstr "輸入"
 
-msgctxt "wizard.url.tabs.profiles"
-msgid "Profiles"
-msgstr "設定檔"
-
 msgctxt "wizard.url.tabs.settings"
 msgid "Settings"
 msgstr "設定"
+
+msgctxt "wizard.url.workspace.advanced"
+msgid "Advanced options"
+msgstr "進階選項"
+
+msgctxt "wizard.url.workspace.analyzing"
+msgid "Analyzing link…"
+msgstr "正在分析連結..."
+
+msgctxt "wizard.url.workspace.bestAudio"
+msgid "Best audio"
+msgstr "最佳音訊"
+
+msgctxt "wizard.url.workspace.changeDestination"
+msgid "Change destination"
+msgstr "改變目的地"
+
+msgctxt "wizard.url.workspace.description"
+msgid "Paste a link to analyze it automatically, then choose everything here."
+msgstr "貼上連結以自動分析，然後在此處選擇所有內容。"
+
+msgctxt "wizard.url.workspace.destination"
+msgid "Download destination"
+msgstr "下載目的地"
+
+msgctxt "wizard.url.workspace.download"
+msgid "Download"
+msgstr "下載"
+
+msgctxt "wizard.url.workspace.filenameTemplate"
+msgid "Output filename template"
+msgstr "輸出檔案名稱模板"
+
+msgctxt "wizard.url.workspace.invalidUrl"
+msgid "Enter a valid HTTP or HTTPS URL."
+msgstr "輸入有效的 HTTP 或 HTTPS URL。"
+
+msgctxt "wizard.url.workspace.options"
+msgid "Download options"
+msgstr "下載選項"
+
+msgctxt "wizard.url.workspace.trim.custom"
+msgid "Custom range"
+msgstr "定制範圍"
+
+msgctxt "wizard.url.workspace.trim.description"
+msgid "Accepts SS, MM:SS, or HH:MM:SS."
+msgstr "接受 SS、MM:SS 或 HH:MM:SS。"
+
+msgctxt "wizard.url.workspace.trim.end"
+msgid "End time"
+msgstr "結束時間"
+
+msgctxt "wizard.url.workspace.trim.error.duration"
+msgid "Start and end times must stay within the video duration."
+msgstr "開始和結束時間必須保持在影片持續時間內。"
+
+msgctxt "wizard.url.workspace.trim.error.end"
+msgid "Enter a valid end time."
+msgstr "輸入有效的結束時間。"
+
+msgctxt "wizard.url.workspace.trim.error.order"
+msgid "End time must be later than start time."
+msgstr "結束時間必須晚於開始時間。"
+
+msgctxt "wizard.url.workspace.trim.error.start"
+msgid "Enter a valid start time at zero or later."
+msgstr "輸入零或更晚的有效開始時間。"
+
+msgctxt "wizard.url.workspace.trim.full"
+msgid "Full video"
+msgstr "完整影片"
+
+msgctxt "wizard.url.workspace.trim.heading"
+msgid "Download a specific part"
+msgstr "下載特定部分"
+
+msgctxt "wizard.url.workspace.trim.loop"
+msgid "Loop clip"
+msgstr "循環播放片段"
+
+msgctxt "wizard.url.workspace.trim.nextFrame"
+msgid "Next frame"
+msgstr "下一影格"
+
+msgctxt "wizard.url.workspace.trim.position"
+msgid "Timeline position"
+msgstr "時間軸位置"
+
+msgctxt "wizard.url.workspace.trim.previewDescription"
+msgid "Play or scrub the video to choose precise cut points."
+msgstr "播放或拖曳影片，以精確選擇剪輯點。"
+
+msgctxt "wizard.url.workspace.trim.previewHeading"
+msgid "Clip preview"
+msgstr "片段預覽"
+
+msgctxt "wizard.url.workspace.trim.previewUnavailable"
+msgid "Preview unavailable for this source. You can still use the timeline and time fields."
+msgstr "此來源無法預覽。您仍可使用時間軸與時間欄位。"
+
+msgctxt "wizard.url.workspace.trim.previousFrame"
+msgid "Previous frame"
+msgstr "上一影格"
+
+msgctxt "wizard.url.workspace.trim.reset"
+msgid "Reset range"
+msgstr "復位範圍"
+
+msgctxt "wizard.url.workspace.trim.selectedRange"
+msgid "Selected range"
+msgstr "已選範圍"
+
+msgctxt "wizard.url.workspace.trim.setEnd"
+msgid "Set end"
+msgstr "設定結束時間"
+
+msgctxt "wizard.url.workspace.trim.setStart"
+msgid "Set start"
+msgstr "設定開始時間"
+
+msgctxt "wizard.url.workspace.trim.start"
+msgid "Start time"
+msgstr "開始時間"
+
+msgctxt "wizard.url.workspace.trim.stepBack"
+msgid "Step back"
+msgstr "向後一步"
+
+msgctxt "wizard.url.workspace.trim.stepForward"
+msgid "Step forward"
+msgstr "向前一步"
+
+msgctxt "wizard.url.workspace.trim.summary"
+msgid "Start {{start}} — End {{end}} — Clip length {{length}}"
+msgstr "開始 {{start}} — 結束 {{end}} — 剪輯長度 {{length}}"
+
+msgctxt "wizard.url.workspace.trim.useEnd"
+msgid "Use video end"
+msgstr "使用視訊端"
+
+msgctxt "wizard.url.workspace.trim.zoom"
+msgid "Timeline zoom"
+msgstr "時間軸縮放"

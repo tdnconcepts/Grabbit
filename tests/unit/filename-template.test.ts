@@ -179,7 +179,7 @@ describe('compileFilenameTemplate', () => {
 		expect(compiled('  {title}  ')).toBe('%(title).120B.%(ext)s')
 	})
 
-	it('compiles only the filename segment — directories are Arroxy-rendered', () => {
+	it('compiles only the filename segment — directories are Grabbit-rendered', () => {
 		expect(compiled('{playlist_title}/{playlist_index} - {title}')).toBe('%(playlist_index|)03d - %(title).120B.%(ext)s')
 	})
 
@@ -298,7 +298,7 @@ describe('bindFilenameTemplate', () => {
 	// trusted to cap what it expands: `%(title).120B` truncates to 120 bytes and
 	// *then* sanitizes, and sanitizing grows the string — ':' becomes ' -', and
 	// '|', '*', '<', '>' become 3-byte full-width forms. A cap it applies before
-	// that pass is advisory, so Arroxy resolves the name itself.
+	// that pass is advisory, so Grabbit resolves the name itself.
 	it('binds every token it knows, leaving only {resolution} for yt-dlp', () => {
 		expect(bound('{uploader} - {title} [{id}] {date} {resolution}', PLAYLIST_META)).toBe('Blender Foundation - Big Buck Bunny [YE7VzlLtp-4] 2026-08-03 {resolution}')
 	})
@@ -437,7 +437,7 @@ describe('templateDirsVaryPerEntry', () => {
 })
 
 describe('render parity between directory and filename position', () => {
-	// A token must mean the same thing wherever it appears. Arroxy renders
+	// A token must mean the same thing wherever it appears. Grabbit renders
 	// directories; yt-dlp renders the filename. These two must not drift.
 	it('formats {date} as YYYY-MM-DD in a directory, matching the compiled strftime', () => {
 		expect(renderTemplateDirs('{date}/{title}', SINGLE_META)).toEqual(['2026-08-03'])

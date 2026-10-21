@@ -9,7 +9,8 @@ import {cn} from '@renderer/lib/utils.js'
 import {formatLocalizedError, formatStatus} from '../../store/useAppStore.js'
 import {Badge} from '../ui/badge.js'
 import {Button} from '../ui/button.js'
-import {Progress} from '../ui/progress.js'
+import {QueueProgress} from './QueueProgress.js'
+import {queueProgressView} from './queueProgressView.js'
 import type {QueueTableFeatures} from './queueTableFeatures.js'
 
 const STATUS_META: Record<
@@ -50,17 +51,20 @@ function sortableHeader(label: string, column: {getIsSorted: () => false | 'asc'
 }
 
 function statusText(item: QueueItem, t: TFunction): string {
-	return t(STATUS_META[item.status].labelKey)
+	return t(queueProgressView(item).labelKey ?? STATUS_META[item.status].labelKey)
 }
 
 function rowStatusDetail(item: QueueItem, t: TFunction): string {
 	if (item.status === 'error') {
 		const message = formatLocalizedError(item.error) || t('queue.item.defaultError')
 		// A scheduled auto-retry otherwise reads as a dead failure. Say that
-		// Arroxy is going to act, so the user does not retry it by hand.
+		// Grabbit is going to act, so the user does not retry it by hand.
 		return item.retryAt ? `${message} — ${t('queue.item.retryingSoon', {attempt: item.retryCount})}` : message
 	}
-	if (item.status === 'running' || item.status === 'paused-active') return item.progressDetail ?? formatStatus(item.lastStatus)
+	if (item.status === 'running' || item.status === 'paused-active') {
+		const progress = queueProgressView(item)
+		return progress.transfer || progress.indeterminate ? formatStatus(item.lastStatus) : (item.progressDetail ?? formatStatus(item.lastStatus))
+	}
 	const notice = doneNotice(item)
 	if (notice) return notice.label(item, t)
 	return ''
@@ -139,12 +143,7 @@ export function useQueueManagerColumns({expandedIds, onToggleExpanded, t}: {expa
 					header: ({column}) => sortableHeader(t('queue.table.progress'), column, t),
 					cell: info => {
 						const item = info.row.original
-						return (
-							<div className="min-w-24 max-w-32">
-								<div className="font-mono text-xs text-muted-foreground">{Math.round(item.progressPercent)}%</div>
-								<Progress value={item.progressPercent} className="mt-1 gap-0 [&_[data-slot=progress-track]]:h-[3px]" />
-							</div>
-						)
+						return <QueueProgress item={item} />
 					}
 				}),
 				columnHelper.accessor('formatLabel', {

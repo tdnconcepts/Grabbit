@@ -1,6 +1,6 @@
 import {useState, useEffect, useMemo, type JSX} from 'react'
 import {useTranslation} from 'react-i18next'
-import mainImg from '../../assets/Main.png'
+import appIcon from '../../assets/App-icon-HQ.png'
 import type {DependencyDiagnostic, DependencyId, WarmupProgressEvent} from '@shared/types.js'
 import {Button} from '../ui/button.js'
 import {RepairPanel} from './RepairPanel.js'
@@ -127,44 +127,43 @@ export function WarmupSplash({initialized, warmupBlocking, warmupDiagnostics, wa
 				onDismissed?.()
 			}}
 		>
-			<img src={mainImg} alt="" className="splash-mascot" />
+			<img src={appIcon} alt="" className="splash-mascot" />
 			<div className="splash-text">
 				{showGreeting && (
-					<p className="splash-greeting" data-testid="splash-greeting">
+					<p className="sr-only" data-testid="splash-greeting">
 						{t('splash.greeting')}
 					</p>
 				)}
-				<p className="splash-brand">Arroxy</p>
 				{showProgress ? (
 					<>
-						<p className="splash-name">{activeEntry ? t('splash.downloading', {binary: activeEntry.binary}) : t('splash.warmup')}</p>
+						<p className="sr-only">{activeEntry ? t('splash.downloading', {binary: activeEntry.binary}) : t('splash.warmup')}</p>
 						{percent !== null && (
 							<div className="splash-progress">
 								<div className="splash-progress-bar" style={{width: `${percent}%`}} />
 							</div>
 						)}
 						{totalDownloaded > 0 && totalBytes > 0 && (
-							<p className="splash-bytes">
+							<p className="sr-only">
 								{formatBytes(totalDownloaded)} / {formatBytes(totalBytes)}
 							</p>
 						)}
 					</>
 				) : showVerifying ? (
 					<>
-						<p className="splash-name" data-testid="splash-verifying">
+						<p className="sr-only" data-testid="splash-verifying">
 							{t('splash.verifying', {binary: verifyingEntry.binary})}
 						</p>
 						<div className="splash-progress">
 							<div className="splash-progress-bar splash-progress-bar--indeterminate" />
 						</div>
 						{firstCheck && (
-							<p className="splash-bytes" data-testid="splash-verify-firstcheck">
+							<p className="sr-only" data-testid="splash-verify-firstcheck">
 								{t('splash.verifyFirstCheck')}
 							</p>
 						)}
 					</>
 				) : (
-					!blocked && <p className="splash-name">{t('splash.warmup')}</p>
+					!blocked && <p className="sr-only">{t('splash.warmup')}</p>
 				)}
 				{showCancel && (
 					<Button type="button" variant="link" size="sm" className="splash-cancel" data-testid="splash-cancel" onClick={() => void onCancel?.()}>

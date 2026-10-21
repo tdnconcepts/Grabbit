@@ -1,14 +1,10 @@
-import {act, fireEvent, render, screen, waitFor, within} from '@testing-library/react'
+import {act, fireEvent, render, screen} from '@testing-library/react'
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vite-plus/test'
 import {DownloadProfilesHome} from '@renderer/components/wizard/DownloadProfilesHome.js'
 import {DownloadProfilesSettingsTab} from '@renderer/components/wizard/DownloadProfilesSettingsTab.js'
 import {useAppStore} from '@renderer/store/useAppStore.js'
 import {i18next} from '@shared/i18n/index.js'
 import en from '@shared/i18n/locales/en.json' with {type: 'json'}
-import {BUILTIN_DOWNLOAD_PROFILES, resolveActiveDownloadProfile} from '@shared/downloadProfiles.js'
-import {defaultAppSettings} from '@shared/constants.js'
-import {ok} from '@shared/result.js'
-import type {AppSettings} from '@shared/types.js'
 import {buildMockAppApi} from '../shared/mockAppApi.js'
 import {makeItem} from '../shared/fixtures.js'
 
@@ -121,12 +117,12 @@ describe('DownloadProfilesHome downloads tab', () => {
 	})
 })
 
-describe('DownloadProfilesHome profiles tab visibility', () => {
+describe('DownloadProfilesHome simplified navigation', () => {
 	beforeEach(() => {
 		window.appApi = buildMockAppApi()
 		window.history.replaceState(null, '', '#profiles')
 		localStorage.clear()
-		useAppStore.setState({queue: [], wizardUrl: '', quickDownloadStatus: 'idle', quickDownloadFailure: null, quickDownloadProgressFailed: 0, settings: defaultAppSettings('/tmp')})
+		useAppStore.setState({queue: [], wizardUrl: '', quickDownloadStatus: 'idle', quickDownloadFailure: null, quickDownloadProgressFailed: 0})
 	})
 
 	afterEach(() => {
@@ -134,78 +130,18 @@ describe('DownloadProfilesHome profiles tab visibility', () => {
 		i18next.addResourceBundle('en', 'translation', en, true, true)
 	})
 
-	it('renders opt-in low-data built-ins muted with a Hidden badge', () => {
+	it('removes profile management and treats old profile links as the download screen', () => {
 		render(<DownloadProfilesHome />)
 
-		const card = screen.getByTestId('profiles-manage-card-low-240')
-		expect(card).toHaveAttribute('data-disabled-profile', 'true')
-		expect(card.className).toMatch(/opacity-60/)
-		expect(within(card).getByText('Hidden')).toBeInTheDocument()
-		expect(within(card).getByText('Built-in')).toBeInTheDocument()
+		expect(screen.getByTestId('profiles-download-panel')).toBeInTheDocument()
+		expect(screen.queryByRole('tab', {name: 'Profiles'})).not.toBeInTheDocument()
+		expect(screen.queryByTestId('profiles-manage-tab')).not.toBeInTheDocument()
 	})
 
-	it('omits disabled profiles from the Quick Download popover', () => {
-		window.history.replaceState(null, '', '#download')
-		useAppStore.setState({settings: defaultAppSettings('/tmp'), wizardUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'})
+	it('removes the active-profile selector from Quick Download', () => {
 		render(<DownloadProfilesHome />)
 
-		fireEvent.click(screen.getByTestId('profiles-active-profile-trigger'))
-		expect(screen.queryByTestId('profiles-profile-option-low-240')).not.toBeInTheDocument()
-		expect(screen.getByTestId('profiles-profile-option-balanced')).toBeInTheDocument()
-	})
-
-	it('does not move the active profile when saving an edit to a hidden profile', async () => {
-		vi.mocked(window.appApi.settings.update).mockImplementation(async patch => {
-			const current = useAppStore.getState().settings
-			return ok({...current, profiles: {...current?.profiles, ...patch.profiles}} as AppSettings)
-		})
-		useAppStore.setState({settings: {...defaultAppSettings('/tmp'), profiles: {...defaultAppSettings('/tmp').profiles, active: {kind: 'builtin', id: 'audio-only'}}}})
-		render(<DownloadProfilesHome />)
-
-		fireEvent.click(within(screen.getByTestId('profiles-manage-card-low-240')).getByRole('button', {name: 'Edit'}))
-		// DownloadProfilesHome renders the editor behind React.lazy + Suspense, and
-		// the first open in a worker measures ~500ms end to end against findBy*'s 1s
-		// default — too little headroom on a loaded Windows CI runner, where this
-		// timed out. Neither preloading the module (28ms) nor pre-rendering the
-		// editor (107ms) accounts for it, so widen the window rather than pretend a
-		// warmup fixes it. Subsequent opens in the same worker cost ~100ms.
-		fireEvent.click(await screen.findByRole('button', {name: 'Save profile'}, {timeout: 15_000}))
-
-		await waitFor(() => expect(window.appApi.settings.update).toHaveBeenCalledTimes(1))
-		const profiles = useAppStore.getState().settings!.profiles
-		expect(resolveActiveDownloadProfile(profiles).ref).toEqual({kind: 'builtin', id: 'audio-only'})
-	})
-
-	it('toggling off the active profile switches active and persists once', async () => {
-		vi.mocked(window.appApi.settings.update).mockImplementation(async patch => {
-			const current = useAppStore.getState().settings
-			return ok({...current, profiles: {...current?.profiles, ...patch.profiles}} as AppSettings)
-		})
-		render(<DownloadProfilesHome />)
-
-		const toggle = screen.getByTestId('profiles-manage-card-balanced-enabled-toggle')
-		fireEvent.click(toggle)
-
-		await waitFor(() => expect(window.appApi.settings.update).toHaveBeenCalledTimes(1))
-		expect(window.appApi.settings.update).toHaveBeenCalledWith(expect.objectContaining({profiles: expect.objectContaining({enabledOverrides: expect.objectContaining({balanced: false})})}))
-		await waitFor(() => expect(useAppStore.getState().settings?.profiles.active.id).not.toBe('balanced'))
-	})
-
-	it('hard-disables the Switch on the last enabled profile', () => {
-		const onlyBalancedOverrides = Object.fromEntries(BUILTIN_DOWNLOAD_PROFILES.filter(profile => profile.id !== 'balanced').map(profile => [profile.id, false]))
-		useAppStore.setState({settings: {...defaultAppSettings('/tmp'), profiles: {...defaultAppSettings('/tmp').profiles, enabledOverrides: onlyBalancedOverrides}}})
-		render(<DownloadProfilesHome />)
-
-		const toggle = screen.getByTestId('profiles-manage-card-balanced-enabled-toggle')
-		expect(toggle).toHaveAttribute('aria-disabled', 'true')
-		expect(toggle).toHaveAttribute('data-disabled', '')
-	})
-
-	it('keeps the Switch outside the picker button', () => {
-		render(<DownloadProfilesHome />)
-
-		const picker = screen.getByTestId('profiles-manage-card-balanced-picker')
-		expect(within(picker).queryByRole('switch')).toBeNull()
-		expect(screen.getByTestId('profiles-manage-card-balanced-enabled-toggle')).toBeInTheDocument()
+		expect(screen.queryByRole('combobox', {name: 'Active profile'})).not.toBeInTheDocument()
+		expect(screen.queryByTestId('profiles-active-profile-trigger')).not.toBeInTheDocument()
 	})
 })

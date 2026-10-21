@@ -47,7 +47,7 @@ export function resolveMainWindowPreloadPath(mainDir: string): string {
 // Chromium occasionally reports its own sandbox-bundle bootstrap failure at
 // error level during a renderer-process retry — the webContents is recreated,
 // the bridge still verifies, and startup completes (observed on loaded
-// Windows runners in CI). It carries no signal about Arroxy's own preload or
+// Windows runners in CI). It carries no signal about Grabbit's own preload or
 // renderer, so keep it out of the error stream the startup gate reads.
 function isSandboxBootstrapRetry(message: string, sourceId: string): boolean {
 	return sourceId === 'node:electron/js2c/sandbox_bundle' && (message.includes('sandboxed_renderer.bundle.js') || message.includes('startupData'))

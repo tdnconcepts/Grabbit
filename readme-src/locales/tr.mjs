@@ -181,8 +181,6 @@ export const tr = {
     "Bir site değişirse yt-dlp haftalık düzeltmeler yayınlar ve Arroxy açılışta ikili dosyayı otomatik günceller",
   shot1_cap:
     "<b>Hızlı İndirme ana ekranı</b><br/>Bir URL yapıştır ve etkin profilinle anında çek",
-  shot2_cap:
-    "<b>Yeniden kullanılabilir indirme profilleri</b><br/>Biçim, kalite ve çıktı ön ayarlarını kaydet — her indirmede yeniden kullan",
   shot3_cap:
     "<b>Çok dilli ses parçaları</b><br/>Videonun sunduğu tam ses dilini seç",
   shot4_cap:

@@ -40,6 +40,19 @@ describe('planWorkflow — probe', () => {
 	})
 })
 
+describe('planWorkflow — caller media sections', () => {
+	it('uses yt-dlp download-sections as a separate argv pair', () => {
+		const plan = planWorkflow({kind: 'media', url: URL, output: {directory: '/tmp'}, download: {sections: ['*80-225']}})
+		expect(plan.args).toEqual(expect.arrayContaining(['--download-sections', '*80-225']))
+		expect(plan.args.join(' ')).not.toContain('yt-dlp ')
+	})
+
+	it('omits download-sections for full media', () => {
+		const plan = planWorkflow({kind: 'media', url: URL, output: {directory: '/tmp'}})
+		expect(plan.args).not.toContain('--download-sections')
+	})
+})
+
 describe('planWorkflow — media', () => {
 	it('plans format id downloads with resume hardening and temp info-json output', () => {
 		const plan = planWorkflow({kind: 'media', url: URL, output: {directory: '/out', tempDirectory: '/out/.tmp/job'}, selection: {formatId: '137+140'}})

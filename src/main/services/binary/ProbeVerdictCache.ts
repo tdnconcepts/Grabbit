@@ -157,7 +157,7 @@ export class ProbeVerdictCache implements ProbeVerdictStore {
 		return this.loaded
 	}
 
-	// Two Arroxy windows can warm up at once. Write to a pid-unique temp file and
+	// Two Grabbit windows can warm up at once. Write to a pid-unique temp file and
 	// rename, so a reader never observes a half-written JSON document.
 	private async persist(verdicts: VerdictFile): Promise<void> {
 		const tempPath = `${this.filePath}.tmp-${process.pid}`

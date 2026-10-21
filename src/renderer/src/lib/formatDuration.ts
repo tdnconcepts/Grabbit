@@ -4,9 +4,10 @@
 // site (callers decide whether to render an em-dash, hide the slot, etc.).
 export function formatDuration(seconds: number, liveLabel?: string): string {
 	if (seconds === 0 && liveLabel !== undefined) return liveLabel
-	const h = Math.floor(seconds / 3600)
-	const m = Math.floor((seconds % 3600) / 60)
-	const s = seconds % 60
+	const wholeSeconds = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0
+	const h = Math.floor(wholeSeconds / 3600)
+	const m = Math.floor((wholeSeconds % 3600) / 60)
+	const s = wholeSeconds % 60
 	if (h > 0) return `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
 	return `${m}:${String(s).padStart(2, '0')}`
 }

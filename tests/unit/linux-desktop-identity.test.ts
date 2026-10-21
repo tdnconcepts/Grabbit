@@ -42,7 +42,7 @@ describe('Linux desktop identity', () => {
 	// the Flatpak would show up under the Flatpak's launcher. The Flatpak window
 	// is matched through its sandbox app id instead (scripts/vm/ubu-window-test.sh).
 	it('the Flatpak desktop entry does not claim windows by class', () => {
-		const flatpakDesktop = read('flatpak/io.github.antonio_orionus.Arroxy.desktop')
+		const flatpakDesktop = read('flatpak/io.github.antonio_orionus.Grabbit.desktop')
 		expect(windowId).toBe('arroxy')
 		expect(desktopEntryValue(flatpakDesktop, 'StartupWMClass')).toBeUndefined()
 	})

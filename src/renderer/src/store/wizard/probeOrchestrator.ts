@@ -11,6 +11,7 @@
 import type {PlaylistScope, ProbePlaylistMode, ProbeResult, WizardTransition} from '@shared/types.js'
 import {getIncompleteCookiesConfigIssue} from '@shared/cookiesConfig.js'
 import {cleanUrl} from '@shared/cleanUrl.js'
+import {formatMediaTime} from '@shared/clipRange.js'
 import {classifyUrlIntent} from '@shared/urlIntent.js'
 import {bulkLogger} from '@renderer/lib/bulkLogger.js'
 import {replaceHash} from '@renderer/lib/navigation.js'
@@ -30,6 +31,13 @@ import {mixedUrlPromptPatch} from './mixedUrlPrompt.js'
 import {configuredCookiesRetryMode} from './probeErrorExperience.js'
 import {policyForUrlIntent} from './urlIntentPolicy.js'
 import {canScanPlaylistFolder} from './outputTemplates.js'
+
+let interactiveProbeRunId = 0
+
+function cancelInteractiveProbe(): void {
+	interactiveProbeRunId += 1
+	void window.appApi.downloads.probeCancel()
+}
 
 function pickWizardSnapshot(state: AppState): Record<string, unknown> {
 	return {
@@ -107,13 +115,15 @@ function startPlaylistPlaceholderHydration(set: SetState, get: GetState): void {
 
 async function runProbe(url: string, playlistMode: ProbePlaylistMode, set: SetState, get: GetState, firstProbe = true): Promise<void> {
 	nextBulkMetadataRunId()
-	void window.appApi.downloads.probeCancel()
+	cancelInteractiveProbe()
+	const runId = interactiveProbeRunId
 	const startProjection = projectProbeStart(get(), url, playlistMode)
 	set(startProjection.patch)
 	logStep('submitUrl', startProjection.fromStep, startProjection.initialStep, pickWizardSnapshot(get()))
 
 	const playlistScope = get().playlistScope
 	const result = await window.appApi.downloads.probe({url, playlistMode, ...(playlistMode === 'video' ? {} : {playlistScope})})
+	if (runId !== interactiveProbeRunId || get().wizardUrl !== url) return
 	if (!result.ok) {
 		set(projectProbeFailure(result.error))
 		return
@@ -245,7 +255,40 @@ export function createProbeOrchestratorSlice(set: SetState, get: GetState): Prob
 		syncedDownloadedIds: RESET_WIZARD_STATE.syncedDownloadedIds,
 		syncScanState: RESET_WIZARD_STATE.syncScanState,
 
-		setWizardUrl: url => set({wizardUrl: url, ...resetQuickDownloadFeedback()}),
+		setWizardUrl: url => {
+			const changed = url !== get().wizardUrl
+			if (changed) cancelInteractiveProbe()
+			set({
+				wizardUrl: url,
+				...(changed
+					? {
+							wizardStep: 'url' as const,
+							wizardMode: 'single' as const,
+							formatsLoading: false,
+							wizardError: null,
+							wizardErrorOrigin: null,
+							wizardFormats: [],
+							wizardTitle: '',
+							wizardThumbnail: '',
+							wizardDuration: undefined,
+							wizardPreviewUrl: undefined,
+							wizardWebpageUrl: '',
+							wizardUploader: '',
+							wizardClipMode: 'full' as const,
+							wizardClipStart: '00:00',
+							wizardClipEnd: ''
+						}
+					: {}),
+				...resetQuickDownloadFeedback()
+			})
+		},
+
+		setWizardPreviewDuration: (previewUrl, durationSeconds) => {
+			if (!Number.isFinite(durationSeconds) || durationSeconds <= 0) return
+			const state = get()
+			if (state.wizardPreviewUrl !== previewUrl || (state.wizardDuration !== undefined && Number.isFinite(state.wizardDuration) && state.wizardDuration > 0)) return
+			set({wizardDuration: durationSeconds, ...(state.wizardClipMode === 'range' && !state.wizardClipEnd ? {wizardClipEnd: formatMediaTime(durationSeconds)} : {})})
+		},
 
 		submitUrl: async () => {
 			const cleaned = rewriteYouTubeChannelRoot(cleanUrl(get().wizardUrl.trim()))

@@ -64,7 +64,7 @@ describe('renderer app bridge bootstrap', () => {
 			appApiInstalled = true
 		})
 
-		await expect(ensureAppBridge({mode: 'browser-mock', userAgent: 'Mozilla/5.0 Arroxy/0.3.2 Electron/42.0.0', hasAppApi: () => appApiInstalled, installBrowserMock})).resolves.toBe('browser-mock')
+		await expect(ensureAppBridge({mode: 'browser-mock', userAgent: 'Mozilla/5.0 Grabbit/0.3.2 Electron/42.0.0', hasAppApi: () => appApiInstalled, installBrowserMock})).resolves.toBe('browser-mock')
 
 		expect(installBrowserMock).toHaveBeenCalledOnce()
 	})
@@ -72,7 +72,7 @@ describe('renderer app bridge bootstrap', () => {
 	it('does not install the browser mock in normal Electron mode when the preload bridge is missing', async () => {
 		const installBrowserMock = vi.fn()
 
-		await expect(ensureAppBridge({mode: 'development', userAgent: 'Mozilla/5.0 Arroxy/0.3.2 Electron/42.0.0', hasAppApi: () => false, installBrowserMock})).rejects.toBeInstanceOf(BridgeUnavailableError)
+		await expect(ensureAppBridge({mode: 'development', userAgent: 'Mozilla/5.0 Grabbit/0.3.2 Electron/42.0.0', hasAppApi: () => false, installBrowserMock})).rejects.toBeInstanceOf(BridgeUnavailableError)
 
 		expect(installBrowserMock).not.toHaveBeenCalled()
 	})

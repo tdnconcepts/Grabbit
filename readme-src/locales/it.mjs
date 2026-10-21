@@ -151,7 +151,6 @@ export const it = {
   feat_sites_3: "**Solo audio e sottotitoli** funzionano su ogni sito supportato, non soltanto su YouTube",
   feat_sites_4: "Se un sito cambia, yt-dlp distribuisce correzioni ogni settimana e Arroxy aggiorna automaticamente il binario all'avvio",
   shot1_cap: "<b>Home di Download rapido</b><br/>Incolla un URL e scaricalo subito con il profilo attivo",
-  shot2_cap: "<b>Profili di download riutilizzabili</b><br/>Salva preset di formato, qualità e destinazione e riutilizzali per ogni download",
   shot3_cap: "<b>Tracce audio multilingue</b><br/>Scegli la lingua audio esatta fornita dal video",
   shot4_cap: "<b>Audio surround / Dolby</b><br/>Le tracce 5.1 e Dolby vengono rilevate e conservate",
   shot5_cap: "<b>Modalità URL massivi</b><br/>Incolla un elenco, rimuovi automaticamente i duplicati e metti tutto in coda",

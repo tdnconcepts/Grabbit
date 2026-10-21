@@ -60,6 +60,7 @@ export function projectProbeStart(state: AppState, url: string, playlistMode: Pr
 			wizardError: null,
 			cookiesConfigDialogIssue: null,
 			wizardFormats: [],
+			wizardPreviewUrl: undefined,
 			wizardFormatsDegraded: null,
 			wizardSubtitles: {},
 			wizardAutomaticCaptions: {},
@@ -123,6 +124,8 @@ export function projectVideoProbeResult(probe: Extract<ProbeResult, {kind: 'vide
 		wizardTitle: title,
 		wizardThumbnail: thumbnail,
 		wizardDuration: duration,
+		wizardPreviewUrl: probe.previewUrl,
+		wizardPreviewFps: probe.previewFps,
 		wizardVideoId: probe.videoId ?? '',
 		wizardUploader: probe.uploader ?? '',
 		wizardUploadDate: probe.uploadDate ?? '',
@@ -176,6 +179,7 @@ export function projectPlaylistProbeResult(probe: Extract<ProbeResult, {kind: 'p
 		wizardExtractorKey: probe.extractorKey,
 		wizardWebpageUrl: probe.webpageUrl,
 		wizardProbeInfoJsonRef: undefined,
+		wizardPreviewUrl: undefined,
 		playlistItems,
 		// Container rows (channel/playlist/album) stay visible so an all-container
 		// result still renders a picker, but they start unselected: they cannot be
@@ -259,6 +263,7 @@ export function projectBulkStart(urls: readonly string[], state: AppState, seeds
 			wizardTitle: '',
 			wizardThumbnail: '',
 			wizardDuration: undefined,
+			wizardPreviewUrl: undefined,
 			wizardVideoId: '',
 			wizardUploader: '',
 			wizardUploadDate: '',

@@ -21,7 +21,7 @@ export async function writeDiagnosticsFile({logPath, outputDir, context, now = n
 	const [oldLog, currentLog] = await Promise.all([readIfPresent(oldLogPath), readIfPresent(logPath)])
 
 	const content = [
-		'Arroxy diagnostics',
+		'Grabbit diagnostics',
 		`Generated: ${now.toISOString()}`,
 		'User folder names and URL secrets are redacted. Video links and titles are kept.',
 		'',

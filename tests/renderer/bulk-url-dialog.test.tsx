@@ -32,20 +32,15 @@ describe('BulkUrlDialog', () => {
 		expect(startBulkUrls).toHaveBeenCalledWith(['https://example.com/latest'])
 	})
 
-	it('renders a compact profile-aware quick download control', () => {
+	it('renders a simple best-quality Quick Download action', () => {
 		render(<BulkUrlDialog open onOpenChange={vi.fn()} initialRaw="https://example.com/video" />)
 
-		expect(screen.getByTestId('bulk-quick-profile-preview')).toHaveAttribute('data-linked-control', 'quick-profile')
 		expect(screen.getByTestId('bulk-quick-download')).toHaveTextContent('Quick Download')
-		expect(screen.getByTestId('bulk-active-profile-card')).toHaveTextContent('Balanced 720p')
-		expect(screen.getByTestId('bulk-active-profile-card')).toHaveTextContent('720p · best audio')
-
-		fireEvent.click(screen.getByRole('button', {name: 'Switch download profile: Balanced 720p'}))
-		expect(screen.getByTestId('bulk-profile-menu')).toBeInTheDocument()
-		expect(screen.getByTestId('bulk-profile-option-balanced')).toHaveAttribute('aria-pressed', 'true')
+		expect(screen.getByTestId('bulk-quick-download')).toHaveAttribute('title', expect.stringContaining('Best quality'))
+		expect(screen.queryByTestId('bulk-active-profile-card')).not.toBeInTheDocument()
 	})
 
-	it('uses a wider shell for the profile-aware bulk workflow', () => {
+	it('uses a wider shell for the bulk workflow', () => {
 		render(<BulkUrlDialog open onOpenChange={vi.fn()} initialRaw="https://example.com/video" />)
 
 		expect(screen.getByTestId('bulk-url-dialog')).toHaveClass('w-[calc(100%-2rem)]', 'sm:max-w-2xl', 'md:max-w-3xl')

@@ -1,4 +1,4 @@
-import {useEffect, useState, type ReactNode} from 'react'
+import {useEffect, useState, type ReactNode, type Ref} from 'react'
 import {Minus, Share2, Square, Minimize2, X} from 'lucide-react'
 import {useTranslation} from 'react-i18next'
 import {cn} from '@renderer/lib/utils.js'
@@ -45,7 +45,7 @@ function WinLinuxControls({isMaximized}: {isMaximized: boolean}): ReactNode {
 	)
 }
 
-export function TitleBar(): ReactNode {
+export function TitleBar({navigationRef}: {navigationRef?: Ref<HTMLDivElement>}): ReactNode {
 	const [isMaximized, setIsMaximized] = useState(false)
 
 	useEffect(() => {
@@ -54,14 +54,17 @@ export function TitleBar(): ReactNode {
 	}, [])
 
 	return (
-		<div className={cn('chrome-glass flex h-9 shrink-0 select-none items-center border-b border-border', isMac ? 'pl-0 pr-2' : 'pl-4 pr-0')} style={drag} data-testid="title-bar">
+		<div className={cn('chrome-glass grabbit-titlebar flex shrink-0 select-none items-center border-b border-border', isMac ? 'pl-0 pr-2' : 'pl-4 pr-0')} style={drag} data-testid="title-bar">
 			{isMac && <div aria-hidden="true" className="w-20 shrink-0" data-testid="native-window-controls-spacer" />}
 
-			<span className={cn('flex-1 flex items-center gap-1.5 text-xs font-medium text-muted-foreground tracking-wide', isMac ? 'justify-center' : 'pl-1')}>
-				<img src={appIcon} alt="" width={14} height={14} className="opacity-70" draggable={false} />
-				Arroxy
-			</span>
+			<div className="grabbit-brand">
+				<img src={appIcon} alt="" width={48} height={48} draggable={false} />
+				<div>
+					<span className="grabbit-brand-name">Grabbit</span>
+				</div>
+			</div>
 
+			<div ref={navigationRef} className="grabbit-navigation-slot" style={noDrag} />
 			<ShareButton />
 
 			{!isMac && <WinLinuxControls isMaximized={isMaximized} />}

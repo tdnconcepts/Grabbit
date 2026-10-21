@@ -4,28 +4,12 @@ import {App} from '@renderer/App.js'
 import {useAppStore} from '@renderer/store/useAppStore.js'
 import {buildMockAppApi} from '../shared/mockAppApi.js'
 import {defaultAppSettings} from '@shared/constants.js'
-import {BUILTIN_DOWNLOAD_PROFILES} from '@shared/downloadProfiles.js'
 import {ok} from '@shared/result.js'
 import type {GraphicsPolicy} from '@shared/types.js'
 
 const mockAppApi = buildMockAppApi()
 
 const CSS_FORCED_GRAPHICS_POLICY: GraphicsPolicy = {backdrop: {forceRenderMode: 'css-only', softwareWebglAllowed: false, fallbackReason: 'gpu-feature-disabled'}}
-
-async function openProfileMenu(): Promise<void> {
-	const profileMenuTrigger = await screen.findByRole('button', {name: 'Switch download profile: Balanced 720p'})
-	fireEvent.click(profileMenuTrigger)
-	expect(await screen.findByText('Switch profile')).toBeInTheDocument()
-}
-
-function expectProfileMenuClosed(): void {
-	const profileMenu = screen.queryByTestId('profiles-profile-menu')
-	if (profileMenu) {
-		expect(profileMenu).toHaveAttribute('data-closed')
-	} else {
-		expect(profileMenu).not.toBeInTheDocument()
-	}
-}
 
 describe('App renderer', () => {
 	beforeEach(() => {
@@ -63,9 +47,19 @@ describe('App renderer', () => {
 
 	it('renders the app heading and URL input', async () => {
 		render(<App />)
-		expect(await screen.findByTestId('title-bar')).toHaveTextContent('Arroxy')
+		expect(await screen.findByTestId('title-bar')).toHaveTextContent('Grabbit')
 		expect(await screen.findByText('Download from URL')).toBeInTheDocument()
 		expect(await screen.findByTestId('profiles-main-input')).toBeInTheDocument()
+	})
+
+	it('does not render the bottom toolbar or delayed feedback prompt', async () => {
+		render(<App />)
+		await screen.findByTestId('profiles-main-input')
+		expect(screen.queryByTestId('app-footer')).not.toBeInTheDocument()
+		expect(screen.queryByTestId('footer-left-controls')).not.toBeInTheDocument()
+		expect(screen.queryByTestId('btn-discord')).not.toBeInTheDocument()
+		expect(screen.queryByTestId('btn-feedback')).not.toBeInTheDocument()
+		expect(screen.queryByTestId('feedback-nudge')).not.toBeInTheDocument()
 	})
 
 	it('does not mount a WebGL canvas before settings and graphics policy resolve', async () => {
@@ -98,14 +92,15 @@ describe('App renderer', () => {
 		})
 	})
 
-	it('uses the CSS fallback when runtime graphics policy forces it', async () => {
+	it('uses the matte backdrop without mounting a decorative canvas', async () => {
 		const api = buildMockAppApi()
 		vi.mocked(api.app.getGraphicsPolicy).mockResolvedValue(ok(CSS_FORCED_GRAPHICS_POLICY))
 		window.appApi = api
 
 		render(<App />)
 
-		await waitFor(() => expect(document.body).toHaveClass('backdrop-static-fallback'))
+		expect(await screen.findByTestId('title-bar')).toBeInTheDocument()
+		expect(document.querySelector('[data-backdrop-layer="matte"]')).toBeInTheDocument()
 		expect(document.querySelector('canvas[data-backdrop-layer="webgl"]')).toBeNull()
 	})
 
@@ -118,39 +113,7 @@ describe('App renderer', () => {
 		expect(screen.queryByTestId('title-bar')).not.toBeInTheDocument()
 	})
 
-	it('switches backdrop isolation render paths and explains each mode', async () => {
-		window.history.replaceState(null, '', '/?backdrop=1')
-
-		render(<App />)
-
-		expect(await screen.findByTestId('backdrop-preview-controls')).toBeInTheDocument()
-		expect(screen.getByTestId('backdrop-preview-gpu')).toHaveAttribute('aria-pressed', 'true')
-		expect(screen.getByTestId('backdrop-preview-description')).toHaveTextContent('WebGL shader preview: hardware when available, software allowed in this stage.')
-		expect(screen.queryByTestId('backdrop-preview-canvas2d')).not.toBeInTheDocument()
-
-		fireEvent.click(screen.getByTestId('backdrop-preview-css'))
-		expect(new URL(window.location.href).searchParams.get('backdropForceFallback')).toBe('css')
-		expect(screen.getByTestId('backdrop-preview-css')).toHaveAttribute('aria-pressed', 'true')
-		expect(screen.getByTestId('backdrop-preview-description')).toHaveTextContent('CSS emergency: no canvas, body gradients only.')
-
-		fireEvent.click(screen.getByTestId('backdrop-preview-gpu'))
-		expect(new URL(window.location.href).searchParams.get('backdropForceFallback')).toBeNull()
-		expect(screen.getByTestId('backdrop-preview-gpu')).toHaveAttribute('aria-pressed', 'true')
-	})
-
-	it('resolves the removed Canvas2D isolation preview mode to GPU', async () => {
-		window.history.replaceState(null, '', '/?backdrop=1&backdropForceFallback=canvas2d')
-
-		render(<App />)
-
-		expect(await screen.findByTestId('backdrop-preview-gpu')).toHaveAttribute('aria-pressed', 'true')
-		expect(screen.queryByTestId('backdrop-preview-canvas2d')).not.toBeInTheDocument()
-
-		fireEvent.click(screen.getByTestId('backdrop-preview-gpu'))
-		expect(new URL(window.location.href).searchParams.get('backdropForceFallback')).toBeNull()
-	})
-
-	it('syncs backdrop isolation theme changes into the URL', async () => {
+	it('keeps the matte isolation stage theme controls', async () => {
 		window.history.replaceState(null, '', '/?backdrop=1&backdropForceFallback=css')
 
 		render(<App />)
@@ -159,7 +122,7 @@ describe('App renderer', () => {
 		let url = new URL(window.location.href)
 		expect(url.searchParams.get('theme')).toBe('dark')
 		expect(url.searchParams.get('backdrop')).toBe('1')
-		expect(url.searchParams.get('backdropForceFallback')).toBe('css')
+		expect(document.querySelector('[data-backdrop-layer="matte"]')).toBeInTheDocument()
 
 		fireEvent.click(screen.getByRole('button', {name: 'Light mode'}))
 		url = new URL(window.location.href)
@@ -170,20 +133,24 @@ describe('App renderer', () => {
 		expect(url.searchParams.get('theme')).toBe('system')
 	})
 
-	it('submits URL probes through the preload API', async () => {
+	it('automatically analyzes a valid URL and reveals the unified options', async () => {
 		render(<App />)
 
 		const input = await screen.findByTestId('profiles-main-input')
 		fireEvent.change(input, {target: {value: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}})
 
-		fireEvent.click(screen.getByTestId('profiles-interactive-download'))
-
-		await waitFor(() => {
-			expect(mockAppApi.downloads.probe).toHaveBeenCalledWith(expect.objectContaining({url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}))
-		})
+		await waitFor(
+			() => {
+				expect(mockAppApi.downloads.probe).toHaveBeenCalledWith(expect.objectContaining({url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}))
+			},
+			{timeout: 2_000}
+		)
+		expect(await screen.findByTestId('unified-download-options')).toHaveTextContent('Test Video')
+		expect(screen.getByTestId('download-action-bar')).toBeInTheDocument()
+		expect(screen.getByTestId('btn-download')).toBeEnabled()
 	})
 
-	it('renders quick download and disables URL actions while preparing', async () => {
+	it('keeps Quick Download compact and blocks competing analysis while it prepares', async () => {
 		let resolveProbe!: (value: Awaited<ReturnType<typeof mockAppApi.downloads.probe>>) => void
 		vi.mocked(mockAppApi.downloads.probe).mockReturnValue(
 			new Promise(resolve => {
@@ -193,35 +160,10 @@ describe('App renderer', () => {
 		render(<App />)
 
 		const quick = await screen.findByTestId('profiles-quick-download')
-		const fetch = screen.getByTestId('profiles-interactive-download')
 		expect(quick.textContent).toMatch(/Quick download/i)
-		expect(quick).toHaveTextContent('Will download using: Balanced 720p')
-		expect(screen.getByTestId('profiles-quick-preview')).toHaveAttribute('data-linked-control', 'quick-profile')
-		expect(screen.getByTestId('profiles-active-profile-card')).toHaveTextContent('Balanced 720p')
-		expect(screen.getByTestId('profiles-active-profile-card')).toHaveTextContent('Active profile')
-		expect(screen.getByTestId('profiles-active-profile-card')).toHaveTextContent('720p · best audio')
-		expect(screen.getByTestId('profiles-profile-destination')).toHaveTextContent('Using global destination + profile subfolder')
-		expect(screen.getByTestId('profiles-profile-destination')).toHaveTextContent('/tmp/Balanced 720p')
-		expect(screen.getByRole('button', {name: 'Edit active profile'})).toBeInTheDocument()
-		expect(screen.getByRole('button', {name: 'Change global destination'})).toBeInTheDocument()
-		const profileMenuTrigger = screen.getByRole('button', {name: 'Switch download profile: Balanced 720p'})
-		expect(profileMenuTrigger).toBeInTheDocument()
+		expect(screen.queryByRole('combobox', {name: 'Active profile'})).not.toBeInTheDocument()
+		expect(screen.queryByRole('tab', {name: 'Profiles'})).not.toBeInTheDocument()
 		expect(quick).toBeDisabled()
-
-		fireEvent.click(profileMenuTrigger)
-		expect(await screen.findByText('Switch profile')).toBeInTheDocument()
-		const profileMenu = screen.getByTestId('profiles-profile-menu')
-		expect(profileMenu).toBeInTheDocument()
-		expect(profileMenu).toHaveClass('w-[min(50rem,calc(100vw-2rem))]')
-		const profileGrid = screen.getByTestId('profiles-profile-menu-grid')
-		expect(profileGrid).toHaveClass('grid')
-		expect(profileGrid).toHaveClass('grid-cols-[repeat(auto-fit,minmax(13.5rem,1fr))]')
-		expect(screen.getByTestId('profiles-profile-option-balanced')).toHaveClass('min-h-12')
-		const profileActions = screen.getByTestId('profiles-profile-menu-actions')
-		expect(profileActions).toHaveClass('sm:grid-cols-3')
-		expect(profileActions).toHaveTextContent('Edit active profile')
-		expect(profileActions).toHaveTextContent('New profile')
-		expect(profileActions).toHaveTextContent('Manage profiles')
 
 		const input = await screen.findByTestId('profiles-main-input')
 		fireEvent.change(input, {target: {value: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}})
@@ -229,7 +171,7 @@ describe('App renderer', () => {
 
 		const progressDialog = await screen.findByTestId('quick-download-progress-dialog')
 		expect(progressDialog).toHaveTextContent('Preparing Quick Download')
-		expect(progressDialog).toHaveTextContent('Balanced 720p')
+		expect(progressDialog).toHaveTextContent('Best quality')
 		expect(progressDialog).toHaveClass('overflow-hidden')
 		expect(screen.getByTestId('quick-download-progress-body')).toHaveClass('min-w-0')
 		expect(screen.getByTestId('quick-download-progress-current')).toHaveClass('max-w-full', 'min-w-0', 'overflow-hidden')
@@ -252,8 +194,9 @@ describe('App renderer', () => {
 
 		await waitFor(() => {
 			expect(quick).toBeDisabled()
-			expect(fetch).toBeDisabled()
 		})
+		await new Promise(resolve => window.setTimeout(resolve, 600))
+		expect(mockAppApi.downloads.probe).toHaveBeenCalledTimes(1)
 
 		resolveProbe({
 			ok: true,
@@ -281,18 +224,6 @@ describe('App renderer', () => {
 		})
 	})
 
-	it('explains profile destination overrides on the active profile card', async () => {
-		const balanced = BUILTIN_DOWNLOAD_PROFILES.find(profile => profile.id === 'balanced')
-		expect(balanced).toBeDefined()
-		window.appApi = buildMockAppApi({settings: {profiles: {active: {kind: 'builtin', id: 'balanced'}, custom: [], overrides: [{...balanced!, output: {kind: 'fixed', dir: '/mnt/archive'}, subfolder: {enabled: true, name: 'Lectures'}}], enabledOverrides: {}}}})
-
-		render(<App />)
-
-		const destination = await screen.findByTestId('profiles-profile-destination')
-		expect(destination).toHaveTextContent('Using profile override + profile subfolder')
-		expect(destination).toHaveTextContent('/mnt/archive/Lectures')
-	})
-
 	it('cancels quick download preparation from the blocking progress dialog', async () => {
 		vi.mocked(mockAppApi.downloads.probe).mockReturnValue(new Promise(() => undefined))
 		render(<App />)
@@ -311,31 +242,12 @@ describe('App renderer', () => {
 		expect(screen.getByTestId('profiles-main-input')).toHaveValue('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 	})
 
-	it('closes the profile picker when opening the new profile editor', async () => {
+	it('keeps the primary navigation focused on downloads and settings', async () => {
 		render(<App />)
-
-		expect(screen.queryByTestId('profiles-editor-dialog')).not.toBeInTheDocument()
-		await openProfileMenu()
-
-		fireEvent.click(screen.getByRole('button', {name: 'New profile'}))
-
-		await waitFor(() => {
-			expectProfileMenuClosed()
-		})
-		expect(await screen.findByTestId('profiles-editor-dialog')).toBeInTheDocument()
-	})
-
-	it('closes the profile picker when opening profile management', async () => {
-		render(<App />)
-
-		await openProfileMenu()
-
-		fireEvent.click(screen.getByRole('button', {name: 'Manage profiles'}))
-
-		await waitFor(() => {
-			expectProfileMenuClosed()
-		})
-		expect(await screen.findByTestId('profiles-manage-tab')).toBeInTheDocument()
+		expect(await screen.findByRole('tab', {name: 'URL'})).toBeInTheDocument()
+		expect(screen.getByRole('tab', {name: /^downloads/i})).toBeInTheDocument()
+		expect(screen.getByRole('tab', {name: 'Settings'})).toBeInTheDocument()
+		expect(screen.queryByRole('tab', {name: 'Profiles'})).not.toBeInTheDocument()
 	})
 
 	it('shows Downloads as a top-level tab', async () => {

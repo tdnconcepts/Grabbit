@@ -20,7 +20,7 @@ describe('isYouTubeExtractor', () => {
 
 	it('accepts yt-dlp plugin suffixes on canonical YouTube extractor names', () => {
 		expect(isYouTubeExtractor('youtube+arroxyfixture')).toBe(true)
-		expect(isYouTubeExtractor('YouTube:Tab+ArroxyFixture')).toBe(true)
+		expect(isYouTubeExtractor('YouTube:Tab+GrabbitFixture')).toBe(true)
 	})
 
 	it.each(['vimeo', 'pornhub', 'PornHubPagedVideoList', 'qqmusic', 'bandcamp', 'soundcloud'])('rejects %s', name => {
