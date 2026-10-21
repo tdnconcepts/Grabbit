@@ -38,4 +38,4 @@ So `.github/workflows/release.yml` emits a `postflight_steps` stanza that runs `
 - No `sudo`: brew installs the bundle user-owned. The same is true after a Finder drag, so the README's old `sudo xattr` was stricter than necessary.
 - The cask is **rewritten wholesale from the heredoc on every stable release**, so edit `release.yml`, never `Casks/arroxy.rb` in the tap — a direct tap edit is reverted by the next tag.
 
-**This has a shelf life.** Homebrew ended support for casks failing Gatekeeper checks in the official repo on 2026-09-01 and Apple keeps tightening. Notarizing (Apple Developer Program, $99/yr) removes the dialog on every path, drops the need for the postflight, and would allow the official homebrew/cask repo. See [[linux-vm-testing]] for the ARM-vs-x86_64 testing constraints that shaped how this was verified.
+**This has a shelf life.** Homebrew ended support for casks failing Gatekeeper checks in the official repo on 2026-09-01 and Apple keeps tightening. Notarizing (Apple Developer Program, $99/yr) removes the dialog on every path, drops the need for the postflight, and would allow the official homebrew/cask repo.

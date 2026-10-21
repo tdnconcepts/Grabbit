@@ -1,24 +1,11 @@
 ---
 name: finish-before-pr
-description: Close every related follow-up before proposing a PR — no dangling "worth its own issue" items.
+description: Finish related tests, translations, and documentation before handing off a change.
 metadata:
-  type: feedback
+  type: project
 ---
 
-Antonio wants one complete PR once everything related is done, not a PR that
-lands with a trail of deferred follow-ups. Ending a summary with "X is still
-open", "worth its own issue", or "want me to also do Y?" is the failure mode —
-if Y is part of shipping the change properly, just do Y.
+Finish related tests, translations, README source changes, and documentation with the change they describe. Report existing unrelated failures without silently repairing them.
 
-**Why:** deferred items in this repo do not get picked up later. The fixture E2E
-suite is the cautionary case: it was never wired into CI, so a queue-UI rework
-left four specs driving buttons that no longer existed and a silent
-resume-after-restart bug shipped unnoticed. Small deferred gaps become invisible
-permanent ones.
-
-**How to apply:** for a user-facing feature, "done" includes the code, tests at
-the owning layer, all locale catalogs, the README (`readme-src/`, all locales),
-`CHANGELOG.md`, and any security or tooling gap the change directly touches.
-Raise scope concerns while working, not as leftovers at the end. Splitting the
-work across several commits on one branch is fine and preferred — that is not
-what he means by fragmented.
+**Why:** incomplete follow-ups leave the source, UI, and documentation inconsistent.
+**How to apply:** verify the requested workflow, run the repository checks, and clearly state any remaining limitation. Publishing releases, changing visibility, or rewriting history requires user authorization.

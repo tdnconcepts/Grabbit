@@ -1,21 +1,14 @@
 # Project memory index
 
-- [Glow intensity policy](glow-intensity-policy.md) — home keeps the branded glow vocabulary; dense screens (settings/dialogs/logs/queue) stay calm.
-- [Backdrop WebGL scenes](backdrop-webgl-scenes.md) — the app background is a scene-selected WebGL backdrop: dark aurora and light ocean, with Canvas2D fallback before CSS.
 - [macOS 26 Electron Audio Service](macos-26-electron-audio-service.md) — Electron 42 can crash-loop `audio.mojom.AudioService`; disable out-of-process Audio Service on Darwin 25+.
 - [Finish before PR](finish-before-pr.md) — close every related follow-up (tests, locales, README, CHANGELOG) before proposing a PR.
 - [No AI attribution](no-ai-attribution.md) — never add Co-Authored-By or "Generated with" lines to commits or PRs.
 - [LOC limits are architecture signals](loc-limits-are-architecture-signals.md) — never raise the LOC cap to land a change; extract a cohesive concern instead.
-- [CodeRabbit review workflow](coderabbit-review-workflow.md) — auto reviews are off, so trigger explicitly at open and again after pushing fixes; poll `issues/<N>/comments` for all three outcomes, because a clean review leaves `pulls/<N>/reviews` empty.
 - [Renderer test & UI API gotchas](renderer-test-and-ui-api-gotchas.md) — base-nova takes a `render` prop, never Radix `asChild`; `@testing-library/user-event` is not installed, use `fireEvent`.
-- [Donation rails are crypto-only](donation-rails-are-crypto-only.md) — Ukraine residency rules out GitHub Sponsors/Ko-fi/BMAC; never suggest a fiat option.
 - [TypeScript & oxlint boundary gates](typescript-and-oxlint-boundary-gates.md) — `"types": []` does not block explicit electron imports; oxlint restricted-import globs need `**`.
-- [Windows VM testing](windows-vm-testing.md) — ssh into the local Win11 ARM64 VM to run `dist:win:dir` + `verify:startup` directly; gotchas: bash on PATH, x64-only inherited asset, node-not-bun for `_electron.launch`.
 - [Inherited ELECTRON_RUN_AS_NODE](electron-run-as-node-leak.md) — agent/editor shells can carry `ELECTRON_RUN_AS_NODE=1`; hand-launched Electron then crashes with "no export named 'BrowserWindow'". Strip it or use `bun run smoke:download`.
-- [Linux VM testing](linux-vm-testing.md) — use the private Ubuntu VMware guest for Linux/Electron/runtime and GPU-specific checks; `scripts/vm/ubu-*` launch apps over ssh, test AppImage updates, build an arm64 Flatpak. Keep connection details outside the repository.
 - [Linux theme portal race](linux-theme-portal-race.md) — wrong theme on first Linux launch is unexplained; read the `theme:startup` log lines and never repro it by stopping xdg-desktop-portal.
 - [YouTube auto-caption -orig tracks](youtube-auto-caption-orig-tracks.md) — automatic_captions mixes byte-identical bare+-orig ASR twins with flaky tlang translations; subtitle 429 ≠ IP block.
 - [yt-dlp stdout corrupts scraped paths](ytdlp-stdout-drops-non-ascii.md) — four ways the stdout we scrape media/subtitle paths from mangles them, all failing silently as ENOENT; fixed with `--encoding utf-8` + a decoding line reader.
 - [Dependabot never bumps overrides](dependabot-never-bumps-overrides.md) — stale `overrides` pins become the vulnerable versions; app.asar ships no node_modules (main bundles everything, guarded by check:main-bundle); never delete lock entries to re-resolve.
 - [shadcn CLI writes a bogus cn import](shadcn-cli-cn-import.md) — `shadcn add` imports from "cn" and installs an unrelated package; revert deps, fix the import.
-- [README edits skip the PR](readme-edits-skip-pr.md) — README-only changes go straight to main after `bun run check`; code still goes through a PR.

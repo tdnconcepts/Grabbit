@@ -1,164 +1,36 @@
-# Contributing to Arroxy
+# Contributing to Grabbit
 
-Thanks for thinking about contributing! Bug reports, fixes, and small features are all welcome.
+Report bugs and suggest improvements in [Grabbit issues](https://github.com/tdnconcepts/Grabbit/issues).
 
-This document covers the essentials. If anything is unclear, open an issue and ask.
+For a bug report, include your OS, app version, reproduction steps, and expected versus actual behavior. Remove private URLs, cookies, credentials, and personal paths from logs or screenshots before sharing.
 
----
+## Development
 
-### Branch policy
-
-Arroxy uses a single long-lived branch, **`main`**. Open contributor PRs against `main`. Feature work happens on short-lived feature branches in your fork and merges into `main` when ready.
-
-### Contributor flow
-
-1. Fork the repo.
-2. Create a feature branch in your fork.
-3. Open a PR into `main`.
-4. Wait for CI and maintainer review.
-
-### Maintainer release flow
-
-1. Contributor work lands on `main`.
-2. Maintainers cut `vX.Y.Z-beta.N` tags from `main` for validation. Pre-release tags are auto-marked `prerelease: true` on GitHub and do not auto-update existing user installs.
-3. After validation, bump `package.json` to the stable version on `main`.
-4. Cut `vX.Y.Z` from `main`; stable package-manager publishing (Scoop, Homebrew, Winget) only happens for these stable tags.
-
-### Registry package flows
-
-`yt-dlp-bridge` and `ytdlp-errors` live under `packages/` and are published to npmjs.com from this repository. Package PRs use the same Arroxy CI gate as app PRs.
-
-Maintainers publish `yt-dlp-bridge` by bumping `packages/yt-dlp-bridge/package.json`, merging to `main`, then pushing a tag named `yt-dlp-bridge-vX.Y.Z`.
-
-Maintainers publish `ytdlp-errors` by bumping `packages/ytdlp-errors/package.json`, merging to `main`, then pushing a tag named `ytdlp-errors-vX.Y.Z`.
-
-Both registry workflows build tarballs with Bun, then publish through registry trusted publishing. They do not use long-lived registry publish tokens.
-
-## Reporting bugs / requesting features
-
-Use the [issue templates](https://github.com/antonio-orionus/Arroxy/issues/new/choose). For bugs, include:
-
-- OS + version (e.g. Windows 11 23H2, macOS 14.4, Ubuntu 24.04)
-- Install channel (NSIS installer, Portable, Scoop, Homebrew, Winget, AppImage, tar.gz, Flatpak, DMG)
-- Arroxy version (visible in the title bar / Settings)
-- A URL or scenario that reproduces it, plus the failure mode (error text, log line, screenshot)
-
-## Local development
-
-Recommended prerequisites: [mise](https://mise.jdx.dev), plus the native OS packages listed below. The shared `mise.toml` pins Node.js and Bun for this repo.
-
-If you do not use mise, install Node.js from `.node-version` and Bun from the root `package.json` `packageManager` field. Bun must already be available before `bun run bootstrap`; bootstrap repairs project-local dependencies and managed binaries, but it does not install Bun itself.
-
-Bun installs JavaScript dependencies, but it does not replace native OS prerequisites.
-
-- macOS: Xcode Command Line Tools may be needed for native rebuilds.
-- Windows: Visual Studio Build Tools and Python may be needed for native rebuilds.
-- Linux: Electron GUI libraries, compiler toolchain, Python, `tar`, and Playwright browser dependencies may be needed.
-
-Run `bun run doctor` after setup. It reports the specific missing tool or artifact when possible.
-
-### Quick start on macOS
+Use the Node.js version in `.node-version` and the Bun version in `package.json`. Windows may require Visual Studio Build Tools and Python; macOS may require Xcode Command Line Tools; Linux needs Electron's system libraries.
 
 ```bash
-brew install mise
-xcode-select --install
-
-git clone https://github.com/antonio-orionus/Arroxy.git
-cd Arroxy
-mise trust
-mise install
+git clone https://github.com/tdnconcepts/Grabbit.git
+cd Grabbit
 bun run bootstrap
 bun run doctor
-bun run dev          # runs the Electron app against the Vite renderer
+bun run dev
 ```
 
-Make mise active in new zsh tabs so the repo-pinned Node.js and Bun versions win over global installs:
+## Changes
+
+- Target `main` with focused pull requests.
+- Add regression tests at the layer that owns the behavior.
+- Run `bun run check` and report any existing failures separately.
+- Edit `readme-src/` and regenerate READMEs with `bun run build:readme`; do not edit generated READMEs directly.
+- Keep app translations synchronized when changing visible text.
+- Keep credentials, app data, installers, caches, and local test artifacts out of Git.
+- Preserve `LICENSE` and `THIRD_PARTY_NOTICES.txt`.
+
+## Packaging
 
 ```bash
-printf '\n# mise\nif command -v mise >/dev/null 2>&1; then\n  eval "$(mise activate zsh)"\nfi\n' >> ~/.zshrc
-exec zsh
+bun run build
+bun run dist
 ```
 
-If `bun run doctor` reports a newer Node.js from `fnm` or a newer Bun from Homebrew, mise is installed but not active for the shell. Confirm from the repo root:
-
-```bash
-which node
-which bun
-node --version       # expected: v24.21.0
-bun --version        # expected: 1.4.2
-```
-
-As a one-off workaround before fixing shell activation, run commands through mise:
-
-```bash
-mise exec -- bun run doctor
-mise exec -- bun run dev
-```
-
-### Cross-platform quick start
-
-```bash
-git clone https://github.com/antonio-orionus/Arroxy.git
-cd Arroxy
-mise trust
-mise install
-bun run bootstrap
-bun run doctor
-bun run dev          # runs the Electron app against the Vite renderer
-```
-
-Without mise, manually activate the versions from `.node-version` and `package.json`, then run `bun run bootstrap`, `bun run doctor`, and `bun run dev`.
-
-For pure-renderer / UI work without the Electron shell:
-
-```bash
-bun run dev:mock
-```
-
-The renderer's `browserMock.ts` stubs `window.appApi` only in explicit `browser-mock` mode so the wizard, queue, and update banner all simulate without a backend. Electron dev and packaged builds use the real preload bridge.
-
-If you use git worktrees, create them with your own tool or harness, then run `bun run bootstrap` inside the new worktree.
-
-Playwright browser downloads use Playwright's normal user cache by default. If you need a strictly repo-local browser cache for a throwaway checkout, run commands with `PLAYWRIGHT_BROWSERS_PATH="$PWD/.playwright-browsers"`; that local cache path is ignored by Git.
-
-## Required pre-PR checks
-
-Run the full local gate before opening a PR. CI gates on the same checks.
-
-```bash
-bun run check       # vp check (format + lint + types + import cycles) + tests + knip + tooling contract + LOC + pins + i18n + package gates
-```
-
-While iterating, `bunx vp check --fix` runs the static part in about five seconds.
-
-The root-owned tooling contract is documented in [`dev-docs/tooling-contract.md`](dev-docs/tooling-contract.md). New workspace packages must be wired into that contract before merging.
-
-## Building installers locally (optional)
-
-```bash
-bun run dist:linux   # AppImage + tar.gz + Flatpak inputs
-bun run dist:mac     # arm64 + x64 DMG (requires macOS host)
-bun run dist:win     # NSIS installer + Portable .exe (Windows host)
-```
-
-For a fresh-Windows-box bootstrap, see `scripts/build/build-windows.ps1`.
-
-## Coding conventions
-
-- **TypeScript-strict.** No `any` / `unknown` without justification.
-- **Naming.** Reuse the domain glossary in [`GLOSSARY.md`](GLOSSARY.md). Don't introduce parallel vocabularies.
-- **Architecture.** Renderer should not know how main fetches; main should not know which component renders. IPC channel names live in `src/shared/ipc.ts`; payload types live in `src/shared/types.ts`.
-- **Comments.** Don't restate what code already says. Comment when WHY is non-obvious — a hidden constraint, an OS-specific quirk, a workaround for a specific bug.
-- **No backwards-compat shims.** Delete old code rather than aliasing or re-exporting.
-- **Mature libraries over bespoke code** for validation, HTTP, ORM, auth, logging, etc.
-
-## Commit & PR conventions
-
-- **Conventional Commits.** Subject ≤ ~70 chars: `fix(scope): …`, `feat(scope): …`, `refactor: …`, `build: …`, `docs: …`. Body explains the _why_, not the _what_.
-- **No AI attribution.** Do **not** add `Co-Authored-By: Claude …` trailers or `🤖 Generated with …` footers to commits or PR bodies. Write as if authored solely by yourself.
-- **Small, separable commits.** If your PR has two unrelated concerns, make them two commits — reviewers may take one and not the other.
-- **Sign your commits** if your Git identity is set up for it. Not required.
-
-## Licensing
-
-Arroxy is MIT-licensed. By submitting a PR you agree your contribution is licensed under the same terms.
+Packaging locally does not authorize publishing releases or packages. Release destinations and integrations must be configured for Grabbit before use.

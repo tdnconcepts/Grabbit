@@ -1,4 +1,4 @@
-<!-- Thanks for contributing to Arroxy! Please skim CONTRIBUTING.md before opening. -->
+<!-- Thanks for contributing to Grabbit! Please skim CONTRIBUTING.md before opening. -->
 
 ## Summary
 
