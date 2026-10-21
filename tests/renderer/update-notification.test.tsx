@@ -193,7 +193,7 @@ describe('UpdateBanner integration in App', () => {
 			fireEvent.click(screen.getByRole('button', {name: 'Download DMG ↗'}))
 		})
 
-		expect(openExternal).toHaveBeenCalledWith('https://orionus.dev/arroxy/')
+		expect(openExternal).toHaveBeenCalledWith('https://github.com/tdnconcepts/Grabbit')
 	})
 
 	it('Download DMG ↗ dismisses the banner after clicking', async () => {

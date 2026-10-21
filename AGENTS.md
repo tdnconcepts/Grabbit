@@ -17,7 +17,7 @@ The defaults below apply to every change in this codebase.
 
 ## Repo Layout — this is a monorepo
 
-Arroxy is a Bun workspace (`workspaces: ["packages/*"]`), not a single app:
+Grabbit is a Bun workspace (`workspaces: ["packages/*"]`), not a single app:
 
 - `src/` — the Electron app (`main` / `preload` / `renderer` / `shared`).
 - `packages/yt-dlp-bridge` — yt-dlp workflow planning, argv generation, process execution, output parsing. Published as `yt-dlp-bridge` on npm; the app consumes it via `workspace:*`.
@@ -32,7 +32,7 @@ bun run errors:check   # ytdlp-errors: typecheck + test + build + pack:dry-run
 bun run bridge:check   # yt-dlp-bridge: builds ytdlp-errors first, then the same chain
 ```
 
-Publishing is **not** part of the app release. Each package ships on its own annotated tag — `yt-dlp-bridge-v*.*.*` and `ytdlp-errors-v*.*.*` (`.github/workflows/publish-*.yml`), or manual `workflow_dispatch`. Pushing to `main` publishes nothing. So a package change is a separately-released change: keep it off the critical path of an app-side fix that does not need it.
+The packages remain local workspace dependencies. Grabbit does not publish them to the original project's registries, and no package-publishing workflows are configured. Pushing to `main` publishes nothing. Keep package changes off the critical path of an app-side fix that does not need them.
 
 ---
 
@@ -457,15 +457,15 @@ Renderer shows `<UpdateBanner>` between title bar and content area; `resolveActi
 - `scoop` → copy-command for `scoop update arroxy`
 - `homebrew` → copy-command for `brew upgrade --cask arroxy`
 - `flatpak` → copy-command for `flatpak update io.github.antonio_orionus.Arroxy` (updates come from Arroxy's own Flatpak repo; see Release Pipeline). On Linux electron-updater only checks inside an AppImage, so Flatpak sets `autoUpdater.forceDevUpdateConfig` to let the *check* run; `flatpak` is non-installable, nothing is downloaded.
-- `portable` → "Download ↗" link to https://orionus.dev/arroxy/ (NSIS auto-update can't run from a %TEMP% extract)
-- `direct` on darwin → "Download ↗" link to https://orionus.dev/arroxy/ (DMG is unsigned, can't self-update)
+- `portable` → "Download ↗" link to https://github.com/tdnconcepts/Grabbit (NSIS auto-update can't run from a %TEMP% extract)
+- `direct` on darwin → "Download ↗" link to https://github.com/tdnconcepts/Grabbit (DMG is unsigned, can't self-update)
 - `direct` on win/linux (and `winget`) → "Install & Restart" button → invokes `updater:install` → main calls `downloadUpdate()` → on `update-downloaded` calls `quitAndInstall(false, true)`
 
 ### Known gap: Linux tar.gz never sees the banner
 
 On Linux, electron-updater's default updater is `AppImageUpdater` (no `package-type` file shipped — we only build AppImage + tar.gz). `AppImageUpdater.isUpdaterActive()` returns `false` when `process.env.APPIMAGE` is unset, which silently short-circuits `AppUpdater.checkForUpdates()` (returns `null`, logs `"APPIMAGE env is not defined, current application is not an AppImage"`, never emits `update-available`). So tar.gz Linux users get **no update banner at all** — not an error, just silence. Verified in `node_modules/electron-updater/out/AppImageUpdater.js:17-28` and `AppUpdater.js:253-256`.
 
-**Decision: do not fix.** Audience is small (most Linux users get AppImage or Flatpak). Fixing would require bypassing electron-updater for this case and hitting `https://api.github.com/repos/antonio-orionus/Arroxy/releases/latest` directly to drive our own `updater:available` IPC.
+This inherited Linux limitation is not part of the current Windows artifact workflow. Any future update implementation must use `tdnconcepts/Grabbit`, never the original project's release feed.
 
 ### IPC + types
 
@@ -473,107 +473,13 @@ IPC channel names live in `IPC_CHANNELS` (`@shared/ipc`); payload types (`Instal
 
 ---
 
-## Release Pipeline
+## Grabbit artifact builds
 
-Pushing a `v*` tag publishes to **five channels in one go**: GitHub Releases, Scoop, Homebrew Cask, Winget, and Arroxy's own Flatpak repo. No per-release manual steps.
+The repository does not automatically publish releases or update external package registries. The manually dispatched `.github/workflows/release.yml` runs checks, builds Windows installers and portable artifacts, scans the output, and stores it as an Actions artifact.
 
-### Branch + tag conventions
+App update metadata and project links belong to `tdnconcepts/Grabbit`. Do not restore the original project's website, feedback upload service, Tally form, telemetry credentials, package-manager publishers, or release-tag helper.
 
-- **`main`** = sole long-lived branch. Both beta (`v*-beta.N`) and stable (`v*`) tags cut from here. Feature work happens on short-lived feature branches merged into `main` when ready.
-- **Tags must be annotated** (`git tag -a NAME -m "..."`), not lightweight. `git push --follow-tags` only pushes annotated tags — lightweight tags get silently skipped, the release pipeline never fires. Lesson learned the hard way.
-
-### Pre-release flow (test pipeline w/o auto-updating users)
-
-Tag w/ semver pre-release suffix (e.g. `v0.4.0-beta.1`):
-
-- electron-builder marks the GitHub Release `prerelease: true` automatically (semver `-` suffix triggers it).
-- electron-updater queries `/releases/latest` (excludes pre-releases) → existing user installs do **not** auto-update.
-- `release.yml` `publish-scoop`/`publish-homebrew` jobs guard `if: !contains(github.ref_name, '-')` so beta tags don't bump public package managers.
-- Winget skipped automatically — `release_to_winget.yml` triggers on `released` event which excludes pre-releases by GitHub API design.
-- Manually download the artifact from the GitHub Release page to validate.
-- When ready: bump to plain semver (`v0.4.0`), tag annotated, push.
-
-**NSIS installer:** pin `electron-builder ≥ 26.9.0` (26.8.x has a `multiUser.nsh:35` buffer over-read on cold-heap). Drop `build/installer.nsh`. Any future custom NSIS `Page custom` callback must open with `${If} ${Silent} \n Abort \n ${EndIf}`. Note: the registry `latest` dist-tag is broken `26.8.1`; pin from `next` channel — `bun update --latest` silently downgrades.
-
-### Release notes — CHANGELOG.md is SSOT
-
-Release notes are hand-written in `CHANGELOG.md` and keyed by version (e.g. `## 0.3.5-beta.1`). The `publish-release` job in `release.yml` extracts the matching section, appends the auto-generated "What's Changed" PR list + Full Changelog link, and posts the combined body as the GitHub Release notes.
-
-**Before tagging a release**, add a new `## <version>` section at the top of `CHANGELOG.md` in the same shape as the previous entry. Tone is friendly user-facing prose grouped by feature (look at `## 0.3.4` as the reference). If no matching section exists, the workflow falls back to pure auto-generated notes and emits a `::warning::` — the release will still publish but the body will only be the PR list.
-
-Do **not** edit GitHub Release notes directly via the web UI or `gh release edit`. The `publish-release` step runs late in the pipeline and will overwrite manual edits made before it. Edit `CHANGELOG.md` instead and push a fix-up commit; re-running `publish-release` rewrites the notes from the file.
-
-### Pre-release checks
-
-**Before committing the release bump**, run the full local gate and fix any failures. A broken release commit fails CI and the tag-side `quality-gate` in `release.yml` now blocks publishing before any artifacts are built:
-
-```bash
-bun run check      # vp check (format + lint + types + import cycles) + tests + knip + tooling contract + package gates
-```
-
-Do not skip. A type error, dead export, circular import, stale locale key, or test failure that slips into a release tag breaks the remote release gate.
-
-### Trigger
-
-Use the wrapper scripts — they enforce branch, version-shape, clean tree, no-duplicate-tag, annotated tag, and `--follow-tags` in one shot. Refuses every footgun that has bitten before. See `scripts/release.sh`.
-
-**When user says "release X":** run checks → commit → `bun run release:beta` (or `release:stable`) autonomously. Do not stop and ask the user to run the script themselves.
-
-```bash
-# beta
-git checkout main
-# bump package.json: e.g. 0.3.1-beta.3 → 0.3.1-beta.4
-git commit -am "release: 0.3.1-beta.4"
-bun run release:beta   # tags + pushes
-
-# stable
-git checkout main
-# bump package.json: e.g. 0.3.1-beta.4 → 0.3.1
-git commit -am "release: 0.3.1"
-bun run release:stable
-```
-
-Manual fallback if the script is unavailable:
-
-```bash
-# package.json version must match tag exactly. annotated tag required.
-git tag -a v0.4.0 -m "release 0.4.0"
-git push --follow-tags
-```
-
-### Job graph
-
-`.github/workflows/release.yml`: `verify-version` → `quality-gate` (`bun run check`) → `prepare-release` → `build` matrix (linux + mac on `ubuntu-latest`/`macos-latest`); `fetch-flatpak-source` downloads the Linux tarball from the draft release after `build` (it alone holds the write token; drafts are invisible to a read-only one), then `build-flatpak` (read-only: builds, signs the Flatpak repo with `scripts/flatpak/publish-repo.sh`, builds the bundle), then `upload-flatpak`; `publish-release` waits for `upload-flatpak`, polls for Windows assets, generates `SHA256SUMS`, then un-drafts the release. Stable tags also run `publish-scoop`, `publish-homebrew`, `publish-flatpak-repo` (GitHub Pages deploy), and `notify-web-release-manifest` after `publish-release`. Read the YAML for step-level detail.
-
-Windows is built separately via a dedicated Windows Installer workflow (smoke-testable before publish); `publish-release` polls up to 15min until the Windows Setup + Portable `.exe` artifacts appear before generating `SHA256SUMS` and un-drafting the release.
-
-Arroxy uses GitHub immutable releases for release asset integrity and the GitHub release asset verification UI. The workflow finishes all mutable release work while the release is still a draft, then publishes/undrafts as the last step. `actions/attest` is intentionally not used for release assets; immutable releases create release attestations for the published assets, while workflow provenance attestations are a separate SLSA/build-chain concern. Keep `SHA256SUMS` for package-manager hashes and offline verification; keep updater metadata (`latest*.yml`) and blockmaps outside the checksum contract.
-
-`.github/workflows/release_to_winget.yml` triggers on the `released` event: once `publish-release` un-drafts the release, the SHA-pinned `vedantmgoyal9/winget-releaser` action runs `komac update AntonioOrionus.Arroxy --submit` → opens a PR against `microsoft/winget-pkgs`. Microsoft reviewers merge within hours-to-a-day. Keep that third-party action pinned to a full commit SHA because it receives `WINGET_TOKEN`.
-
-### Required GitHub repo secret
-
-| Secret                    | Used by            | Scope                                                        |
-| ------------------------- | ------------------ | ------------------------------------------------------------ |
-| `WINGET_TOKEN`            | all 3 publish jobs | classic PAT, `public_repo` + `workflow`                      |
-| `FLATPAK_GPG_PRIVATE_KEY` | `build-flatpak`    | signs the Flatpak repo; must match `flatpak/repo-signing-key.asc` |
-
-Despite the name, this single token authenticates Scoop, Homebrew, **and** Winget pushes (needs `public_repo` to push to external bucket/tap repos and to fork `microsoft/winget-pkgs`). Rotate every 90 days.
-
-### Initial Winget submission (one-time, done)
-
-The `vedantmgoyal9/winget-releaser` action can only **update** an existing winget package, not create one. For Arroxy this was done once via [komac](https://github.com/russellbanks/Komac) (`komac new AntonioOrionus.Arroxy …`) → submitted PR [microsoft/winget-pkgs#365414](https://github.com/microsoft/winget-pkgs/pull/365414). Future tag pushes auto-bump the existing manifest with no manual work.
-
-If we ever change the PackageIdentifier, repeat that one-time submission for the new identifier and update `release_to_winget.yml`.
-
-### External repos this pipeline writes to
-
-- [`antonio-orionus/scoop-bucket`](https://github.com/antonio-orionus/scoop-bucket) — single `bucket/arroxy.json` manifest, auto-bumped per release
-- [`antonio-orionus/homebrew-arroxy`](https://github.com/antonio-orionus/homebrew-arroxy) — single `Casks/arroxy.rb` cask with `on_arm`/`on_intel` stanzas, auto-bumped per release
-- [`microsoft/winget-pkgs`](https://github.com/microsoft/winget-pkgs) — community repo; PRs land at `manifests/a/AntonioOrionus/Arroxy/<version>/`
-- This repo's GitHub Pages — Arroxy's Flatpak repo at https://antonio-orionus.github.io/Arroxy/flatpak/, replaced by every stable release (`publish-flatpak-repo`). See [`dev-docs/flatpak-repo.md`](dev-docs/flatpak-repo.md); never rotate its signing key casually — installed copies reject updates signed by another key.
-
-GitHub Releases ships: NSIS installer, portable `.exe`, arm64 DMG, x64 DMG, AppImage, tar.gz source, and a Flatpak bundle (stable bundles carry the Flatpak repo as their remote, so `flatpak update` works after installing one). No Snap. An AUR `arroxy-bin` package (repackaging the x64 tar.gz, auto-published like Scoop/Homebrew) is on the roadmap for Arch/Omarchy users, blocked until AUR reopens new-account registration (closed as of 2026-10).
+Publishing a GitHub Release, tagging a release, or changing repository visibility requires explicit user authorization. Preserve license notices and essential third-party binary verification.
 
 ---
 

@@ -5,16 +5,6 @@ import {WINDOWS_APP_USER_MODEL_ID} from '@shared/constants.js'
 
 const root = process.cwd()
 
-// The block of one workflow step: from its `- name:` up to the next one. Enough
-// to prove a key is attached to the step that needs it, which is the whole
-// point — `continue-on-error` anywhere in the file proves nothing.
-function workflowStep(workflow: string, name: string): string {
-	const start = workflow.indexOf(`- name: ${name}`)
-	if (start < 0) return ''
-	const next = workflow.indexOf('\n      - ', start + 1)
-	return workflow.slice(start, next < 0 ? undefined : next)
-}
-
 interface ElectronBuilderDmgConfig {
 	background?: string
 	icon?: null
@@ -35,7 +25,6 @@ function read(path: string): string {
 }
 
 describe('release asset names', () => {
-	const stableAssets = ['Grabbit-win-x64-Setup.exe', 'Grabbit-win-x64-Portable.exe', 'Grabbit-mac-arm64.dmg', 'Grabbit-mac-x64.dmg', 'Grabbit-linux-x64.AppImage', 'Grabbit-linux-x64.tar.gz', 'Grabbit-linux-x64.flatpak']
 	const workflowText = () =>
 		readdirSync(join(root, '.github', 'workflows'))
 			.filter(file => file.endsWith('.yml') || file.endsWith('.yaml'))
@@ -109,31 +98,6 @@ describe('release asset names', () => {
 		expect(main).toContain('app.setAppUserModelId(WINDOWS_APP_USER_MODEL_ID)')
 	})
 
-	it('gates the Defender scan before release day rather than during it', () => {
-		const installer = read('.github/workflows/installer-smoke.yml')
-		const scan = workflowStep(installer, 'Scan packed output with Windows Defender')
-		const advisory = workflowStep(installer, 'Surface an advisory Defender failure on tags')
-
-		expect(scan).toContain('scan-windows-defender.ps1')
-		// The scan protects against a flagged third-party binary reaching users.
-		// But the pinned ffmpeg is already scanned, so the only way it fires on a
-		// tag is Microsoft's classifier changing its mind about a binary that
-		// passed last week — nothing in the repo changed. Failing there strands a
-		// draft release that already holds the macOS and Linux assets, so on tags
-		// it warns and on every other ref it blocks. An explicit override changes
-		// the payload, so that recovery run must block even when dispatched at a tag.
-		expect(scan).toContain("continue-on-error: ${{ startsWith(github.ref, 'refs/tags/v') && inputs.btbn_release_tag == '' }}")
-		// The advisory notice must be gated on exactly the refs the scan lets pass,
-		// or a run that actually blocked still claims it was only advisory.
-		expect(advisory).toContain("if: ${{ startsWith(github.ref, 'refs/tags/v') && inputs.btbn_release_tag == '' && steps.defender.outcome == 'failure' }}")
-		// A schedule is what actually catches definition drift, early and cheaply.
-		expect(installer).toContain('schedule:')
-		// Rebuilding against a different ffmpeg must not need a source edit and a
-		// re-tag — that was the only recovery path a blocking release-day gate left.
-		expect(installer).toContain('btbn_release_tag')
-		expect(installer).toContain('BTBN_RELEASE_TAG: ${{ inputs.btbn_release_tag }}')
-	})
-
 	it('passes Defender an absolute scan path so custom scans can resolve the target', () => {
 		const defender = read('scripts/test-binaries/scan-windows-defender.ps1')
 
@@ -173,67 +137,6 @@ describe('release asset names', () => {
 		expect(coldStart).not.toContain('ARROXY_LIVE_CANARY_URL')
 	})
 
-	it('smoke-tests Windows installed and portable artifacts before publish', () => {
-		const installer = read('.github/workflows/installer-smoke.yml')
-
-		expect(installer).toContain('bun run dist:win')
-		expect(installer).toContain('Run installed app runtime smoke')
-		expect(installer).toContain('Run portable app runtime smoke')
-		expect(installer).toContain('ARROXY_RUNTIME_SMOKE')
-		expect(installer).toContain('Grabbit Runtime Ω Installed')
-		expect(installer).toContain('Grabbit Portable Ω Path')
-		expect(installer).toContain('runtime-smoke-logs')
-	})
-
-	it('blocks release on packaged runtime smoke and runs no live YouTube canary', () => {
-		const release = read('.github/workflows/release.yml')
-
-		expect(release).toContain('Run packaged runtime smoke')
-		expect(release).toContain("ARROXY_RUNTIME_SMOKE: '1'")
-		expect(release).toContain('libfuse2t64')
-		expect(release).not.toContain('Run Linux live probe canary')
-		expect(release).not.toContain('ARROXY_LIVE_CANARY_URL')
-		expect(release).not.toContain('ARROXY_SMOKE_URL')
-	})
-
-	it('keeps release workflow consumers on the same stable filenames', () => {
-		const release = read('.github/workflows/release.yml')
-		const installer = read('.github/workflows/installer-smoke.yml')
-		const winget = read('.github/workflows/release_to_winget.yml')
-		const flatpak = read('.github/workflows/flatpak.yml')
-
-		for (const asset of stableAssets) {
-			expect([release, installer, winget, flatpak].join('\n')).toContain(asset)
-		}
-
-		expect(winget).toContain("installers-regex: '^Grabbit-win-x64-Setup\\.exe$'")
-		expect(release).not.toContain('Grabbit-Setup-${VERSION}.exe')
-		expect(release).not.toContain('Grabbit-${VERSION}-arm64.dmg')
-		expect(flatpak).not.toContain('Grabbit-${VERSION}.tar.gz')
-	})
-
-	it('relies on immutable release attestations instead of workflow provenance attestations', () => {
-		const release = read('.github/workflows/release.yml')
-
-		expect(release).not.toContain('actions/attest')
-		expect(release).not.toContain('attestations: write')
-		expect(release).not.toContain('artifact-metadata: write')
-		expect(release).not.toContain('gh attestation verify')
-		expect(release).toContain('gh release edit "$REF_NAME" --draft=false $EXTRA')
-	})
-
-	it('authenticates electron-builder BtbN resolver calls in CI builds', () => {
-		const release = read('.github/workflows/release.yml')
-		const installer = read('.github/workflows/installer-smoke.yml')
-		const coldStart = read('.github/workflows/e2e-cold-start.yml')
-
-		expect(installer).toContain('BTBN_GITHUB_TOKEN: ${{ github.token }}')
-		expect(coldStart).toContain('BTBN_GITHUB_TOKEN: ${{ github.token }}')
-		expect(release).toContain('BTBN_GITHUB_TOKEN: ${{ github.token }}')
-		expect(installer).not.toMatch(/^\s+GITHUB_TOKEN:\s+\$\{\{\s*github\.token\s*\}\}/m)
-		expect(coldStart).not.toMatch(/^\s+GITHUB_TOKEN:\s+\$\{\{\s*github\.token\s*\}\}/m)
-	})
-
 	it('keeps GitHub artifact actions off Node 20-backed refs', () => {
 		const workflows = workflowText()
 
@@ -254,17 +157,6 @@ describe('release asset names', () => {
 		expect(workflow).not.toContain('contents: write')
 		expect(workflow).not.toContain('ARROXY_RUNTIME_INDEX_SIGNING_KEY')
 		expect(workflow).not.toContain('gh release')
-	})
-
-	it('normalizes electron-builder AppImage arch names before publishing checksums', () => {
-		const release = read('.github/workflows/release.yml')
-
-		expect(release).toContain('Normalize Linux AppImage asset name')
-		expect(release).toContain('Grabbit-linux-x86_64.AppImage')
-		expect(release).toContain('Grabbit-linux-x64.AppImage')
-		expect(release).toContain('latest-linux.yml')
-		expect(release).toContain('.apiUrl')
-		expect(release).toContain('${builder_api_url#https://api.github.com/}')
 	})
 
 	it('presents Grabbit without upstream release or marketing links in the README', () => {

@@ -1,4 +1,3 @@
-import {execFileSync} from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import type {ProfileKind} from './journeys.js'
@@ -19,26 +18,7 @@ export interface ProvisionOptions {
  * therefore never acceptable here.
  */
 export function copyProfilePreservingMtime(from: string, to: string): void {
-	fs.mkdirSync(path.dirname(to), {recursive: true})
-	if (process.platform === 'darwin') {
-		execFileSync('ditto', [from, to])
-		return
-	}
-	if (process.platform === 'win32') {
-		// robocopy exits 1 on "files copied", which is success, not failure.
-		// Exit codes 0-7 are all benign (1 = files copied, 2/4 = informational,
-		// OR-combined); 8+ is failure. A spawn failure reports no numeric status
-		// (robocopy never ran) and must rethrow — an unpopulated directory must
-		// not pose as a prepared profile.
-		try {
-			execFileSync('robocopy', [from, to, '/E', '/COPYALL', '/NFL', '/NDL', '/NJH', '/NJS'])
-		} catch (err) {
-			const status = (err as {status?: number}).status
-			if (typeof status !== 'number' || status >= 8) throw err
-		}
-		return
-	}
-	execFileSync('cp', ['-a', `${from}/.`, to])
+	fs.cpSync(from, to, {recursive: true, preserveTimestamps: true})
 }
 
 function freshDir(baseDir: string, name: string): string {

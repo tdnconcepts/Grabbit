@@ -566,15 +566,6 @@ export interface CommonPaths {
 	home?: string | null
 }
 
-export interface FeedbackDiagnosticUpload {
-	reportId: string
-	diagnosticUrl: string | null
-	rawBytes: number
-	compressedBytes: number
-	truncated: boolean
-	sha256: string
-}
-
 export interface StartDownloadInput {
 	url: string
 	outputDir?: string

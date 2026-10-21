@@ -87,7 +87,7 @@
   },
   "publish": {
     "provider": "github",
-    "owner": "antonio-orionus",
-    "repo": "Arroxy"
+    "owner": "tdnconcepts",
+    "repo": "Grabbit"
   }
 }

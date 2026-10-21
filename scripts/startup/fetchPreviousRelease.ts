@@ -4,7 +4,7 @@ import path from 'node:path'
 import {_electron as electron} from '@playwright/test'
 
 const STABLE_TAG = /^v(\d+)\.(\d+)\.(\d+)$/
-const REPO = 'antonio-orionus/Arroxy'
+const REPO = 'tdnconcepts/Grabbit'
 const PROFILE_WRITE_TIMEOUT_MS = 10 * 60 * 1000
 
 function parseStable(tag: string): [number, number, number] | null {
@@ -43,14 +43,14 @@ export function previousStableTag(tags: readonly string[], current: string): str
 /**
  * Portable/unpacked forms only. The inherited journey needs the previous version
  * merely to *write a profile*, so installer flows stay owned by
- * installer-smoke.yml rather than being rebuilt here.
+ * the manual Windows artifact workflow rather than being rebuilt here.
  */
 export function assetNameFor(platform: NodeJS.Platform, arch: string): string {
 	// electron-builder substitutes ${arch} verbatim, and only x64 AppImages are
-	// built — the name is 'Arroxy-linux-x64.AppImage', not the gnu triple.
-	if (platform === 'linux') return `Arroxy-linux-${arch}.AppImage`
-	if (platform === 'darwin') return `Arroxy-mac-${arch}.dmg`
-	return `Arroxy-win-${arch}-Portable.exe`
+	// built — the name is 'Grabbit-linux-x64.AppImage', not the gnu triple.
+	if (platform === 'linux') return `Grabbit-linux-${arch}.AppImage`
+	if (platform === 'darwin') return `Grabbit-mac-${arch}.dmg`
+	return `Grabbit-win-${arch}-Portable.exe`
 }
 
 function downloadAsset(tag: string, assetName: string, intoDir: string): string {
@@ -79,7 +79,7 @@ function unpackAsset(assetPath: string, workDir: string): string {
 			if (!appName) throw new Error(`no .app inside ${assetPath}`)
 			const copied = path.join(workDir, appName)
 			execFileSync('ditto', [path.join(mount, appName), copied])
-			return path.join(copied, 'Contents', 'MacOS', 'Arroxy')
+			return path.join(copied, 'Contents', 'MacOS', 'Grabbit')
 		} finally {
 			execFileSync('hdiutil', ['detach', mount, '-quiet'])
 		}
@@ -99,8 +99,8 @@ function unpackAsset(assetPath: string, workDir: string): string {
 	if (nestedPayload) {
 		execFileSync(sevenZip, ['x', '-y', `-o${unpacked}`, nestedPayload], {stdio: 'ignore'})
 	}
-	const exe = shallowestNamed(unpacked, /^Arroxy\.exe$/i)
-	if (!exe) throw new Error(`no Arroxy.exe reconstructed from ${assetPath}`)
+	const exe = shallowestNamed(unpacked, /^Grabbit\.exe$/i)
+	if (!exe) throw new Error(`no Grabbit.exe reconstructed from ${assetPath}`)
 	return exe
 }
 
@@ -130,7 +130,7 @@ function shallowestNamed(root: string, name: RegExp): string | null {
  * Runs the previous release once so it writes a genuine profile — settings.json,
  * queue.json, runtime-cache, probe-info-cache-v1 — which the new build is then
  * verified against. Only the portable/unpacked form is used: installer flows stay
- * owned by installer-smoke.yml.
+ * owned by the manual Windows artifact workflow.
  */
 export async function generateInheritedProfile(tag: string, workDir: string): Promise<string> {
 	const asset = downloadAsset(tag, assetNameFor(process.platform, process.arch), path.join(workDir, 'download'))

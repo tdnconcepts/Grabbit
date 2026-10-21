@@ -1,12 +1,21 @@
 # Changelog
 
-All notable user-facing changes to Arroxy.
+Changes to Grabbit. Earlier entries retain the upstream project's release history.
 
-This file is the source of truth for release notes. The release workflow reads the section matching the pushed tag (e.g. `## 0.3.5-beta.1`) and posts it as the GitHub Release body. Auto-generated "What's Changed" PR list + Full Changelog link is appended automatically.
+Release notes are maintained here manually. The Windows artifact workflow does not publish a GitHub Release or update package registries.
 
 When cutting a release, add a new section at the top in the same shape as the most recent entry.
 
 ---
+
+## Unreleased
+
+- Grabbit project links and the app updater now use `tdnconcepts/Grabbit`.
+- Removed the inherited feedback form, remote diagnostic uploader, and their hosted-worker configuration. Local log browsing and diagnostic export remain available.
+- Telemetry credentials are no longer embedded in builds, and analytics defaults to off.
+- Replaced upstream publishing automation with a manual, read-only Windows artifact build and retained download checksum and antivirus checks.
+- Removed obsolete maintainer material, donation assets, translated READMEs, and the unused Linux installer.
+- Fixed stale quality-control expectations and Windows startup-test profile copying.
 
 ## 0.4.27
 

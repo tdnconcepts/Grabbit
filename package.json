@@ -102,8 +102,6 @@
 		"smoke": "bun scripts/smoke-youtube.ts",
 		"smoke:playlist": "bun scripts/smoke-playlist-presets.ts",
 		"smoke:download": "bun scripts/smoke-download.ts",
-		"release:beta": "bash scripts/release.sh beta",
-		"release:stable": "bash scripts/release.sh stable",
 		"prepare": "vp config --no-agent",
 		"postinstall": "bun scripts/dev-env.ts electron-payload",
 		"react-doctor": "react-doctor"

@@ -88,11 +88,10 @@ describe('invoke methods → correct IPC channel', () => {
 		expect(ipc.invoke).toHaveBeenCalledWith(IPC_CHANNELS.shellOpenExternal, 'https://example.com')
 	})
 
-	it('logs.uploadFeedbackDiagnostic', () => {
+	it('does not expose a remote diagnostic uploader', () => {
 		const api = createPreloadApi(ipc.ipcRenderer)
-		const input = {reportId: '11111111-1111-4111-8111-111111111111'}
-		void api.logs.uploadFeedbackDiagnostic(input)
-		expect(ipc.invoke).toHaveBeenCalledWith(IPC_CHANNELS.logsUploadFeedbackDiagnostic, input)
+		expect('uploadFeedbackDiagnostic' in api.logs).toBe(false)
+		expect(IPC_CHANNELS).not.toHaveProperty('logsUploadFeedbackDiagnostic')
 	})
 
 	it('logs.saveDiagnostics', () => {

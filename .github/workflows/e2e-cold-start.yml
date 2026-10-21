@@ -54,8 +54,6 @@ jobs:
         shell: bash
         env:
           BUILD_CMD: ${{ matrix.build_cmd }}
-          OPENPANEL_CLIENT_ID: ${{ secrets.OPENPANEL_CLIENT_ID }}
-          OPENPANEL_CLIENT_SECRET: ${{ secrets.OPENPANEL_CLIENT_SECRET }}
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
           BTBN_GITHUB_TOKEN: ${{ github.token }}
         run: bash -c "$BUILD_CMD"
@@ -89,7 +87,7 @@ jobs:
         shell: bash
         env:
           ARROXY_RUNTIME_SMOKE: '1'
-          ELECTRON_USER_DATA: ${{ runner.temp }}/Arroxy Runtime Ω Cold
+          ELECTRON_USER_DATA: ${{ runner.temp }}/Grabbit Runtime Ω Cold
           ARROXY_LOG_ARCHIVE: ${{ runner.temp }}/arroxy-cold-logs
           ARROXY_BINARY_DOWNLOAD_MAX_MS: '120000'
         run: |

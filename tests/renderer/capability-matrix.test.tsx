@@ -30,7 +30,7 @@ describe('DownloadProfilesHome action rows', () => {
 		expect(screen.queryByTestId('profiles-interactive-download')).not.toBeInTheDocument()
 	})
 
-	it('keeps static supported-site proof out of the main URL workflow', () => {
+	it('keeps a compact supported-site strip in the main URL workflow', () => {
 		render(
 			<TooltipProvider>
 				<StepUrlInput />
@@ -38,7 +38,7 @@ describe('DownloadProfilesHome action rows', () => {
 		)
 
 		expect(screen.queryByTestId('url-capabilities')).not.toBeInTheDocument()
-		expect(screen.queryByText('2000+ sites')).not.toBeInTheDocument()
+		expect(screen.getByText('2000+ sites')).toBeInTheDocument()
 	})
 
 	it('uses concise inline guidance instead of a decorative helper block', () => {

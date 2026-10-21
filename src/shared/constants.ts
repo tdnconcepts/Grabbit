@@ -2,11 +2,8 @@ import type {SubtitleMode, SubtitleFormat, SponsorBlockMode, SponsorBlockCategor
 import type {AppSettings} from './types.js'
 import {DEFAULT_FILENAME_TEMPLATE} from './filenameTemplate.js'
 
-export const DISCORD_URL = 'https://discord.gg/ueGvXwQH8y'
-
-// Public landing site. The old host (arroxy.orionus.dev) 301s here, so links in
-// earlier releases keep working.
-export const WEBSITE_URL = 'https://orionus.dev/arroxy/'
+// Grabbit project page; no inherited website or community endpoints.
+export const WEBSITE_URL = 'https://github.com/tdnconcepts/Grabbit'
 
 // Windows AppUserModelID. Must stay identical to `appId` in electron-builder.json5:
 // the NSIS installer stamps that value onto the Start Menu shortcut, and Windows
@@ -73,7 +70,7 @@ export function defaultAppSettings(downloadsDir: string): AppSettings {
 			clipboardWatchEnabled: true,
 			hotkeyEnabled: DEFAULTS.hotkeyEnabled,
 			hotkeyAccelerator: DEFAULTS.hotkeyAccelerator,
-			analyticsEnabled: true,
+			analyticsEnabled: false,
 			filenameTemplate: DEFAULTS.filenameTemplate,
 			backdropRenderMode: DEFAULTS.backdropRenderMode,
 			nativeAudioPreference: DEFAULTS.nativeAudioPreference

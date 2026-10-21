@@ -23,7 +23,7 @@ function isLoopbackHttpUrl(value: string): boolean {
 }
 
 export function resolveUpdateFeed(env: NodeJS.ProcessEnv, channel: string): ResolvedUpdateFeed {
-	const github: UpdateFeed = {provider: 'github', owner: 'antonio-orionus', repo: 'Grabbit', channel}
+	const github: UpdateFeed = {provider: 'github', owner: 'tdnconcepts', repo: 'Grabbit', channel}
 	const override = env.ARROXY_UPDATE_FEED_URL
 	if (!override) return {kind: 'github', feed: github}
 	if (!isLoopbackHttpUrl(override)) return {kind: 'rejected', feed: github}

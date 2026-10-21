@@ -19,6 +19,8 @@ refs
 # Local environment variables (API keys — never commit)
 .env
 .env.local
+.env.*
+!.env.example
 
 # Local tool-version overrides and optional repo-local browser cache
 mise.local.toml

@@ -369,6 +369,8 @@ const metadataCheckIndex = packagesCheck.indexOf('packages:verify-metadata')
 assert(errorsCheckIndex !== -1 && bridgeCheckIndex !== -1 && metadataCheckIndex !== -1 && errorsCheckIndex < bridgeCheckIndex && bridgeCheckIndex < metadataCheckIndex, 'packages:check must run errors:check, bridge:check, then packages:verify-metadata.')
 
 for (const workflow of publishWorkflows) {
+	// Registry publishing is optional for forks; validate any configured publisher.
+	if (!existsSync(repoPath(workflow.path))) continue
 	const text = readText(workflow.path)
 	assert(text.includes(`run: ${workflow.command}`), `${workflow.path} must call "${workflow.command}".`)
 	assert(text.includes('bun pm view'), `${workflow.path} must use bun pm view for registry version checks.`)

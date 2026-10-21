@@ -1,12 +1,11 @@
 /// <reference types="vite/client" />
 /// <reference types="unplugin-icons/types/react" />
 
-import type {TallyWidget} from '@renderer/lib/tallyWidget.js'
+export {}
 
 declare global {
 	interface Window {
 		__arroxyBrowserMockShowStartupSplash?: boolean
 		__arroxyMockEmitClipboardUrl?: (url: string) => void
-		Tally?: Partial<TallyWidget>
 	}
 }

@@ -207,12 +207,12 @@ describe('quickDownload', () => {
 		expect(queued).toMatchObject({
 			url: VIDEO_PROBE.webpageUrl,
 			title: 'Test Video',
-			outputDir: '/tmp/downloads/Balanced 720p',
+			outputDir: '/tmp/downloads/Best available',
 			status: 'pending',
 			lane: 'normal',
 			// Bound, not the token form: the probe supplied both title and id, so
 			// the job carries the name that will actually be written.
-			job: expect.objectContaining({kind: 'ranged-format', extractor: 'youtube', extractorKey: 'Youtube', intent: {kind: 'video-audio', codec: 'best', tiers: ['720'], audio: {format: 'best'}}, filenameTemplate: 'Test Video [dQw4w9WgXcQ]'})
+			job: expect.objectContaining({kind: 'ranged-format', extractor: 'youtube', extractorKey: 'Youtube', intent: {kind: 'video-audio', codec: 'best', tiers: ['best'], audio: {format: 'best'}}, filenameTemplate: 'Test Video [dQw4w9WgXcQ]'})
 		})
 		expect(useAppStore.getState().wizardUrl).toBe('')
 		expect(useAppStore.getState().wizardStep).toBe('url')
@@ -248,7 +248,7 @@ describe('quickDownload', () => {
 		await useAppStore.getState().quickDownload()
 
 		const queued = vi.mocked(api.queue.cmd.add).mock.calls[0]?.[0]?.[0]
-		expect(queued).toMatchObject({outputDir: '/tmp/first-launch-downloads/Balanced 720p', formatLabel: 'Up to 720p · Native formats · Native audio', job: expect.objectContaining({kind: 'ranged-format', intent: {kind: 'video-audio', codec: 'best', tiers: ['720'], audio: {format: 'best'}}})})
+		expect(queued).toMatchObject({outputDir: '/tmp/first-launch-downloads/Best available', formatLabel: 'Best available · Native formats · Native audio', job: expect.objectContaining({kind: 'ranged-format', intent: {kind: 'video-audio', codec: 'best', tiers: ['best'], audio: {format: 'best'}}})})
 		expect(useAppStore.getState().quickDownloadStatus).toBe('queued')
 		expect(useAppStore.getState().wizardUrl).toBe('')
 		expect(useAppStore.getState().wizardStep).toBe('url')

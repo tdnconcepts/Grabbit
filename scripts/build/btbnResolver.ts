@@ -10,7 +10,7 @@ const BTBN_API_BASE = 'https://api.github.com/repos/BtbN/FFmpeg-Builds'
 // BtbN/FFmpeg-Builds#646) and is quarantined on install, which breaks probing.
 //
 // To bump: pick a newer autobuild tag, run scripts/test-binaries/smoke-all.sh,
-// and let the Defender scan in .github/workflows/installer-smoke.yml gate it.
+// and let the Defender scan in .github/workflows/release.yml gate it.
 // Set BTBN_RELEASE_TAG to override — a tag name, 'latest' for BtbN's floating
 // release, or 'floating' to resolve the newest complete release as before.
 export const BTBN_PINNED_RELEASE_TAG = 'autobuild-2026-08-31-13-27'

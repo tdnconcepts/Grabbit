@@ -3,7 +3,7 @@ import {useShallow} from 'zustand/react/shallow'
 import {releaseNotesSince, shouldShowWhatsNew, type ReleaseNotesDigest} from '@shared/releaseNotes.js'
 import {useAppStore} from '../../store/useAppStore.js'
 
-const RELEASES_URL = 'https://github.com/antonio-orionus/Grabbit/releases'
+const RELEASES_URL = 'https://github.com/tdnconcepts/Grabbit/releases'
 
 interface UseWhatsNewDialogOptions {
 	startupReady?: boolean

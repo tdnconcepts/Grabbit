@@ -19,7 +19,7 @@ describe('blandUserAgent', () => {
 	})
 
 	it('matches the app name case-insensitively, as Electron reports it in dev and packaged builds', () => {
-		expect(blandUserAgent(MAC.replace('Grabbit/', 'arroxy/'), 'Grabbit')).not.toMatch(/arroxy\//i)
+		expect(blandUserAgent(MAC.replace('Grabbit/', 'grabbit/'), 'Grabbit')).not.toMatch(/grabbit\//i)
 	})
 
 	it('treats regex characters in the app name literally', () => {
