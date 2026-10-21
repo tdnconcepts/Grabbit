@@ -267,18 +267,20 @@ describe('release asset names', () => {
 		expect(release).toContain('${builder_api_url#https://api.github.com/}')
 	})
 
-	it('documents evergreen direct download links in the README template', () => {
+	it('presents Grabbit without upstream release or marketing links in the README template', () => {
 		const template = read('readme-src/template.md')
 
-		expect(template).toContain('## <a id="install"></a>{{dl_h2}}')
-		for (const asset of stableAssets) {
-			expect(template).toContain(`https://github.com/antonio-orionus/Grabbit/releases/latest/download/${asset}`)
+		expect(template).toContain('# Grabbit')
+		expect(template).toContain('https://github.com/tdnconcepts/Grabbit.git')
+		expect(template).toContain('build/Main-screenshot.png')
+		expect(template).toContain('[LICENSE](LICENSE)')
+		expect(template).not.toMatch(/arroxy|antonio-orionus|orionus\.dev|discord\.gg|shields\.io|DONATE\.md|demo\.gif/i)
+		for (const file of readdirSync(root).filter(name => /^README(?:\.[\w-]+)?\.md$/.test(name))) {
+			const content = read(file)
+			expect(content, file).toContain('# Grabbit')
+			expect(content, file).not.toMatch(/arroxy|antonio-orionus|orionus\.dev|discord\.gg|shields\.io|DONATE\.md|demo\.gif/i)
+			expect(content, file).not.toMatch(/\{\{\w+\}\}/)
 		}
-		expect(template).toContain('https://github.com/antonio-orionus/Grabbit/releases/latest/download/SHA256SUMS')
-		expect(template).toContain('img.shields.io/badge/Windows-Setup-0078D4')
-		expect(template).not.toContain('| 🪟 Windows')
-		expect(template).not.toContain('| 🍎 macOS')
-		expect(template).not.toContain('| 🐧 Linux')
 	})
 
 	it('does not document stale versioned Windows filename patterns in generated READMEs', () => {
